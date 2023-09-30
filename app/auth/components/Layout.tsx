@@ -17,7 +17,7 @@ const Layout = ({ children }: LayoutProps) => {
 				animate="animateState"
 				exit="exitState"
 				transition={{
-					duration: 0.7,
+					duration: 1,
 				}}
 				variants={{
 					initialState: {
