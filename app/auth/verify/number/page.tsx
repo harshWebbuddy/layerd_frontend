@@ -2,23 +2,21 @@ import Logo from "@/components/logo";
 import React from "react";
 
 import PhoneNumberInput from "./components/PhoneNumberInput";
-import PageLayout from "../../components/layout";
+import PageLayout from "../../components/PageLayout";
 
 export default function VerifyNumber() {
 	return (
-		<PageLayout>
-			<main className="bg-black w-full min-w-screen h-full min-h-screen flex justify-center items-center">
-				<div className="w-full max-w-[470px] p-3 sm:p-4">
-					<div className="flex flex-col items-center">
-						<Logo />
-						<h1 className="text-4xl sm:text-[39px] font-bold mt-6 text-center whitespace-nowrap my-4 capitalize tracking-tighter">
-							{" "}
-							Verify your phone number
-						</h1>
-					</div>
-					<PhoneNumberInput />
+		<main className="bg-black w-full min-w-screen h-full min-h-screen flex justify-center items-center">
+			<div className="w-full max-w-[470px] p-3 sm:p-4">
+				<div className="flex flex-col items-center">
+					<Logo />
+					<h1 className="text-4xl sm:text-[39px] font-bold mt-6 text-center whitespace-nowrap my-4 capitalize tracking-tighter">
+						{" "}
+						Verify your phone number
+					</h1>
 				</div>
-			</main>
-		</PageLayout>
+				<PhoneNumberInput />
+			</div>
+		</main>
 	);
 }
