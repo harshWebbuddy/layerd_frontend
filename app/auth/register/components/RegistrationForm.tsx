@@ -11,6 +11,7 @@ export default function RegistrationForm({}: Props) {
   const router = useRouter()
   const submitHandler = (e : any) => {
     e.preventDefault();
+		console.log('submitted!!!!!!!!')
     router.push('/auth/verify/email')
   }
 	return (
