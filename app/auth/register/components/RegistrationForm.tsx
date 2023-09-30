@@ -50,7 +50,7 @@ export default function RegistrationForm({}: Props) {
 					</p>
 				</div>
 			</div>
-			<button>8239041</button>
+			<Button type="submit">Continue</Button>
 		</form>
 	);
 }
