@@ -9,11 +9,12 @@ type Props = {};
 
 export default function RegistrationForm({}: Props) {
   const router = useRouter()
+
   const submitHandler = (e : any) => {
     e.preventDefault();
-		console.log('submitted!!!!!!!!')
-    router.push('/auth/verify/email')
+    router.replace('/auth/verify/email')
   }
+	
 	return (
 		<form className="space-y-10 mt-7 w-full" onSubmit={submitHandler}>
 			<div className="space-y-6">
