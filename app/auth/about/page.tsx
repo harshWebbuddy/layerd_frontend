@@ -3,6 +3,7 @@ import Input from "../components/Input";
 import Button from "../components/Button";
 import Logo from "@/components/logo";
 import AboutForm from "./components/AboutForm";
+import Link from "next/link";
 
 export default function About() {
 	return (
@@ -17,9 +18,9 @@ export default function About() {
 				<AboutForm/>
 				<div className="mt-6">
 					<p className="max-w-sm text-center text-sm text-white/50">
-						By Clicking “<a href="#" className="text-primary-red hover:underline">Continue</a>”,
+						By Clicking “<Link href="#" className="text-primary-red hover:underline">Continue</Link>”,
 						You Agree to Our Terms and Acknowledge Our{" "}
-						<a href="#" className="text-primary-red cursor-pointer hover:underline">Privacy Policy</a>
+						<Link href="#" className="text-primary-red cursor-pointer hover:underline">Privacy Policy</Link>
 					</p>
 				</div>
 			</div>
