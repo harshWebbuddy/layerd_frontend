@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import SocialAuthButton from "../components/SocialAuthButton";
-import Input from "../components/Input";
-import Button from "../components/Button";
-import Image from "next/image";
+
 import RegistrationForm from "./components/RegistrationForm";
 import Link from "next/link";
 import ImageFlipper from "../components/ImageFlipper";

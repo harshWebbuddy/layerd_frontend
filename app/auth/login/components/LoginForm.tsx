@@ -14,7 +14,7 @@ export default function LoginForm({}: Props) {
 	}
 	return (
 		<form className="space-y-10 mt-7" onSubmit={submitHandler}>
-			<div className="space-y-8">
+			<div className="space-y-6">
 				<Input
 					id="email"
 					label="email/Phone"

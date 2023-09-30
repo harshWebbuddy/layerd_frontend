@@ -40,6 +40,7 @@ const ImageFlipper = ({ images }: { images: string[] }) => {
 										fill
 										className="w-full h-full object-cover"
 									/>
+									<span className="text-xs font-semibold absolute bottom-3 left-3 text-[#AFAFAF]">Art Created by Midjourney</span>
 								</div>
 							</SwiperSlide>
 						))}
