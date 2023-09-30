@@ -12,7 +12,7 @@ export default function RegistrationForm({}: Props) {
 
   const submitHandler = (e : any) => {
     e.preventDefault();
-    router.replace('/auth/verify/email')
+    router.push('/auth/verify/email')
   }
 	
 	return (
