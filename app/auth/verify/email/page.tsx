@@ -7,10 +7,10 @@ export default function VerifyEmail() {
 		<main className="bg-black w-full min-w-screen h-full min-h-screen flex justify-center items-center">
 			<div className="flex flex-col items-center p-3 sm:p-4">
 				<Logo />
-				<h1 className="text-4xl sm:text-5xl font-bold capitalize mt-10 text-center tracking-tighter">
+				<h1 className="text-4xl sm:text-[39px] font-bold capitalize mt-10 text-center tracking-tighter">
 					Verify your email
 				</h1>
-				<div className="text-white/80 flex flex-col items-center mt-6 leading-7 text-lg">
+				<div className="text-white/80 flex flex-col items-center mt-6 leading-7">
 					<p>We sent an email to</p>
 					<p className="text-primary-red">email@email.com</p>
 					<p>Click the link inside to get started</p>
