@@ -24,7 +24,7 @@ export default function page() {
 						<p className="text-white/80">
 							Enter your username and password to login
 						</p>
-						<div className="flex gap-4 mt-2">
+						<div className="flex gap-4 mt-1">
 							<SocialAuthButton
 								image={googleIcon}
 								title="Sign up with google"

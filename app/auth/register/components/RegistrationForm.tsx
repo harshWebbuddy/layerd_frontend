@@ -14,7 +14,7 @@ export default function RegistrationForm({}: Props) {
     router.push('/auth/verify/email')
   }
 	return (
-		<form className="space-y-10 mt-6 w-full" onSubmit={submitHandler}>
+		<form className="space-y-10 mt-7 w-full" onSubmit={submitHandler}>
 			<div className="space-y-6">
 				<Input
 					id="email"

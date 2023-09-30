@@ -20,12 +20,12 @@ export default function page() {
 		<main className="bg-black w-full min-w-screen h-full min-h-screen flex justify-center items-center">
 			<div className="flex items-center gap-10 xl:gap-28 p-3 sm:p-4">
 				<section className="w-full max-w-[500px]">
-					<div className="flex flex-col gap-5">
+					<div className="flex flex-col gap-6">
 						<h1 className="text-3xl sm:text-4xl font-bold">Sign up</h1>
 						<p className="text-white/80">
 							Register to login to your admin panel
 						</p>
-						<div className="flex gap-4">
+						<div className="flex gap-4 mt-1">
 							<SocialAuthButton
 								image={googleIcon}
 								title="Sign up with google"
