@@ -10,37 +10,22 @@ body {
 	color: rgb(var(--foreground-rgb));
 	background: rgb(var(--background-rgb));
 }
-
-/* input[type="checkbox"] {
-	appearance: none;
-	-webkit-appearance: none;
-	height: 20px;
-	width: 20px;
-	background-color: #0f0f0f;
-	border: 1px solid #2d2d2d;
-	border-radius: 3px;
-	cursor: pointer;
-}
-input[type="checkbox"]::after {
-	content: "";
-	position: absolute;
-	left: 24px;
-	bottom: 10px;
-	width: 20px;
-} */
-
-
 .swiper {
-  width: 500px;
-  height: 650px;
+	width: 500px;
+	height: 650px;
 }
-
 .swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 18px;
-  font-size: 22px;
-  font-weight: bold;
-  color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 18px;
+	font-size: 22px;
+	font-weight: bold;
+	color: #fff;
+}
+li::marker {
+	font-size: 30px;
+}
+.premium li::marker {
+	color: #FDBB14;
 }

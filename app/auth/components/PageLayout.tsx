@@ -24,7 +24,9 @@ export default function PageLayout({
 				animateState: {
 					opacity: 1,
 				},
-				exitState: {},
+				exitState: {
+					opacity: 0,
+				},
 			}}>
 			{children}
 		</motion.main>
