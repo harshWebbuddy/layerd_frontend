@@ -1,5 +1,4 @@
-import Layout from "./components/Layout";
-("use client");
+"use client"
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 export default function RootLayout({
