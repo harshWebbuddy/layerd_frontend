@@ -27,5 +27,28 @@ li::marker {
 	font-size: 30px;
 }
 .premium li::marker {
-	color: #FDBB14;
+	color: #fdbb14;
+}
+.swiper-pagination-bullets {
+	margin-bottom: 10px;
+}
+.swiper-pagination-bullet {
+	padding: 5px;
+	background-color: #fdbb14 !important;
+}
+.ReactCollapse--collapse {
+	transition: height 500ms;
+}
+::-webkit-scrollbar {
+	width: 0px;
+	height: 5px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: rgb(78, 78, 78);
+	border-radius: 10px;
+	height: 200px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
 }

@@ -18,7 +18,7 @@ export default function Contact({}: Props) {
 				visible: { opacity: 1, x: 0 },
 			}}
 			className="my-28 relative flex justify-center items-center">
-			<div className="absolute h-[200px] w-[50px] rotate-45 blur-[70px] opacity-80 bg-gradient-to-br from-primary-red to-primary-yellow top-1/2 right-1/2 transform translate-x-1/2 -translate-y-[10%] " />
+			<div className="absolute h-[200px] w-[50px] rotate-45 blur-[70px] bg-gradient-to-br from-primary-red to-primary-yellow top-1/2 right-1/2 transform translate-x-1/2 -translate-y-[10%] " />
 			<div className="max-w-5xl relative z-10 backdrop-blur-3xl bg-gradient-to-b from-transparent to-white/[0.05] w-full rounded-b-3xl flex flex-col items-center gap-2 border-b-[3px] border-white/10 py-14">
 				<h1>
 					<Image

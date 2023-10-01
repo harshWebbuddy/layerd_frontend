@@ -1,5 +1,7 @@
 import React from "react";
 import Contact from "../components/Contact";
+import Tabs from "./components/Tabs";
+import Accordion from "./components/Accordion";
 
 export default function FaqPage() {
 	return (
@@ -11,7 +13,11 @@ export default function FaqPage() {
 					</h1>
 				</div>
 			</div>
-			<div className="max-w-[1300px] mx-auto">
+			<div className="max-w-[1300px] mx-auto p-2">
+				<Tabs />
+				<div className="mt-10">
+					<Accordion />
+				</div>
 				<Contact />
 			</div>
 		</div>

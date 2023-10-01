@@ -15,7 +15,7 @@ export default function PageLayout({
 			animate="animateState"
 			exit="exitState"
 			transition={{
-				duration: 1,
+				duration: 1.5,
 			}}
 			variants={{
 				initialState: {
