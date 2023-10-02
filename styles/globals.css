@@ -23,11 +23,8 @@ body {
 	font-weight: bold;
 	color: #fff;
 }
-li::marker {
-	font-size: 30px;
-}
-.premium li::marker {
-	color: #fdbb14;
+.list-item > li::marker {
+	font-size : 30px;
 }
 .swiper-pagination-bullets {
 	margin-bottom: 10px;

@@ -4,18 +4,19 @@ import { products } from "./constants/Products";
 
 export default function Products() {
 	return (
-		<div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 w-full mt-14">
+		<div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 w-full mt-14">
 			{products.map((item, index) => (
-				<div key={index} className="w-full h-80 relative">
+				<div key={index} className="w-full max-h-[500px] relative">
 					<Image
 						src={item.image}
 						alt={item.title}
-						fill
-						className="w-full h-full object-cover rounded-xl shadow-xl"
+						height={600}
+						width={500}
+						className=" rounded-xl h-96 object-cover w-full shadow-xl"
 					/>
-					<div className="bg-gradient-to-b from-[#2d2e36] shadow-2xl to-[#1b1b1f] rounded-lg w-fit absolute sm:left-3 sm:-right-5 -bottom-6 p-4">
-						<h1 className="text-lg">{item.title}</h1>
-						<p className="text-sm leading-relaxed mt-2 text-gray-400">
+					<div className="bg-gradient-to-b from-[#363636] z-10 transform -translate-y-1/2 translate-x-6 h-[220px] shadow-2xl to-[#1F1F1F] rounded-lg  p-4">
+						<h1 className="text-xl font-semibold">{item.title}</h1>
+						<p className="text-sm leading-relaxed mt-2 text-white/80">
 							{item.desription}
 						</p>
 					</div>

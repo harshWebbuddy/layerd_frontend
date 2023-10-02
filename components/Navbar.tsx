@@ -8,7 +8,7 @@ export default function Navbar() {
 	const router = useRouter();
 
 	return (
-		<div className="mx-auto max-w-[1500px] p-4">
+		<div className="mx-auto max-w-[1500px] p-4 relative z-20">
 			<div className="w-full flex justify-between">
 				<Logo />
 				<div className="flex gap-4">

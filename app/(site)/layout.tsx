@@ -8,7 +8,7 @@ interface Props {
 
 export default function layout({ children }: Props) {
 	return (
-		<main className="bg-[#141418]">
+		<main className="bg-[#141418] overflow-hidden">
 			<Navbar />
 			{children}
 			<Footer />
