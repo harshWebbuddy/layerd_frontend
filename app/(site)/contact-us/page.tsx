@@ -5,6 +5,7 @@ import Image from "next/image";
 import { awards } from "../about/components/constants/Awards";
 import { labels } from "@/utils/constants/objects";
 import Link from "next/link";
+import SalesForm from "./components/SalesContactForm";
 
 export default function ContactPage() {
 	return (

@@ -1,0 +1,17 @@
+<svg width="56" height="57" viewBox="0 0 56 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="done.svg" clip-path="url(#clip0_1467_104481)">
+<path id="Vector" d="M56 28.4531C56 12.9892 43.464 0.453125 28 0.453125C12.536 0.453125 0 12.9892 0 28.4531C0 43.9171 12.536 56.4531 28 56.4531C43.464 56.4531 56 43.9171 56 28.4531Z" fill="black" fill-opacity="0.48"/>
+<path id="Vector_2" d="M52 28.4531C52 15.1983 41.2548 4.45312 28 4.45312C14.7452 4.45312 4 15.1983 4 28.4531C4 41.708 14.7452 52.4531 28 52.4531C41.2548 52.4531 52 41.708 52 28.4531Z" fill="#FDBB14"/>
+<path id="Vector_3" fill-rule="evenodd" clip-rule="evenodd" d="M36.7071 21.746C37.0976 22.1365 37.0976 22.7697 36.7071 23.1602L25.7071 34.1602C25.3166 34.5507 24.6834 34.5507 24.2929 34.1602L19.2929 29.1602C18.9024 28.7697 18.9024 28.1365 19.2929 27.746C19.6834 27.3555 20.3166 27.3555 20.7071 27.746L25 32.0389L35.2929 21.746C35.6834 21.3555 36.3166 21.3555 36.7071 21.746Z" fill="#0E0C15"/>
+<path id="Vector_4" d="M51.5 28.4531C51.5 15.4744 40.9787 4.95312 28 4.95312C15.0213 4.95312 4.5 15.4744 4.5 28.4531C4.5 41.4318 15.0213 51.9531 28 51.9531C40.9787 51.9531 51.5 41.4318 51.5 28.4531Z" stroke="url(#paint0_linear_1467_104481)" stroke-opacity="0.15"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1467_104481" x1="28" y1="4.45312" x2="28" y2="52.4531" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.560128" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="clip0_1467_104481">
+<rect width="56" height="56" fill="white" transform="translate(0 0.453125)"/>
+</clipPath>
+</defs>
+</svg>
