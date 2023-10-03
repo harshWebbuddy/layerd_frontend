@@ -55,3 +55,26 @@ body {
 		-webkit-text-stroke: 4px rgb(177, 177, 177);
 	}
 }
+
+
+.bg-custom-0 {
+	background: linear-gradient(to top right, #111010, #292828, white);
+}
+.bg-custom-1 {
+	background: linear-gradient(to top right, #4d35c8, #4c3d9a, white);
+}
+.bg-custom-2 {
+	background: linear-gradient(to top right, #5cbe2d, #33962e, white);
+}
+.bg-custom-3 {
+	background: linear-gradient(to top right, #ff7a00, #ff8622, white);
+}
+.bg-custom-4 {
+	background: linear-gradient(to top right, #1650a8, #3376da, white);
+}
+.bg-custom-5 {
+	background: linear-gradient(to top right, #258d99, #13daf0, white);
+}
+.bg-custom-6 {
+	background: linear-gradient(to top right, #d59500, #ff8622, white);
+}

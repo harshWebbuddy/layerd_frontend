@@ -70,7 +70,7 @@ export default function About() {
 										research, development, testing, and refining to bring our
 										vision to life. But seeing our platform empower individuals
 										and businesses, making their lives easier and their
-										operations more efficient, has made it all worthwhile. 
+										operations more efficient, has made it all worthwhile.
 									</p>
 									<p className="text-white/60 text-[15px] leading-relaxed">
 										Today, WhopMe.com stands as a testament to our belief that
@@ -131,7 +131,7 @@ export default function About() {
 										research, development, testing, and refining to bring our
 										vision to life. But seeing our platform empower individuals
 										and businesses, making their lives easier and their
-										operations more efficient, has made it all worthwhile. 
+										operations more efficient, has made it all worthwhile.
 									</p>
 									<p className="text-white/60 text-[15px] leading-relaxed">
 										Today, WhopMe.com stands as a testament to our belief that

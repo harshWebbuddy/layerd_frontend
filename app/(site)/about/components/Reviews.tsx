@@ -35,13 +35,13 @@ export default function Reviews({}: Props) {
 					return (
 						<SwiperSlide key={index}>
 							<div
-								className={`w-full h-[600px] bg-center rounded-[50px] relative p-4 md:px-28 py-20 overflow-hidden mt-10`}>
+								className={`w-full h-[600px] bg-center rounded-xl md:rounded-[50px] relative p-4 md:px-28 py-20 overflow-hidden mt-10`}>
 								<Image
 									src={item.image}
 									alt="Image"
 									height={600}
 									width={400}
-									className="object-cover !w-full absolute inset-0"
+									className="object-cover !w-full !h-full absolute inset-0"
 								/>
 								<div className="bg-black opacity-70 absolute inset-0" />
 								<div className="before:content-quotes relative z-50 w-full">

@@ -1,12 +1,14 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 import ContactForm from "./ContactForm";
-type Props = {};
+type Props = {
+	message?: string;
+};
 
-export default function Contact({}: Props) {
+export default function Contact({ message }: Props) {
 	return (
 		<motion.div
 			initial="hidden"
@@ -37,11 +39,15 @@ export default function Contact({}: Props) {
 						hidden: { opacity: 0, x: -50 },
 						visible: { opacity: 1, x: 0 },
 					}}
-					className="text-center font-semibold text-3xl">
-					Are You Ready
-					<br /> For Getting Future Updates
+					className="text-center font-semibold text-3xl max-w-2xl leading-relaxed">
+					{message || (
+						<span>
+							Are You Ready
+							<br /> For Getting Future Updates
+						</span>
+					)}
 				</motion.h1>
-				<ContactForm/>
+				<ContactForm />
 			</div>
 		</motion.div>
 	);
