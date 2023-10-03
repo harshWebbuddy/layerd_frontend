@@ -1,10 +1,11 @@
 import { heroTools } from "@/utils/constants/objects";
 import React from "react";
 import HeroButton from "./HeroButton";
+import AccessButton from "./AccessButton";
 
 export default function Hero() {
 	return (
-		<div className="mt-20 h-fit max-w-[1500px] h- mx-auto px-2 sm:px-4">
+		<div className="mt-20 h-fit max-w-[1500px] mx-auto px-2 sm:px-4 min-h-[40vh] max-h-[70vh]">
 			<div className="flex flex-col gap-4 items-start sm:items-center">
 				<h1 className="text-4xl text-transparent bg-gradient-to-b from-white to-gray-500 bg-clip-text flex gap-2">
 					Empowering
@@ -12,14 +13,12 @@ export default function Hero() {
 				<h1 className="capitalize text-4xl text-gray-200">
 					Everything, Everyone with AI
 				</h1>
-				<button className="px-6 py-3.5 bg-neutral-800/50 ring-1 ring-inset ring-neutral-700 mt-5 capitalize text-sm rounded-md hover:bg-neutral-800/80 transition font-semibold">
-					Get early access
-				</button>
+				<AccessButton/>
 			</div>
 
-			<div className="flex justify-center mt-56 gap-14 h-[40vh]">
+			<div className="hidden xl:flex justify-center mt-40 gap-3 h-[60vh]">
 				{heroTools.map((item, index) => {
-					const angle = index * (180 / (heroTools.length - 2.5 )) - 120;
+					const angle = index * (180 / (heroTools.length - 1 )) - 90;
 					return <HeroButton angle={angle} index={index} item={item} />;
 				})}
 			</div>

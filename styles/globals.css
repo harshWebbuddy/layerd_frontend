@@ -58,7 +58,7 @@ body {
 
 
 .bg-custom-0 {
-	background: linear-gradient(to top right, #111010, #292828, white);
+	background: linear-gradient(to top right, #111010, #292828, #6d6d6d);
 }
 .bg-custom-1 {
 	background: linear-gradient(to top right, #4d35c8, #4c3d9a, white);

@@ -16,7 +16,7 @@ export default function RoadMapPage() {
 					</h1>
 				</div>
 			</div>
-			<section className="max-w-[1400px] mx-auto mt-20">
+			<section className="max-w-[1400px] mx-auto mt-20 p-3 sm:p-4">
 				<div>
 					<div>
 						<Image
@@ -34,7 +34,7 @@ export default function RoadMapPage() {
 							alt="Slashes"
 							height={100}
 							width={600}
-							className="w-[1000px] h-[70px] absolute right-0 -translate-y-12"
+							className="w-[1000px] h-[70px] absolute right-0 -translate-y-12 hidden md:block"
 						/>
 					</div>
 					<div className="mt-20">
@@ -62,7 +62,7 @@ export default function RoadMapPage() {
 							alt="Slashes"
 							height={100}
 							width={600}
-							className="w-[1000px] h-[70px] absolute right-0 -translate-y-12"
+							className="w-[1000px] h-[70px] absolute right-0 -translate-y-12 hidden md:block"
 						/>
 					</div>
 					<div className="mt-20">

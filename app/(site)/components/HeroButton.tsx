@@ -37,7 +37,7 @@ export default function HeroButton({
 				<div
 					className={`absolute z-[1] opacity-0 -inset-2 rounded-full bg-custom-${index} transition duration-500 group-hover:opacity-30`}></div>
 				<div
-					className={`relative z-20 bg-custom-${index} max-w-fittransition p-8 rounded-full`}
+					className={`relative z-20 bg-custom-${index} max-w-fit transition ${index === 3 ? 'p-8' : 'p-5 mt-10'} rounded-full`}
 					style={{
 						transform: `rotate(${-angle}deg)`, // Apply reverse rotation to the image
 					}}>

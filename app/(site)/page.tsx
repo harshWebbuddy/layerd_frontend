@@ -15,13 +15,13 @@ import BoxComponent from "./components/BoxComponent";
 export default function Home() {
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between">
-			<div className="w-full bg-[url('background-image-earh')]">
+			<div className="w-full bg-[url('/background-image-earth-landing.png')] bg-cover bg-center bg-no-repeat">
 				<Hero />
 			</div>
 			<section className="max-w-[1400px] w-full mx-auto p-3 sm:p-4">
 				<div id="ai-search" className="mt-20 px-2 sm:px-4">
 					<div className="w-full flex items-center flex-col">
-						<div className="absolute h-[300px] w-[600px] bg-orange-700 -left-[800px] blur-[300px] rounded-full" />
+						<div className="absolute h-[900px] w-[120px] bg-orange-700 left-[-250px] blur-[250px] rounded" />
 						<div>
 							<Image
 								src="/slash.png"
@@ -40,7 +40,7 @@ export default function Home() {
 								height={300}
 								width={600}
 								draggable={false}
-								className="w-[800px] h-[70px] absolute right-0 -translate-y-16"
+								className="w-[800px] h-[70px] absolute right-0 -translate-y-16 hidden md:block"
 							/>
 						</div>
 						<p className="text-sm text-gray-300 text-center max-w-3xl mt-6 leading-relaxed">
@@ -59,7 +59,8 @@ export default function Home() {
 						/>
 					</div>
 				</div>
-				<div id="ai-bots" className="mt-28">
+				<div id="ai-chat" className="mt-28">
+					<div className="absolute h-[900px] w-[120px] bg-[#2463C1] right-[-250px] blur-[250px] rounded" />
 					<div className="w-full flex items-center gap-3">
 						<Image
 							src="/slash.png"
@@ -89,6 +90,7 @@ export default function Home() {
 								src="/gifs/process.gif"
 								alt="process-image"
 								fill
+								sizes=""
 								objectFit="cover"
 							/>
 						</div>
@@ -104,8 +106,8 @@ export default function Home() {
 						</button>
 					</div>
 				</div>
-				<div id="ai-images" className="mt-32 relative">
-					<div className="absolute h-[600px] w-[300px] bg-green-700 -left-[700px] blur-[250px]" />
+				<div id="ai-images" className="mt-32">
+					<div className="absolute h-[900px] w-[120px] bg-[#369933] left-[-250px] blur-[250px] rounded" />
 					<div className="flex flex-col md:flex-row gap-20">
 						<div className="w-full flex md:hidden items-center gap-3">
 							<h1 className="uppercase text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-500 font-bold text-transparent bg-clip-text">
@@ -113,13 +115,13 @@ export default function Home() {
 							</h1>
 							<div className="h-[3px] max-w-xl bg-gradient-to-r from-gray-500 via-gray-700/50 to-transparent flex-1" />
 						</div>
-						<div className="h-96 md:h-auto w-full relative">
+						<div className="h-96 md:h-auto w-full relative sha">
 							<Image
 								src="/gifs/man-visualization.gif"
 								alt="visualization"
 								objectFit="cover"
 								fill
-								className="rounded-3xl max-h-[500px]"
+								className="rounded-3xl max-h-[500px]  shadow-2xl shadow-[#2c2c2c]"
 							/>
 						</div>
 						<div className="w-full">
@@ -149,6 +151,7 @@ export default function Home() {
 					</div>
 				</div>
 				<div id="ai-writing" className="mt-28">
+					<div className="absolute h-[900px] w-[120px] bg-[#27ACB2] right-[-250px] blur-[250px] rounded" />
 					<div className="w-full flex items-center gap-3">
 						<Image
 							src="/slash.png"
@@ -170,13 +173,15 @@ export default function Home() {
 							))}
 						</div>
 						<div className="w-full md:max-w-lg ">
-							<Image
-								src="/landing/ai-writing.gif"
-								alt="Writing Ai"
-								width={900}
-								height={600}
-								className="rounded-3xl shadow-2xl shadow-[#2c2c2c]"
-							/>
+							<div className="bg-gradient-to-tl from-primary-red via-primary-yellow/40 to-transparent p-[3px] w-full rounded-3xl">
+								<Image
+									src="/landing/ai-writing.gif"
+									alt="Writing Ai"
+									width={900}
+									height={600}
+									className="rounded-3xl shadow-2xl shadow-[#2c2c2c]"
+								/>
+							</div>
 						</div>
 					</div>
 					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mt-10">
@@ -191,8 +196,8 @@ export default function Home() {
 					</div>
 				</div>
 				<div id="ai-voice" className="mt-28">
+					<div className="absolute h-[400px] w-[200px] bg-blue-700 left-[-250px] blur-[250px] rounded" />
 					<div className="w-full flex items-center flex-col">
-						<div className="absolute h-[300px] w-[600px] bg-orange-700 -left-[800px] blur-[300px] rounded-full" />
 						<div>
 							<Image
 								src="/slash.png"
@@ -211,7 +216,7 @@ export default function Home() {
 								height={300}
 								width={600}
 								draggable={false}
-								className="w-[800px] h-[70px] absolute right-0 -translate-y-16"
+								className="w-[800px] h-[70px] absolute right-0 -translate-y-16 hidden md:block"
 							/>
 						</div>
 					</div>
@@ -221,9 +226,9 @@ export default function Home() {
 						))}
 					</div>
 				</div>
-				<div className="mt-28">
+				<div id="ai-codes" className="mt-28">
+					<div className="absolute h-[900px] w-[120px] bg-[#726761] right-[-250px] blur-[250px] rounded" />
 					<div className="w-full flex items-center flex-col">
-						<div className="absolute h-[300px] w-[600px] bg-orange-700 -left-[800px] blur-[300px] rounded-full" />
 						<div className="w-full flex items-center gap-3">
 							<Image
 								src="/slash.png"
@@ -275,9 +280,9 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-				<div className="mt-28">
+				<div id="ai-personalized" className="mt-28">
+					<div className="absolute h-[900px] w-[120px] bg-yellow-700 left-[-250px] blur-[250px] rounded" />
 					<div className="w-full flex items-center flex-col">
-						<div className="absolute h-[300px] w-[600px] bg-orange-700 -left-[800px] blur-[300px] rounded-full" />
 						<div>
 							<Image
 								src="/slash.png"
@@ -296,12 +301,12 @@ export default function Home() {
 								height={300}
 								width={600}
 								draggable={false}
-								className="w-[800px] h-[70px] absolute right-0 -translate-y-16"
+								className="w-[800px] h-[70px] absolute right-0 -translate-y-16 hidden md:block"
 							/>
 						</div>
 					</div>
 					<div className="mt-14">
-						<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+						<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
 							{AiPersonaObject.map((option, index) => (
 								<BoxComponent
 									isFullWidth={true}
@@ -312,7 +317,8 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-				<div className="mt-28">
+				<div id="create-your-own" className="mt-28">
+					<div className="absolute h-[900px] w-[120px] bg-primary-red right-[-250px] blur-[250px] rounded" />
 					<div className="w-full flex items-center gap-3">
 						<Image
 							src="/slash.png"
