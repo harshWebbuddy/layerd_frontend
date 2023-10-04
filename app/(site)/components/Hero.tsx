@@ -13,14 +13,22 @@ export default function Hero() {
 				<h1 className="capitalize text-4xl text-gray-200">
 					Everything, Everyone with AI
 				</h1>
-				<AccessButton/>
+				<AccessButton />
 			</div>
 
-			<div className="hidden xl:flex justify-center mt-40 gap-3 h-[60vh]">
+			<div className="hidden xl:flex justify-center mt-40 gap-3 h-[60vh] relative z-10">
 				{heroTools.map((item, index) => {
-					const angle = index * (180 / (heroTools.length - 1 )) - 90;
+					const angle = index * (180 / (heroTools.length - 1)) - 90;
 					return <HeroButton angle={angle} index={index} item={item} />;
 				})}
+			</div>
+			<div className="header-images hidden md:block">
+				{Array(4)
+					.fill(null)
+					.map((_, index) => (
+						<img src={`animated/assets-${index + 1}.png`} className={`header-img-${index + 1} relative z-0`} draggable={false}/>
+					))}
+			
 			</div>
 		</div>
 	);
