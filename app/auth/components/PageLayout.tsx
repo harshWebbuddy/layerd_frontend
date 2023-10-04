@@ -28,6 +28,8 @@ export default function PageLayout({
 					opacity: 0,
 				},
 			}}>
+			<div className="bg-[url('/background-rectangle-c-auth.png')] bg-no-repeat bg-center bg-cover h-full min-h-screen w-full fixed inset-0 z-[-1]" />
+
 			{children}
 		</motion.main>
 	);

@@ -5,7 +5,7 @@ import PageLayout from "../../components/PageLayout";
 
 export default function VerifyEmail() {
 	return (
-		<main className="bg-black w-full min-w-screen h-full min-h-screen flex justify-center items-center">
+		<main className="bg-black/90 backdrop-blur-2xl  w-full min-w-screen h-full min-h-screen flex justify-center items-center">
 			<div className="flex flex-col items-center p-3 sm:p-4">
 				<Logo />
 				<h1 className="text-4xl sm:text-[39px] font-bold capitalize mt-10 text-center tracking-tighter">

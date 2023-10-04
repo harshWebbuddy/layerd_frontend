@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function About() {
 	return (
-		<main className="bg-black w-full min-w-screen h-full min-h-screen flex justify-center items-center">
+		<main className="bg-black/90 backdrop-blur-2xl w-full min-w-screen h-full min-h-screen flex justify-center items-center">
 			<div className="flex flex-col items-center p-3 sm:p-4 w-full max-w-[450px]">
 				<div className="flex flex-col items-center">
 					<Logo />

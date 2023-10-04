@@ -6,7 +6,7 @@ import PageLayout from "../../components/PageLayout";
 
 export default function VerifyNumber() {
 	return (
-		<main className="bg-black w-full min-w-screen h-full min-h-screen flex justify-center items-center">
+		<main className="bg-black/90 backdrop-blur-2xl  w-full min-w-screen h-full min-h-screen flex justify-center items-center">
 			<div className="w-full max-w-[470px] p-3 sm:p-4">
 				<div className="flex flex-col items-center">
 					<Logo />
