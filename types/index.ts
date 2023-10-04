@@ -1,8 +1,8 @@
-interface Feature {
+export interface Feature {
 	title: string;
 	peer: string[];
 }
-type FeatureGroup = {
+export type FeatureGroup = {
   name: string;
   features: Feature[];
 };
