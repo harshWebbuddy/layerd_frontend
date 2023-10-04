@@ -82,3 +82,13 @@ body {
 .bg-custom-6 {
 	background: linear-gradient(to top right, #d59500, #ff8622, white);
 }
+
+
+.border-corner {
+	position: relative;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+	border: 1px solid #ff5733;
+	border-image: linear-gradient(45deg, #464646, transparent, #464646, transparent) 1;
+	border-image-slice: 1;
+	
+}

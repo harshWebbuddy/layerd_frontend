@@ -121,7 +121,7 @@ export default function Home() {
 								alt="visualization"
 								objectFit="cover"
 								fill
-								className="rounded-3xl max-h-[500px]  shadow-2xl shadow-[#2c2c2c]"
+								className="rounded-3xl max-h-[500px] lg:max-h-none  shadow-2xl shadow-[#2c2c2c]"
 							/>
 						</div>
 						<div className="w-full">
@@ -137,7 +137,7 @@ export default function Home() {
 										<BoxComponent option={option} index={index} />
 									))}
 								</div>
-								<div>
+								<div className="mt-6">
 									{ImageAiOptions.slice(2).map((option, index) => (
 										<BoxComponent
 											option={option}
@@ -145,6 +145,11 @@ export default function Home() {
 											isFullWidth={true}
 										/>
 									))}
+								</div>
+								<div className="w-full mt-10">
+									<button className="text-sm font-semibold hover:bg-gray-600/10 transition ring-1 ring-gray-200 px-4 py-3 rounded-lg">
+										Explore AI Image tools
+									</button>
 								</div>
 							</div>
 						</div>
@@ -263,17 +268,18 @@ export default function Home() {
 										/>
 									))}
 								</div>
-
-								{codeOptions.slice(4).map((option, index) => (
-									<BoxComponent
-										option={option}
-										index={index}
-										isFullWidth={true}
-									/>
-								))}
+								<div className="mt-6">
+									{codeOptions.slice(4).map((option, index) => (
+										<BoxComponent
+											option={option}
+											index={index}
+											isFullWidth={true}
+										/>
+									))}
+								</div>
 								<div className="w-full mt-10">
 									<button className="text-sm font-semibold hover:bg-gray-600/10 transition ring-1 ring-gray-200 px-4 py-3 rounded-lg">
-										Explore AI Images Tools
+										Explore AI Codes
 									</button>
 								</div>
 							</div>
