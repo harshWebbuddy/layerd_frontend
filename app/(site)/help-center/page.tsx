@@ -13,8 +13,8 @@ export default function HelpCenter() {
 					</h1>
 				</div>
 			</div>
-			<div className="max-w-[1400px] mx-auto">
-				<div className="grid grid-cols-4 gap-4 mt-14">
+			<div className="max-w-[1400px] mx-auto p-3 sm:p-4">
+				<div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-14">
 					{helpCenterOptions.map((item, index) => (
 						<Card item={item} key={index} />
 					))}

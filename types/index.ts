@@ -2,7 +2,7 @@ export interface Feature {
 	title: string;
 	peer: string[];
 }
-export type FeatureGroup = {
+export interface FeatureGroup {
   name: string;
   features: Feature[];
 };

@@ -8,7 +8,7 @@ interface Props {
 
 export default function layout({ children }: Props) {
 	return (
-		<main className="bg-[url('/grains.png')] bg-cover overflow-hidden">
+		<main className="bg-[url('/grains.png')] bg-cover bg-center overflow-hidden">
 			<div className="bg-[#1E1E26]/20">
 				<Navbar />
 				{children}
