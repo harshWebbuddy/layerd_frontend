@@ -25,7 +25,7 @@ export default function AffiliatePage() {
 						"Leverage the power of AI to earn while you empower others with
 						cutting-edge technology."
 					</p>
-					<p className="text-center max-w-3xl text-white/80">
+					<p className="sm:text-center max-w-3xl text-white/80">
 						Welcome to the WhopMe.com Affiliate Program! We're excited to have
 						you join our team and help us spread the word about our innovative
 						AI tools. By joining our affiliate program, you can earn a
@@ -241,7 +241,7 @@ export default function AffiliatePage() {
 							height={100}
 							width={600}
 							draggable={false}
-							className="w-[1000px] h-[70px] absolute right-0 -translate-y-12"
+							className="w-[900px] h-[70px] absolute right-0 -translate-y-12 hidden xl:block"
 						/>
 					</div>
 				</div>

@@ -3,10 +3,11 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Logo from "./logo";
+import Popup from "@/app/(site)/components/Popup";
 
 export default function Navbar() {
 	const router = useRouter();
-
+	const [isOpen, setIsOpen] = useState(false);
 	return (
 		<div className="mx-auto max-w-[1500px] p-4 relative z-20">
 			<div className="w-full flex justify-between">
@@ -23,7 +24,7 @@ export default function Navbar() {
 						Sign up
 					</button>
 					<button
-						onClick={() => {}}
+						onClick={() => setIsOpen(true)}
 						className="bg-neutral-800 px-3 py-3 rounded-xl">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -41,6 +42,7 @@ export default function Navbar() {
 					</button>
 				</div>
 			</div>
+			<Popup isOpen={isOpen} onClose={() => setIsOpen(false)} />
 		</div>
 	);
 }

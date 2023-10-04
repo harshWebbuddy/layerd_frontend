@@ -14,6 +14,11 @@ body {
 	width: 500px;
 	height: 650px;
 }
+@media screen and (max-width: 768px) {
+	.swiper {
+		height: 700px;
+	}
+}
 .swiper-slide {
 	display: flex;
 	align-items: center;
@@ -24,7 +29,7 @@ body {
 	color: #fff;
 }
 .list-item > li::marker {
-	font-size : 30px;
+	font-size: 30px;
 }
 .swiper-pagination-bullets {
 	margin-bottom: 10px;
@@ -55,7 +60,6 @@ body {
 		-webkit-text-stroke: 4px rgb(177, 177, 177);
 	}
 }
-
 
 .bg-custom-0 {
 	background: linear-gradient(to top right, #111010, #292828, #6d6d6d);

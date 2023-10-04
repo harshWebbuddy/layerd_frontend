@@ -21,7 +21,7 @@ export default function MileStoneComponent({
 						<h1 className="text-[#FBFBFB]/80 uppercase">{date}</h1>
 						<span className="text-primary-yellow">]</span>
 					</div>
-					<div className="h-[1px] max-w-[120px] w-full bg-[#252134]" />
+					<div className="h-[1px] max-w-[120px] sm:max-w-[90px] lg:max-w-[120px] w-full bg-[#252134]" />
 				</div>
 				<div className="w-full md:border-l md:border-[#252134] flex items-start gap-5 py-10 px-5 md:px-10 max-w-2xl">
 					<Image

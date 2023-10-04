@@ -16,7 +16,7 @@ export default function RoadMapPage() {
 					</h1>
 				</div>
 			</div>
-			<section className="max-w-[1400px] mx-auto mt-20 p-3 sm:p-4">
+			<section className="xl:max-w-[1400px] xl:mx-auto mt-20 p-3 sm:p-4">
 				<div>
 					<div>
 						<Image
@@ -24,7 +24,7 @@ export default function RoadMapPage() {
 							alt="Slashes"
 							height={100}
 							width={600}
-							className="w-[1000px] h-[70px] absolute left-0 -translate-y-3"
+							className="w-[900px] h-[70px] absolute left-0 -translate-y-3"
 						/>
 						<h1 className="relative text-center uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 							Achieved milestones
@@ -34,7 +34,7 @@ export default function RoadMapPage() {
 							alt="Slashes"
 							height={100}
 							width={600}
-							className="w-[1000px] h-[70px] absolute right-0 -translate-y-12 hidden md:block"
+							className="w-[900px] h-[70px] absolute right-0 -translate-y-12 hidden lg:block"
 						/>
 					</div>
 					<div className="mt-20">
@@ -52,7 +52,7 @@ export default function RoadMapPage() {
 							alt="Slashes"
 							height={100}
 							width={600}
-							className="w-[1000px] h-[70px] absolute left-0 -translate-y-3"
+							className="w-[900px] h-[70px] absolute left-0 -translate-y-3"
 						/>
 						<h1 className="relative text-center uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 							Future plans
@@ -62,7 +62,7 @@ export default function RoadMapPage() {
 							alt="Slashes"
 							height={100}
 							width={600}
-							className="w-[1000px] h-[70px] absolute right-0 -translate-y-12 hidden md:block"
+							className="w-[900px] h-[70px] absolute right-0 -translate-y-12 hidden md:block"
 						/>
 					</div>
 					<div className="mt-20">

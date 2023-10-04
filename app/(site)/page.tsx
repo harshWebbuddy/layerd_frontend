@@ -21,7 +21,7 @@ export default function Home() {
 			<section className="max-w-[1400px] w-full mx-auto p-3 sm:p-4">
 				<div id="ai-search" className="mt-20 px-2 sm:px-4">
 					<div className="w-full flex items-center flex-col">
-						<div className="absolute h-[900px] w-[120px] bg-orange-700 left-[-250px] blur-[250px] rounded" />
+						<div className="absolute h-[900px] w-[270px] bg-orange-700 left-[-250px] blur-[250px] rounded" />
 						<div>
 							<Image
 								src="/slash.png"
@@ -60,7 +60,7 @@ export default function Home() {
 					</div>
 				</div>
 				<div id="ai-chat" className="mt-28">
-					<div className="absolute h-[900px] w-[120px] bg-[#2463C1] right-[-250px] blur-[250px] rounded" />
+					<div className="absolute h-[900px] w-[270px] bg-[#2463C1] right-[-250px] blur-[250px] rounded" />
 					<div className="w-full flex items-center gap-3">
 						<Image
 							src="/slash.png"
@@ -107,7 +107,7 @@ export default function Home() {
 					</div>
 				</div>
 				<div id="ai-images" className="mt-32">
-					<div className="absolute h-[900px] w-[120px] bg-[#369933] left-[-250px] blur-[250px] rounded" />
+					<div className="absolute h-[900px] w-[270px] bg-[#369933] left-[-250px] blur-[250px] rounded" />
 					<div className="flex flex-col md:flex-row gap-20">
 						<div className="w-full flex md:hidden items-center gap-3">
 							<h1 className="uppercase text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-500 font-bold text-transparent bg-clip-text">
@@ -151,7 +151,7 @@ export default function Home() {
 					</div>
 				</div>
 				<div id="ai-writing" className="mt-28">
-					<div className="absolute h-[900px] w-[120px] bg-[#27ACB2] right-[-250px] blur-[250px] rounded" />
+					<div className="absolute h-[900px] w-[270px] bg-[#27ACB2] right-[-250px] blur-[250px] rounded" />
 					<div className="w-full flex items-center gap-3">
 						<Image
 							src="/slash.png"
@@ -227,7 +227,7 @@ export default function Home() {
 					</div>
 				</div>
 				<div id="ai-codes" className="mt-28">
-					<div className="absolute h-[900px] w-[120px] bg-[#726761] right-[-250px] blur-[250px] rounded" />
+					<div className="absolute h-[900px] w-[270px] bg-[#726761] right-[-250px] blur-[250px] rounded" />
 					<div className="w-full flex items-center flex-col">
 						<div className="w-full flex items-center gap-3">
 							<Image
@@ -281,7 +281,7 @@ export default function Home() {
 					</div>
 				</div>
 				<div id="ai-personalized" className="mt-28">
-					<div className="absolute h-[900px] w-[120px] bg-yellow-700 left-[-250px] blur-[250px] rounded" />
+					<div className="absolute h-[900px] w-[270px] bg-yellow-700 left-[-250px] blur-[250px] rounded" />
 					<div className="w-full flex items-center flex-col">
 						<div>
 							<Image
@@ -318,7 +318,7 @@ export default function Home() {
 					</div>
 				</div>
 				<div id="create-your-own" className="mt-28">
-					<div className="absolute h-[900px] w-[120px] bg-primary-red right-[-250px] blur-[250px] rounded" />
+					<div className="absolute h-[900px] w-[270px] bg-primary-red right-[-250px] blur-[250px] rounded" />
 					<div className="w-full flex items-center gap-3">
 						<Image
 							src="/slash.png"
@@ -364,7 +364,7 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<div className="w-full">
+			<div id="ai-tools" className="w-full">
 				<Tools />
 				<div id="user-form" className="w-full flex flex-between">
 					<h1 className="w-full text-center uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-500 font-bold text-transparent bg-clip-text">

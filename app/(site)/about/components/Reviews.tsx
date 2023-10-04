@@ -35,7 +35,7 @@ export default function Reviews({}: Props) {
 					return (
 						<SwiperSlide key={index}>
 							<div
-								className={`w-full h-[600px] bg-center rounded-xl md:rounded-[50px] relative p-4 md:px-28 py-20 overflow-hidden mt-10`}>
+								className={`w-full h-[700px] sm:h-auto bg-center rounded-xl md:rounded-[50px] relative p-10 md:px-28 py-20 overflow-hidden mt-10`}>
 								<Image
 									src={item.image}
 									alt="Image"
@@ -63,7 +63,7 @@ export default function Reviews({}: Props) {
 										className="max-w-2xl text-lg mt-10 leading-relaxed">
 										{item.testimonial}
 									</motion.p>
-									<div className="flex flex-col md:flex-row justify-between items-center mt-28 sm:mt-40">
+									<div className="flex flex-col md:flex-row justify-between items-center mt-20 sm:mt-40">
 										<motion.div
 											initial="hidden"
 											whileInView="visible"
