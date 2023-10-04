@@ -1,5 +1,5 @@
-import { FeatureGroup } from "@/types";
 import React from "react";
+import { FeatureGroup } from "@/types";
 interface Props {
 	feature: FeatureGroup;
 }
