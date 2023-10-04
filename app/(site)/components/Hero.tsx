@@ -5,7 +5,7 @@ import AccessButton from "./AccessButton";
 
 export default function Hero() {
 	return (
-		<div className="mt-20 h-fit max-w-[1500px] mx-auto px-2 sm:px-4 min-h-[40vh] max-h-[70vh]">
+		<div className="mt-28 h-fit max-w-[1500px] mx-auto px-2 sm:px-4 min-h-[40vh] max-h-[70vh]">
 			<div className="flex flex-col gap-4 items-start sm:items-center">
 				<h1 className="text-4xl text-transparent bg-gradient-to-b from-white to-gray-500 bg-clip-text flex gap-2">
 					Empowering

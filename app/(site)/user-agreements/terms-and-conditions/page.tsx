@@ -4,7 +4,7 @@ import React from "react";
 export default function TermsAndConditionsPage() {
 	return (
 		<main>
-			<div className="bg-[url('/background-image.png')] w-full h-[35vh] bg-center bg-no-repeat bg-cover">
+			<div className="bg-[url('/background-image.png')] w-full h-[50vh] bg-center bg-no-repeat bg-cover">
 				<div className="w-full h-full flex flex-col justify-center items-center gap-1">
 					<p className="bg-gradient-to-r from-primary-yellow to-primary-red font-bold text-transparent bg-clip-text">
 						Last updated: July 28, 2023

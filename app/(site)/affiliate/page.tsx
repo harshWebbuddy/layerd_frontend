@@ -12,7 +12,7 @@ import Reviews from "../about/components/Reviews";
 export default function AffiliatePage() {
 	return (
 		<main>
-			<div className="bg-[url('/background-image.png')] w-full h-[35vh] bg-center bg-no-repeat bg-cover">
+			<div className="bg-[url('/background-image.png')] w-full h-[50vh] bg-center bg-no-repeat bg-cover">
 				<div className="w-full h-full flex flex-col sm:justify-center sm:items-center gap-5 p-3">
 					<h1 className="sm:text-center uppercase mt-4 text-3xl md:text-4xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text max-w-2xl">
 						"Join the future of AI - Become a
