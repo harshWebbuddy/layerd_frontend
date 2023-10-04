@@ -1,5 +1,6 @@
 import Image from "next/image";
 import clsx from "clsx";
+import { Feature } from "@/types";
 interface Props {
 	name: string;
 	price: number;
