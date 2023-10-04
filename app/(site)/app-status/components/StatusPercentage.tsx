@@ -27,7 +27,7 @@ const StatusPercentage: React.FC<StatusPercentageProps> = ({
   ));
 
   return (
-    <div className="flex gap-1 mt-6">
+    <div className="flex sm:gap-1 mt-6">
       {greenDivs}
       {grayDivs}
     </div>
