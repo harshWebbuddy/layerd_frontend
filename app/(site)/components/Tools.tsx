@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Tools() {
 	return (
-		<div className="mt-40 mb-20 py-14 w-full">
+		<div className="mt-10 mb-10 sm:mt-40 sm:mb-20 py-14 w-full">
 			<div className="flex items-center justify-center relative">
 				<div className="absolute w-full">
 					<div className="flex">

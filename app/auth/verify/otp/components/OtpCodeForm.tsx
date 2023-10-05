@@ -25,7 +25,7 @@ export default function OtpCodeForm() {
 						backgroundColor: "#0F0F0F",
 						border: "2px solid #2D2D2D",
 						borderRadius: "12px",
-						marginInline: "10px",
+						marginInline: "1.5%",
 						fontSize: "30px",
 						outline: "none",
 						userSelect: "none",

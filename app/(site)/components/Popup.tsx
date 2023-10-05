@@ -8,12 +8,10 @@ interface IProps {
 	isOpen: boolean;
 }
 export default function Popup({ onClose, isOpen }: IProps) {
-	const router = useRouter()
+	const router = useRouter();
 	return (
 		<Modal onClose={onClose} isOpen={isOpen}>
-			<div
-				className="h-screen w-full"
-				onClick={onClose}>
+			<div className="h-screen w-full p-2" onClick={onClose}>
 				<div className="relative md:m-14">
 					<div className="flex justify-between w-full">
 						<div className="flex gap-5 font-bold">
@@ -83,10 +81,14 @@ export default function Popup({ onClose, isOpen }: IProps) {
 						))}
 					</div>
 					<div className="flex gap-4 mt-10">
-						<button onClick={() => router.push('/auth/login')} className="hidden sm:block bg-transparent ring-1 ring-inset ring-gray-300 max-h-12 py-2 w-28 rounded-xl hover:bg-neutral-700/30 transition">
+						<button
+							onClick={() => router.push("/auth/login")}
+							className="mb-20 bg-transparent ring-1 ring-inset ring-gray-300 max-h-12 py-2 w-28 rounded-xl hover:bg-neutral-700/30 transition">
 							Sign in
 						</button>
-						<button onClick={() => router.push('/auth/register')} className="hidden sm:block bg-gradient-to-r from-primary-red max-h-12 to-primary-yellow py-2 w-28 rounded-xl">
+						<button
+							onClick={() => router.push("/auth/register")}
+							className="mb-20 bg-gradient-to-r from-primary-red max-h-12 to-primary-yellow py-2 w-28 rounded-xl">
 							Sign up
 						</button>
 					</div>

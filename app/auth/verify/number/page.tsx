@@ -10,8 +10,7 @@ export default function VerifyNumber() {
 			<div className="w-full max-w-[470px] p-3 sm:p-4">
 				<div className="flex flex-col items-center">
 					<Logo />
-					<h1 className="text-4xl sm:text-[39px] font-bold mt-6 text-center whitespace-nowrap my-4 capitalize tracking-tighter">
-						{" "}
+					<h1 className="text-2xl sm:text-4xl sm:text-[39px] font-bold mt-6 text-center sm:whitespace-nowrap my-4 capitalize tracking-tighter">
 						Verify your phone number
 					</h1>
 				</div>

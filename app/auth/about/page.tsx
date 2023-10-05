@@ -11,7 +11,7 @@ export default function About() {
 			<div className="flex flex-col items-center p-3 sm:p-4 w-full max-w-[450px]">
 				<div className="flex flex-col items-center">
 					<Logo />
-					<h1 className="text-4xl font-bold mt-6 tracking-tight text-center">
+					<h1 className="text-2xl sm:text-4xl font-bold mt-6 tracking-tight text-center">
 						Tell Us About You
 					</h1>
 				</div>
@@ -20,7 +20,7 @@ export default function About() {
 					<p className="max-w-sm text-center text-sm text-white/50">
 						By Clicking “<Link href="#" className="text-primary-red hover:underline">Continue</Link>”,
 						You Agree to Our Terms and Acknowledge Our{" "}
-						<Link href="#" className="text-primary-red cursor-pointer hover:underline">Privacy Policy</Link>
+						<Link href="/user-agreements/privacy-policy" className="text-primary-red cursor-pointer hover:underline">Privacy Policy</Link>
 					</p>
 				</div>
 			</div>

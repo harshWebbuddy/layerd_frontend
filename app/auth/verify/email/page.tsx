@@ -16,7 +16,7 @@ export default function VerifyEmail() {
 					<p className="text-primary-red">email@email.com</p>
 					<p>Click the link inside to get started</p>
 					<Link href="/auth/about">
-						<button className="bg-[#242424]/50 hover:bg-[#242424]/80 tracking-tight transition duration-300 mt-10 w-full py-3 rounded-lg px-6">
+						<button className="bg-[#242424]/50 hover:bg-primary-red tracking-tight transition duration-300 mt-10 w-full py-3 rounded-lg px-6">
 							Click to Verify Email
 						</button>
 					</Link>

@@ -212,3 +212,25 @@ body {
   -webkit-animation-delay: 10s;
   opacity: 0;
 }
+
+.selected-flag {
+  background-color:#0F0F0F !important;
+  width: 100% !important;
+  border-radius: 6px !important;
+  transition: 0.3s;
+}
+.selected-flag:hover{
+  background-color:#202020 !important;
+}
+.country-list{
+  background-color: #1d1d1d !important;
+  color : white !important;
+  border-radius: 7px !important;
+  border: 1px solid #353535;
+}
+.country:hover{
+  background-color: #313131 !important;
+}
+.country.highlight{
+  background-color: #474747 !important;
+}

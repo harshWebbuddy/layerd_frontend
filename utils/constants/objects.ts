@@ -189,43 +189,43 @@ export const writingOptions = [
 			"AI can help you create compelling copy using the AIDA (Attention, Interest, Desire, Action) framework. It can generate attention-grabbing headlines, build interest with compelling facts, create desire.",
 	},
 	{
-		image: "/landing/AI-writing-3.png",
+		image: "/landing/AI-writing-4.png",
 		title: "Email",
 		description:
 			"Compose professional and effective emails in no time with our AI Email Writing tool. It ensures efficiency, infuses your style, and leaves a lasting impression. Elevate your communication with AI-powered precision",
 	},
 	{
-		image: "/landing/AI-writing-3.png",
+		image: "/landing/AI-writing-5.png",
 		title: "Facebook, Twitter, LinkedIn Ads",
 		description:
 			"AI can help you write engaging ad copy for various platforms. It can tailor the language, tone, and content to the specific platform and audience, maximizing engagement and conversions.",
 	},
 	{
-		image: "/landing/AI-writing-3.png",
-		title: "/Landing Page & Website Copies",
+		image: "/landing/AI-writing-6.png",
+		title: "Landing Page & Website Copies",
 		description:
 			"AI can help you create persuasive and SEO-friendly content for your website or landing page. It can ensure your content is engaging, relevant, and optimized for search engines.",
 	},
 	{
-		image: "/landing/AI-writing-3.png",
+		image: "/landing/AI-writing-7.png",
 		title: "Reply to Reviews & Messages",
 		description:
 			"AI can help you manage customer interactions by crafting appropriate responses to reviews and messages. It can help you respond quickly and effectively, improving customer satisfaction and loyalty.",
 	},
 	{
-		image: "/landing/AI-writing-3.png",
+		image: "/landing/AI-writing-8.png",
 		title: "SEO Meta Title",
 		description:
 			"AI can help you create SEO-friendly meta titles that attract clicks and improve your search engine ranking. It can ensure your titles are concise, relevant, and include your target keywords.",
 	},
 	{
-		image: "/landing/AI-writing-3.png",
+		image: "/landing/AI-writing-9.png",
 		title: "Text Editing: Continue	Rything",
 		description:
 			"AI can be used to continue writing from a given point. You can provide AI with a sentence or a paragraph, and it can generate the rest of the content. This feature can be used to write articles, stories, scripts, and more. ",
 	},
 	{
-		image: "/landing/AI-writing-3.png",
+		image: "/landing/AI-writing-10.png",
 		title: "Amazon Product	Features",
 		description:
 			"AI can help you write detailed and persuasive product descriptions for Amazon. It can highlight key features, benefits, and use cases, helping you attract potential customers and increase sales.",

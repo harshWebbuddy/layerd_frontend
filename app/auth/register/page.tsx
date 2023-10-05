@@ -24,7 +24,7 @@ export default function page() {
 						<p className="text-white/80">
 							Register to login to your admin panel
 						</p>
-						<div className="flex gap-4 mt-1">
+						<div className="flex gap-2 sm:gap-4 mt-1">
 							<SocialAuthButton
 								image={googleIcon}
 								title="Sign up with google"
@@ -34,7 +34,7 @@ export default function page() {
 					</div>
 					<RegistrationForm />
 					<div className="mt-6">
-						<p className="text-white/50">
+						<p className="text-white/50 text-sm sm:text-base">
 							Have an account?{" "}
 							<Link
 								href={"/auth/login"}

@@ -15,7 +15,7 @@ const Input = ({ label, id, disabled, required, type , placeholder}: Props) => {
 		<div className="w-full">
 			<label
 				htmlFor={id}
-				className="block leading-6 text-white/80 capitalize">
+				className="block leading-6 text-white/80 capitalize text-sm sm:text-base">
 				{label}
 			</label>
 			<div className="mt-2 ">

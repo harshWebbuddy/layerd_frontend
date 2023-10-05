@@ -11,7 +11,7 @@ export default function StickyComponent() {
 				alt="Coding Ai"
 				width={900}
 				height={600}
-				className="rounded-3xl shadow-2xl shadow-[#2c2c2c]"
+				className="rounded-xl sm:rounded-3xl shadow-2xl shadow-[#2c2c2c]"
 			/>
 		</div>
 	);
