@@ -16,12 +16,12 @@ export default function Navbar() {
 					<div className="flex gap-4">
 						<button
 							onClick={() => router.push("/auth/login")}
-							className="hidden sm:block bg-transparent ring-1 ring-inset ring-gray-300 max-h-12 py-2 w-28 rounded-xl hover:bg-neutral-700/30 transition">
+							className="hidden sm:block bg-transparent ring-1 ring-inset ring-gray-300 max-h-12 py-2 w-28 rounded-xl hover:bg-neutral-700/30 transition capitalize">
 							Sign in
 						</button>
 						<button
 							onClick={() => router.push("/auth/register")}
-							className="hidden sm:block bg-gradient-to-r from-primary-red max-h-12 to-primary-yellow py-2 w-28 rounded-xl">
+							className="hidden sm:block bg-gradient-to-r from-primary-red max-h-12 to-primary-yellow py-2 w-28 rounded-xl capitalize">
 							Sign up
 						</button>
 						<button

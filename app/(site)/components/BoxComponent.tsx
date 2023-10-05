@@ -32,7 +32,7 @@ export default function BoxComponent({ option, index, isFullWidth }: Props) {
 				<h1 className="group-hover:text-primary-yellow transition duration-200 text-xl font-semibold capitalize">
 					{option.title}
 				</h1>
-				<p className="mt-3 text-white/60 text-xs leading-relaxed">{option.description}</p>
+				<p className="mt-3 text-white/50 text-xs leading-relaxed group-hover:text-white">{option.description}</p>
 			</div>
 		</div>
 	);

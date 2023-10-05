@@ -30,7 +30,7 @@ function Footer() {
 										<li key={itemIndex} className="mt-1">
 											<a
 												href={item.link}
-												className="hover:underline text-white/50 text-sm">
+												className="hover:underline hover:text-white text-white/50 text-sm">
 												<span dangerouslySetInnerHTML={{ __html: item.text }} />
 											</a>
 										</li>
@@ -41,7 +41,7 @@ function Footer() {
 					</div>
 				</div>
 			</div>
-			<div className="border-t border-gray-700 py-10 px-4 mt-5">
+			<div className="border-t border-white/20 py-10 px-4 mt-5">
 				<div className="flex flex-col sm:flex-row gap-6 justify-between w-full max-w-[1400px] mx-auto">
 					<div className="w-full max-w-lg">
 						<p className="w-full text-sm text-white/80">
@@ -50,14 +50,14 @@ function Footer() {
 					</div>
 					<div className="flex w-full sm:justify-end gap-4">
 						{labels.map((item, index) => (
-							<Link
-								href={item.link}
-								key={index}
-								className="hover:scale-110 transition duration-300 active:scale-95">
-								<div className="ring-1 ring-white rounded-full p-1.5">
-									<Image src={item.icon} alt="Icon" height={30} width={30} />
-								</div>
-							</Link>
+							<div className="cursor-pointer">
+								<Link
+									href={item.link}
+									key={index}
+									className="hover:scale-110 transition duration-300 active:scale-95">
+									<Image src={item.icon} alt="Icon" height={40} width={40} />
+								</Link>
+							</div>
 						))}
 					</div>
 				</div>

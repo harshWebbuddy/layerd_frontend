@@ -17,7 +17,7 @@ export default function LoginForm({}: Props) {
 			<div className="space-y-6">
 				<Input
 					id="email"
-					label="email/Phone"
+					label="email"
 					type="email"
 					required={true}
 					placeholder="example@email.com"
