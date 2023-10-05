@@ -18,7 +18,7 @@ export default function BoxComponent({ option, index, isFullWidth }: Props) {
 		<div
 			className={`py-6 px-5 sm:px-7 border-corner ${
 				!isFullWidth && "md:max-w-[340px]"
-			} group hover:ring-2 hover:ring-gray-700 hover:bg-[#1E1E26]/30 cursor-pointer transition`}
+			} group  hover:bg-[#1E1E26]/30 cursor-pointer transition`}
 			key={index}>
 			<img
 				src={option.icon! || option.image!}

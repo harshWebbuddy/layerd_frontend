@@ -19,6 +19,7 @@ export default function TermsAndConditionsPage() {
 					<Image
 						src="/slash.png"
 						alt="Slashes"
+						draggable={false}
 						height={100}
 						width={600}
 						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
@@ -91,7 +92,7 @@ export default function TermsAndConditionsPage() {
 						</p>
 						<ul>
 							<h1 className="font-bold text-white">You must not:</h1>
-							<li className="list-disc pr-7 ranslate-x-6">
+							<li className="list-disc pr-7 translate-x-6">
 								Republish material from WhopMe
 							</li>
 							<li className="list-disc pr-7 translate-x-6">
@@ -267,6 +268,7 @@ export default function TermsAndConditionsPage() {
 						<Image
 							src="/slash.png"
 							alt="Slashes"
+						draggable={false}
 							height={100}
 							width={600}
 							className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
@@ -284,6 +286,7 @@ export default function TermsAndConditionsPage() {
 						<Image
 							src="/slash.png"
 							alt="Slashes"
+						draggable={false}
 							height={100}
 							width={600}
 							className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
@@ -304,6 +307,7 @@ export default function TermsAndConditionsPage() {
 						<Image
 							src="/slash.png"
 							alt="Slashes"
+						draggable={false}
 							height={100}
 							width={600}
 							className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
@@ -324,6 +328,7 @@ export default function TermsAndConditionsPage() {
 						<Image
 							src="/slash.png"
 							alt="Slashes"
+						draggable={false}
 							height={100}
 							width={600}
 							className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
@@ -350,6 +355,7 @@ export default function TermsAndConditionsPage() {
 						<Image
 							src="/slash.png"
 							alt="Slashes"
+						draggable={false}
 							height={100}
 							width={600}
 							className="w-[450px] h-[70px] absolute left-0 -translate-y-3"

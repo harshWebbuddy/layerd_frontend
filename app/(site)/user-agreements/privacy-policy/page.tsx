@@ -43,6 +43,7 @@ export default function PrivacyPolicyPage() {
 						<Image
 							src="/slash.png"
 							alt="Slashes"
+							draggable={false}
 							height={100}
 							width={600}
 							className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
@@ -60,6 +61,7 @@ export default function PrivacyPolicyPage() {
 					<Image
 						src="/slash.png"
 						alt="Slashes"
+						draggable={false}
 						height={100}
 						width={600}
 						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
@@ -88,6 +90,7 @@ export default function PrivacyPolicyPage() {
 					<Image
 						src="/slash.png"
 						alt="Slashes"
+						draggable={false}
 						height={100}
 						width={600}
 						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
@@ -131,6 +134,7 @@ export default function PrivacyPolicyPage() {
 					<Image
 						src="/slash.png"
 						alt="Slashes"
+						draggable={false}
 						height={100}
 						width={600}
 						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
@@ -155,6 +159,7 @@ export default function PrivacyPolicyPage() {
 					<Image
 						src="/slash.png"
 						alt="Slashes"
+						draggable={false}
 						height={100}
 						width={600}
 						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
@@ -175,6 +180,7 @@ export default function PrivacyPolicyPage() {
 					<Image
 						src="/slash.png"
 						alt="Slashes"
+						draggable={false}
 						height={100}
 						width={600}
 						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
@@ -200,6 +206,7 @@ export default function PrivacyPolicyPage() {
 					<Image
 						src="/slash.png"
 						alt="Slashes"
+						draggable={false}
 						height={100}
 						width={600}
 						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
@@ -229,6 +236,7 @@ export default function PrivacyPolicyPage() {
 					<Image
 						src="/slash.png"
 						alt="Slashes"
+						draggable={false}
 						height={100}
 						width={600}
 						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
@@ -254,6 +262,7 @@ export default function PrivacyPolicyPage() {
 					<Image
 						src="/slash.png"
 						alt="Slashes"
+						draggable={false}
 						height={100}
 						width={600}
 						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
@@ -305,6 +314,7 @@ export default function PrivacyPolicyPage() {
 					<Image
 						src="/slash.png"
 						alt="Slashes"
+						draggable={false}
 						height={100}
 						width={600}
 						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
@@ -355,6 +365,7 @@ export default function PrivacyPolicyPage() {
 					<Image
 						src="/slash.png"
 						alt="Slashes"
+						draggable={false}
 						height={100}
 						width={600}
 						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
@@ -379,6 +390,7 @@ export default function PrivacyPolicyPage() {
 					<Image
 						src="/slash.png"
 						alt="Slashes"
+						draggable={false}
 						height={100}
 						width={600}
 						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
@@ -402,6 +414,7 @@ export default function PrivacyPolicyPage() {
 					<Image
 						src="/slash.png"
 						alt="Slashes"
+						draggable={false}
 						height={100}
 						width={600}
 						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"

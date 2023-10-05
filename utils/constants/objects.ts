@@ -44,7 +44,7 @@ export const menuSections = [
 			{ text: "Pricing", link: "/pricing" },
 			{ text: "Roadmap", link: "/road-map" },
 			{ text: "Affiliates", link: "/affiliate" },
-			{ text: "Terms", link: "/user-agreements/terms-and-condition" },
+			{ text: "Terms", link: "/user-agreements/terms-and-conditions" },
 			{ text: "Privacy", link: "/user-agreements/privacy-policy" },
 			{ text: "Send feedback</br>(whopme.canny.io)", link: "/contact-us" },
 		],

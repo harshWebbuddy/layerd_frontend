@@ -84,11 +84,10 @@ body {
 }
 
 
-.border-corner {
+.border-corner:hover {
 	position: relative;
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-	border: 1px solid #ff5733;
-	border-image: linear-gradient(45deg, #464646, transparent, #464646, transparent) 1;
+	border: 1px solid;
+	border-image: linear-gradient(30deg, #464646, transparent, #464646, transparent);
 	border-image-slice: 1;
 	
 }

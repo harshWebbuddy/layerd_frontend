@@ -20,7 +20,7 @@ export default function OtpCodeForm() {
 					numInputs={5}
 					renderInput={(props) => <input {...props} />}
 					inputStyle={{
-						height: "70px",
+						height: "80px",
 						width: "100%",
 						backgroundColor: "#0F0F0F",
 						border: "2px solid #2D2D2D",
