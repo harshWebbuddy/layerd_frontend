@@ -257,7 +257,7 @@ export default function Home() {
 							</h1>
 							<div className="h-[3px] max-w-4xl translate-y-1.5 bg-gradient-to-r from-gray-600 via-gray-800/50 to-transparent flex-1" />
 						</div>
-						<div className="flex flex-col xl:flex-row gap-10 mt-20">
+						<div className="flex flex-col xl:flex-row gap-10 mt-20 relative">
 							<StickyComponent />
 							<div className="w-full">
 								<div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -331,6 +331,7 @@ export default function Home() {
 									isFullWidth={true}
 									option={option}
 									index={index}
+									isBorderShown={true}
 								/>
 							))}
 						</div>
