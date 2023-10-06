@@ -48,16 +48,14 @@ function Footer() {
 							&copy; 2023 WhopMe. All rights reserved
 						</p>
 					</div>
-					<div className="flex w-full sm:justify-end gap-4">
+					<div className="flex w-full sm:justify-end gap-4 relative z-10">
 						{labels.map((item, index) => (
-							<div className="cursor-pointer">
-								<Link
-									href={item.link}
-									key={index}
-									className="hover:scale-110 transition duration-300 active:scale-95">
-									<Image src={item.icon} alt="Icon" height={40} width={40} />
-								</Link>
-							</div>
+							<Link
+								href={item.link}
+								key={index}
+								className="hover:scale-110 transition duration-300 active:scale-95">
+								<Image src={item.icon} alt="Icon" height={45} width={45} />
+							</Link>
 						))}
 					</div>
 				</div>

@@ -68,7 +68,7 @@ export default function ContactPage() {
 						</div>
 					</div>
 				</div>
-				<div className="mt-20 bg-[url('/background-rectangle-c-us.png')] bg-no-repeat bg-cover bg-center rounded-xl ">
+				<div className="mt-20 bg-[url('/background-rectangle-c-us.png')] bg-no-repeat bg-cover bg-center rounded-2xl ">
 					<div className="flex flex-col md:flex-row w-full items-center h-fit p-5 sm:py-12 sm:px-20 gap-6">
 						<h1 className="relative mt-4 capitalize w-full mb-2 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 							Don't forget to join us on social media
@@ -79,9 +79,7 @@ export default function ContactPage() {
 									href={item.link}
 									key={index}
 									className="hover:scale-110 transition duration-300 active:scale-95">
-									<div className="ring-1 ring-white rounded-full p-1.5">
-										<Image src={item.icon} alt="Icon" height={30} width={30} />
-									</div>
+									<Image src={item.icon} alt="Icon" height={45} width={45} />
 								</Link>
 							))}
 						</div>
