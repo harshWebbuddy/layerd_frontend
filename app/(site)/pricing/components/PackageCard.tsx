@@ -33,7 +33,7 @@ const PackageCard: React.FC<Props> = ({
 					</p>
 				</div>
 			)}
-			<div className="bg-gradient-to-b from-[#242424] to-black h-full p-7 rounded-xl flex flex-col justify-between">
+			<div className="bg-gradient-to-b from-[#242424] to-black h-full p-5 sm:p-7 rounded-xl flex flex-col justify-between">
 				<div>
 					<div className="flex items-center gap-6 border-b border-[#454545] pb-6">
 						<div className={`border ${accentColor} p-3 rounded-lg`}>
@@ -59,7 +59,7 @@ const PackageCard: React.FC<Props> = ({
 									<div className="list-item">
 										<li
 											key={index}
-											className="list-disc text-[#ffffffcc] font-[500] capitalize whitespace-nowrap">
+											className="list-disc text-[#ffffffcc] font-[500] capitalize whitespace-wrap sm:whitespace-nowrap">
 											{feature.title}
 										</li>
 									</div>

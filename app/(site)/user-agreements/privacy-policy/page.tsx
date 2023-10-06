@@ -5,7 +5,18 @@ import React from "react";
 export default function PrivacyPolicyPage() {
 	return (
 		<main>
-			<div className="bg-[url('/background-image.png')] w-full h-[50vh] bg-center bg-no-repeat bg-cover">
+			<div className="w-full h-[50vh] relative">
+				<div className="bg-[#0a0a0e]/90 absolute inset-0 z-[-1]" />
+				<video
+					className="w-full h-full absolute inset-0 object-cover z-[-2]"
+					loop={true}
+					autoPlay={true}>
+					<source
+						src="/video/-1af2-4fbf-b389-3d379703d080.mp4"
+						type="video/mp4"
+					/>
+				</video>
+				<div className="bg-gradient-to-b from-transparent to-[#16161b] h-40 absolute bottom-0 w-full z-1" />
 				<div className="w-full h-full flex flex-col justify-center items-center gap-1">
 					<p className="bg-gradient-to-r from-primary-yellow to-primary-red font-bold text-transparent bg-clip-text">
 						Last updated: July 28, 2023
@@ -46,7 +57,7 @@ export default function PrivacyPolicyPage() {
 							draggable={false}
 							height={100}
 							width={600}
-							className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+							className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 						/>
 						<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 							Consent
@@ -64,7 +75,7 @@ export default function PrivacyPolicyPage() {
 						draggable={false}
 						height={100}
 						width={600}
-						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+						className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 					/>
 					<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 						Information we collect
@@ -93,7 +104,7 @@ export default function PrivacyPolicyPage() {
 						draggable={false}
 						height={100}
 						width={600}
-						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+						className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 					/>
 					<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 						How we use your information
@@ -137,7 +148,7 @@ export default function PrivacyPolicyPage() {
 						draggable={false}
 						height={100}
 						width={600}
-						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+						className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 					/>
 					<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 						Log files
@@ -162,7 +173,7 @@ export default function PrivacyPolicyPage() {
 						draggable={false}
 						height={100}
 						width={600}
-						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+						className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 					/>
 					<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 						Cookies and Web Beacons
@@ -183,7 +194,7 @@ export default function PrivacyPolicyPage() {
 						draggable={false}
 						height={100}
 						width={600}
-						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+						className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 					/>
 					<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 						Our Advertising Partners
@@ -209,7 +220,7 @@ export default function PrivacyPolicyPage() {
 						draggable={false}
 						height={100}
 						width={600}
-						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+						className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 					/>
 					<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 						Advertising Partners Privacy Policies
@@ -239,7 +250,7 @@ export default function PrivacyPolicyPage() {
 						draggable={false}
 						height={100}
 						width={600}
-						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+						className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 					/>
 					<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 						Third Party Privacy Policies
@@ -265,7 +276,7 @@ export default function PrivacyPolicyPage() {
 						draggable={false}
 						height={100}
 						width={600}
-						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+						className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 					/>
 					<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 						CCPA Privacy Rights (Do Not Sell My Personal Information)
@@ -317,7 +328,7 @@ export default function PrivacyPolicyPage() {
 						draggable={false}
 						height={100}
 						width={600}
-						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+						className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 					/>
 					<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 						GDPR Data Protection Rights
@@ -368,7 +379,7 @@ export default function PrivacyPolicyPage() {
 						draggable={false}
 						height={100}
 						width={600}
-						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+						className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 					/>
 					<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 						Children's Information
@@ -393,7 +404,7 @@ export default function PrivacyPolicyPage() {
 						draggable={false}
 						height={100}
 						width={600}
-						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+						className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 					/>
 					<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 						Changes to This Privacy Policy
@@ -417,7 +428,7 @@ export default function PrivacyPolicyPage() {
 						draggable={false}
 						height={100}
 						width={600}
-						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+						className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 					/>
 					<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 						Contact Us

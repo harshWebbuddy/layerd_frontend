@@ -10,22 +10,21 @@ body {
 	color: rgb(var(--foreground-rgb));
 	background: rgb(var(--background-rgb));
 }
-.swiper {
+.auth-pages .swiper {
 	width: 500px;
 	height: 650px;
 }
 @media screen and (max-width: 768px) {
-	.swiper {
+	.auth-pages .swiper {
 		height: 700px;
 	}
 }
-.swiper-slide {
+.reviews .swiper-slide {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	border-radius: 18px;
 	font-size: 22px;
-	font-weight: bold;
 	color: #fff;
 }
 .list-item > li::marker {
@@ -36,7 +35,7 @@ body {
 }
 .swiper-pagination-bullet {
 	padding: 5px;
-	background-color: #fdbb14 !important;
+	background-color: #a1a1a1 !important;
 }
 .ReactCollapse--collapse {
 	transition: height 500ms;
@@ -58,6 +57,9 @@ body {
 @layer base {
 	.text-outline {
 		-webkit-text-stroke: 4px rgb(177, 177, 177);
+	}
+	.text-outline-sm {
+		-webkit-text-stroke: 1px rgb(177, 177, 177);
 	}
 }
 

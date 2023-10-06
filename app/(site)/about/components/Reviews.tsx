@@ -17,7 +17,7 @@ interface Props {}
 
 export default function Reviews({}: Props) {
 	return (
-		<div className="relative">
+		<div className="relative reviews mt-10">
 			<Swiper
 				spaceBetween={30}
 				effect={"fade"}
@@ -35,12 +35,11 @@ export default function Reviews({}: Props) {
 					return (
 						<SwiperSlide key={index}>
 							<div
-								className={`w-full h-[700px] sm:h-auto bg-center rounded-xl md:rounded-[50px] relative p-10 md:px-28 py-20 overflow-hidden mt-10`}>
+								className={`w-full h-[500px] sm:h-[600px] bg-center rounded-3xl md:rounded-[50px] relative px-3 py-10 sm:p-10 lg:px-28 lg:py-20 overflow-hidden`}>
 								<Image
 									src={item.image}
 									alt="Image"
-									height={600}
-									width={400}
+									fill
 									className="object-cover !w-full !h-full absolute inset-0"
 								/>
 								<div className="bg-black opacity-70 absolute inset-0" />
@@ -50,6 +49,7 @@ export default function Reviews({}: Props) {
 										alt="Image"
 										width={70}
 										height={70}
+										className="w-10 h-10 sm:h-auto sm:w-auto"
 									/>
 									<motion.p
 										initial="hidden"
@@ -60,10 +60,10 @@ export default function Reviews({}: Props) {
 											hidden: { opacity: 0, x: -5 },
 											visible: { opacity: 1, x: 0 },
 										}}
-										className="max-w-2xl text-lg mt-10 leading-relaxed">
+										className="max-w-xl text-lg sm:text-xl font-normal mt-5 leading-normal md:leading-loose">
 										{item.testimonial}
 									</motion.p>
-									<div className="flex flex-col md:flex-row justify-between items-center mt-20 sm:mt-40">
+									<div className="flex flex-col-reverse gap-10 md:gap-0 md:flex-row justify-between items-center mt-14 sm:mt-40">
 										<motion.div
 											initial="hidden"
 											whileInView="visible"
@@ -80,15 +80,16 @@ export default function Reviews({}: Props) {
 													alt="play"
 													height={60}
 													width={60}
+													className="w-10 h-10 sm:h-auto sm:w-auto"
 												/>
-												<span className="font-bold text-xl">Watch video</span>
+												<span className="font-semibold text-lg sm:text-2xl">Watch video</span>
 											</button>
 										</motion.div>
 										<div className="w-full flex flex-col md:items-end">
-											<h1 className="text-3xl text-white leading-relaxed font-semibold">
+											<h1 className="text-xl sm:text-3xl text-white leading-relaxed font-semibold">
 												{item.name}
 											</h1>
-											<p className="text-[#D8D8D8] text-lg">{item.role}</p>
+											<p className="text-[#D8D8D8] text-md sm:text-xl font-medium whitespace-nowrap">{item.role}</p>
 										</div>
 									</div>
 								</div>

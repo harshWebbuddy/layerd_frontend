@@ -4,7 +4,18 @@ import React from "react";
 export default function TermsAndConditionsPage() {
 	return (
 		<main>
-			<div className="bg-[url('/background-image.png')] w-full h-[50vh] bg-center bg-no-repeat bg-cover">
+			<div className="w-full h-[50vh] relative">
+				<div className="bg-[#0a0a0e]/90 absolute inset-0 z-[-1]" />
+				<video
+					className="w-full h-full absolute inset-0 object-cover z-[-2]"
+					loop={true}
+					autoPlay={true}>
+					<source
+						src="/video/-1af2-4fbf-b389-3d379703d080.mp4"
+						type="video/mp4"
+					/>
+				</video>
+				<div className="bg-gradient-to-b from-transparent to-[#16161b] h-40 absolute bottom-0 w-full z-1" />
 				<div className="w-full h-full flex flex-col justify-center items-center gap-1">
 					<p className="bg-gradient-to-r from-primary-yellow to-primary-red font-bold text-transparent bg-clip-text">
 						Last updated: July 28, 2023
@@ -22,7 +33,7 @@ export default function TermsAndConditionsPage() {
 						draggable={false}
 						height={100}
 						width={600}
-						className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+						className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 					/>
 					<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 						Welcome to whopme!
@@ -131,7 +142,9 @@ export default function TermsAndConditionsPage() {
 						</p>
 
 						<ul>
-							<h1 className="font-bold text-white">You warrant and represent that:</h1>
+							<h1 className="font-bold text-white">
+								You warrant and represent that:
+							</h1>
 							<li className="list-disc pr-7 translate-x-6">
 								You are entitled to post the Comments on our website and have
 								all necessary licenses and consents to do so;
@@ -168,9 +181,13 @@ export default function TermsAndConditionsPage() {
 								The following organizations may link to our Website without
 								prior written approval:
 							</h1>
-							<li className="list-disc pr-7 translate-x-6">Government agencies;</li>
+							<li className="list-disc pr-7 translate-x-6">
+								Government agencies;
+							</li>
 							<li className="list-disc pr-7 translate-x-6">Search engines;</li>
-							<li className="list-disc pr-7 translate-x-6">News organizations;</li>
+							<li className="list-disc pr-7 translate-x-6">
+								News organizations;
+							</li>
 							<li className="list-disc pr-7 translate-x-6">
 								Online directory distributors may link to our Website in the
 								same manner as they hyperlink to the Websites of other listed
@@ -207,8 +224,12 @@ export default function TermsAndConditionsPage() {
 							<li className="list-disc pr-7 translate-x-6">
 								online directory distributors;
 							</li>
-							<li className="list-disc pr-7 translate-x-6">internet portals;</li>
-							<li className="list-disc pr-7 translate-x-6">internet portals;</li>
+							<li className="list-disc pr-7 translate-x-6">
+								internet portals;
+							</li>
+							<li className="list-disc pr-7 translate-x-6">
+								internet portals;
+							</li>
 							<li className="list-disc pr-7 translate-x-6">
 								accounting, law and consulting firms; and
 							</li>
@@ -268,10 +289,10 @@ export default function TermsAndConditionsPage() {
 						<Image
 							src="/slash.png"
 							alt="Slashes"
-						draggable={false}
+							draggable={false}
 							height={100}
 							width={600}
-							className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+							className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 						/>
 						<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 							iFrames
@@ -286,10 +307,10 @@ export default function TermsAndConditionsPage() {
 						<Image
 							src="/slash.png"
 							alt="Slashes"
-						draggable={false}
+							draggable={false}
 							height={100}
 							width={600}
-							className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+							className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 						/>
 						<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 							Content Liability
@@ -307,10 +328,10 @@ export default function TermsAndConditionsPage() {
 						<Image
 							src="/slash.png"
 							alt="Slashes"
-						draggable={false}
+							draggable={false}
 							height={100}
 							width={600}
-							className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+							className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 						/>
 						<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 							Reservation of Rights
@@ -328,10 +349,10 @@ export default function TermsAndConditionsPage() {
 						<Image
 							src="/slash.png"
 							alt="Slashes"
-						draggable={false}
+							draggable={false}
 							height={100}
 							width={600}
-							className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+							className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 						/>
 						<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 							Removal of links from our website
@@ -355,10 +376,10 @@ export default function TermsAndConditionsPage() {
 						<Image
 							src="/slash.png"
 							alt="Slashes"
-						draggable={false}
+							draggable={false}
 							height={100}
 							width={600}
-							className="w-[450px] h-[70px] absolute left-0 -translate-y-3"
+							className="w-[450px] h-[70px] absolute left-0 -translate-y-5"
 						/>
 						<h1 className="relative uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 							Disclaimer

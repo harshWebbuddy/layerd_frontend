@@ -11,7 +11,7 @@ export default function Popup({ onClose, isOpen }: IProps) {
 	const router = useRouter();
 	return (
 		<Modal onClose={onClose} isOpen={isOpen}>
-			<div className="h-screen w-full p-2" onClick={onClose}>
+			<div className="h-screen w-full p-2">
 				<div className="relative md:m-14">
 					<div className="flex justify-between w-full">
 						<div className="flex gap-5 font-bold">

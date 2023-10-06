@@ -12,12 +12,23 @@ import Reviews from "../about/components/Reviews";
 export default function AffiliatePage() {
 	return (
 		<main>
-			<div className="bg-[url('/background-image.png')] w-full h-[50vh] bg-center bg-no-repeat bg-cover">
-				<div className="w-full h-full flex flex-col sm:justify-center sm:items-center gap-5 p-3">
-					<h1 className="sm:text-center uppercase mt-4 text-3xl md:text-4xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text max-w-2xl">
-						"Join the future of AI - Become a
+			<div className="w-full min-h-[60vh] sm:min-h-fit sm:h-[50vh] relative">
+				<div className="bg-[#0a0a0e]/90 absolute inset-0 z-[-1]" />
+				<video
+					className="w-full h-full absolute inset-0 object-cover z-[-2]"
+					loop={true}
+					autoPlay={true}>
+					<source
+						src="/video/-1af2-4fbf-b389-3d379703d080.mp4"
+						type="video/mp4"
+					/>
+				</video>
+				<div className="bg-gradient-to-b from-transparent to-[#16161b] h-40 absolute bottom-0 w-full z-1" />
+				<div className="w-full h-full flex flex-col sm:justify-center sm:items-center gap-10 sm:gap-5 py-28 px-2 sm:p-3">
+					<h1 className="sm:text-center uppercase mt-4 text-2xl sm:text-3xl md:text-4xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text max-w-2xl">
+						"Join the future of AI - Become a{" "}
 						<span className="bg-gradient-to-b from-primary-red to-primary-yellow bg-clip-text text-transparent">
-							WhopMe
+							WhopMe{" "}
 						</span>
 						affiliate today!"
 					</h1>
@@ -78,8 +89,8 @@ export default function AffiliatePage() {
 					</div>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 						{affiliateData.map((item) => (
-							<div className="space-y-4 hover:bg-zinc-700/20 bg-cover hover:shadow-2xl px-10 py-5 cursor-pointer rounded-2xl transition duration-300">
-								<Image src={item.icon} alt="Icon" width={30} height={30} />
+							<div className="space-y-4 hover:bg-zinc-700/20 bg-cover hover:shadow-2xl px-5 sm:px-10 py-5 cursor-pointer rounded-2xl transition duration-300">
+								<Image src={item.icon} alt="Icon" width={50} height={50} />
 								<h1 className="text-2xl font-bold">{item.title}</h1>
 								<p>{item.description}</p>
 							</div>
@@ -90,7 +101,7 @@ export default function AffiliatePage() {
 					<Image
 						src="/slash.png"
 						width={600}
-						height={300}
+						height={500}
 						alt="Slashes"
 						draggable={false}
 						className="absolute left-0 w-[500px] h-[80px] translate-y-16 z-0"
@@ -151,7 +162,7 @@ export default function AffiliatePage() {
 					<Image
 						src="/slash.png"
 						width={600}
-						height={300}
+						height={500}
 						alt="Slashes"
 						draggable={false}
 						className="absolute left-0 w-[500px] h-[80px] -translate-y-8 z-0"
@@ -173,16 +184,16 @@ export default function AffiliatePage() {
 						</p>
 					</div>
 				</div>
-				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 mt-10">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 mt-10">
 					<Image
 						src="/svgs/path.svg"
 						width={1000}
-						height={300}
+						height={500}
 						alt="Slashes"
-						className="absolute h-[80px] hidden md:block z-0 translate-x-24 translate-y-2"
+						className="absolute h-[80px] hidden lg:block z-0 translate-x-24 translate-y-2"
 					/>
 					{supportOptions.map((item, index) => (
-						<div className="space-y-6 p-5 cursor-pointer relative z-10 ">
+						<div className="space-y-6 p-5 cursor-pointer relative border-corner hover:bg-[#1E1E26]/40 rounded-2xl z-10 ">
 							<div className="bg-primary-yellow max-w-fit rounded-full p-[2px]">
 								<div className="bg-black rounded-full p-[2px]">
 									<div className="bg-primary-yellow p-2 rounded-full h-14 w-14 flex items-center justify-center">
@@ -201,7 +212,7 @@ export default function AffiliatePage() {
 					<Image
 						src="/slash.png"
 						width={600}
-						height={300}
+						height={500}
 						alt="Slashes"
 						draggable={false}
 						className="absolute left-0 w-[400px] h-[80px] -translate-y-2"
@@ -251,10 +262,10 @@ export default function AffiliatePage() {
 							<h1 className="text-[#F9BA3F] uppercase bg-[#353535] p-3 text-center rounded-t-2xl">
 								Level
 							</h1>
-							<div className="px-6">
+							<div className="px-3 sm:px-6">
 								{paymentStructure.map((item, index) => (
 									<div
-										className={`px-3  py-6 h-[100px] md:h-[120px]  ${
+										className={`px-3 py-6 h-fit md:h-[120px] flex items-center ${
 											index !== paymentStructure.length - 1 &&
 											"border-b border-[#646464]/30"
 										}`}>
@@ -267,10 +278,10 @@ export default function AffiliatePage() {
 							<h1 className="text-[#F9BA3F] uppercase bg-[#353535] p-3 text-center rounded-t-2xl">
 								Commision Rate
 							</h1>
-							<div className="px-6">
+							<div className="px-3 sm:px-6">
 								{paymentStructure.map((item, index) => (
 									<div
-										className={`px-3 py-6 h-[100px] md:h-[120px] ${
+										className={`px-3 py-6 h-fit md:h-[120px] flex items-center ${
 											index !== paymentStructure.length - 1 &&
 											"border-b border-[#646464]/30"
 										}`}>
@@ -279,14 +290,14 @@ export default function AffiliatePage() {
 								))}
 							</div>
 						</div>
-						<div className="bg-gradient-to-br from-[#222222] to-[#181818]/10 rounded-2xl">
+						<div className="bg-gradient-to-br from-[#222222] to-[#181818]/10 rounded-2xl col-span-1 md:col-span-2 lg:col-span-1">
 							<h1 className="text-[#F9BA3F] uppercase bg-[#353535] p-3 text-center rounded-t-2xl">
 								Description
 							</h1>
-							<div className="px-6">
+							<div className="px-3 sm:px-6">
 								{paymentStructure.map((item, index) => (
 									<div
-										className={`px-3 py-2 h-[100px] md:h-[120px] ${
+										className={`px-3 py-4 h-fit md:h-[120px] flex items-center ${
 											index !== paymentStructure.length - 1 &&
 											"border-b border-[#646464]/30"
 										}`}>
@@ -326,7 +337,7 @@ export default function AffiliatePage() {
 					<Image
 						src="/slash.png"
 						width={600}
-						height={300}
+						height={500}
 						alt="Slashes"
 						draggable={false}
 						className="absolute left-0 w-[400px] h-[80px] -translate-y-2"
