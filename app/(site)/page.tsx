@@ -189,13 +189,15 @@ export default function Home() {
 						</div>
 						<div className="w-full relative sm:!max-h-[300px]">
 							<div className="bg-gradient-to-tl from-primary-red via-primary-yellow/40 to-transparent p-[3px] w-full rounded-3xl">
-								<Image
-									src="/landing/ai-writing.gif"
-									alt="Writing Ai"
-									width={900}
-									height={600}
-									className="rounded-3xl w-full shadow-2xl shadow-[#2c2c2c] sm:!max-h-[300px]"
-								/>
+								<div className="bg-black w-full h-full rounded-3xl">
+									<Image
+										src="/landing/ai-writing.gif"
+										alt="Writing Ai"
+										width={900}
+										height={600}
+										className="rounded-3xl w-full shadow-2xl shadow-[#2c2c2c] sm:!max-h-[300px]"
+									/>
+								</div>
 							</div>
 						</div>
 					</div>
