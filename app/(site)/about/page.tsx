@@ -7,7 +7,7 @@ import Awards from "./components/Awards";
 export default function About() {
 	return (
 		<div>
-			<div className="w-full h-[50vh] relative">
+			<div className="w-full h-[70vh] sm:h-[50vh] relative">
 				<div className="bg-[#0a0a0e]/90 absolute inset-0 z-[-1]" />
 				<video
 					className="w-full h-full absolute inset-0 object-cover z-[-2]"
@@ -18,8 +18,8 @@ export default function About() {
 						type="video/mp4"
 					/>
 				</video>
-				<div className="bg-gradient-to-b from-transparent to-[#16161b] h-40 absolute bottom-0 w-full z-1" />
-				<div className="w-full h-full flex flex-col justify-center items-center gap-5">
+				<div className="bg-gradient-to-b from-transparent to-[#16161b] h-20  sm:h-40 absolute bottom-0 w-full z-1" />
+				<div className="w-full h-full flex flex-col justify-center items-center gap-5 ">
 					<div className="w-full max-w-7xl mx-auto px-3 sm:px-4">
 						<div className="w-full flex flex-col items-start md:items-center justify-center">
 							<h2 className="bg-gradient-to-r text-2xl font-bold from-primary-yellow to-primary-red tracking-tight text-transparent md:text-center bg-clip-text">

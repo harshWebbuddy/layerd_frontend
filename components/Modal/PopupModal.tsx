@@ -35,7 +35,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 							leave="ease-in duration-200"
 							leaveFrom="opacity-100 translate-y-0 sm:scale-100"
 							leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
-							<Dialog.Panel className="overflow-hidden w-full max-w-[1600px] mx-auto  md:h-[80vh] p-2 bg-white/10 backdrop-blur-sm rounded-3xl ring-4 ring-gray-400/50 mt-14 sm:p-6">
+							<Dialog.Panel className="overflow-hidden sm:w-[95%] max-w-[1600px] mx-auto md:h-[80vh] p-2 bg-white/10 backdrop-blur-sm rounded-3xl ring-4 ring-gray-400/50 mt-14 sm:p-6">
 								{children}
 							</Dialog.Panel>
 						</Transition.Child>

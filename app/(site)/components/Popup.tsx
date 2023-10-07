@@ -11,8 +11,8 @@ export default function Popup({ onClose, isOpen }: IProps) {
 	const router = useRouter();
 	return (
 		<Modal onClose={onClose} isOpen={isOpen}>
-			<div className="min-h-screen w-full p-2">
-				<div className="relative md:m-14">
+			<div className="min-h-screen w-full">
+				<div className="relative m-5 md:m-14">
 					<div className="flex justify-between w-full">
 						<div className="flex gap-5 font-bold">
 							<p className="text-primary-yellow uppercase ">Menu</p>
@@ -42,7 +42,7 @@ export default function Popup({ onClose, isOpen }: IProps) {
 							</button>
 						</div>
 					</div>
-					<div className="mt-10 flex w-full flex-wrap gap-y-14 gap-x-4 xl:gap-14">
+					<div className="mt-10 flex w-full flex-wrap gap-y-14 gap-x-4 justify-between">
 						{menuSections.map((section, index) => (
 							<div key={index} className="w-full min-w-[200px] max-w-fit">
 								<div className="gap-2 flex items-center">

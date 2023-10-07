@@ -17,12 +17,12 @@ export default function ContactForm({}: Props) {
 				visible: { opacity: 1, x: 0 },
 			}}
 			onSubmit={(e: any) => e.preventDefault()}
-			className="w-full max-w-sm mt-10 px-4 sm:px-0">
+			className="w-full max-w-sm mt-10 px-3 sm:px-0">
 			<div className="bg-[#fbf7fb14] ring-1 ring-[#fbf7fb33] max-h-12 focus-within:ring-[#fbf7fb77] transition rounded-md flex items-center p-1 pl-3">
 				<input
 					type="text"
 					placeholder="Enter your email address"
-					className="h-full w-full bg-transparent outline-none text-sm"
+					className="h-full w-full bg-transparent outline-none text-sm overflow-hidden text-ellipsis"
 				/>
 				<button
 					type="submit"

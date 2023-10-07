@@ -15,7 +15,7 @@ export default function AppFeatureCard({ feature }: Props) {
 								<div className="list-item">
 									<li
 										key={index}
-										className="list-disc text-white font-semibold capitalize md:whitespace-nowrap">
+										className="list-disc text-white font-semibold capitalize whitespace-normal">
 										{feature.title}
 									</li>
 								</div>

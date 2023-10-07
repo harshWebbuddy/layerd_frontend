@@ -59,7 +59,7 @@ const PackageCard: React.FC<Props> = ({
 									<div className="list-item">
 										<li
 											key={index}
-											className="list-disc text-[#ffffffcc] font-[500] capitalize whitespace-wrap sm:whitespace-nowrap">
+											className="list-disc text-[#ffffffcc] font-[500] capitalize whitespace-wrap">
 											{feature.title}
 										</li>
 									</div>

@@ -19,7 +19,7 @@ function Footer() {
 							Explore the future
 						</button>
 					</div>
-					<div className="flex flex-1 flex-wrap md:ml-28 gap-y-14 gap-x-4 xl:gap-14">
+					<div className="flex flex-1 flex-wrap md:ml-28 gap-y-14 gap-x-4 justify-between">
 						{menuSections.map((section, index) => (
 							<div key={index} className="w-full min-w-[200px] max-w-fit">
 								<h3 className="text-xl uppercase font-[500]">

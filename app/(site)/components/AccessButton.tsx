@@ -40,11 +40,11 @@ export default function AccessButton() {
 		};
 	}, []);
 	return (
-		<div className="flex flex-col justify-center items-center">
+		<div className="flex flex-col justify-center items-center w-full">
 			{!isEarlyAccess && (
 				<button
 					onClick={() => setIsEarlyAccess(true)}
-					className="px-6 py-3.5 bg-neutral-800/50 ring-1 ring-inset ring-neutral-700 mt-5 capitalize text-sm rounded-md hover:bg-neutral-800/80 transition duration-300 font-semibold">
+					className="px-6 py-3.5 max-w-fit bg-neutral-800/50 ring-1 ring-inset ring-neutral-700 mt-5 capitalize text-sm rounded-md hover:bg-primary-red hover:ring-0 transition duration-300 font-semibold">
 					Get early access
 				</button>
 			)}
@@ -60,7 +60,7 @@ export default function AccessButton() {
 					}}
 					ref={formRef}
 					onSubmit={handleSubmit}
-					className="w-[500px] mt-10">
+					className="min-w-full sm:min-w-[500px] max-w-[500px] mt-10">
 					<div className="bg-[#fbf7fb14] ring-1 ring-[#fbf7fb33] h-12 focus-within:ring-[#fbf7fb77] transition rounded-md flex items-center p-1 pl-3">
 						<input
 							type="text"

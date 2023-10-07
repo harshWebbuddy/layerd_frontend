@@ -32,7 +32,7 @@ export default function AffiliatePage() {
 						</span>
 						affiliate today!"
 					</h1>
-					<p className="font-bold text-lg">
+					<p className="font-bold text-lg sm:text-center">
 						"Leverage the power of AI to earn while you empower others with
 						cutting-edge technology."
 					</p>
@@ -104,10 +104,10 @@ export default function AffiliatePage() {
 						height={500}
 						alt="Slashes"
 						draggable={false}
-						className="absolute left-0 w-[500px] h-[80px] translate-y-16 z-0"
+						className="absolute left-0 w-[500px] h-[70px] translate-y-16 z-0 object-cover"
 					/>
-					<div className="mt-10 md:mt-20 ring-2 p-5 pb-10 md:py-14 md:px-28 ring-gray-400/60 bg-neutral-700/20 rounded-3xl relative z-10">
-						<div className="flex flex-col md:flex-row items-start justify-center gap-4">
+					<div className="mt-10 md:mt-20 ring-2 p-5 pb-10 md:py-14 lg:px-28 ring-gray-400/60 bg-neutral-700/20 rounded-3xl relative z-10">
+						<div className="flex flex-col lg:flex-row items-start justify-center gap-4">
 							<div className="w-full space-y-6">
 								<h1 className="relative z-20 uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600  max-w-3xl font-bold text-transparent text-left bg-clip-text">
 									WhopMe Affiliate Program - Empowering You to Empower Others
@@ -129,7 +129,7 @@ export default function AffiliatePage() {
 								/>
 							</div>
 						</div>
-						<div className="flex flex-col md:flex-row-reverse justify-center items-center gap-10 -mt-16">
+						<div className="flex flex-col lg:flex-row-reverse justify-center items-center gap-10 -mt-16">
 							<div className="w-full space-y-6">
 								<h1 className="relative z-20 uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600  max-w-3xl font-bold text-transparent text-left bg-clip-text">
 									Ready to Join the AI Revolution?
@@ -155,7 +155,7 @@ export default function AffiliatePage() {
 						height={400}
 						alt="Slashes"
 						draggable={false}
-						className="absolute right-0 w-[700px] h-[80px] -translate-y-64 object-cover z-0"
+						className="absolute right-0 w-[700px] h-[70px] hidden lg:block -translate-y-[260px] object-cover z-0"
 					/>
 				</div>
 				<div className="mt-20">
@@ -165,7 +165,7 @@ export default function AffiliatePage() {
 						height={500}
 						alt="Slashes"
 						draggable={false}
-						className="absolute left-0 w-[500px] h-[80px] -translate-y-8 z-0"
+						className="absolute left-0 w-[500px] h-[70px] -translate-y-5 z-0 object-cover"
 					/>
 					<div className="w-full space-y-6">
 						<h1 className="relative z-20 uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600  max-w-3xl font-bold text-transparent text-left bg-clip-text">
@@ -190,7 +190,7 @@ export default function AffiliatePage() {
 						width={1000}
 						height={500}
 						alt="Slashes"
-						className="absolute h-[80px] hidden lg:block z-0 translate-x-24 translate-y-2"
+						className="absolute h-[70px] hidden lg:block z-0 translate-x-20"
 					/>
 					{supportOptions.map((item, index) => (
 						<div className="space-y-6 p-5 cursor-pointer relative border-corner hover:bg-[#1E1E26]/40 rounded-2xl z-10 ">
@@ -215,7 +215,7 @@ export default function AffiliatePage() {
 						height={500}
 						alt="Slashes"
 						draggable={false}
-						className="absolute left-0 w-[400px] h-[80px] -translate-y-2"
+						className="absolute left-0 w-[500px] h-[70px] -translate-y-0 object-cover"
 					/>
 					<div className="flex flex-col gap-3 sm:flex-row items-start relative z-10">
 						<div className="w-full">
@@ -223,7 +223,7 @@ export default function AffiliatePage() {
 								Testimonials
 							</h1>
 						</div>
-						<div className="w-full mb-4">
+						<div className="w-full my-4">
 							<p className="tracking-tight leading-tight text-white/80">
 								We are proud of our affiliate community and the success they
 								have achieved with WhopMe.com. Here are some of the testimonials
@@ -241,7 +241,7 @@ export default function AffiliatePage() {
 							height={100}
 							width={600}
 							draggable={false}
-							className="w-[1000px] h-[70px] absolute left-0 -translate-y-3"
+							className="w-[500px] sm:w-[40%] h-[70px] absolute left-0 -translate-y-3 object-cover"
 						/>
 						<h1 className="relative text-center uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text z-10">
 							Payment Structure
@@ -252,7 +252,7 @@ export default function AffiliatePage() {
 							height={100}
 							width={600}
 							draggable={false}
-							className="w-[900px] h-[70px] absolute right-0 -translate-y-12 hidden xl:block"
+							className="w-[500px] sm:w-[40%] h-[70px] absolute right-0 -translate-y-12 hidden sm:block object-cover"
 						/>
 					</div>
 				</div>
@@ -340,7 +340,7 @@ export default function AffiliatePage() {
 						height={500}
 						alt="Slashes"
 						draggable={false}
-						className="absolute left-0 w-[400px] h-[80px] -translate-y-2"
+						className="absolute left-0 w-[400px] h-[70px] -translate-y-1"
 					/>
 					<div className="flex flex-col relative z-10">
 						<div className="w-full">
@@ -359,7 +359,7 @@ export default function AffiliatePage() {
 						<h2 className="text-primary-yellow font-semibold">
 							Payment Methods:
 						</h2>
-						<p className="text-white/70 text-sm leading-relaxed">
+						<p className="text-white text-sm leading-relaxed">
 							We offer a variety of payment methods to suit your preferences and
 							needs. Currently, we support payments through PayPal, Bank
 							Transfer, and Check. If you have a preferred payment method that
@@ -371,7 +371,7 @@ export default function AffiliatePage() {
 						<h2 className="text-primary-yellow font-semibold">
 							Minimum Payout Amount:
 						</h2>
-						<p className="text-white/70 text-sm leading-relaxed">
+						<p className="text-white text-sm leading-relaxed">
 							To keep the payment process efficient, we've set a minimum payout
 							amount of $100. This means that you need to earn at least $100 in
 							commissions before a payment can be issued. If your earnings for a
@@ -384,7 +384,7 @@ export default function AffiliatePage() {
 						<h2 className="text-primary-yellow font-semibold">
 							Payment Schedule:
 						</h2>
-						<p className="text-white/70 text-sm leading-relaxed">
+						<p className="text-white text-sm leading-relaxed">
 							We understand the importance of timely payments for our
 							affiliates. Therefore, we operate on a monthly payment schedule.
 							All commissions earned within a calendar month are paid out by the{" "}
@@ -397,20 +397,20 @@ export default function AffiliatePage() {
 								February 15th.
 							</span>
 						</p>
-						<p className="text-white/70 text-sm leading-relaxed">
+						<p className="text-white text-sm leading-relaxed">
 							Please note that payments may take a few days to process,
 							depending on the payment method used. Rest assured, our dedicated
 							team works tirelessly to ensure that all payments are sent out on
 							time.
 						</p>
-						<p className="text-white/70 text-sm leading-relaxed">
+						<p className="text-white text-sm leading-relaxed">
 							We believe in transparency and open communication. Therefore,
 							you'll always have access to detailed reports of your earnings and
 							payments in your affiliate dashboard. If you ever have any
 							questions or concerns about your payments, our support team is
 							always ready to assist.
 						</p>
-						<p className="text-white/70 text-sm leading-relaxed">
+						<p className="text-white text-sm leading-relaxed font-bold">
 							Join us today and start earning with WhopMe.com, your one-stop
 							platform for all things AI!
 						</p>
