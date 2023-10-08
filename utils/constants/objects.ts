@@ -111,19 +111,19 @@ export const heroTools = [
 
 export const botOptions = [
 	{
-		icon: "/landing/chatgpt4.png",
+		icon: "/landing/Chatgpt4.png",
 		title: "Chat GPT 4",
 		description:
 			"Unleash the power of AI with our intelligent search engine. Experience precise, personalized, and faster search results, revolutionizing the way you browse.",
 	},
 	{
-		icon: "/landing/chatgpt3.png",
+		icon: "/landing/Chatgpt3.png",
 		title: "Chat GPT 3.5",
 		description:
 			"Harnessing the power of OpenAI's GPT-3.5, this chatbot delivers insightful responses and can carry out meaningful conversations, making it a reliable companion for various tasks.",
 	},
 	{
-		icon: "/landing/googlebard.png",
+		icon: "/landing/googleBard.png",
 		title: "Google bard",
 		description:
 			"Google Bard is a storytelling wizard, weaving narratives with the finesse of a seasoned author. It's your go-to AI for creating compelling stories and engaging content.",

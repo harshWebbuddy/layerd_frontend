@@ -29,7 +29,7 @@ const ImageFlipper = ({ images }: { images: string[] }) => {
 						className="mySwiper">
 						{images.map((image, index) => (
 							<SwiperSlide>
-								<div className="relative w-[500px] h-[650px] bg-[#0F0F0F]" key={index}>
+								<div className="relative w-[500px] h-[650px] bg-[#0F0F0F] rounded-2xl overflow-hidden" key={index}>
 									<span className="absolute z-50 top-3 left-3">
 										<Logo />
 									</span>
