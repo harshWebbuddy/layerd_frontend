@@ -23,7 +23,7 @@ export default function Home() {
 			<section className="max-w-[1400px] w-full mx-auto p-2.5 sm:p-4">
 				<div id="ai-search" className="mt-20">
 					<div className="w-full flex sm:items-center flex-col">
-						<div className="absolute h-[900px] sm:w-[200px] bg-orange-700 left-[-250px] blur-[250px] rounded" />
+						<div className="absolute h-[900px] sm:w-[150px] bg-orange-700 left-[-250px] blur-[250px] rounded" />
 						<div>
 							<Image
 								src="/slash.png"
@@ -62,7 +62,7 @@ export default function Home() {
 					</div>
 				</div>
 				<div id="ai-chat" className="mt-28">
-					<div className="absolute h-[900px] w-[70px] sm:w-[200px] bg-[#2463C1] right-[-250px] blur-[250px] rounded" />
+					<div className="absolute h-[900px] w-[70px] sm:w-[150px] bg-[#2463C1] right-[-250px] blur-[250px] rounded" />
 					<div className="w-full flex items-center gap-3">
 						<Image
 							src="/slash.png"
@@ -109,7 +109,7 @@ export default function Home() {
 					</div>
 				</div>
 				<div id="ai-images" className="mt-12 sm:mt-32">
-					<div className="absolute h-[900px] w-[70px] sm:w-[200px] bg-[#369933] left-[-250px] blur-[250px] rounded" />
+					<div className="absolute h-[900px] w-[70px] sm:w-[150px] bg-[#369933] left-[-250px] blur-[250px] rounded" />
 					<div className="flex flex-col lg:flex-row gap-5 sm:gap-10">
 						<div className="w-full flex lg:hidden items-center gap-3">
 							<h1 className="uppercase text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-500 font-bold text-transparent bg-clip-text">
@@ -162,7 +162,7 @@ export default function Home() {
 					</div>
 				</div>
 				<div id="ai-writing" className="mt-28">
-					<div className="absolute h-[900px] w-[70px] sm:w-[200px] bg-[#27ACB2] right-[-250px] blur-[250px] rounded" />
+					<div className="absolute h-[900px] w-[70px] sm:w-[150px] bg-[#27ACB2] right-[-250px] blur-[250px] rounded" />
 					<div className="w-full flex items-center gap-3">
 						<Image
 							src="/slash.png"
@@ -244,7 +244,7 @@ export default function Home() {
 					</div>
 				</div>
 				<div id="ai-codes" className="mt-14 sm:mt-28">
-					<div className="absolute h-[900px] w-[200px] bg-[#726761] right-[-250px] blur-[250px] rounded" />
+					<div className="absolute h-[900px] w-[150px] bg-[#726761] right-[-250px] blur-[250px] rounded" />
 					<div className="w-full flex items-center flex-col">
 						<div className="w-full flex items-center gap-3">
 							<Image
@@ -294,7 +294,7 @@ export default function Home() {
 			<div
 				id="ai-personalized"
 				className="sm:mt-14 pt-14 pb-14 relative w-full">
-				<div className="absolute h-[900px] w-[70px] sm:w-[200px] bg-yellow-700 left-[-250px] blur-[250px] rounded" />
+				<div className="absolute h-[900px] w-[70px] sm:w-[150px] bg-yellow-700 left-[-250px] blur-[250px] rounded" />
 				<div className="bg-gradient-to-r from-[#000] via-[#000]/80 to-[#000] absolute inset-0 z-[-1]" />
 				<video
 					className="w-full h-full absolute inset-0 object-cover z-[-2] hidden md:block"

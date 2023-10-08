@@ -17,8 +17,8 @@ export default function page() {
 
 	return (
 		<main className="bg-black/90 backdrop-blur-2xl w-full min-w-screen h-full min-h-screen flex justify-center items-center">
-			<div className="flex items-center gap-20 xl:gap-28 p-3 sm:p-4">
-				<section className="w-full max-w-[500px]">
+			<div className="flex items-center gap-20 xl:gap-32 p-3 sm:p-4 w-full sm:w-auto justify-center">
+				<section className="w-full sm:min-w-[450px] max-w-[450px] sm:max-w-[500px]">
 					<div className="flex flex-col gap-6">
 						<h1 className="text-3xl sm:text-4xl font-bold">Sign up</h1>
 						<p className="text-white/80">

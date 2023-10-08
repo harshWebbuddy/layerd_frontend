@@ -1,0 +1,20 @@
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="microphone">
+<g id="Rectangle">
+<rect x="11.0317" y="2.69595" width="7.35449" height="13.4832" rx="3.67725" stroke="white" stroke-width="2.14506" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="11.0317" y="2.69595" width="7.35449" height="13.4832" rx="3.67725" stroke="white" stroke-opacity="0.2" stroke-width="2.14506" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Path">
+<path d="M6.12872 12.5019C6.12872 17.2407 9.97023 21.0822 14.709 21.0822C19.4477 21.0822 23.2892 17.2407 23.2892 12.5019" stroke="white" stroke-width="2.14506" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.12872 12.5019C6.12872 17.2407 9.97023 21.0822 14.709 21.0822C19.4477 21.0822 23.2892 17.2407 23.2892 12.5019" stroke="white" stroke-opacity="0.2" stroke-width="2.14506" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Path_2">
+<path d="M9.80597 25.9852H19.612" stroke="white" stroke-width="2.14506" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M9.80597 25.9852H19.612" stroke="white" stroke-opacity="0.2" stroke-width="2.14506" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Path_3">
+<path d="M14.709 21.0822V25.9852" stroke="white" stroke-width="2.14506" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.709 21.0822V25.9852" stroke="white" stroke-opacity="0.2" stroke-width="2.14506" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>

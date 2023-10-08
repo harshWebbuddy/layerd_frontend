@@ -13,7 +13,7 @@ export default function LoginForm({}: Props) {
 		e.preventDefault();
 	};
 	return (
-		<form className="space-y-10 mt-7" onSubmit={submitHandler}>
+		<form className="space-y-10 mt-7 w-full" onSubmit={submitHandler}>
 			<div className="space-y-6">
 				<Input
 					id="email"

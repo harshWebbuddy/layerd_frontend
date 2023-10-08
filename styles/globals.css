@@ -94,7 +94,13 @@ body {
 	inset: 0;
 	border-radius: 20px;
 	padding: 1px;
-  background: linear-gradient(-45deg, #818181 0%, #ffffff00 25%, #ffffff00 75%, #818181 100%);
+	background: linear-gradient(
+		-45deg,
+		#818181 0%,
+		#ffffff00 25%,
+		#ffffff00 75%,
+		#818181 100%
+	);
 
 	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
 	-webkit-mask-composite: xor;
@@ -109,11 +115,41 @@ body {
 	inset: 0;
 	border-radius: 20px;
 	padding: 1px;
-  background: linear-gradient(-45deg, #818181 0%, #ffffff00 25%, #ffffff00 75%, #818181 100%);
+	background: linear-gradient(
+		-45deg,
+		#818181 0%,
+		#ffffff00 25%,
+		#ffffff00 75%,
+		#818181 100%
+	);
 
 	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
 	-webkit-mask-composite: xor;
 	mask-composite: exclude;
+}
+.border-right-gradient {
+	border-right-width: 4px;
+	border-style: solid;
+	border-image: linear-gradient(
+			to bottom,
+			rgba(236, 34, 39, 0) 0%,
+			#ec2227 40.62%,
+			#f99b18 60.42%,
+			rgba(249, 155, 24, 0) 100%
+		)
+		1;
+}
+.border-bottom-gradient {
+	border-bottom-width: 3px;
+	border-style: solid;
+	border-image: linear-gradient(
+			to right,
+			rgba(236, 34, 39, 0) 20%,
+			#f99b18 40.62%,
+			#ec2227 60.42%,
+			rgba(249, 155, 24, 0) 80%
+		)
+		1;
 }
 @keyframes starAnimation1 {
 	0% {
