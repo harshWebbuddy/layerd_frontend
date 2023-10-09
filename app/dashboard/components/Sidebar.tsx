@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { navObjecs } from "../main/components/constants";
+import SideNavItem from "./SideNavComponent";
 
 export default function Sidebar() {
 	return (
@@ -15,23 +15,7 @@ export default function Sidebar() {
 					className="w-36"
 				/>
 			</div>
-			<div className="space-y-3 mt-10">
-				{navObjecs.map((item, index) => (
-					<div
-						key={index}
-						className="flex gap-4 hover:bg-[#323232] hover:ring-2 ring-[#514E4E] rounded-lg cursor-pointer p-2 items-center transition duration-200">
-						<Image
-							src={item.icon}
-							alt="Icon"
-							width={200}
-							height={100}
-							draggable={false}
-							className="w-8"
-						/>
-						<p>{item.title}</p>
-					</div>
-				))}
-			</div>
+			<SideNavItem/>
 		</div>
 	);
 }

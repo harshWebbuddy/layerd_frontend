@@ -2,6 +2,7 @@ import React from "react";
 import Contact from "../components/Contact";
 import Tabs from "./components/Tabs";
 import Accordion from "./components/Accordion";
+import MainSection from "./components/MainSection";
 
 export default function FaqPage() {
 	return (
@@ -25,10 +26,7 @@ export default function FaqPage() {
 				</div>
 			</div>
 			<div className="max-w-[1300px] mx-auto p-2">
-				<Tabs />
-				<div className="mt-10">
-					<Accordion />
-				</div>
+				<MainSection/>
 				<Contact />
 			</div>
 		</div>
