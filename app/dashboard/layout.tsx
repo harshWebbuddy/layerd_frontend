@@ -10,7 +10,7 @@ export default function RootLayout({
 		<main className="min-h-screen bg-[#212327] ">
 			<div className="flex items-start">
 				<Sidebar />
-				<div className="flex-1 w-full h-screen flex flex-col  justify-start">
+				<div className="flex-1 w-full h-screen flex flex-col justify-start relative">
 					<Navigation />
 					{children}
 				</div>

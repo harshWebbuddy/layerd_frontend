@@ -6,30 +6,36 @@ import { Collapse } from "react-collapse";
 import { navObjects } from "../main/components/constants";
 import clsx from "clsx";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function SideNavItem() {
 	const [activeLink, setActiveLink] = useState<string | null>(null);
 	const [isOpen, setIsOpen] = useState(false);
+	const router = useRouter();
 	return (
 		<div className="space-y-3 mt-10">
 			{navObjects.map((item, index) => (
 				<div
 					key={index}
 					onClick={() => {
-						if (item.title === activeLink) {
-							setIsOpen(false);
-							setActiveLink(null);
-						} else {
-							setIsOpen(true);
-							setActiveLink(item.title);
+						if (!item.items?.length && item?.link)
+							return router.push(item?.link);
+						else {
+							if (item.title === activeLink) {
+								setIsOpen(false);
+								setActiveLink(null);
+							} else {
+								setIsOpen(true);
+								setActiveLink(item.title);
+							}
 						}
 					}}>
 					<div
 						className={clsx(
-							"flex justify-between gap-4 hover:bg-[#323232] hover:ring-2 ring-[#514E4E] rounded-lg cursor-pointer p-2 items-center transition duration-200 h-[52px]",
+							"flex justify-between gap-3 hover:bg-[#323232] hover:ring-2 ring-[#514E4E] rounded-lg cursor-pointer py-2 pl-2 pr-4 items-center transition duration-200 h-[48px]",
 							activeLink == item.title && "bg-[#272727] ring-1"
 						)}>
-						<div className="flex items-center gap-3">
+						<div className="flex items-center gap-1">
 							<div
 								className={`${
 									activeLink == item.title && `bg-custom-${index} rounded-full `
@@ -47,7 +53,7 @@ export default function SideNavItem() {
 						</div>
 						{item.items?.length && (
 							<div
-								className={`rotate-180 transition duration-300 pr-2 ${
+								className={`rotate-180 transition duration-300 ${
 									isOpen && activeLink === item.title && "rotate-0"
 								}`}>
 								<Image
@@ -84,6 +90,44 @@ export default function SideNavItem() {
 					</Collapse>
 				</div>
 			))}
+			<div className="flex justify-between gap-3 hover:bg-[#323232] hover:ring-2 ring-[#514E4E] rounded-lg cursor-pointer py-2 pl-2 pr-4 items-center transition duration-200 h-[48px]">
+				<div className="flex items-center gap-1">
+					<div className={` p-1.5 transition duration-300`}>
+						<Image
+							src={"/main/drawing-tools.gif"}
+							alt="Icon"
+							width={200}
+							height={100}
+							draggable={false}
+							className="w-6"
+						/>
+					</div>
+					<p>
+						WolframAlpha
+						<span className="text-xs text-white/50"> (Coming Soon)</span>
+					</p>
+				</div>
+			</div>
+			<div className="!mt-10 space-y-4">
+				<h1 className="text-sm uppercase pl-2">History</h1>
+				<Link
+					href={"/dashboard/main/documents"}
+					className="flex justify-between gap-3 hover:bg-[#323232] hover:ring-2 ring-[#514E4E] rounded-lg cursor-pointer pl-2 pr-4 items-center transition duration-200 h-[48px]">
+					<div className="flex items-center gap-1">
+						<div className={`p-1.5 transition duration-300`}>
+							<Image
+								src={"/main/document.gif"}
+								alt="Icon"
+								width={200}
+								height={100}
+								draggable={false}
+								className="w-6"
+							/>
+						</div>
+						<p>Documents</p>
+					</div>
+				</Link>
+			</div>
 		</div>
 	);
 }

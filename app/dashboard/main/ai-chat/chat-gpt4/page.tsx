@@ -40,7 +40,7 @@ export default function page() {
 				</div>
 			</div>
 			<form className="space-y-7 mt-28">
-				<div className="bg-[url('/main/background-image-form.png')] bg-cover bg-no-repeat h-16 rounded-xl flex pl-4 border-bottom-gradient">
+				<div className="bg-[url('/main/background-image-form.png')] bg-cover bg-no-repeat h-14 rounded-xl flex pl-4 border-bottom-gradient">
 					<input
 						type="text"
 						className="flex-1 bg-transparent outline-none placeholder:capitalize text-sm"

@@ -108,6 +108,9 @@ export const navObjects = [
 	{
 		icon: "/main/ai-writing.gif",
 		title: "AI Writing",
+		link : '/dashboard/main/ai-writing'
+
+
 	},
 	{
 		icon: "/main/ai-voice.gif",
@@ -129,12 +132,5 @@ export const navObjects = [
 		icon: "/main/ai-tools.gif",
 		title: "AI tools",
 	},
-	{
-		icon: "/main/drawing-tools.gif",
-		title: "AI tools",
-	},
-	{
-		icon: "/main/document.gif",
-		title: "Documents",
-	},
+
 ];

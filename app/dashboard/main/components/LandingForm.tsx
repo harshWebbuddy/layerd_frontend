@@ -10,7 +10,7 @@ export default function LandingForm() {
 	return (
 		<div className="w-full">
 			<form className="space-y-7">
-				<div className="bg-[url('/main/background-image-form.png')] bg-cover bg-no-repeat h-14 rounded-xl flex pl-4 border-bottom-gradient">
+				<div className="bg-[url('/main/background-image-form.png')] bg-cover bg-no-repeat h-12 rounded-xl flex pl-4 border-bottom-gradient">
 					<input
 						type="text"
 						className="flex-1 bg-transparent outline-none placeholder:capitalize text-sm"
