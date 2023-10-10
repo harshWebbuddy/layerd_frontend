@@ -33,14 +33,14 @@ const PackageCard: React.FC<Props> = ({
 					</p>
 				</div>
 			)}
-			<div className="bg-gradient-to-b from-[#242424] to-black h-full p-5 sm:p-7 rounded-xl flex flex-col justify-between">
+			<div className="bg-gradient-to-b from-[#2b2b2b] to-[#080808] h-full p-5 sm:p-7 rounded-xl flex flex-col justify-between">
 				<div>
 					<div className="flex items-center gap-6 border-b border-[#454545] pb-6">
 						<div className={`border ${accentColor} p-3 rounded-lg`}>
 							<Image src={image} alt="Star" width={32} height={32} />
 						</div>
 						<div>
-							<h1 className="text-[#FFFFFFCC] font-bold text-xl">{name}</h1>
+							<h1 className="text-[#FFFFFFCC] font-bold text-xl capitalize">{name}</h1>
 							<p className="flex text-[32px] h-10 gap-1 font-extrabold text-red-500">
 								<span className="self-start text-[12px] mt-2 font-semibold">
 									$

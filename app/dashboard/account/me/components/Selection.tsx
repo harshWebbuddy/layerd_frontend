@@ -1,63 +1,55 @@
 import React from "react";
 import Select, { StylesConfig } from "react-select";
-interface ItemType {
+
+type ItemType = {
 	value: string;
 	label: string;
-}
-
-export default function SelectComponent({
-	items,
-	label,
-	placeholder,
-	required,
-	isMulti,
+};
+export default function Selection({
 	id,
+	label,
+	items,
+	required,
+	placeholder,
 }: {
-	items: ItemType[];
-	label: string;
-	placeholder: string;
-	isMulti?: boolean;
-	required: boolean;
 	id: string;
+	label: string;
+	required?: boolean;
+	items: ItemType[];
+	placeholder: string;
 }) {
 	return (
 		<div className="w-full space-y-2 ">
 			<label htmlFor={id} className="block leading-6 text-white/80 capitalize">
 				{label}
-				{required ? (
-					<span className="text-primary-red">*</span>
-				) : (
-					<span className="text-[#6F6F6F] text-sm"> (Optional)</span>
-				)}
 			</label>
 			<Select
 				id={id}
+				required={required}
 				options={items}
 				placeholder={placeholder}
-				isSearchable
-				isMulti={isMulti}
 				theme={(theme) => ({
 					...theme,
 					borderRadius: 7,
 					colors: {
 						...theme.colors,
 						primary25: "",
-						primary: "white",
-						primary50: "#333333",
+						primary: "#5f5f5f",
+						primary50: "#5f5f5f",
 					},
 				})}
 				noOptionsMessage={() => "No industries found"}
 				styles={{
 					control: (baseStyles, state) => ({
 						...baseStyles,
-						backgroundColor: "transparent",
+						backgroundColor: "#454545",
 						minHeight: "50px",
-						borderColor: state.isFocused ? "grey" : "white",
+						border: "none",
 						color: "white",
 					}),
 					option: (baseStyles, state) => ({
 						...baseStyles,
-						backgroundColor: "#212121",
+						backgroundColor: "#363636",
 						color: "#fff",
 						cursor: "pointer",
 					}),

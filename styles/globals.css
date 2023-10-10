@@ -151,6 +151,20 @@ body {
 		)
 		1;
 }
+.border-gradient {
+	position: relative;
+}
+.border-gradient::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: 8px;
+	padding: 2px;
+	background: linear-gradient(-45deg, #f99b18, #ec2227);
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+}
 @keyframes starAnimation1 {
 	0% {
 		width: 0;
@@ -292,12 +306,32 @@ body {
 	background-color: #474747 !important;
 }
 
+.edit-form .form-control {
+	border-radius: 8px !important;
+}
+.edit-form .selected-flag {
+	background-color: #454545 !important;
+	width: 100% !important;
+	transition: 0.3s !important;
+}
+.edit-form .selected-flag:hover {
+	background-color: #4b4b4b !important;
+}
+
+.edit-form .country-list {
+	background-color: #313131 !important;
+	color: white !important;
+	border-radius: 7px !important;
+	border: 1px solid #353535;
+}
+.css-1u9des2-indicatorSeparator{
+	display: none !important;
+}
 .scrollbar-hide::-webkit-scrollbar {
 	display: none;
 }
-
 /* For IE, Edge and Firefox */
 .scrollbar-hide {
-	-ms-overflow-style: none;  /* IE and Edge */
-	scrollbar-width: none;  /* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
 }

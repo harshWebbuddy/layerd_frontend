@@ -9,7 +9,7 @@ interface Iprops {
 	isOpen: boolean;
 	onClose: () => void;
 }
-import { industryOptions, sourceInquiry } from "../constants";
+import { countryList, industryOptions, sourceInquiry } from "../constants";
 
 export default function PartnershipRequestForm({ isOpen, onClose }: Iprops) {
 	return (
@@ -84,13 +84,15 @@ export default function PartnershipRequestForm({ isOpen, onClose }: Iprops) {
 						/>
 						<SelectComponent
 							items={industryOptions}
+							id="industry"
 							label="Industry"
 							placeholder="Select"
 							required={true}
 						/>
 					</div>
 					<SelectComponent
-						items={industryOptions}
+						id="country"
+						items={countryList}
 						label="Country"
 						placeholder="Select Country"
 						required={true}
@@ -106,6 +108,7 @@ export default function PartnershipRequestForm({ isOpen, onClose }: Iprops) {
 					/>
 
 					<SelectComponent
+						id="sourceInquiry"
 						items={sourceInquiry}
 						label="How did you hear about us?"
 						placeholder="Select industry"

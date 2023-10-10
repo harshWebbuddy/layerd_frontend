@@ -5,7 +5,7 @@ import React from "react";
 import Input from "./Input";
 import Checkbox from "./CheckBox";
 import SelectComponent from "./SelectComponent";
-import { industryOptions, sourceInquiry } from "../constants";
+import { countryList, industryOptions, sourceInquiry } from "../constants";
 interface Iprops {
 	isOpen: boolean;
 	onClose: () => void;
@@ -78,23 +78,24 @@ export default function SalesContactForm({ isOpen, onClose }: Iprops) {
 							disabled={false}
 						/>
 						<SelectComponent
+							id="industy"
 							items={industryOptions}
 							label="Industry"
 							placeholder="Select industry"
 							required={true}
 						/>
 					</div>
-					<Input
+					<SelectComponent
 						id="country"
-						label="country"
-						type="text"
-						placeholder="Select"
+						items={countryList}
+						label="Country"
+						placeholder="Select Country"
 						required={true}
-						//disable button with loading state, default --> false
-						disabled={false}
 					/>
+
 					<SelectComponent
 						items={sourceInquiry}
+						id="sourceInquiry"
 						label="How did you hear about us?"
 						placeholder="Select industry"
 						required={false}

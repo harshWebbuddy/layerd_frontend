@@ -7,7 +7,7 @@ export default function Navigation() {
 		<nav className="m-5 p-3">
 			<div className="flex justify-between">
 				<div className="space-y-3">
-					<h1 className="text-[28px] font-semibold">Hi, Sheraz Ahmed</h1>
+					<h1 className="text-[23px] font-semibold">Hi, Sheraz Ahmed</h1>
 					<p className="text-sm capitalize">Welcome to world of AI</p>
 				</div>
 				<div className="flex gap-6 items-center">
