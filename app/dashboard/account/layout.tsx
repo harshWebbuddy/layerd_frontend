@@ -24,27 +24,27 @@ export default function layout({ children }: { children: ReactNode }) {
 	];
 	const options = [
 		{
-			link: "/",
+			link: "/dashboard/account",
 			image: "/main/user.svg",
 			title: "view profile",
 		},
 		{
-			link: "/",
+			link: "/dashboard/account/defaults",
 			image: "/main/adjustments-horizontal.svg",
 			title: "set defaults",
 		},
 		{
-			link: "/",
+			link: "/dashboard/account/passwords",
 			image: "/main/key.svg",
 			title: "Change password",
 		},
 		{
-			link: "/",
+			link: "/dashboard/account/2fa-authentication",
 			image: "/main/lock-access.svg",
 			title: "2FA Authentication",
 		},
 		{
-			link: "/",
+			link: "/dashboard/account/delete",
 			image: "/main/delete.svg",
 			title: "Delete Account",
 		},

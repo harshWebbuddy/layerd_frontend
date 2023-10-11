@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Chart from "./components/Chart";
 
 export default function page() {
 	const stats = [
@@ -66,7 +67,7 @@ export default function page() {
 					</div>
 				))}
 			</div>
-			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-6 space-y-5">
+			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-6 space-y-5 mt-6">
 				<h1 className="flex items-center text-lg gap-2">
 					<Image
 						src={"/main/box.png"}
@@ -85,6 +86,19 @@ export default function page() {
 					available 899.
 				</p>
 				<div className="h-5 bg-[#5F5F5F] rounded-full w-full"></div>
+			</div>
+			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-6 space-y-5 mt-6">
+				<h1 className="flex items-center text-xl gap-2 font-semibold">
+					<Image
+						src={"/main/image-colored.svg"}
+						alt="Stat-image"
+						width={25}
+						height={25}
+					/>
+					<span className="text-primary-yellow">Words & Images Generated</span>
+          <span className="text-white/80">(Current Year)</span>
+				</h1>
+        <Chart/>
 			</div>
 		</div>
 	);
