@@ -24,9 +24,9 @@ export default function layout({ children }: { children: ReactNode }) {
 	];
 	const options = [
 		{
-			link: "/dashboard/account",
+			link: "/dashboard/account/edit",
 			image: "/main/user.svg",
-			title: "view profile",
+			title: "Update profile",
 		},
 		{
 			link: "/dashboard/account/defaults",

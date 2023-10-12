@@ -16,7 +16,7 @@ const Input = ({ label, id, disabled, required, type , placeholder, defaultValue
 		<div className="w-full">
 			<label
 				htmlFor={id}
-				className="block leading-6 text-white/80 capitalize text-sm">
+				className="block leading-6 text-white capitalize text-sm">
 				{label}
 			</label>
 			<div className="mt-2 ">

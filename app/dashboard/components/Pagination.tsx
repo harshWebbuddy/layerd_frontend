@@ -26,6 +26,7 @@ export default function Pagination() {
 					.fill(null)
 					.map((_, index) => (
 						<div
+							key={index}
 							className={clsx(
 								"py-2 px-4 bg-gray-600/10  rounded-md cursor-pointer hover:bg-gray-600/50 transition",
 								!index && "!bg-primary-yellow"
