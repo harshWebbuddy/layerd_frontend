@@ -4,6 +4,7 @@ import SearchFilter from "./components/SearchFilter";
 import { memberTabs } from "./components/constants";
 import Chart from "../../account/components/Chart";
 import clsx from "clsx";
+import Pagination from "../../components/Pagination";
 
 export default function page() {
 	const stats = [
@@ -40,7 +41,6 @@ export default function page() {
 	];
 	//dummy data
 	let members = [];
-	const dummyMemberLength = 5;
 	return (
 		<section className="p-10 space-y-10">
 			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-10">
@@ -116,39 +116,7 @@ export default function page() {
 						)}
 					</div>
 				</div>
-				<div className="flex items-center justify-between">
-					<p>Showing 1 to 5 of 100 entries</p>
-					<div className="space-x-3 flex items-center">
-						<span>Page</span>
-						<button className="bg-[#4F4F4F] flex items-center justify-center h-12 w-12  rounded-lg pl-4">
-							<input
-								type="number"
-								className="bg-transparent outline-none w-full"
-								min={1}
-							/>
-						</button>
-						<span>of 200</span>
-					</div>
-					<div className="flex items-center gap-1">
-						<button className="bg-gray-600/10 py-2 px-3 rounded-md }text-white hover:bg-gray-600/50 transition">
-							Previous
-						</button>
-						{Array(dummyMemberLength)
-							.fill(null)
-							.map((_, index) => (
-								<div
-									className={clsx(
-										"py-2 px-4 bg-gray-600/10  rounded-md cursor-pointer hover:bg-gray-600/50 transition",
-										!index && "!bg-primary-yellow"
-									)}>
-									{index + 1}
-								</div>
-							))}
-						<button className="bg-gray-600/10 py-2 px-3 rounded-md }text-white hover:bg-gray-600/50 transition">
-							Next
-						</button>
-					</div>
-				</div>
+				<Pagination />
 			</div>
 			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-10">
 				<Chart />
