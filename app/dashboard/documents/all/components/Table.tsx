@@ -8,15 +8,15 @@ interface Props {
 }
 export default function Table({columns, data }: Props) {
 	return (
-		<div className="w-full">
+		<div className="w-full overflow-x-auto">
 			<table className="w-full">
 				<thead className="border-b-[3px] border-white/10">
 					<tr>
 						{columns.map((column, index) => (
 							<th
 								key={index}
-								className={`text-primary-yellow text-left p-6 ${
-									index === 0 && "pl-14"
+								className={`text-primary-yellow min-w-[250px] text-left p-6 ${
+									index === 0 && "pl-8 sm:pl-14"
 								}`}>
 								{column}
 							</th>
@@ -24,7 +24,6 @@ export default function Table({columns, data }: Props) {
 					</tr>
 				</thead>
 				<tbody>
-
 					{data.map((document, index) => (
 						<tr
 							key={index}
@@ -32,7 +31,7 @@ export default function Table({columns, data }: Props) {
 								index % 2 &&
 								"bg-gradient-to-br from-[#ffffff09] to-[#8f8f8f0c] backdrop-blur-md w-full"
 							}`}>
-							<td className="p-6 pl-14">
+							<td className="p-6 pl-8 sm:pl-14 min-w-[300px]">
 								<div>
 									<div className="flex items-center gap-4">
 										<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-3 max-w-fit">

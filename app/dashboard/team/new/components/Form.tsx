@@ -16,7 +16,7 @@ export default function Form() {
 			<h1 className="text-primary-yellow  text-xl">Edit Profile</h1>
 			<div className="bg-gradient-to-r from-transparent via-[#ffffff62] to-transparent h-[2px] w-full my-4" />
 			<form onSubmit={submitHandler} className="space-y-7">
-				<div className="flex gap-4">
+				<div className="flex flex-col sm:flex-row gap-4">
 					<Input
 						id="fullName"
 						label="full name"
@@ -36,7 +36,7 @@ export default function Form() {
 						defaultValue="sherazahmedofficial@gmail.com"
 					/>
 				</div>
-				<div className="flex gap-4">
+				<div className="flex flex-col sm:flex-row gap-4">
 					<Input
 						id="newPassword"
 						label="new password"
@@ -57,7 +57,7 @@ export default function Form() {
 					/>
 				</div>
 				<div className="bg-gradient-to-r from-transparent via-[#ffffff62] to-transparent h-[2px] w-full my-4" />
-				<div className="grid grid-cols-3 gap-4">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 					<ToggleButton label="Allow Credits for Templates" />
 					<ToggleButton label="Allow Credits for AI Chat" />
 					<ToggleButton label="Allow Credits for AI Images" defaultEnabled={true}/>
@@ -67,7 +67,7 @@ export default function Form() {
 				</div>
 				<div className="bg-gradient-to-r from-transparent via-[#ffffff62] to-transparent h-[2px] w-full my-4" />
 
-				<div className="flex gap-4">
+				<div className="flex flex-col sm:flex-row gap-4">
 					<Input
 						id="jobRole"
 						label="Job Role"
@@ -81,7 +81,7 @@ export default function Form() {
 						<PhoneNumberInput />
 					</div>
 				</div>
-				<div className="flex gap-4">
+				<div className="flex flex-col sm:flex-row gap-4">
 					<Input
 						id="companyName"
 						label="company name"
@@ -107,7 +107,7 @@ export default function Form() {
 					type="text"
 					defaultValue="House # xyz, Block xyz. xyz "
 				/>
-				<div className="flex gap-4">
+				<div className="flex flex-col sm:flex-row gap-4">
 					<Input
 						id="city"
 						label="city"

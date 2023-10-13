@@ -25,7 +25,7 @@ export default function ToggleButton({ label , defaultEnabled}: Props) {
 					</button>
 				)}
 			</Switch>
-			<p className="block leading-6 text-white/80 capitalize">{label}</p>
+			<p className="block leading-6 text-white/80 capitalize text-sm sm:text-base">{label}</p>
 		</div>
 	);
 }

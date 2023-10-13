@@ -13,21 +13,21 @@ export default function page() {
 		"Status",
 		"Actions",
 	];
-  
+
 	return (
-		<section className="px-10 py-5 space-y-5">
-			<div className="flex justify-between">
+		<section className="px-3 sm:px-10 py-5 space-y-5">
+			<div className="flex flex-col gap-5 sm:flex-row justify-between">
 				<div>
 					<h1 className="text-3xl font-semibold leading-relaxed">
 						My Payouts{" "}
 					</h1>
 					<p className="text-white/70 text-sm">
-						Affiliate {">>"}{" "}
+						Affiliate {">>"}
 						<span className="text-primary-yellow capitalize">My payouts</span>
 					</p>
 				</div>
 				<div>
-					<Link href="/dashboard/affiliate/new">
+					<Link href="/dashboard/affiliates/payouts/new">
 						<button
 							type="submit"
 							className="bg-gradient-to-r from-primary-red to-primary-yellow  px-10 py-3 rounded-lg font-semibold">
@@ -60,10 +60,10 @@ export default function page() {
 						</div>
 					))}
 				</div>
-        <div className="h-[40vh] grid place-content-center">
-          <p>No Voice Over Results Found</p>
-        </div>
-        <Pagination/>
+				<div className="h-[40vh] grid place-content-center">
+					<p>No Voice Over Results Found</p>
+				</div>
+				<Pagination />
 			</div>
 		</section>
 	);

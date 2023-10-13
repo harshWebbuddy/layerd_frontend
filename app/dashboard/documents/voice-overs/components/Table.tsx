@@ -5,15 +5,15 @@ interface Props {
 }
 export default function Table({ columns, data }: Props) {
 	return (
-		<div className="w-full">
+		<div className="w-full overflow-x-auto">
 			<table className="w-full">
 				<thead className="border-b-[3px] border-white/10">
 					<tr>
 						{columns.map((column, index) => (
 							<th
 								key={index}
-								className={`text-primary-yellow text-left p-6 ${
-									index === 0 && "pl-14"
+								className={`text-primary-yellow text-left p-6 min-w-[250px] ${
+									index === 0 && "pl-6 sm:pl-14"
 								}`}>
 								{column}
 							</th>

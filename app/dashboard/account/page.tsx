@@ -52,7 +52,7 @@ export default function page() {
 	];
 	return (
 		<div className="w-full">
-			<div className="grid grid-cols-3 gap-4 w-full">
+			<div className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-4 w-full">
 				{stats.map((item, index) => (
 					<div
 						key={index}
@@ -67,7 +67,7 @@ export default function page() {
 					</div>
 				))}
 			</div>
-			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-6 space-y-5 mt-6">
+			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-4 sm:p-6 space-y-5 mt-6">
 				<h1 className="flex items-center text-lg gap-2">
 					<Image
 						src={"/main/box.png"}
@@ -78,27 +78,33 @@ export default function page() {
 					<span>Subscription</span>
 				</h1>
 				<div>
-					<h1 className="text-3xl font-bold">Free Trial</h1>
+					<h1 className="text-left text-xl sm:text-3xl font-bold">
+						Free Trial
+					</h1>
 					<p className="text-white/60">No Subscription / $0.00 Per Month</p>
 				</div>
-				<p>
+				<p className="text-sm sm:text-base">
 					Total words available via subscription plan 0. Total prepaid words
 					available 899.
 				</p>
 				<div className="h-5 bg-[#5F5F5F] rounded-full w-full"></div>
 			</div>
-			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-6 space-y-5 mt-6">
-				<h1 className="flex items-center text-xl gap-2 font-semibold">
+			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-3 sm:p-6 space-y-5 mt-6">
+				<div className="flex items-start gap-x-2">
 					<Image
 						src={"/main/image-colored.svg"}
 						alt="Stat-image"
 						width={25}
 						height={25}
 					/>
-					<span className="text-primary-yellow">Words & Images Generated</span>
-          <span className="text-white/80">(Current Year)</span>
-				</h1>
-        <Chart/>
+					<h1 className="text-lg sm:text-xl font-semibold ">
+						<span className="text-primary-yellow">
+							Words & Images Generated
+						</span>
+						<span className="text-white/80">{" "}(Current Year)</span>
+					</h1>
+				</div>
+				<Chart />
 			</div>
 		</div>
 	);

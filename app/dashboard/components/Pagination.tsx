@@ -3,9 +3,8 @@ import React from "react";
 
 export default function Pagination() {
 	const dummyMemberLength = 5;
-
 	return (
-		<div className="flex items-center justify-between">
+		<div className="flex flex-wrap gap-3 items-center justify-between text-xs sm:text-sm">
 			<p>Showing 1 to 5 of 100 entries</p>
 			<div className="space-x-3 flex items-center">
 				<span>Page</span>
@@ -34,7 +33,7 @@ export default function Pagination() {
 							{index + 1}
 						</div>
 					))}
-				<button className="bg-gray-600/10 py-2 px-3 rounded-md }text-white hover:bg-gray-600/50 transition">
+				<button className="bg-gray-600/10 py-2 px-3 rounded-md text-white hover:bg-gray-600/50 transition">
 					Next
 				</button>
 			</div>

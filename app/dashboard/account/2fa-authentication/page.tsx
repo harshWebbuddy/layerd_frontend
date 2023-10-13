@@ -4,15 +4,15 @@ import Form from "./components/Form";
 
 export default function page() {
 	return (
-		<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-10">
-			<div className="flex items-center gap-2">
+		<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg px-5 py-6 sm:p-10">
+			<div className="flex items-start sm:items-center gap-2">
 				<Image
 					src="/main/lock-access-colored.svg"
 					alt="Adjustments"
 					width={25}
 					height={25}
 				/>
-				<h1 className="text-primary-yellow font-semibold text-xl">
+				<h1 className="text-primary-yellow font-semibold text-lg sm:text-xl ">
 					Activate 2FA Authentication
 				</h1>
 			</div>

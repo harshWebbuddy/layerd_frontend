@@ -12,7 +12,7 @@ export default function page() {
 		"Earned Commission (USD)",
 	];
 	return (
-		<section className="px-10 py-5 space-y-5">
+		<section className="px-3 sm:px-10 py-5 space-y-5">
 			<div>
 				<h1 className="text-3xl font-semibold leading-relaxed capitalize">
 					My referrals{" "}
@@ -22,7 +22,7 @@ export default function page() {
 					<span className="text-primary-yellow capitalize">My referrals</span>
 				</p>
 			</div>
-			<div className="flex gap-10">
+			<div className="flex flex-col sm:flex-row gap-5 sm:gap-10">
 				<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-7 space-y-4">
 					<h1 className="text-white capitalize text-xl font-semibold">
 						Total Referred Users

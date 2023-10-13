@@ -19,11 +19,13 @@
     "react": "latest",
     "react-chartjs-2": "^5.2.0",
     "react-collapse": "^5.1.1",
+    "react-credit-card-input": "^1.1.5",
     "react-dom": "latest",
     "react-hook-form": "^7.46.2",
     "react-otp-input": "^3.1.0",
     "react-phone-input-2": "^2.15.1",
     "react-select": "^5.7.7",
+    "styled-components": "^6.0.9",
     "swiper": "^10.3.1"
   },
   "devDependencies": {

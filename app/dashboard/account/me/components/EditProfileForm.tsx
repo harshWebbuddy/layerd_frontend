@@ -14,8 +14,8 @@ export default function EditProfileForm() {
 		<div>
 			<h1 className="text-primary-yellow  text-xl">Edit Profile</h1>
 			<div className="bg-gradient-to-r from-transparent via-[#ffffff62] to-transparent h-[2px] w-full my-4" />
-			<form onSubmit={submitHandler} className="space-y-7">
-				<div className="flex gap-4">
+			<form onSubmit={submitHandler} className="space-y-4 sm:space-y-7">
+				<div className="flex flex-col sm:flex-row gap-4">
 					<Input
 						id="firstName"
 						label="first name"
@@ -35,7 +35,7 @@ export default function EditProfileForm() {
 						defaultValue="Ahmed"
 					/>
 				</div>
-				<div className="flex gap-4">
+				<div className="flex flex-col sm:flex-row gap-4">
 					<Input
 						id="email"
 						label="Email Address"
@@ -49,7 +49,7 @@ export default function EditProfileForm() {
 						<PhoneNumberInput />
 					</div>
 				</div>
-				<div className="flex gap-4">
+				<div className="flex flex-col sm:flex-row gap-4">
 					<div className="w-full">
 						<p className="capitalize text-sm mb-3">Choose an Avatar</p>
 						<label htmlFor="file-image" className="cursor-pointer">
@@ -92,7 +92,7 @@ export default function EditProfileForm() {
 					type="text"
 					defaultValue="House # xyz, Block xyz. xyz "
 				/>
-				<div className="flex gap-4">
+				<div className="flex flex-col sm:flex-row gap-4">
 					<Input
 						id="city"
 						label="city"
@@ -119,7 +119,7 @@ export default function EditProfileForm() {
 						required={true}
 					/>
 				</div>
-				<div className="flex justify-end gap-4">
+				<div className="flex justify-end gap-4 !mt-10 sm:mt-0">
 					<button
 						type="button"
 						className="bg-transparent ring-1 ring-inset ring-white px-10 py-3 rounded-lg hover:bg-white/[0.05] transition duration-300 text-sm">

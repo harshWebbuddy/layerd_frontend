@@ -13,7 +13,7 @@ export default function SideNavItem() {
 	const [isOpen, setIsOpen] = useState(false);
 	const router = useRouter();
 	return (
-		<div className="space-y-3 mt-10">
+		<div className="space-y-3 mt-10 text-sm">
 			{navObjects.map((item, index) => (
 				<div
 					key={index}
@@ -71,9 +71,10 @@ export default function SideNavItem() {
 						<div
 							className="ml-10 mt-4 mb-10 flex flex-col gap-6"
 							onClick={(e) => e.stopPropagation()}>
-							{item.items?.map((item) => (
+							{item.items?.map((item, index) => (
 								<Link
 									href={item.link}
+									key={index}
 									className="flex justify-between pr-4 cursor-pointer">
 									<p>{item.title}</p>
 									<Image

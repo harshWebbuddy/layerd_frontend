@@ -5,6 +5,7 @@ import { memberTabs } from "./components/constants";
 import Chart from "../../account/components/Chart";
 import clsx from "clsx";
 import Pagination from "../../components/Pagination";
+import Link from "next/link";
 
 export default function page() {
 	const stats = [
@@ -42,24 +43,27 @@ export default function page() {
 	//dummy data
 	let members = [];
 	return (
-		<section className="p-10 space-y-10">
-			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-10">
-				<div className="flex gap-10 items-center">
-					<div className="w-full max-w-sm rounded-lg p-10 space-y-3 text-center bg-gradient-to-br from-white/10 to-[#8f8f8f10]">
+		<section className="p-2 sm:p-10 space-y-4 sm:space-y-10">
+			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-4 sm:p-10">
+				<div className="flex flex-col sm:flex-row gap-10 items-center">
+					<div className="w-full max-w-sm rounded-lg p-10 space-y-4 text-center bg-gradient-to-br from-white/10 to-[#8f8f8f10]">
 						<h1 className="text-white">
-							<span className="text-primary-yellow font-bold text-5xl">0</span>{" "}
+							<span className="text-primary-yellow font-bold text-5xl">0</span>
 							Members
 						</h1>
 						<p className="text-sm">
 							Manage your team members and review their credit usage
 						</p>
-						<p>You can add up to 2 team members</p>
-						<button className="bg-gradient-to-r from-primary-red to-primary-yellow  px-10 py-3 rounded-lg text-sm">
-							Add Team Members
-						</button>
+						<p className="text-sm !mb-2">You can add up to 2 team members</p>
+
+						<Link href="/dashboard/team/new">
+							<button className="bg-gradient-to-r from-primary-red to-primary-yellow  px-10 py-3 rounded-lg text-sm">
+								Add Team Members
+							</button>
+						</Link>
 					</div>
 					<div className="w-full">
-						<div className="grid grid-cols-3 gap-4 w-full">
+						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
 							{stats.map((item, index) => (
 								<div
 									key={index}
@@ -118,7 +122,7 @@ export default function page() {
 				</div>
 				<Pagination />
 			</div>
-			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-10">
+			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-4 sm:p-10">
 				<Chart />
 			</div>
 		</section>

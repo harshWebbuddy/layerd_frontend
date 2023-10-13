@@ -3,7 +3,7 @@ import Input from "../../account/me/components/Input";
 
 export default function Mail() {
 	return (
-		<form className="flex gap-6 items-end">
+		<form className="flex flex-col sm:flex-row gap-6 items-end">
 			<Input
 				id="mail"
 				label="Insert your friends email address and send him an invitations to join WhopeMe!"

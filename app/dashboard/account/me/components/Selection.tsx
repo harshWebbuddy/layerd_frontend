@@ -46,6 +46,7 @@ export default function Selection({
 						minHeight: "50px",
 						border: "none",
 						color: "white",
+						
 					}),
 					option: (baseStyles, state) => ({
 						...baseStyles,

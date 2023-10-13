@@ -19,7 +19,7 @@ export default function ProfileDetail() {
 	const path = usePathname();
 	if (path !== "/dashboard/account") return;
 	return (
-		<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg px-6 pt-6 pb-3">
+		<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg px-4 sm:px-6 pt-6 pb-3">
 			<h1 className="capitalize text-xl text-primary-yellow font-semibold">
 				Personal Details
 			</h1>

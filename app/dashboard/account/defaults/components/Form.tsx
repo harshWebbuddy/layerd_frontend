@@ -24,8 +24,8 @@ export default function Form() {
 				</h1>
 			</div>
 			<div className="bg-gradient-to-r from-transparent via-[#ffffff62] to-transparent h-[2px] w-full my-4" />
-			<form onSubmit={submitHandler} className="space-y-7">
-				<div className="flex gap-8">
+			<form onSubmit={submitHandler} className="space-y-2 sm:space-y-7">
+				<div className="flex flex-col sm:flex-row gap-8">
 					<Selection
 						id="ai-voice-language"
 						label="Default AI Voiceover Studio Language"
@@ -41,7 +41,7 @@ export default function Form() {
 						items={languages}
 					/>
 				</div>
-				<div className="flex gap-8">
+				<div className="flex flex-col sm:flex-row gap-8">
 					<Selection
 						id="ai-voice-language"
 						label="Default Language for Templates"

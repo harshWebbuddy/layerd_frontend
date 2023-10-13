@@ -8,7 +8,7 @@ export default function page() {
 		<section className="w-4/5 mx-16">
 			<h1 className="text-white text-3xl font-semibold">Subscription Plans</h1>
 			<div className="mt-10">
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 xl:gap-10">
+				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 xl:gap-10">
 					{packageData.map((data, index) => (
 						<PackageCard key={index} {...data} />
 					))}

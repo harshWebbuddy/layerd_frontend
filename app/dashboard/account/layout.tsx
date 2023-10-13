@@ -24,7 +24,7 @@ export default function layout({ children }: { children: ReactNode }) {
 	];
 	const options = [
 		{
-			link: "/dashboard/account/edit",
+			link: "/dashboard/account/me",
 			image: "/main/user.svg",
 			title: "Update profile",
 		},
@@ -50,11 +50,11 @@ export default function layout({ children }: { children: ReactNode }) {
 		},
 	];
 	return (
-		<section className="mx-10">
+		<section className="mx-3 sm:mx-10">
 			<h1 className="text-white text-3xl font-semibold">My Account</h1>
-			<div className="flex items-start gap-10 mt-6">
-				<div className="w-full max-w-md flex flex-col gap-4">
-					<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-6">
+			<div className="flex flex-col md:flex-row items-start gap-10 mt-6">
+				<div className="w-full sm:max-w-md flex flex-col gap-4">
+					<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-2 sm:p-6">
 						<div className="flex flex-col gap-2 items-center">
 							<div className="bg-[#7367F0] rounded-full overflow-hidden">
 								<Image
@@ -71,7 +71,7 @@ export default function layout({ children }: { children: ReactNode }) {
 							<h2 className="text-white font-semibold">UX/UI Design</h2>
 							<div className="bg-gradient-to-r from-[#FFFFFF00] via-[#ffffff62] to-[#ffffff00] h-[2px] w-full my-4" />
 						</div>
-						<div className="grid grid-cols-2 mt-2 gap-6">
+						<div className="grid grid-cols-1 min-[300px]:grid-cols-2  mt-2 gap-6">
 							{plans.map((item, index) => (
 								<div key={index} className="flex flex-col items-center">
 									<h1 className="capitalize text-primary-yellow text-lg font-semibold">

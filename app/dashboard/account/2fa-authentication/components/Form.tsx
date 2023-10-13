@@ -6,7 +6,7 @@ export default function Form() {
 	let disabled = false;
 	return (
 		<form className="space-y-6">
-			<div className="flex gap-16">
+			<div className="flex flex-col sm:flex-row gap-16">
 				<div className="w-full space-y-6">
 					<h1 className="font-semibold leading-relaxed">
 						In order to enable enhanced security measures, setup Google Two

@@ -3,15 +3,16 @@ import clsx from "clsx";
 import Image from "next/image";
 import React, { useState } from "react";
 import SuccessPopup from "./SuccessPopup";
+import PaymentDetails from "./PaymentDetails";
 
 export default function page() {
 	const payDetails = {
 		Subtotal: "$49.00",
 		"Taxes (0%)": "$0.00",
 	};
-	const [selectedPaymentMode, setSelectedPaymentMode] = useState<string | null>(
-		null
-	);
+	const [selectedPaymentMode, setSelectedPaymentMode] = useState<
+		"paypal" | "stripe" | null
+	>(null);
 	const [isSuccessOpen, setIsSuccessOpen] = useState(false);
 	const submitHandler = (e: any) => {
 		e.preventDefault();
@@ -21,9 +22,9 @@ export default function page() {
 	return (
 		<section className="mx-10">
 			<h1 className="text-white text-3xl font-semibold">Secure Checkout</h1>
-			<div className="ring-2 ring-[#343434b3] flex items-start p-10 gap-10 rounded-lg mt-10">
-				<div className="w-full bg-gradient-to-br from-[#ffffff3b] to-[#8f8f8f1e] backdrop-blur-md rounded-lg p-10">
-					<h1 className="text-2xl font-semibold text-white">
+			<div className="ring-2 ring-[#343434b3] flex flex-col xl:flex-row items-start p-10 gap-10 rounded-lg mt-10">
+				<div className="w-full bg-gradient-to-br from-[#ffffff1c] to-[#8f8f8f1e] backdrop-blur-md rounded-lg px-10 py-8">
+					<h1 className="text-xl font-bold text-white">
 						Select Payment Option
 					</h1>
 					<div className="bg-gradient-to-r from-[#FFFFFF00] via-[#ffffff71] to-[#FFFFFF00] h-0.5 w-full my-4" />
@@ -32,7 +33,7 @@ export default function page() {
 						<div
 							onClick={() => setSelectedPaymentMode("paypal")}
 							className={clsx(
-								"w-full p-6 flex justify-center items-center bg-gradient-to-br from-[#ffffff21] to-[#8F8F8F13] cursor-pointer hover:bg-[#ffffff10] transition duration-300 rounded-lg",
+								"w-full p-6 flex justify-center items-center bg-gradient-to-br from-[#ffffff15] to-[#8F8F8F13] cursor-pointer hover:bg-[#ffffff10] transition duration-300 rounded-lg",
 								selectedPaymentMode === "paypal" && "border-gradient"
 							)}>
 							<Image
@@ -60,9 +61,10 @@ export default function page() {
 							/>
 						</div>
 					</div>
+					<PaymentDetails selectedPayement={selectedPaymentMode} />
 				</div>
-				<div className="w-full bg-gradient-to-br from-[#ffffff3b] to-[#8f8f8f1e] backdrop-blur-md rounded-lg p-7">
-					<h1 className="text-xl font-semibold">
+				<div className="w-full bg-gradient-to-br from-[#ffffff15] to-[#8f8f8f1e] backdrop-blur-md rounded-lg p-7">
+					<h1 className="text-xl font-bold">
 						Plan Name: Standard{" "}
 						<span className="text-primary-yellow">(Monthly Plan)</span>
 					</h1>
@@ -90,7 +92,7 @@ export default function page() {
 					</div>
 					<div className="flex justify-between gap-5 w-full text-right mt-10">
 						<h4 className="capitalize text-lg">Total Payment</h4>
-						<p className="capitalize text-xl font-semibold text-primary-yellow">
+						<p className="capitalize text-xl font-bold text-primary-yellow">
 							$49.00USD
 						</p>
 					</div>
