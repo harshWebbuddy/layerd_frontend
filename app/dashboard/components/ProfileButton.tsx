@@ -28,7 +28,7 @@ export default function ProfileButton({}: Props) {
 				onClick={() => {
 					isPopupOpen ? setIsPopupOpen(false) : setIsPopupOpen(true);
 				}}
-				className="flex items-center gap-2 hover:bg-[#30343a]/60 py-1.5 px-2 cursor-pointer rounded-full transition duration-300">
+				className="flex items-center gap-1 sm:gap-2 hover:bg-[#30343a]/60 py-1 sm:py-1.5 px-1 sm:px-2 cursor-pointer rounded-full transition duration-300">
 				<div className="relative">
 					<div className="bg-[#7367F0] rounded-full overflow-hidden">
 						<Image

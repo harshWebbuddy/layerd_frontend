@@ -20,20 +20,20 @@ export default function page() {
 		return setIsSuccessOpen(true);
 	};
 	return (
-		<section className="mx-10">
+		<section className="mx-2 sm:mx-10 text-sm">
 			<h1 className="text-white text-3xl font-semibold">Secure Checkout</h1>
-			<div className="ring-2 ring-[#343434b3] flex flex-col xl:flex-row items-start p-10 gap-10 rounded-lg mt-10">
-				<div className="w-full bg-gradient-to-br from-[#ffffff1c] to-[#8f8f8f1e] backdrop-blur-md rounded-lg px-10 py-8">
+			<div className="ring-2 ring-[#343434b3] flex flex-col xl:flex-row items-start p-3 sm:p-10 gap-5 sm:gap-10 rounded-lg mt-10">
+				<div className="w-full bg-gradient-to-br from-[#ffffff1c] to-[#8f8f8f1e] backdrop-blur-md rounded-lg px-4 sm:px-10 py-8">
 					<h1 className="text-xl font-bold text-white">
 						Select Payment Option
 					</h1>
 					<div className="bg-gradient-to-r from-[#FFFFFF00] via-[#ffffff71] to-[#FFFFFF00] h-0.5 w-full my-4" />
 
-					<div className="flex gap-10 mt-6">
+					<div className="flex flex-col min-[400px]:flex-row gap-3 sm:gap-10 mt-6">
 						<div
 							onClick={() => setSelectedPaymentMode("paypal")}
 							className={clsx(
-								"w-full p-6 flex justify-center items-center bg-gradient-to-br from-[#ffffff15] to-[#8F8F8F13] cursor-pointer hover:bg-[#ffffff10] transition duration-300 rounded-lg",
+								"w-full p-4 sm:p-6 flex justify-center items-center bg-gradient-to-br from-[#ffffff15] to-[#8F8F8F13] cursor-pointer hover:bg-[#ffffff10] transition duration-300 rounded-lg",
 								selectedPaymentMode === "paypal" && "border-gradient"
 							)}>
 							<Image
@@ -42,13 +42,13 @@ export default function page() {
 								width={100}
 								height={30}
 								draggable={false}
-								className="w-32"
+								className="w-28 sm:w-32"
 							/>
 						</div>
 						<div
 							onClick={() => setSelectedPaymentMode("stripe")}
 							className={clsx(
-								"w-full p-6 flex justify-center items-center bg-gradient-to-br from-[#ffffff21] to-[#8f8f8f13] cursor-pointer hover:bg-[#ffffff10] transition duration-300 rounded-lg",
+								"w-full p-4 sm:p-6 flex justify-center items-center bg-gradient-to-br from-[#ffffff21] to-[#8f8f8f13] cursor-pointer hover:bg-[#ffffff10] transition duration-300 rounded-lg",
 								selectedPaymentMode === "stripe" && "border-gradient"
 							)}>
 							<Image
@@ -57,31 +57,31 @@ export default function page() {
 								width={100}
 								height={30}
 								draggable={false}
-								className="w-20"
+								className="w-16 sm:w-20"
 							/>
 						</div>
 					</div>
 					<PaymentDetails selectedPayement={selectedPaymentMode} />
 				</div>
-				<div className="w-full bg-gradient-to-br from-[#ffffff15] to-[#8f8f8f1e] backdrop-blur-md rounded-lg p-7">
+				<div className="w-full bg-gradient-to-br from-[#ffffff15] to-[#8f8f8f1e] backdrop-blur-md rounded-lg px-4 py-7 sm:p-7">
 					<h1 className="text-xl font-bold">
 						Plan Name: Standard{" "}
 						<span className="text-primary-yellow">(Monthly Plan)</span>
 					</h1>
 					<div className="flex items-center gap-7 mt-4">
-						<div className="w-full bg-white/50 h-[2px]" />
+						<div className="w-full hidden min-[420px]:block bg-white/50 h-[2px]" />
 						<p className="text-lg whitespace-nowrap capitalize">
 							Purchase Summary
 						</p>
-						<div className="w-full bg-white/50 h-[2px]" />
+						<div className="w-full hidden min-[420px]:block bg-white/50 h-[2px]" />
 					</div>
 					<div className="mt-6 flex flex-col gap-6">
 						{Object.entries(payDetails).map(([key, value]) => (
 							<div
 								className="flex justify-between gap-5 w-full text-right"
 								key={key}>
-								<h4 className="capitalize text-lg">{key}</h4>
-								<p className="capitalize text-lg">{value}</p>
+								<h4 className="capitalize sm:text-lg">{key}</h4>
+								<p className="capitalize sm:text-lg">{value}</p>
 							</div>
 						))}
 					</div>

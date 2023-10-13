@@ -52,8 +52,8 @@ export default function layout({ children }: { children: ReactNode }) {
 	return (
 		<section className="mx-3 sm:mx-10">
 			<h1 className="text-white text-3xl font-semibold">My Account</h1>
-			<div className="flex flex-col md:flex-row items-start gap-10 mt-6">
-				<div className="w-full sm:max-w-md flex flex-col gap-4">
+			<div className="flex flex-col xl:flex-row items-start gap-10 mt-6">
+				<div className="w-full xl:max-w-md flex flex-col gap-4">
 					<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-2 sm:p-6">
 						<div className="flex flex-col gap-2 items-center">
 							<div className="bg-[#7367F0] rounded-full overflow-hidden">

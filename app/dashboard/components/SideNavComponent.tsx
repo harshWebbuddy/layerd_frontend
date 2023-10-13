@@ -49,7 +49,7 @@ export default function SideNavItem() {
 									className="w-6"
 								/>
 							</div>
-							<p>{item.title}</p>
+							<p className="whitespace-nowrap">{item.title}</p>
 						</div>
 						{item.items?.length && (
 							<div
