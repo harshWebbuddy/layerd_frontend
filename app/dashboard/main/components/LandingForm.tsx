@@ -18,7 +18,7 @@ export default function LandingForm() {
 					/>
 					<div
 						onClick={() => setVoiceSearch(true)}
-						className="hover:bg-[#49566b]/60 cursor-pointer grid place-content-center m-1.5 p-1.5 rounded-full transition duration-300">
+						className="cursor-pointer grid place-content-center m-3">
 						<Image
 							src="/svgs/microphone.svg"
 							alt="logo"

@@ -4,7 +4,7 @@ import { defaultDisplay } from "../../components/constants";
 
 export default function page() {
 	return (
-		<section className="grid place-content-center">
+		<section className="grid place-content-center p-2">
 			<div className="flex flex-col items-center">
 				<Image
 					src="/main/ChatGPT 1.svg"
@@ -15,7 +15,7 @@ export default function page() {
 					className="w-28"
 				/>
 				<h1 className="text-3xl font-semibold mt-10">Welcome to ChatGPT</h1>
-				<div className="grid grid-cols-3 gap-16 mt-16">
+				<div className="grid grid-cols-1 md:grid-cols-3  gap-6 2xl:gap-16 mt-16">
 					{defaultDisplay.map((item, index) => (
 						<div key={index} className="space-y-6 flex flex-col items-center">
 							<Image
@@ -30,7 +30,7 @@ export default function page() {
 								{item.lists.map((itemList, index) => (
 									<div
 										key={index}
-										className="bg-[#323232]/60 hover:bg-[#323232] py-3 px-4 ring-2 ring-[#514E4E]/70 cursor-pointer rounded-lg max-w-xs min-h-[80px]">
+										className="bg-[#323232]/60 hover:bg-[#323232] py-3 px-4 ring-2 ring-[#514E4E]/70 cursor-pointer rounded-lg md:max-w-xs min-h-[80px]">
 										{itemList}
 									</div>
 								))}

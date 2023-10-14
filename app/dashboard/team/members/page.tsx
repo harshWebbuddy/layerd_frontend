@@ -45,7 +45,7 @@ export default function page() {
 	return (
 		<section className="p-2 sm:p-10 space-y-4 sm:space-y-10">
 			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-4 sm:p-10">
-				<div className="flex flex-col sm:flex-row gap-10 items-center">
+				<div className="flex flex-col xl:flex-row gap-10 xlitems-center">
 					<div className="w-full max-w-sm rounded-lg p-10 space-y-4 text-center bg-gradient-to-br from-white/10 to-[#8f8f8f10]">
 						<h1 className="text-white">
 							<span className="text-primary-yellow font-bold text-5xl">0</span>
@@ -86,18 +86,20 @@ export default function page() {
 					</div>
 				</div>
 			</div>
-			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-10">
-				<div className="flex justify-between">
-					<h1 className="text-primary-yellow capitalize text-xl">
-						Edit Profile
+			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-4 sm:p-10">
+				<div className="flex flex-col sm:flex-row justify-between">
+					<h1 className="text-primary-yellow capitalize text-xl font-bold">
+						My Team Members
 					</h1>
 					<SearchFilter />
 				</div>
 				<div className="bg-gradient-to-r from-transparent via-[#ffffff62] to-transparent h-[2px] w-full my-4" />
-				<div>
+				<div className="overflow-x-auto">
 					<div className="flex w-full justify-between">
 						{memberTabs.map((tab, index) => (
-							<div className="flex gap-2 cursor-pointer" key={index}>
+							<div
+								className="flex gap-2 cursor-pointer min-w-[200px]"
+								key={index}>
 								<p className="text-primary-yellow font-semibold text-lg capitalize">
 									{tab}
 								</p>
@@ -122,7 +124,21 @@ export default function page() {
 				</div>
 				<Pagination />
 			</div>
-			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-4 sm:p-10">
+			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-3 sm:p-6 space-y-5 mt-6">
+				<div className="flex items-start gap-x-2">
+					<Image
+						src={"/main/image-colored.svg"}
+						alt="Stat-image"
+						width={25}
+						height={25}
+					/>
+					<h1 className="text-lg sm:text-xl font-semibold ">
+						<span className="text-primary-yellow">
+							Words & Images Generated
+						</span>
+						<span className="text-white/80"> (Current Year)</span>
+					</h1>
+				</div>
 				<Chart />
 			</div>
 		</section>

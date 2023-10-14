@@ -9,7 +9,7 @@ export default function Menu() {
 	const { isExpanded, setIsExpanded } = useSidebar();
   
 	return (
-		<button onClick={() => setIsExpanded((prev) => !prev)}>
+		<button onClick={() => setIsExpanded((prev) => !prev)} className="block sm:hidden">
 			<Image
 				src="/main/menu.svg"
 				alt="menu"

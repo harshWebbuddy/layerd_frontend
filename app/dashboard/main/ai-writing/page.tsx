@@ -1,10 +1,11 @@
 import React from "react";
 import { writingTabs } from "../components/constants/writingTabs";
 import Image from "next/image";
+import { templates } from "./constants/Templates";
 
 export default function page() {
 	return (
-		<section className="bg-[url('/main/background-image-writing.png')] bg-cover bg-center absolute inset-0 w-full h-full pt-32 px-7">
+		<section className="bg-[url('/main/background-image-writing.png')] bg-cover bg-center absolute inset-0 w-full h-full pt-32 px-7 text-sm">
 			<h1 className="text-primary-yellow text-3xl font-semibold leading-loose">
 				Templates
 			</h1>
@@ -13,8 +14,10 @@ export default function page() {
 				fantastic lineup of templates
 			</p>
 			<div className="flex gap-x-4 gap-y-3 flex-wrap mt-4">
-				{writingTabs.map((tab) => (
-					<div className="flex gap-3 bg-[#2F3133]/90 py-1.5 px-4 rounded-full ring-1 ring-[#2F3133] hover:bg-[#393b3d]/90 transition duration-300 cursor-pointer">
+				{writingTabs.map((tab, index) => (
+					<div
+						key={index}
+						className="flex gap-3 bg-[#2F3133]/90 py-1.5 px-4 rounded-full ring-1 ring-[#2F3133] hover:bg-[#393b3d]/90 transition duration-300 cursor-pointer">
 						{tab.icon && (
 							<Image
 								src={tab.icon}
@@ -28,6 +31,7 @@ export default function page() {
 					</div>
 				))}
 			</div>
+
 			<form>
 				<div className="bg-[#323232]/70 ring-1 ring-[#514E4E] h-12 rounded-lg flex items-center gap-2 p-0.5 border-bottom-gradient mt-10">
 					<div className="cursor-pointer grid place-content-center h-full mx-2 my-0.5 p-1.5 rounded-md transition duration-300">
@@ -46,6 +50,23 @@ export default function page() {
 					/>
 				</div>
 			</form>
+			<div className="grid grid-cols-5 gap-4 p-2">
+				{templates.map((template, index) => (
+					<div
+						className="bg-[url('/rectangle-background-h-center.png')] bg-cover bg-center bg-no-repeat p-5"
+						key={index}>
+						<Image
+							src={template.icon}
+							alt="logo"
+							width={40}
+							height={40}
+							draggable={false}
+						/>
+						<h1>{template.title}</h1>
+						<p>{template.description}</p>
+					</div>
+				))}
+			</div>
 		</section>
 	);
 }

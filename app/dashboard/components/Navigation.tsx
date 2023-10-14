@@ -21,7 +21,7 @@ export default function Navigation() {
 							alt="Moon starts"
 							height={25}
 							width={25}
-							className="w-6 sm:w-10"
+							className="w-6"
 							draggable={false}
 						/>
 					</div>
@@ -31,7 +31,7 @@ export default function Navigation() {
 							alt="Moon starts"
 							height={25}
 							width={25}
-							className="w-6 sm:w-10"
+							className="w-6"
 							draggable={false}
 						/>
 						<div className="absolute -top-2 -right-2 bg-[#EA5455] w-5 h-5 rounded-full grid place-content-center text-xs">
