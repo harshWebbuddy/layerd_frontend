@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import SideNavItem from "./SideNavComponent";
+import SideNavItem from "./SideNavItem";
 import clsx from "clsx";
 
 export default function Sidebar() {

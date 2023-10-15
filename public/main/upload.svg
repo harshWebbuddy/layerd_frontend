@@ -1,0 +1,16 @@
+<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="upload">
+<g id="Path">
+<path d="M4 17.5762V19.5762C4 20.6807 4.89543 21.5762 6 21.5762H18C19.1046 21.5762 20 20.6807 20 19.5762V17.5762" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M4 17.5762V19.5762C4 20.6807 4.89543 21.5762 6 21.5762H18C19.1046 21.5762 20 20.6807 20 19.5762V17.5762" stroke="white" stroke-opacity="0.2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Path_2">
+<path d="M7 9.57617L12 4.57617L17 9.57617" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7 9.57617L12 4.57617L17 9.57617" stroke="white" stroke-opacity="0.2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Path_3">
+<path d="M12 4.57617V16.5762" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 4.57617V16.5762" stroke="white" stroke-opacity="0.2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>

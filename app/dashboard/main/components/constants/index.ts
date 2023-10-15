@@ -74,34 +74,24 @@ export const navObjects = [
 		title: "AI Image",
 		items: [
 			{
-				title: "Chat GPT4",
+				title: "Dalle - 2 ",
 				link: "/",
-				icon: "/main/chagpt4-ai.png",
+				icon: "/main/dalle-2.png",
 			},
 			{
-				title: "Chat GPT3.5",
+				title: "Stable Diffusion",
 				link: "/",
-				icon: "/main/chagpt3.5-ai.png",
+				icon: "/main/stable-diffusion.png",
 			},
 			{
 				title: "Google Bard",
 				link: "/",
-				icon: "/main/googlebard-ai.svg",
+				icon: "/main/midjourney.png",
 			},
 			{
-				title: "Anthopic’s Claude 2.0",
+				title: "Create Avatar",
 				link: "/",
-				icon: "/main/anthopic-ai.svg",
-			},
-			{
-				title: "Duck Duck Go",
-				link: "/",
-				icon: "/main/duckduckgo.svg",
-			},
-			{
-				title: "Bing Chat",
-				link: "",
-				icon: "/main/bing-chat.svg",
+				icon: "/main/create-avatar.png",
 			},
 		],
 	},
@@ -113,18 +103,75 @@ export const navObjects = [
 	{
 		icon: "/main/ai-voice.gif",
 		title: "AI Voice",
+		items: [
+			{
+				title: "Speech To Text ",
+				link: "/",
+				icon: "/main/speech-text.png",
+			},
+			{
+				title: "Text To Speech",
+				link: "/",
+				icon: "/main/text-speech.png",
+			},
+		],
 	},
 	{
 		icon: "/main/ai-code.gif",
 		title: "AI Code",
+		items: [
+			{
+				title: "Code Writing",
+				link: "/dashboard/main/ai-code/code-writing",
+				icon: "/main/code-writing.png",
+			},
+			{
+				title: "Code Converter",
+				link: "/dashboard/main/ai-code/code-converter",
+				icon: "/main/code-converter.png",
+			},
+			{
+				title: "Code Guru",
+				link: "/dashboard/main/ai-code/code-guru",
+				icon: "/main/code-guru.png",
+			},
+		],
 	},
 	{
 		icon: "/main/ai-person.gif",
 		title: "Personalized AI",
+		items: [
+			{
+				title: "Interior AI",
+				link: "/dashboard/main/personalized/interior-ai",
+				icon: "/main/interior-ai.png",
+			},
+			{
+				title: "Movie AI",
+				link: "/dashboard/main/personalized/movie-ai",
+				icon: "/main/movie-ai.png",
+			},
+			{
+				title: "Age AI",
+				link: "/dashboard/main/personalized/age-ai",
+				icon: "/main/age-ai.png",
+			},
+			{
+				title: "Weather GPT",
+				link: "/dashboard/main/personalized/weather-gpt",
+				icon: "/main/weather-gpt.png",
+			},
+			{
+				title: "Interview AI",
+				link: "/dashboard/main/personalized/interview-ai",
+				icon: "/main/interview-ai.png",
+			},
+		],
 	},
 	{
 		icon: "/main/add-list.gif",
 		title: "Create Your Own GPT",
+		link : '/dashboard/main/create-your-own'
 	},
 	{
 		icon: "/main/ai-tools.gif",
@@ -202,5 +249,5 @@ export const dummyChatHistory = [
 	"UI and UX difference",
 	"User Persona Defination",
 	"UI and UX difference",
-	"User Persona Defination"
-]
+	"User Persona Defination",
+];

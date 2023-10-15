@@ -5,7 +5,7 @@ import Menu from "./Menu";
 
 export default function Navigation() {
 	return (
-		<nav className="m-2 sm:m-5 p-1 sm:p-3">
+		<nav className="m-2 sm:m-5 p-1 sm:p-3 z-10">
 			<div className="flex items-center justify-between">
 				<div>
 					<Menu />
