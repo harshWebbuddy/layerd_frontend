@@ -75,22 +75,22 @@ export const navObjects = [
 		items: [
 			{
 				title: "Dalle - 2 ",
-				link: "/",
+				link: "#",
 				icon: "/main/dalle-2.png",
 			},
 			{
 				title: "Stable Diffusion",
-				link: "/",
+				link: "#",
 				icon: "/main/stable-diffusion.png",
 			},
 			{
 				title: "Google Bard",
-				link: "/",
+				link: "#",
 				icon: "/main/midjourney.png",
 			},
 			{
 				title: "Create Avatar",
-				link: "/",
+				link: "#",
 				icon: "/main/create-avatar.png",
 			},
 		],
@@ -106,12 +106,12 @@ export const navObjects = [
 		items: [
 			{
 				title: "Speech To Text ",
-				link: "/",
+				link: "#",
 				icon: "/main/speech-text.png",
 			},
 			{
 				title: "Text To Speech",
-				link: "/",
+				link: "#",
 				icon: "/main/text-speech.png",
 			},
 		],
