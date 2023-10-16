@@ -156,7 +156,7 @@ export default function SideNavItem() {
 			<div className="!mt-10 space-y-4">
 				<h1 className="text-sm uppercase pl-2">History</h1>
 				<Link
-					href={"/dashboard/main/documents"}
+					href={"/dashboard/documents/all"}
 					className="flex justify-between gap-3 hover:bg-[#323232] hover:ring-2 ring-[#514E4E] rounded-lg cursor-pointer pl-2 pr-4 items-center transition duration-200 h-[48px]">
 					<div className="flex items-center gap-1">
 						<div className={`p-1.5 transition duration-300`}>
