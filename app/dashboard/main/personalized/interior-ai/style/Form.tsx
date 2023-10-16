@@ -62,7 +62,7 @@ export default function Form() {
     }
   ]
 	return (
-		<div className="w-full flex items-center gap-2">
+		<div className="w-full flex items-center gap-2 !mt-20">
 			<div className="space-y-3 w-full">
 				<label
 					htmlFor="style"

@@ -10,6 +10,7 @@ export default function PageTransitionLayout({
 
 	return (
 		<motion.main
+			className="h-full"
 			key={pathname}
 			initial="initialState"
 			animate="animateState"
@@ -28,8 +29,7 @@ export default function PageTransitionLayout({
 					opacity: 0,
 				},
 			}}>
-			<div className="h-full" />
-			{children}
+			<div className="h-full">{children}</div>
 		</motion.main>
 	);
 }

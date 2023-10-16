@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import DropZone from "../../components/DropZone";
+import NavigationButton from "@/app/dashboard/components/NavigationButton";
 
 export default function page() {
 	return (
@@ -64,7 +65,7 @@ export default function page() {
 					and you get your own private workspace.
 				</p>
 				<div className="flex justify-center">
-					<button className="font-bold flex items-center justify-between gap-3 bg-[#3d3d3d] hover:bg-[#3d3d3d] p-4 w-[250px] rounded-lg self-end">
+					<NavigationButton link="/dashboard/main/personalized/interior-ai/room-type" styleClass="font-bold flex items-center justify-between gap-3 bg-[#3d3d3d] hover:bg-[#3d3d3d] p-3 w-[250px] rounded-lg self-end">
 						<span>Next</span>
 						<Image
 							src="/arrow-right.svg"
@@ -72,12 +73,8 @@ export default function page() {
 							width={20}
 							height={20}
 						/>
-					</button>
+					</NavigationButton>
 				</div>
-			</div>
-			<div className="fixed bottom-0">
-				<div className="w-[600px] h-[138px] bg-[#FFB076] blur-[250px] absolute bottom-[-100px] left-[-200px]" />
-				<h1 className="text-[#0b0e1721] relative select-none text-9xl font-[800] m-4 uppercase">Interior</h1>
 			</div>
 		</section>
 	);
