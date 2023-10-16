@@ -1,6 +1,9 @@
+"use client"
+
 import Image from "next/image";
 import clsx from "clsx";
 import { Feature } from "@/types";
+import { useRouter } from "next/navigation";
 interface Props {
 	name: string;
 	price: number;
@@ -11,6 +14,7 @@ interface Props {
 	accentColor: string;
 	isCurrent: boolean;
 	buttonTitle: string;
+	isPayment ?: boolean;
 }
 const PackageCard: React.FC<Props> = ({
 	name,
@@ -23,6 +27,10 @@ const PackageCard: React.FC<Props> = ({
 	buttonTitle,
 	isCurrent,
 }) => {
+	const router = useRouter()
+ 	const handleNavigate = () => {
+		router.push(`/dashboard/subscription/buy`)
+	}
 	return (
 		<div
 			className={`p-1 bg-gradient-to-b ${gradient} relative rounded-2xl md:max-w-[430px] min-h-[560px] sm:min-h-max`}>
@@ -78,6 +86,7 @@ const PackageCard: React.FC<Props> = ({
 					</div>
 				</div>
 				<button
+					onClick={handleNavigate}
 					disabled={isCurrent}
 					className={clsx(
 						"capitalize mt-6 font-semibold w-full py-3  rounded-xl hover:bg-primary-red/[0.05] transition duration-300  text-red-600",

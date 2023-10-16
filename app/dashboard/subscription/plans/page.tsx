@@ -10,7 +10,7 @@ export default function page() {
 			<div className="mt-10">
 				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 xl:gap-10">
 					{packageData.map((data, index) => (
-						<PackageCard key={index} {...data} />
+						<PackageCard key={index} {...data} isPayment={true}/>
 					))}
 				</div>
 				<p className="mt-10 opacity-80">

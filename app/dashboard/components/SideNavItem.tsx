@@ -56,7 +56,7 @@ export default function SideNavItem() {
 						{item.items?.length && (
 							<div
 								className={`rotate-180 transition duration-300 ${
-									isOpen && activeLink === item.title && "rotate-0"
+									activeLink?.toLowerCase() === item.title.toLowerCase() && "rotate-0"
 								}`}>
 								<Image
 									src="/main/arrow-up.svg"
