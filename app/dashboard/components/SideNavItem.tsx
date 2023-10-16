@@ -76,16 +76,7 @@ export default function SideNavItem() {
 								onClick={(e) => e.stopPropagation()}>
 								{item.items?.map((item, index) => (
 									<div className="relative">
-										<div
-											className={`flex items-end `}
-											style={{
-												transform:
-													index > 1
-														? `translateY(-${10 + index * 8}px)`
-														: index === 1
-														? "translateY(-14px)"
-														: "translateY(0)",
-											}}>
+										<div className={`flex items-end `}>
 											<Image
 												src={`${
 													pathname.includes(item.link)
@@ -96,27 +87,46 @@ export default function SideNavItem() {
 														? "/main/inactive-bar.svg"
 														: "/main/inactive-bar-init.svg"
 												}`}
+												style={{
+													transform:
+														index > 1
+															? `translateY(-${10 + index * 8}px)`
+															: index === 1
+															? "translateY(-14px)"
+															: "translateY(0)",
+												}}
 												alt="Icon"
 												width={20}
 												height={50}
 												draggable={false}
 											/>
-											<Link
-												href={item.link}
-												key={index}
-												className="cursor-pointer w-full">
-												<div className="w-full flex justify-between items-center pr-4 translate-y-3">
-													<p>{item.title}</p>
-													<Image
-														src={item.icon}
-														alt="Icon"
-														width={200}
-														height={100}
-														draggable={false}
-														className="w-7"
-													/>
-												</div>
-											</Link>
+											<div
+												className="w-full"
+												style={{
+													transform:
+														index > 1
+															? `translateY(-${index * 8}px)`
+															: index === 1
+															? "translateY(-2px)"
+															: "translateY(10px)",
+												}}>
+												<Link
+													href={item.link}
+													key={index}
+													className="cursor-pointer w-full">
+													<div className="w-full flex justify-between items-center pr-4">
+														<p>{item.title}</p>
+														<Image
+															src={item.icon}
+															alt="Icon"
+															width={200}
+															height={100}
+															draggable={false}
+															className="w-7"
+														/>
+													</div>
+												</Link>
+											</div>
 										</div>
 									</div>
 								))}
