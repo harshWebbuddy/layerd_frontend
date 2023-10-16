@@ -6,12 +6,13 @@ import { Collapse } from "react-collapse";
 import { navObjects } from "../main/components/constants";
 import clsx from "clsx";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function SideNavItem() {
 	const [activeLink, setActiveLink] = useState<string | null>(null);
 	const [isOpen, setIsOpen] = useState(false);
 	const router = useRouter();
+	const pathname = usePathname();
 	return (
 		<div className="space-y-3 mt-10 text-sm">
 			{navObjects.map((item, index) => (
@@ -71,23 +72,53 @@ export default function SideNavItem() {
 					{item.items?.length && (
 						<Collapse isOpened={item.title === activeLink && isOpen}>
 							<div
-								className="ml-10 mt-4 mb-10 flex flex-col gap-6"
+								className="ml-3 flex flex-col"
 								onClick={(e) => e.stopPropagation()}>
 								{item.items?.map((item, index) => (
-									<Link
-										href={item.link}
-										key={index}
-										className="flex justify-between pr-4 cursor-pointer">
-										<p>{item.title}</p>
-										<Image
-											src={item.icon}
-											alt="Icon"
-											width={200}
-											height={100}
-											draggable={false}
-											className="w-7"
-										/>
-									</Link>
+									<div className="relative">
+										<div
+											className={`flex items-end `}
+											style={{
+												transform:
+													index > 1
+														? `translateY(-${10 + index * 8}px)`
+														: index === 1
+														? "translateY(-14px)"
+														: "translateY(0)",
+											}}>
+											<Image
+												src={`${
+													pathname.includes(item.link)
+														? index !== 0
+															? "/main/active-bar.svg"
+															: "/main/active-bar-init.svg"
+														: index !== 0
+														? "/main/inactive-bar.svg"
+														: "/main/inactive-bar-init.svg"
+												}`}
+												alt="Icon"
+												width={20}
+												height={50}
+												draggable={false}
+											/>
+											<Link
+												href={item.link}
+												key={index}
+												className="cursor-pointer w-full">
+												<div className="w-full flex justify-between items-center pr-4 translate-y-3">
+													<p>{item.title}</p>
+													<Image
+														src={item.icon}
+														alt="Icon"
+														width={200}
+														height={100}
+														draggable={false}
+														className="w-7"
+													/>
+												</div>
+											</Link>
+										</div>
+									</div>
 								))}
 							</div>
 						</Collapse>

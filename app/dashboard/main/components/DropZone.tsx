@@ -21,7 +21,7 @@ export default function Dropzone({ isInterior }: Props) {
 	return (
 		<div
 			{...getRootProps()}
-			className="bg-[url('/background-image-uploads.png')] bg-no-repeat bg-cover  border-[2px] rounded-3xl border-white/70 border-dashed w-full flex justify-center items-center h-[396px]">
+			className="bg-[url('/background-image-uploads.png')] bg-no-repeat bg-cover  border-[2px] rounded-3xl border-white/70 border-dashed w-full flex justify-center items-center h-[396px] cursor-pointer">
 			<input {...getInputProps()} accept="images/*" />
 			{isDragActive ? (
 				<p className="text-lg">Drop the files here ...</p>

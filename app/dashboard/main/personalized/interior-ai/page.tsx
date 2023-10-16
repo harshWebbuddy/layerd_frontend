@@ -4,7 +4,7 @@ import DropZone from "../../components/DropZone";
 
 export default function page() {
 	return (
-		<section className="relative h-full">
+		<section className="relative">
 			<div className="w-full max-w-5xl mx-auto h-full flex flex-col items-center space-y-10 mt-10">
 				<div className="flex gap-4">
 					<div className="flex gap-4">
