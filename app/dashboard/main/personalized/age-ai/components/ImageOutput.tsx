@@ -13,11 +13,11 @@ export default function ImageOutput() {
 				alt="output image"
 				height={720}
 				width={660}
-				className="rounded-xl w-[650px] h-[600px] relative z-10"
+				className="rounded-xl w-[650px] h-[600px] relative z-[1] object-cover"
 			/>
 			<button
 				onClick={() => setViewOriginal((prev) => !prev)}
-				className="py-2 px-4 rounded-md bg-primary-red text-white absolute top-4 right-4 object-cover z-20">
+				className="py-2 px-4 rounded-md bg-primary-red text-white absolute top-4 right-4  z-[2]">
 				{viewOriginal ? "View Result" : "View Original"}
 			</button>
 			<div className="w-[200px] h-[238px] bg-[#FFB076] blur-[150px] absolute bottom-0 right-20 z-0" />

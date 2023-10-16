@@ -23,7 +23,7 @@ export default function ProfileButton({}: Props) {
 		};
 	});
 	return (
-		<div className="relative" ref={popupRef}>
+		<div className="relative z-[99999]" ref={popupRef}>
 			<div
 				onClick={() => {
 					isPopupOpen ? setIsPopupOpen(false) : setIsPopupOpen(true);
@@ -59,7 +59,9 @@ export default function ProfileButton({}: Props) {
 					/>
 				</div>
 			</div>
-			{isPopupOpen && <ProfilePopup onClose={() => setIsPopupOpen(false)} />}
+			<div className="relative">
+				{isPopupOpen && <ProfilePopup onClose={() => setIsPopupOpen(false)} />}
+			</div>
 		</div>
 	);
 }
