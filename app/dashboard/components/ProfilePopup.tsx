@@ -36,7 +36,7 @@ export default function ProfilePopup({ onClose }: Props) {
 		},
 	];
 	return (
-		<div className="absolute right-0 mt-4">
+		<div className="absolute right-0 mt-4 z-50">
 			<div className="w-[300px] border-gradient z-[2] bg-[#1616163a] backdrop-blur-3xl rounded-lg">
 				<div className="bg-gradient-to-br from-[#ffffff31] to-[#8f8f8f05] z-10 p-3 pt-6 relative rounded-lg">
 					<div className="text-center">
