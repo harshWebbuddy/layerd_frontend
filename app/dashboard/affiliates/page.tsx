@@ -83,7 +83,7 @@ export default function page() {
 			</div>
 			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-3 py-7 sm:p-7 space-y-10">
 				<h1 className="text-2xl font-semibold">Affiliate Program</h1>
-				<div className="flex flex-wrap gap-6">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 					<div className="bg-gradient-to-br from-[#ffffff10] to-[#8f8f8f02] backdrop-blur-md rounded-lg p-6 space-y-4 flex flex-col items-center w-full">
 						<Image
 							src="/main/send-mail.svg"

@@ -171,11 +171,47 @@ export const navObjects = [
 	{
 		icon: "/main/add-list.gif",
 		title: "Create Your Own GPT",
-		link : '/dashboard/main/create-your-own'
+		link: "/dashboard/main/create-your-own",
 	},
 	{
 		icon: "/main/ai-tools.gif",
 		title: "AI tools",
+	},
+	{
+		icon: "/main/ai-person.gif",
+		title: "Documents",
+		items: [
+			{
+				title: "All Documents",
+				link: "/dashboard/documents/all",
+				icon: "/main/documents-blue.png",
+			},
+			{
+				title: "All Images",
+				link: "/dashboard/documents/images",
+				icon: "/main/images-docs.png",
+			},
+			{
+				title: "All Voiceovers",
+				link: "/dashboard/documents/voice-overs",
+				icon: "/main/voiceovers-docs.png",
+			},
+			{
+				title: "All Transcripts",
+				link: "/dashboard/documents/transcripts",
+				icon: "/main/voice-docs.png",
+			},
+			{
+				title: "Workbooks",
+				link: "/dashboard/documents/work-books",
+				icon: "/main/code-docs.png",
+			},
+			{
+				title: "All Codes",
+				link: "/dashboard/documents/codes",
+				icon: "/main/interior-ai.png",
+			},
+		],
 	},
 ];
 

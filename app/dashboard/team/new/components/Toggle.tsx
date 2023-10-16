@@ -1,6 +1,6 @@
 "use client";
 import { Switch } from "@headlessui/react";
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 interface Props {
 	label: string;
 	defaultEnabled?: boolean;
@@ -8,9 +8,13 @@ interface Props {
 export default function ToggleButton({ label , defaultEnabled}: Props) {
 	const [enabled, setEnabled] = useState(false);
 
+	useEffect(() => {
+		setEnabled(defaultEnabled!)
+	}, [])
+
 	return (
 		<div className="flex gap-2">
-			<Switch checked={defaultEnabled} onChange={setEnabled} as={Fragment}>
+			<Switch checked={enabled} onChange={setEnabled} as={Fragment}>
 				{({ checked }) => (
 					<button
 						className={`${

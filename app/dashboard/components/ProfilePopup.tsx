@@ -30,7 +30,7 @@ export default function ProfilePopup({ onClose }: Props) {
 			title: "Team Members",
 		},
 		{
-			link: "/dashboard/affiliate-program",
+			link: "/dashboard/affiliates",
 			image: "/main/file-dollar.svg",
 			title: "Affiliate program",
 		},
