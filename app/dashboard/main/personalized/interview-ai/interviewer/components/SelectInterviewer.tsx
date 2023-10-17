@@ -34,16 +34,16 @@ export default function SelectInterviewer() {
 					</div>
 					<div className="flex flex-col items-center space-y-1">
 						<Image
-							src="/main/ai/difficulty-easy.svg"
+							src="/main/ai/us-en.png"
 							alt="easy"
-							width={30}
-							height={30}
+							width={35}
+							height={27}
 						/>
 						<p
 							className={`text-sm ${
 								selectedInterviewer == person.name && "text-primary-yellow"
 							} `}>
-							Easy
+							EN
 						</p>
 					</div>
 				</div>
