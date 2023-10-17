@@ -4,7 +4,6 @@ export const templates = [
 		title: "Ask Whopme AI Anything",
 		description:
 			"Ask to create anything your heart desires if a template does not meet your needs",
-		isPremium: true,
 	},
 	{
 		icon: "/main/templates/aida.png",
@@ -64,7 +63,6 @@ export const templates = [
 		title: "Fun Marketing Ideas",
 		description:
 			"Generate fun marketing ideas that may or may not drive the results you're looking for.",
-		isPremium: true,
 	},
 	{
 		icon: "/main/templates/sentence-expander.png",
@@ -104,7 +102,6 @@ export const templates = [
 		title: "Mission Statement Generator",
 		description:
 			"Create a clear and compelling mission statement that employees and customers.",
-		isPremium: true,
 	},
 	{
 		icon: "/main/templates/pas-framework.png",
@@ -166,14 +163,12 @@ export const templates = [
 		title: "Write a Review",
 		description:
 			"Write a review about anything like books, movies, food, and more!",
-		isPremium: true,
 	},
 	{
 		icon: "/main/templates/review-responder.png",
 		title: "Review Responder",
 		description:
 			"Generate responses to reviews about your business, product, or service that are professional and friendly, ensuring customer satisfaction is always great.",
-		isPremium: true,
 	},
 	{
 		icon: "/main/templates/job-description.png",
@@ -235,7 +230,6 @@ export const templates = [
 		title: "Simplify Your Text",
 		description:
 			"Simplify complex ideas into something easily understandable by a broad audience",
-		isPremium: true,
 	},
 	{
 		icon: "/main/templates/ebook-outline-generator.png",

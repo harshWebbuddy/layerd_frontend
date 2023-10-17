@@ -2,6 +2,7 @@ import React from "react";
 import { writingTabs } from "../components/constants/writingTabs";
 import Image from "next/image";
 import { templates } from "./constants/Templates";
+import Card from "./components/Card";
 
 export default function page() {
 	return (
@@ -52,29 +53,7 @@ export default function page() {
 			</form>
 			<div className="grid grid-cols-5 gap-4 py-2 mt-3">
 				{templates.map((template, index) => (
-					<div
-						className="bg-[url('/rectangle-background-h-center.png')] bg-cover bg-center bg-no-repeat p-5 ring-1 ring-white/10 rounded-2xl overflow-hidden space-y-3 relative cursor-pointer"
-						key={index}>
-						<Image
-							src={template.icon}
-							alt="logo"
-							width={54}
-							height={54}
-							draggable={false}
-						/>
-						{template.isPremium && (
-							<Image
-								src="/main/lock-premium.svg"
-								alt="logo"
-								width={20}
-								height={20}
-								draggable={false}
-								className="absolute top-0 right-0 m-5"
-							/>
-						)}
-						<h1 className="text-xl font-bold">{template.title}</h1>
-						<p className="text-[#B1B0B6]">{template.description}</p>
-					</div>
+					<Card template={template} key={index} />
 				))}
 			</div>
 		</section>
