@@ -106,12 +106,12 @@ export const navObjects = [
 		items: [
 			{
 				title: "Speech To Text ",
-				link: "#",
+				link: "/dashboard/main/ai-voice/speech-to-text",
 				icon: "/main/speech-text.png",
 			},
 			{
 				title: "Text To Speech",
-				link: "#",
+				link: "/dashboard/main/ai-voice/text-to-speech",
 				icon: "/main/text-speech.png",
 			},
 		],
