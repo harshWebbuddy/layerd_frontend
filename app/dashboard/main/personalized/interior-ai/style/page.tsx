@@ -53,7 +53,7 @@ export default function page() {
 				<div className="flex justify-center gap-4">
 					<NavigationButton
 						link="/dashboard/main/personalized/interior-ai/room-type"
-						styleClass="font-bold flex items-center justify-between gap-3 ring-1 ring-white/70 bg-transparent hover:bg-[#3d3d3d1c] p-3 w-[220px] rounded-lg self-end">
+						styleClass="font-bold flex items-center justify-between gap-3 ring-1 ring-white/70 bg-transparent hover:bg-[#3d3d3d1c] p-3 w-[220px] h-[54px] ring-inset rounded-lg self-end">
 						<Image
 							src="/arrow-left.svg"
 							alt="Arrow Right"
@@ -64,7 +64,7 @@ export default function page() {
 					</NavigationButton>
 					<NavigationButton
 						link="#"
-						styleClass="font-bold flex items-center justify-between gap-3 bg-gradient-to-br from-primary-red to-primary-yellow p-3 w-[220px] rounded-lg self-end">
+						styleClass="font-bold flex items-center justify-between gap-3 bg-gradient-to-br from-primary-red to-primary-yellow p-3 w-[220px] h-[54px] ring-inset rounded-lg self-end">
 						<span>Render New Idea</span>
 						<Image
 							src="/arrow-right.svg"

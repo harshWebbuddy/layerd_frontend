@@ -7,131 +7,127 @@ export default function Form() {
 	const [selectedSelection, setSelectedSelection] = useState<string | null>(
 		null
 	);
-	const roomTypes = [
+	const styleOptions = [
 		{
-			value: "Living room",
-			label: "Living room",
+			value: "Tropical",
+			label: "Tropical",
 		},
 		{
-			value: "Bed room",
-			label: "Bed room",
+			value: "Minimalist",
+			label: "Minimalist",
 		},
 		{
-			value: "Kitchen",
-			label: "Kitchen",
+			value: "Scandinavian",
+			label: "Scandinavian",
 		},
 		{
-			value: "Diner",
-			label: "Diner",
-		},
-	];
-	const roomModels = [
-		{
-			value: "Interior Design (more creative, fast)",
-			label: "Interior Design (more creative, fast)",
+			value: "Art Deco Style",
+			label: "Art Deco Style",
 		},
 		{
-			value: "Modern Marvel Oasis",
-			label: "Modern Marvel Oasis",
+			value: "Farmhouse",
+			label: "Farmhouse",
 		},
 		{
-			value: "Cozy Nordic Retreat",
-			label: "Cozy Nordic Retreat",
+			value: "Japanese Zen Style",
+			label: "Japanese Zen Style",
 		},
 		{
-			value: "Vintage Eclectic Sanctuary",
-			label: "Vintage Eclectic Sanctuary",
-		},
-		{
-			value: "Tropical Paradise Hideaway",
-			label: "Tropical Paradise Hideaway",
-		},
-		{
-			value: "Industrial Chic Workspace",
-			label: "Industrial Chic Workspace",
+			value: "Industrial",
+			label: "Industrial",
 		},
 	];
-  const privacyOptions = [
-    {
-      value : 'public',
-      label : 'Public'
-    },
-    {
-      value : 'private',
-      label : 'Private'
-    }
-  ]
+	const privacyOptions = [
+		{
+			value: "public",
+			label: "Public",
+		},
+		{
+			value: "private",
+			label: "Private",
+		},
+	];
 	return (
 		<div className="w-full flex items-center gap-2 !mt-20">
 			<div className="space-y-3 w-full">
-				<label
-					htmlFor="style"
-					className="block leading-6 capitalize">
+				<label htmlFor="style" className="block leading-6 capitalize">
 					Style
 				</label>
-				<div
-					onClick={() => setSelectedSelection("style")}
-					className={`transition ${
-						selectedSelection == "style" && "border-gradient"
-					}`}>
+				<div onClick={() => setSelectedSelection("style")}>
 					<Selection
 						id="style"
-						items={roomModels}
+						items={styleOptions}
 						placeholder="Select room type"
+						isActive={selectedSelection == "style"}
 					/>
 				</div>
 			</div>
 			<div className="space-y-3 w-full">
-				<label
-					htmlFor="renders"
-					className="block leading-6 capitalize">
+				<label htmlFor="renders" className="block leading-6 capitalize">
 					Number Of Renders
 				</label>
-				<div
-					onClick={() => setSelectedSelection("renders")}
-					className={`transition ${
-						selectedSelection == "renders" && "border-gradient"
-					}`}>
+				<div onClick={() => setSelectedSelection("renders")}>
 					<Selection
 						id="renders"
-						items={roomModels}
+						items={[
+							{
+								label: "1",
+								value: "1",
+							},
+							{
+								label: "2",
+								value: "2",
+							},
+							{
+								label: "4",
+								value: "4",
+							},
+							{
+								label: "8",
+								value: "8",
+							},
+						]}
 						placeholder="Select room type"
+						isActive={selectedSelection == "renders"}
 					/>
 				</div>
 			</div>
 			<div className="space-y-3 w-full">
-				<label
-					htmlFor="resolution"
-					className="block leading-6 capitalize">
+				<label htmlFor="resolution" className="block leading-6 capitalize">
 					Resolution
 				</label>
-				<div
-					onClick={() => setSelectedSelection("resolution")}
-					className={`transition ${
-						selectedSelection == "resolution" && "border-gradient"
-					}`}>
+				<div onClick={() => setSelectedSelection("resolution")}>
 					<Selection
 						id="resolution"
-						items={roomModels}
+						items={[
+							{
+								label: "Low (fas, takes 7s)",
+								value: "Low",
+							},
+							{
+								label: "Medium (fas, takes 12s)",
+								value: "Medium",
+							},
+							{
+								label: "High (fas, takes 20s)",
+								value: "High",
+							},
+						]}
 						placeholder="Select room type"
+						isActive={selectedSelection == "resolution"}
 					/>
 				</div>
 			</div>
 			<div className="space-y-3 w-full">
-				<label
-					htmlFor="privacy"
-					className="block leading-6 capitalize">
+				<label htmlFor="privacy" className="block leading-6 capitalize">
 					Privacy
 				</label>
-				<div
-					onClick={() => setSelectedSelection("privacy")}
-					className={`transition ${
-						selectedSelection == "privacy" && "border-gradient"
-					}`}>
+				<div onClick={() => setSelectedSelection("privacy")}>
 					<Selection
 						id="privacy"
 						items={privacyOptions}
 						placeholder="Select room type"
+						isActive={selectedSelection == "privacy"}
 					/>
 				</div>
 			</div>

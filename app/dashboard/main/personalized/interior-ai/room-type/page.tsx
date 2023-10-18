@@ -51,7 +51,7 @@ export default function page() {
 				</div>
 				<Form/>
 				<div className="flex justify-center gap-4">
-					<NavigationButton link="/dashboard/main/personalized/interior-ai" styleClass="font-bold flex items-center justify-between gap-3 ring-1 ring-white/70 bg-transparent hover:bg-[#3d3d3d1c] p-3 w-[220px] rounded-lg self-end">
+					<NavigationButton link="/dashboard/main/personalized/interior-ai" styleClass="font-bold flex items-center justify-between gap-3 ring-1 ring-white/70 bg-transparent hover:bg-[#3d3d3d1c] p-3 h-[54px] ring-inset w-[220px] rounded-lg self-end">
 						<Image
 							src="/arrow-left.svg"
 							alt="Arrow Right"
@@ -60,7 +60,7 @@ export default function page() {
 						/>
 						<span>Back</span>
 					</NavigationButton>
-					<NavigationButton link="/dashboard/main/personalized/interior-ai/style" styleClass="font-bold flex items-center justify-between gap-3 bg-[#3d3d3d] hover:bg-[#3d3d3d] p-3 w-[220px] rounded-lg self-end">
+					<NavigationButton link="/dashboard/main/personalized/interior-ai/style" styleClass="font-bold flex items-center justify-between gap-3 bg-[#3d3d3d] hover:bg-[#3d3d3d] h-[54px] p-3 w-[220px] rounded-lg self-end">
 						<span>Next</span>
 						<Image
 							src="/arrow-right.svg"

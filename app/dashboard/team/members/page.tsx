@@ -46,7 +46,7 @@ export default function page() {
 		<section className="p-2 sm:p-10 space-y-4 sm:space-y-10">
 			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-4 sm:p-10">
 				<div className="flex flex-col xl:flex-row gap-10 xlitems-center">
-					<div className="w-full max-w-sm rounded-lg p-10 space-y-4 text-center bg-gradient-to-br from-white/10 to-[#8f8f8f10]">
+					<div className="w-full max-w-sm rounded-lg p-6 space-y-3 text-center bg-gradient-to-br from-white/10 to-[#8f8f8f10]">
 						<h1 className="text-white">
 							<span className="text-primary-yellow font-bold text-5xl">0</span>
 							Members
@@ -54,7 +54,7 @@ export default function page() {
 						<p className="text-sm">
 							Manage your team members and review their credit usage
 						</p>
-						<p className="text-sm !mb-2">You can add up to 2 team members</p>
+						<p className="text-sm !mb-6">You can add up to 2 team members</p>
 
 						<Link href="/dashboard/team/new">
 							<button className="bg-gradient-to-r from-primary-red to-primary-yellow  px-10 py-3 rounded-lg text-sm">

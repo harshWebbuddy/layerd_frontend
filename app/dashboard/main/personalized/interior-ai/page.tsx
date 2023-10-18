@@ -65,7 +65,7 @@ export default function page() {
 					and you get your own private workspace.
 				</p>
 				<div className="flex justify-center">
-					<NavigationButton link="/dashboard/main/personalized/interior-ai/room-type" styleClass="font-bold flex items-center justify-between gap-3 bg-[#3d3d3d] hover:bg-[#3d3d3d] p-3 w-[250px] rounded-lg self-end">
+					<NavigationButton link="/dashboard/main/personalized/interior-ai/room-type" styleClass="font-bold flex items-center justify-between gap-3 bg-[#3d3d3d] hover:bg-[#3d3d3d] h-[54px] p-3 w-[250px] rounded-lg self-end">
 						<span>Next</span>
 						<Image
 							src="/arrow-right.svg"

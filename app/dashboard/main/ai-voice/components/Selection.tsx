@@ -1,5 +1,8 @@
-import React from "react";
-import Select, { StylesConfig } from "react-select";
+"use client";
+
+import React, { useState } from "react";
+import { Listbox } from "@headlessui/react";
+import Image from "next/image";
 
 type ItemType = {
 	value: string;
@@ -18,51 +21,38 @@ export default function Selection({
 	items: ItemType[];
 	placeholder: string;
 }) {
+	const [selectedPerson, setSelectedPerson] = useState<ItemType | null>(null);
+
 	return (
-		<div className="w-full space-y-2 ">
-			{label && (
-				<label
-					htmlFor={id}
-					className="block leading-6 text-white/80 capitalize">
-					{label}
-				</label>
-			)}
-			<Select
-				id={id}
-				required={required}
-				options={items}
-				placeholder={placeholder}
-				theme={(theme) => ({
-					...theme,
-					borderRadius: 10,
-					colors: {
-						...theme.colors,
-						primary25: "",
-						primary: "#5f5f5f",
-						primary50: "#5f5f5f",
-					},
-				})}
-				noOptionsMessage={() => "No industries found"}
-				styles={{
-					control: (baseStyles, state) => ({
-						...baseStyles,
-						backgroundColor: "#32323280",
-						minHeight: "50px",
-						border: "2px solid #514E4E",
-						color: "white",
-					}),
-					option: (baseStyles, state) => ({
-						...baseStyles,
-						backgroundColor: "#424242",
-						color: "#fff",
-						cursor: "pointer",
-					}),
-					singleValue: (baseStyles, state) => ({
-						...baseStyles,
-						color: "#fff",
-					}),
-				}}
-			/>
+		<div className="w-full space-y-2 relative">
+			{label && <label>{label}</label>}
+			<Listbox value={selectedPerson} onChange={setSelectedPerson}>
+				<Listbox.Button
+					placeholder={placeholder}
+					className="bg-[#32323280] w-full text-start h-[50px] ring-2 ring-[#514e4e7a] px-3 rounded-lg flex justify-between items-center">
+					{selectedPerson ? (
+						<span>{selectedPerson.label}</span>
+					) : (
+						<span>{placeholder}</span>
+					)}
+					<Image
+						src="/chevron-down.svg"
+						alt="chevron-down"
+						height={18}
+						width={18}
+					/>
+				</Listbox.Button>
+				<Listbox.Options className="absolute bg-[#333] rounded-sm max-h-[300px] overflow-y-auto w-full z-50 p-1">
+					{items.map((item) => (
+						<Listbox.Option
+							key={item.label}
+							value={item}
+							className="p-2 hover:bg-[#494949]">
+							{item.label}
+						</Listbox.Option>
+					))}
+				</Listbox.Options>
+			</Listbox>
 		</div>
 	);
 }

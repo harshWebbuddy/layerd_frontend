@@ -59,15 +59,12 @@ export default function Form() {
 					className="block leading-6 text-white/80 capitalize">
 					Room
 				</label>
-				<div
-					onClick={() => setSelectedSelection("room-type")}
-					className={`transition ${
-						selectedSelection == "room-type" && "border-gradient"
-					}`}>
+				<div onClick={() => setSelectedSelection("room-type")}>
 					<Selection
 						id="room"
 						items={roomTypes}
 						placeholder="Select room type"
+						isActive={selectedSelection == "room-type"}
 					/>
 				</div>
 			</div>
@@ -77,15 +74,12 @@ export default function Form() {
 					className="block leading-6 text-white/80 capitalize">
 					Mode
 				</label>
-				<div
-					onClick={() => setSelectedSelection("room-model")}
-					className={`transition ${
-						selectedSelection == "room-model" && "border-gradient p-[2px]"
-					}`}>
+				<div onClick={() => setSelectedSelection("room-model")}>
 					<Selection
 						id="room-mode"
 						items={roomModels}
 						placeholder="Select room type"
+						isActive={selectedSelection == "room-model"}
 					/>
 				</div>
 			</div>

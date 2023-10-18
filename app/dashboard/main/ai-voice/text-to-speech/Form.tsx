@@ -294,7 +294,7 @@ export default function Form() {
 				</div>
 			</div>
 			<div className="flex justify-center gap-3">
-				<button className="bg-transparent ring-1 ring-white ring-inset rounded-lg py-3 w-[200px]">
+				<button className="bg-transparent ring-1 ring-white ring-inset rounded-lg py-3 w-[200px] hover:bg-[#47444446] transition duration-300">
 					Listen
 				</button>
 				<button className="bg-gradient-to-br from-primary-red to-primary-yellow rounded-lg py-3 w-[200px]">

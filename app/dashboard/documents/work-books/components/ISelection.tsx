@@ -6,28 +6,28 @@ import React from "react";
 export default function ISelection() {
 	const selectionItems = [
 		{
-			value: "Document Name",
-			label: "Document Name",
+			value: "Workbook 1",
+			label: "Workbook 1",
 		},
 		{
-			value: "Document Name",
-			label: "Document Name",
+			value: "Workbook 2",
+			label: "Workbook 2",
 		},
 		{
-			value: "Document Name",
-			label: "Document Name",
+			value: "Workbook 3",
+			label: "Workbook 3",
 		},
 		{
-			value: "Document Name",
-			label: "Document Name",
+			value: "Workbook 4",
+			label: "Workbook 4",
 		},
 		{
-			value: "Document Name",
-			label: "Document Name",
+			value: "Workbook 5",
+			label: "Workbook 5",
 		},
 		{
-			value: "Document Name",
-			label: "Document Name",
+			value: "Workbook 6",
+			label: "Workbook 6",
 		},
 	];
 	return (

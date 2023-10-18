@@ -2,7 +2,6 @@ import React from "react";
 import SearchFilter from "../../team/members/components/SearchFilter";
 import Pagination from "../../components/Pagination";
 import Table from "./components/Table";
-import Selection from "../../account/me/components/Selection";
 import ISelection from "./components/ISelection";
 import Image from "next/image";
 
@@ -20,7 +19,7 @@ export default function page() {
 	return (
 		<section className="px-3 sm:px-10 py-5 space-y-5">
 			<h1 className="text-2xl font-semibold">Workbooks</h1>
-			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-10">
+			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-10 relative z-[1]">
 				<h1 className="text-primary-yellow capitalize text-2xl font-bold">
 					All My Workbooks
 				</h1>
