@@ -32,6 +32,7 @@ export const navObjects = [
 	{
 		icon: "/main/search-list.gif",
 		title: "AI Search Engine",
+		link: "/dashboard/main/search-engine",
 	},
 	{
 		icon: "/main/ai-chat.gif",

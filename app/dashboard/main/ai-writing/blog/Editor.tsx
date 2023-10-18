@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { dummyEditorData } from "../../ai-voice/speech-to-text";
 import Selection from "../../ai-voice/components/Selection";
-
+import { TooltipComponent as Tooltip } from "../../components/Tooltip";
 export default function Editor() {
 	const [selectedFormat, setSelectedFormat] = useState<string>("pdf");
 	const formatsList = [
@@ -33,20 +33,37 @@ export default function Editor() {
 						<div className="w-full flex gap-4">
 							<div className="space-y-2 w-full">
 								<label htmlFor="File Title">Document Title</label>
-								<div className="border-bottom-gradient">
-									<input
-										id="File Title"
-										placeholder="Audio File"
-										className="block w-full border-[3px] rounded-lg border-[#514E4E] h-14 outline-none bg-[#32323280] p-3"
-									/>
+								<div className=" ring-inset ring-[#514E4E] ring-[2px] rounded-lg">
+									<div className="border-bottom-gradient h-full rounded-lg">
+										<input
+											id="document-title"
+											placeholder="New Document"
+											className="block w-full  rounded-xl h-[50px] outline-none bg-[#32323280] p-3"
+										/>
+									</div>
 								</div>
 							</div>
 							<div className="space-y-2 w-full">
-								<label htmlFor="Select">Document Title</label>
+								<div>
+									<label htmlFor="Select" className="flex items-center gap-2">
+										<span>Select</span>
+										<Tooltip tooltipContent="Select a workbook name">
+											<div className="cursor-pointer">
+												<Image
+													src="/main/ai/info-circle.svg"
+													alt="info-circle"
+													width={20}
+													draggable={false}
+													height={20}
+												/>
+											</div>
+										</Tooltip>
+									</label>
+								</div>
 								<div className="border-bottom-gradient">
 									<Selection
 										id="Select"
-										placeholder="Audio File"
+										placeholder="Workbook Name"
 										items={[
 											{
 												value: "Workbook 1",
@@ -99,7 +116,9 @@ export default function Editor() {
 					</div>
 				</form>
 				<div className="w-full ring-1 ring-white/60 mt-5 flex-1 h-full rounded-2xl focus-within:ring-white/80">
-					<textarea name="" className="w-full h-full rounded-xl resize-none bg-transparent p-6 outline-none"></textarea>
+					<textarea
+						name=""
+						className="w-full h-full rounded-xl resize-none bg-transparent p-6 outline-none"></textarea>
 				</div>
 			</div>
 		</div>
