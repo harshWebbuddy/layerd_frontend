@@ -48,7 +48,7 @@ export default function Editor() {
 									<label htmlFor="Select" className="flex items-center gap-2">
 										<span>Select</span>
 										<Tooltip tooltipContent="Select a workbook name">
-											<div className="cursor-pointer">
+											<span className="cursor-pointer">
 												<Image
 													src="/main/ai/info-circle.svg"
 													alt="info-circle"
@@ -56,7 +56,7 @@ export default function Editor() {
 													draggable={false}
 													height={20}
 												/>
-											</div>
+											</span>
 										</Tooltip>
 									</label>
 								</div>

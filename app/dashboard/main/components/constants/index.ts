@@ -76,22 +76,22 @@ export const navObjects = [
 		items: [
 			{
 				title: "Dalle - 2 ",
-				link: "#",
+				link: "/dashboard/main/ai-image/dalle-2",
 				icon: "/main/dalle-2.png",
 			},
 			{
 				title: "Stable Diffusion",
-				link: "#",
+				link: "/dashboard/main/ai-image/stable-diffusion",
 				icon: "/main/stable-diffusion.png",
 			},
 			{
-				title: "Google Bard",
-				link: "#",
+				title: "Mid journey",
+				link: "/dashboard/main/ai-image/midjourney",
 				icon: "/main/midjourney.png",
 			},
 			{
 				title: "Create Avatar",
-				link: "#",
+				link: "/dashboard/main/ai-image/create-avatar",
 				icon: "/main/create-avatar.png",
 			},
 		],

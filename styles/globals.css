@@ -422,3 +422,18 @@ body {
 		rgba(249, 155, 24, 0) 100%
 	);
 }
+
+.border-gradient-sm {
+	position: relative;
+}
+.border-gradient-sm::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: 6px;
+	padding: 2px;
+	background: linear-gradient(-45deg, #f99b18, #ec2227);
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+}

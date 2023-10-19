@@ -13,7 +13,7 @@ export default function ToggleButton({ label , defaultEnabled}: Props) {
 	}, [])
 
 	return (
-		<div className="flex gap-2">
+		<div className="flex items-center gap-2">
 			<Switch checked={enabled} onChange={setEnabled} as={Fragment}>
 				{({ checked }) => (
 					<button

@@ -39,7 +39,7 @@ export default function Form() {
 						<label htmlFor="maxResults" className="flex items-center gap-3">
 							<span>Creativity</span>
 							<Tooltip tooltipContent="Increase or Decrease the creativity level to get various results">
-								<div className="cursor-pointer">
+								<span className="cursor-pointer">
 									<Image
 										src="/main/ai/info-circle.svg"
 										alt="info-circle"
@@ -47,7 +47,7 @@ export default function Form() {
 										draggable={false}
 										height={20}
 									/>
-								</div>
+								</span>
 							</Tooltip>
 						</label>
 						<div className="border-bottom-gradient w-full">
@@ -75,7 +75,7 @@ export default function Form() {
 						<label htmlFor="maxResults" className="flex items-center gap-3">
 							<span>Tone of Voice</span>
 							<Tooltip tooltipContent="Set results tone of the text as needed">
-								<div className="cursor-pointer">
+								<span className="cursor-pointer">
 									<Image
 										src="/main/ai/info-circle.svg"
 										alt="info-circle"
@@ -83,7 +83,7 @@ export default function Form() {
 										draggable={false}
 										height={20}
 									/>
-								</div>
+								</span>
 							</Tooltip>
 						</label>
 
@@ -110,7 +110,7 @@ export default function Form() {
 						<label htmlFor="maxResults" className="flex items-center gap-3">
 							<span>Max Results Length</span>
 							<Tooltip tooltipContent="Maximum supporting results is 5">
-								<div className="cursor-pointer">
+								<span className="cursor-pointer">
 									<Image
 										src="/main/ai/info-circle.svg"
 										alt="info-circle"
@@ -118,7 +118,7 @@ export default function Form() {
 										draggable={false}
 										height={20}
 									/>
-								</div>
+								</span>
 							</Tooltip>
 						</label>
 						<div className="border-bottom-gradient w-full">
@@ -146,7 +146,7 @@ export default function Form() {
 						<label htmlFor="maxResults" className="flex items-center gap-3">
 							<span>Max Results Length</span>
 							<Tooltip tooltipContent="Maximum word for each generated text. Maximum allowed length is 1000">
-								<div className="cursor-pointer">
+								<span className="cursor-pointer">
 									<Image
 										src="/main/ai/info-circle.svg"
 										alt="info-circle"
@@ -154,7 +154,7 @@ export default function Form() {
 										draggable={false}
 										height={20}
 									/>
-								</div>
+								</span>
 							</Tooltip>
 						</label>
 						<div className=" ring-inset ring-[#514E4E] ring-[2px] rounded-lg">
