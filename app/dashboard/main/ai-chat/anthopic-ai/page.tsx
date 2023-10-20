@@ -4,7 +4,7 @@ import PromptInput from "../components/PromptInput";
 
 export default function page() {
 	return (
-		<section className="px-10 flex flex-col h-full flex-1 text-sm w-full">
+		<section className="md:px-10 flex flex-col h-full flex-1 text-sm w-full">
 			<div className="flex-1 space-y-6">
 				<h1 className="text-primary-yellow text-3xl font-bold">
 					Example Capabilities

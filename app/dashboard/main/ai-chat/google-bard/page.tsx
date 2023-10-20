@@ -3,7 +3,7 @@ import PromptInput from "../components/PromptInput";
 
 export default function page() {
 	return (
-		<section className="bg-[url('/main/background-image-chat-bard.png')] bg-cover bg-center bg-no-repeat flex-1 mb-10 rounded-2xl border-bottom-gradient p-10 flex flex-col text-sm">
+		<section className="bg-[url('/main/background-image-chat-bard.png')] bg-cover bg-center bg-no-repeat flex-1 mb-10 rounded-2xl border-bottom-gradient p-4 md:p-10 flex flex-col text-sm">
 			<div className="flex-1">
 				<div className="bg-[#323232] ring-2 ring-[#514E4E] space-y-4 p-8 rounded-2xl">
 					<div className="space-y-2">

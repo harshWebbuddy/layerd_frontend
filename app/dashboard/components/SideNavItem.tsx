@@ -48,7 +48,7 @@ export default function SideNavItem() {
 									width={200}
 									height={100}
 									draggable={false}
-									className="w-6"
+									className="w-6 min-w-[24px]"
 								/>
 							</div>
 							<p className="whitespace-nowrap">{item.title}</p>
@@ -116,7 +116,7 @@ export default function SideNavItem() {
 													className="cursor-pointer w-full">
 													<div className="w-full flex justify-between items-center pr-4">
 														<p
-															className={`${
+															className={`whitespace-nowrap ${
 																pathname
 																	.toLowerCase()
 																	.includes(item.link.toLowerCase()) &&
@@ -160,10 +160,10 @@ export default function SideNavItem() {
 							width={200}
 							height={100}
 							draggable={false}
-							className="w-6"
+							className="w-6 min-w-[24px]"
 						/>
 					</div>
-					<p>
+					<p className="whitespace-nowrap">
 						WolframAlpha
 						<span className="text-xs text-white/50"> (Coming Soon)</span>
 					</p>
@@ -205,7 +205,7 @@ export default function SideNavItem() {
 										width={200}
 										height={100}
 										draggable={false}
-										className="w-6"
+										className="w-6 min-w-[24px]"
 									/>
 								</div>
 								<p className="whitespace-nowrap">{item.title}</p>
@@ -273,7 +273,7 @@ export default function SideNavItem() {
 														className="cursor-pointer w-full">
 														<div className="w-full flex justify-between items-center pr-4">
 															<p
-																className={`${
+																className={`whitespace-nowrap ${
 																	pathname
 																		.toLowerCase()
 																		.includes(item.link.toLowerCase()) &&
