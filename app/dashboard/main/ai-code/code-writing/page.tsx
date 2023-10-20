@@ -22,14 +22,14 @@ export default function page() {
 		"/main/code/mysql.png",
 	];
 	return (
-		<section className="relative">
+		<section className="relative p-3">
 			<div className="max-w-7xl mx-auto space-y-10">
 				<div className="flex justify-center">
 					<h1 className="text-3xl font-bold text-center max-w-sm">
 						Supports Major Programming Languages
 					</h1>
 				</div>
-				<div className="grid grid-cols-6 gap-4">
+				<div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 3xl:grid-cols-6 gap-4">
 					{codeArray.map((item, index) => (
 						<div
 							className="bg-gradient-to-br from-[#ffffff13] to-[#8f8f8f0c] grid place-content-center p-12 rounded-xl cursor-pointer"
