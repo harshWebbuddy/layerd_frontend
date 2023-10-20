@@ -4,8 +4,8 @@ import ImageOutput from "./components/ImageOutput";
 
 export default function page() {
 	return (
-		<section className="relative h-full mb-40">
-			<div className="h-full flex justify-center gap-10 items-center max-w-7xl mx-auto">
+		<section className="relative h-full mb-40 p-3">
+			<div className="h-full flex  flex-col xl:flex-row justify-center gap-10 items-center max-w-7xl mx-auto">
 				<div className="space-y-6 w-full">
 					<h1 className="capitalize mt-4 text-3xl md:text-5xl bg-gradient-to-b from-white to-primary-red !leading-[60px] font-bold text-transparent bg-clip-text max-w-[500px]">
 						Use artificial intelligence to see how you're aging

@@ -5,9 +5,9 @@ import React from "react";
 export default function page() {
 	return (
 		<section className="h-full">
-			<div className="h-full flex justify-center gap-10 items-center max-w-6xl mx-auto">
+			<div className="h-full flex  flex-col sm:flex-row justify-center gap-10 items-center max-w-6xl mx-auto">
 				<div className="space-y-10">
-					<h1 className="capitalize mt-4 text-3xl md:text-5xl bg-gradient-to-b from-white to-primary-red !leading-[65px] font-bold text-transparent bg-clip-text max-w-[600px]">
+					<h1 className="capitalize mt-4 text-3xl md:text-5xl bg-gradient-to-b from-white to-primary-red !leading-[40px] sm:!leading-[65px] font-bold text-transparent bg-clip-text max-w-[600px]">
 						Get Curated Show & Movie Recommendations with{" "}
 						<span className="text-primary-yellow">WhopMe</span> AI
 					</h1>

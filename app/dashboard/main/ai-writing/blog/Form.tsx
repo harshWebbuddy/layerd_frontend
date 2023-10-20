@@ -34,7 +34,7 @@ export default function Form() {
 					</div>
 					<div className="flex justify-end text-white/70">0/600</div>
 				</div>
-				<div className="flex gap-3 items-end">
+				<div className="flex flex-col sm:flex-row gap-3 items-end">
 					<div className="w-full space-y-1.5">
 						<label htmlFor="maxResults" className="flex items-center gap-3">
 							<span>Creativity</span>
@@ -105,7 +105,7 @@ export default function Form() {
 						</div>
 					</div>
 				</div>
-				<div className="flex gap-3 items-end">
+				<div className="flex  flex-col sm:flex-row gap-3 items-end">
 					<div className="w-full space-y-1.5">
 						<label htmlFor="maxResults" className="flex items-center gap-3">
 							<span>Max Results Length</span>

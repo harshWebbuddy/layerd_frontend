@@ -29,7 +29,7 @@ export default function Editor() {
 		<div className="h-full">
 			<div className="flex flex-col h-full">
 				<form>
-					<div className="flex gap-4 items-end h-fit">
+					<div className="flex  flex-col md:flex-row gap-4 md:items-end h-fit">
 						<div className="w-full flex gap-4">
 							<div className="space-y-2 w-full">
 								<label htmlFor="File Title">Document Title</label>
@@ -82,7 +82,7 @@ export default function Editor() {
 								</div>
 							</div>
 						</div>
-						<div className="flex gap-3 mb-3">
+						<div className="flex gap-3">
 							{formatsList.map((format) => (
 								<div
 									onClick={() => setSelectedFormat(format.name)}
@@ -95,12 +95,13 @@ export default function Editor() {
 										alt="image"
 										height={45}
 										width={45}
+										className="min-w-[20px]"
 									/>
 								</div>
 							))}
 						</div>
 					</div>
-					<div className="flex gap-3 mt-5">
+					<div className="flex flex-wrap gap-3 mt-5">
 						{dummyEditorData.map((image, index) => (
 							<div className="hover:bg-slate-700 p-2.5 rounded-md cursor-pointer transition duration-300 grid place-content-center">
 								<Image
@@ -110,12 +111,13 @@ export default function Editor() {
 									height={10}
 									width={15}
 									draggable={false}
+									className="min-w-[15px]"
 								/>
 							</div>
 						))}
 					</div>
 				</form>
-				<div className="w-full ring-1 ring-white/60 mt-5 flex-1 h-full rounded-2xl focus-within:ring-white/80">
+				<div className="w-full ring-1 ring-white/60 min-h-[400px] mt-5 flex-1 h-full rounded-2xl focus-within:ring-white/80">
 					<textarea
 						name=""
 						className="w-full h-full rounded-xl resize-none bg-transparent p-6 outline-none"></textarea>

@@ -6,14 +6,14 @@ import NavigationButton from "@/app/dashboard/components/NavigationButton";
 export default function page() {
 	return (
 		<section className="relative h-full">
-			<div className="w-full max-w-6xl mx-auto h-full flex flex-col items-center space-y-10 mt-10">
-				<div className="flex gap-4">
+			<div className="w-full max-w-6xl mx-auto h-full flex flex-col sm:items-center space-y-10 mt-10">
+				<div className="flex flex-col sm:flex-row gap-4">
 					<div className="flex gap-4">
 						<div className="flex items-center gap-2">
 							<div className="text-[#8D8D99] bg-[#E1E1E6] h-6 w-6 grid place-content-center text-xs rounded-full">
 								1
 							</div>
-							<p className="font-semibold text-lg text-[#8D8D99]">
+							<p className="font-semibold text-lg whitespace-nowrap text-[#8D8D99]">
 								Upload your picture
 							</p>
 						</div>
@@ -29,7 +29,7 @@ export default function page() {
 							<div className="text-[#8D8D99] bg-[#E1E1E6] h-6 w-6 grid place-content-center text-xs rounded-full">
 								2
 							</div>
-							<p className="font-semibold text-lg text-[#8D8D99]">
+							<p className="font-semibold text-lg whitespace-nowrap text-[#8D8D99]">
 								Room Type / Mode
 							</p>
 						</div>
@@ -45,7 +45,7 @@ export default function page() {
 							<div className="text-black bg-primary-yellow h-6 w-6 grid place-content-center text-xs rounded-full">
 								3
 							</div>
-							<p className="font-semibold text-lg ">Style & Others</p>
+							<p className="font-semibold text-lg whitespace-nowrap ">Style & Others</p>
 						</div>
 					</div>
 				</div>

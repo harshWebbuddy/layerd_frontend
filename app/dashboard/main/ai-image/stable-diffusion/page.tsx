@@ -12,22 +12,24 @@ export default function page() {
 	const [selectedAspect, setSelectedAspect] = useState<string>("1:1");
 	const [numberOfResults, setNumberOfResults] = useState<number>(2);
 	return (
-		<div className="flex px-7 gap-6">
+		<div className="flex px-3 sm:px-7 gap-6">
 			<section className="w-full">
-				<div className="bg-[url('/main/ai/background-diffusion-ai.png')] bg-center bg-cover p-7 ring-1 ring-neutral-700 rounded-2xl">
+				<div className="bg-[url('/main/ai/background-diffusion-ai.png')] bg-center bg-cover p-4 sm:p-7 ring-1 ring-neutral-700 rounded-2xl">
 					<form className="space-y-6">
-						<div className="flex justify-between items-center">
+						<div className="flex flex-col xl:flex-row justify-between xl:items-center">
 							<h1 className="capitalize text-primary-yellow text-3xl font-semibold">
 								stable diffusion
 							</h1>
-							<div className="flex gap-6 items-center">
+							<div className="flex flex-col sm:flex-row gap-6 sm:items-center !mt-6 sm:mt-0">
 								<ToggleButton label="Show Hints" />
-								<button className="ring-1 ring-white ring-inset bg-transparent py-3 px-8 rounded-lg font-semibold hover:bg-neutral-700/30 transition duration-300">
-									Prompt Assistant
-								</button>
-								<button className="ring-1 ring-white ring-inset bg-transparent py-3 px-8 rounded-lg font-semibold hover:bg-neutral-700/30 transition duration-300">
-									Translate
-								</button>
+								<div className="flex gap-6 items-center">
+									<button className="whitespace-nowrap ring-1 ring-white ring-inset bg-transparent py-3 px-8 w-full rounded-lg font-semibold hover:bg-neutral-700/30 transition duration-300">
+										Prompt Assistant
+									</button>
+									<button className="whitespace-nowrap ring-1 ring-white ring-inset bg-transparent py-3 px-8 w-full rounded-lg font-semibold hover:bg-neutral-700/30 transition duration-300">
+										Translate
+									</button>
+								</div>
 							</div>
 						</div>
 						<div className="w-full">
@@ -35,7 +37,7 @@ export default function page() {
 								className="bg-[#3F3F4699] h-36 w-full resize-none px-4 py-3 ring-1 ring-white/80 focus:ring-white focus:ring-2 transition duration-300 rounded-xl outline-none"
 								placeholder="Describe the image you want to generate"></textarea>
 						</div>
-						<div className="w-full flex justify-between">
+						<div className="w-full flex items-center justify-between">
 							<ToggleButton label="Negative Reminder" />
 							<button className="bg-gradient-to-br from-primary-red to-primary-yellow py-3 px-8 rounded-lg font-semibold hover:bg-neutral-700/30 transition duration-300">
 								Generate
@@ -49,7 +51,7 @@ export default function page() {
 					</h1>
 				</div>
 			</section>
-			<section className="w-full max-w-[380px] bg-[url('/main/ai/background-diffusion-ai-options.png')] bg-center bg-cover ring-1 ring-neutral-700 rounded-2xl">
+			<section className="w-full hidden sm:block max-w-[380px] bg-[url('/main/ai/background-diffusion-ai-options.png')] bg-center bg-cover ring-1 ring-neutral-700 rounded-2xl">
 				<div className="p-7">
 					<p className="flex items-center gap-4 font-semibold text-lg">
 						<span>Aspect Ratio</span>

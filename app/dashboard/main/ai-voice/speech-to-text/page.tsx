@@ -5,9 +5,9 @@ import Editor from "./Editor";
 
 export default function page() {
 	return (
-		<section className="h-full px-10 pb-10 flex-1">
-			<div className="flex gap-6 h-full">
-				<div className="w-full bg-[url('/main/ai/background-voice-ai-forms.png')] max-w-[480px] ring-1 ring-slate-600/80 rounded-2xl bg-center bg-cover bg-no-repeat h-full p-7 space-y-4">
+		<section className="h-full px-5 md:px-10 pb-10 flex-1">
+			<div className="flex  flex-col xl:flex-row gap-6 h-full">
+				<div className="w-full bg-[url('/main/ai/background-voice-ai-forms.png')] xl:max-w-[480px] ring-1 ring-slate-600/80 rounded-2xl bg-center bg-cover bg-no-repeat h-full p-4 md:p-7 space-y-4">
 					<div className="flex items-center gap-4">
 						<Image
 							src="/main/ai/speech-to-text.png"
@@ -38,7 +38,7 @@ export default function page() {
 					</div>
 					<Form />
 				</div>
-				<div className="w-full bg-[url('/main/ai/background-voice-ai-space.png')] bg-center bg-no-repeat bg-cover rounded-2xl ring-1 ring-slate-600 p-7 h-full">
+				<div className="w-full bg-[url('/main/ai/background-voice-ai-space.png')] bg-center bg-no-repeat bg-cover rounded-2xl ring-1 ring-slate-600 p-4 md:p-7 h-full">
 					<Editor/>
 				</div>
 			</div>

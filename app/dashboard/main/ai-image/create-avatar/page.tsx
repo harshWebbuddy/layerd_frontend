@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function page() {
 	return (
-		<section className="max-w-7xl mx-auto w-full">
+		<section className="max-w-7xl mx-auto w-full p-3">
 			<div className="flex justify-between">
 				<h1 className="capitalize text-2xl text-primary-yellow font-semibold">
 					Create A New Studio
@@ -13,10 +13,10 @@ export default function page() {
 					Prompt
 				</button>
 			</div>
-			<div className="relative flex items-center gap-20 border-[3px] border-primary-yellow border-dashed rounded-2xl bg-[#27272799] p-20 mt-10 min-h-[600px]">
+			<div className="relative flex flex-col md:flex-row items-center gap-10 md:gap-20 border-[3px] border-primary-yellow border-dashed rounded-2xl bg-[#27272799] px-5 py-10 md:p-20 mt-10 min-h-[600px]">
 				<Dropzone />
-				<div className="w-1 h-[320px] bg-[#494949]"></div>
-				<div className="space-y-8">
+				<div className="w-full md:w-1 h-[2px] md:h-[320px] bg-[#494949]"></div>
+				<div className="relative z-20 space-y-8">
 					<p className="leading-[2] capitalize">
 						To get the best results, we suggest uploading 3 full body or entire
 						object photos, 5 medium shots of the chest and up, and 10 close-up
@@ -71,14 +71,14 @@ export default function page() {
 					alt="create-avatar"
 					width={300}
 					height={300}
-					className="w-[210px] h-[210px] rounded-xl object-cover transform -rotate-45 absolute top-0 left-0 -translate-x-20"
+					className="w-[150px] md:w-[210px] h-[150px] md:h-[210px] rounded-xl object-cover transform -rotate-45 absolute top-0 left-0 -translate-x-20 z-[1]"
 				/>
 				<Image
 					src="/main/ai/avatar-image-cc.png"
 					alt="create-avatar"
 					width={300}
 					height={300}
-					className="w-[90px] h-[90px] rounded-xl object-cover transform rotate-[-30deg] absolute top-12 left-48"
+					className="w-[90px] h-[90px] rounded-xl object-cover transform rotate-[-30deg] absolute top-12 left-24 md:left-48"
 				/>
 			</div>
 			<div className="mt-10">

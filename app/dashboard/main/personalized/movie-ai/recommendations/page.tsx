@@ -20,7 +20,7 @@ export default function page() {
 
 	return (
 		<section className="backdrop-blur-md h-full absolute inset-0">
-			<div className="mt-28 p-10 space-y-10">
+			<div className="mt-28 p-2 xl:p-10 space-y-10">
 				<div>
 					<div>
 						<h1 className="text-lg">

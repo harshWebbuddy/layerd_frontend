@@ -42,8 +42,8 @@ export default function page() {
 	];
 
 	return (
-		<section className="max-w-7xl mx-auto w-full space-y-14">
-			<div className="flex justify-between">
+		<section className="max-w-7xl mx-auto w-full space-y-14 p-4">
+			<div className="flex items-start flex-col gap-y-2 min-[400px]:flex-row justify-between">
 				<h1 className="capitalize text-2xl text-primary-yellow font-semibold">
 					Create A New Studio
 				</h1>
@@ -51,17 +51,17 @@ export default function page() {
 					Prompt
 				</button>
 			</div>
-			<div className="flex gap-7">
+			<div className="grid-cols-1 min-[400px]:grid-cols-2 grid sm:grid-cols-3 lg:grid-cols-5 gap-7 w-fit">
 				{dummyImages.map((image, index) => (
 					<div
 						key={index}
-						className="relative shadow-xl shadow-[#ffb70030] rounded-xl">
+						className="relative shadow-lg shadow-[#ffb70030] rounded-xl h-[200px] max-w-[200px] ">
 						<Image
 							src={image}
 							alt="image"
 							width={1000}
 							height={1000}
-							className="w-[180px] h-[180px] object-cover rounded-xl"
+							className="h-full w-full object-cover rounded-xl"
 						/>
 						<Image
 							src="/main/check-circle.svg"
@@ -80,32 +80,34 @@ export default function page() {
 					</div>
 				))}
 			</div>
-			<div className="flex items-center gap-4">
-				<div className="w-full space-y-1.5">
-					<label htmlFor="studioName">Name</label>
-					<div className=" ring-inset ring-[#514E4E] ring-[2px] rounded-xl">
-						<div className="border-bottom-gradient h-[54px] rounded-xl">
-							<input
-								id="studioName"
-								placeholder="Studio Name"
-								className="block w-full rounded-xl h-full outline-none bg-[#323232] p-3"
-							/>
+			<div className="flex flex-col md:flex-row items-start md:items-center gap-4">
+				<div className="w-full flex-col min-[400px]:flex-row flex items-center gap-4">
+					<div className="w-full space-y-1.5">
+						<label htmlFor="studioName">Name</label>
+						<div className=" ring-inset ring-[#514E4E] ring-[2px] rounded-xl">
+							<div className="border-bottom-gradient h-[54px] rounded-xl">
+								<input
+									id="studioName"
+									placeholder="Studio Name"
+									className="block w-full rounded-xl h-full outline-none bg-[#323232] p-3"
+								/>
+							</div>
+						</div>
+					</div>
+					<div className="w-full space-y-1.5">
+						<label htmlFor="Subject Type">Subject Type</label>
+						<div className="border-bottom-gradient !bg-[#323232] rounded-lg w-full transform rotate-180">
+							<div className="transform -rotate-180">
+								<Selection
+									id="SubjectType"
+									items={subjectType}
+									placeholder="Subject Type"
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div className="w-full space-y-1.5">
-					<label htmlFor="Subject Type">Subject Type</label>
-					<div className="border-bottom-gradient !bg-[#323232] rounded-lg w-full transform rotate-180">
-						<div className="transform -rotate-180">
-							<Selection
-								id="SubjectType"
-								items={subjectType}
-								placeholder="Subject Type"
-							/>
-						</div>
-					</div>
-				</div>
-				<button className="w-full h-[54px] self-end max-w-[220px] bg-gradient-to-br from-primary-red to-primary-yellow flex justify-center items-center gap-2 rounded-lg">
+				<button className="w-full h-[54px] md:self-end max-w-[220px] bg-gradient-to-br from-primary-red to-primary-yellow flex justify-center items-center gap-2 rounded-lg">
 					<span className="font-semibold">Create Your Studio</span>
 					<Image src="/main/ai/click.svg" alt="click" width={20} height={20} />
 				</button>

@@ -6,7 +6,7 @@ import Card from "./components/Card";
 
 export default function page() {
 	return (
-		<section className="bg-[url('/main/background-image-writing.png')] bg-cover bg-center absolute inset-0 w-full h-full pt-32 px-7 text-sm">
+		<section className="bg-[url('/main/background-image-writing.png')] bg-cover bg-center absolute inset-0 w-full h-full pt-32 px-2 md:px-7 text-sm">
 			<h1 className="text-primary-yellow text-3xl font-semibold leading-loose">
 				Templates
 			</h1>
@@ -14,7 +14,7 @@ export default function page() {
 				Seeking that perfect content? Look no further! get ready to explore out
 				fantastic lineup of templates
 			</p>
-			<div className="flex gap-x-4 gap-y-3 flex-wrap mt-4">
+			<div className="flex gap-x-2 md:gap-x-4 gap-y-3 flex-wrap mt-4">
 				{writingTabs.map((tab, index) => (
 					<div
 						key={index}
@@ -25,7 +25,7 @@ export default function page() {
 								alt="Icon"
 								width={30}
 								height={30}
-								className="w-5 h-5 object-cover"
+								className="w-4 md:w-5 h-4 md:h-5 object-cover"
 							/>
 						)}
 						<p className="text-sm capitalize">{tab.title}</p>
@@ -51,7 +51,7 @@ export default function page() {
 					/>
 				</div>
 			</form>
-			<div className="grid grid-cols-5 gap-4 py-2 mt-3">
+			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5 gap-4 py-2 mt-3">
 				{templates.map((template, index) => (
 					<Card template={template} key={index} />
 				))}

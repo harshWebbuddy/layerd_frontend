@@ -8,7 +8,7 @@ import { languages } from "@/app/dashboard/account/defaults/components";
 export default function Form() {
 	return (
 		<form className="space-y-5 mt-6">
-			<div className="flex gap-3 w-full">
+			<div className="flex flex-col xl:flex-row gap-3 w-full">
 				<div className="border-bottom-gradient w-full">
 					<Selection
 						id="auto-detect"
@@ -17,7 +17,7 @@ export default function Form() {
 						placeholder="English (USA)"
 					/>
 				</div>
-				<div className="w-full">
+				<div className="w-full sm:max-w-[200px]">
 					<Selection
 						id="voices"
 						items={languages}
@@ -47,7 +47,7 @@ export default function Form() {
 						/>
 					</div>
 				</div>
-				<div className="w-full">
+				<div className="w-full sm:max-w-[200px]">
 					<Selection
 						id="select-workbook"
 						items={[
@@ -79,8 +79,8 @@ export default function Form() {
 				<Checkbox label="OGG" id="OGG" />
 				<Checkbox label="WEBM" id="WEBM" />
 			</div>
-			<div className="flex gap-2">
-				<div className="w-full">
+			<div className="flex flex-col sm:flex-row flex-wrap xl:flex-nowrap gap-4 xl:gap-3">
+				<div className="w-full sm:max-w-[200px]">
 					<Selection
 						id="speaking-style"
 						items={[
@@ -100,7 +100,7 @@ export default function Form() {
 						placeholder="Speaking Style"
 					/>
 				</div>
-				<div className="w-full">
+				<div className="w-full sm:max-w-[200px]">
 					<Selection
 						id="voice-effects"
 						items={[
@@ -124,7 +124,7 @@ export default function Form() {
 						placeholder="Voice Effects"
 					/>
 				</div>
-				<div className="w-full">
+				<div className="w-full sm:max-w-[200px]">
 					<Selection
 						id="say-as"
 						items={[
@@ -140,7 +140,7 @@ export default function Form() {
 						placeholder="Say as"
 					/>
 				</div>
-				<div className="w-full">
+				<div className="w-full sm:max-w-[200px]">
 					<Selection
 						id="Emphasis"
 						items={[
@@ -156,7 +156,7 @@ export default function Form() {
 						placeholder="Emphasis"
 					/>
 				</div>
-				<div className="w-full">
+				<div className="w-full sm:max-w-[200px]">
 					<Selection
 						id="Volume"
 						items={[
@@ -176,7 +176,7 @@ export default function Form() {
 						placeholder="Volume"
 					/>
 				</div>
-				<div className="w-full">
+				<div className="w-full sm:max-w-[200px]">
 					<Selection
 						id="speed"
 						items={[
@@ -196,7 +196,7 @@ export default function Form() {
 						placeholder="Speed"
 					/>
 				</div>
-				<div className="w-full">
+				<div className="w-full sm:max-w-[200px]">
 					<Selection
 						id="pitch"
 						items={[
@@ -216,7 +216,7 @@ export default function Form() {
 						placeholder="Pitch"
 					/>
 				</div>
-				<div className="w-full">
+				<div className="w-full sm:max-w-[200px]">
 					<Selection
 						id="pauses"
 						items={[
@@ -240,19 +240,21 @@ export default function Form() {
 			<div className="bg-[url('/main/background-speech.png')] bg-center bg-cover bg-no-repeat px-7 pt-6 pb-4 ring-1 ring-slate-700 ring-inset rounded-2xl !mt-10">
 				<h1 className="text-2xl font-semibold">Text To Speech</h1>
 				<div className="ring-1 ring-white/30 rounded-2xl mt-4 min-h-[380px] flex flex-col">
-					<div className="flex items-center gap-5 p-7">
-						<Image
-							src="/main/ai/speech-to-text.png"
-							alt="speech to text"
-							width={50}
-							height={50}
-						/>
-						<div className="bg-[#32323280] rounded-lg ring-[#514E4E] ring-2 w-full flex justify-center items-center h-[50px] cursor-pointer outline-none px-3">
-							<input
-								type="text"
-								className="w-full h-full  rounded-lg bg-transparent outline-none"
-								placeholder="Enter your text here to synthesize..."
+					<div className="flex  flex-col sm:flex-row sm:items-center gap-5 p-7">
+						<div className="flex w-full items-center gap-5">
+							<Image
+								src="/main/ai/speech-to-text.png"
+								alt="speech to text"
+								width={50}
+								height={50}
 							/>
+							<div className="bg-[#32323280] rounded-lg ring-[#514E4E] ring-2 w-full flex justify-center items-center h-[50px] cursor-pointer outline-none px-3">
+								<input
+									type="text"
+									className="w-full h-full  rounded-lg bg-transparent outline-none"
+									placeholder="Enter your text here to synthesize..."
+								/>
+							</div>
 						</div>
 						<div className="flex h-[50px] gap-2">
 							{[
@@ -278,7 +280,7 @@ export default function Form() {
 						/>
 					</div>
 				</div>
-				<div className="flex items-center justify-between mt-3">
+				<div className="flex  flex-col sm:flex-row sm:items-center justify-between mt-3">
 					<h1>0 Characters, 2 Lines</h1>
 					<div className="flex gap-3">
 						<button type="button" className="underline leading-[200%]">

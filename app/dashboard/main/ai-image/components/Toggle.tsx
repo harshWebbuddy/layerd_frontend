@@ -38,7 +38,7 @@ export default function ToggleButton({
 				)}
 			</Switch>
 			{label && (
-				<p className="block leading-6 text-white/80 capitalize text-sm sm:text-base font-bold">
+				<p className="block leading-6 text-white/80 capitalize text-sm sm:text-base font-bold whitespace-nowrap">
 					{label}
 				</p>
 			)}

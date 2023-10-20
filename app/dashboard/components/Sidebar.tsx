@@ -8,7 +8,6 @@ import { useExpandedState } from "@/hooks/useExpandedState";
 
 export default function Sidebar() {
 	const { isExpanded, expand, collapse, toggle } = useExpandedState();
-	console.log(isExpanded)
 	return (
 		<div className="w-fit min-h-screen sticky top-0 z-20">
 			<div

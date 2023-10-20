@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function page() {
 	return (
-		<section className="relative h-full text-sm flex justify-center items-center">
+		<section className="relative h-full text-sm flex justify-center items-center p-3">
 			<div className="h-full space-y-5 w-full max-w-3xl flex flex-col  justify-center">
 				<h1 className="text-2xl font-bold">Select A Question Type</h1>
 				<p className="text-[#ABAEB7] max-w-lg">

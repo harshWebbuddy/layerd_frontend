@@ -13,17 +13,17 @@ export default function page() {
 	const imageVersions = ["U1", "U2", "U3", "U4", "V1", "V2", "V3", "V4"];
 	const midWayStyles = ["4", "5", "5.1", "Rainbow Colors", "Iridescent 5"];
 	return (
-		<section className="absolute inset-0 bg-[url('/main/ai/background-midjourney.png')] bg-cover center bg-no-repeat">
+		<section className="absolute inset-0 bg-[url('/main/ai/background-midjourney.png')] bg-cover center bg-no-repeat p-4">
 			<div className="w-full h-full max-w-4xl mx-auto flex flex-col">
 				<div className="max-w-4xl w-full flex-1 mt-28">
-					<div className="flex gap-7">
+					<div className="flex flex-col md:flex-row gap-7">
 						<form className="bg-[url('/main/ai/background-diffusion-ai-options.png')] bg-center rounded-2xl ring-1 ring-neutral-600 bg-no-repeat bg-cover w-full max-w-[352px]">
 							<div className="p-5">
 								<h1 className="font-semibold">Midway Trip Advance</h1>
 								<div className="flex flex-wrap mt-4 mb-2 gap-2">
 									{midWayStyles.map((item, index) => (
 										<button
-                      type="button"
+											type="button"
 											key={index}
 											onClick={() => setSelectedStyle(item)}
 											className={`px-2 min-w-[50px] h-[50px] grid place-content-center cursor-pointer rounded-md whitespace-nowrap ${
@@ -31,7 +31,7 @@ export default function page() {
 													? "border-gradient bg-[#212529]"
 													: "hover:bg-slate-600/50 "
 											}`}>
-                        {item}
+											{item}
 										</button>
 									))}
 								</div>
@@ -197,7 +197,9 @@ export default function page() {
 						</div>
 					</div>
 				</div>
-				<PromptInput />
+				<div>
+					<PromptInput />
+				</div>
 			</div>
 		</section>
 	);

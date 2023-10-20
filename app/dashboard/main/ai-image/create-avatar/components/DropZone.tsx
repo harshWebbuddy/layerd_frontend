@@ -19,7 +19,7 @@ export default function Dropzone() {
 	return (
 		<div
 			{...getRootProps()}
-			className="bg-transparent bg-no-repeat bg-cover rounded-3xl w-full flex justify-center items-center cursor-pointer">
+			className="bg-transparent bg-no-repeat bg-cover rounded-3xl w-full flex justify-center items-center cursor-pointer relative z-10">
 			<input {...getInputProps()} accept="images/*" />
 			{isDragActive ? (
 				<p className="text-lg">Drop the files here ...</p>
