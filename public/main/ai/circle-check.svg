@@ -1,0 +1,12 @@
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="circle-check">
+<g id="Oval">
+<circle cx="14.8978" cy="15.1967" r="10.9369" stroke="#FDBB14" stroke-width="2.12662" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="14.8978" cy="15.1967" r="10.9369" stroke="white" stroke-opacity="0.2" stroke-width="2.12662" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g id="Path">
+<path d="M11.2524 15.197L13.6829 17.6274L18.5437 12.7666" stroke="#FDBB14" stroke-width="2.12662" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.2524 15.197L13.6829 17.6274L18.5437 12.7666" stroke="white" stroke-opacity="0.2" stroke-width="2.12662" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</svg>

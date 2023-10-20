@@ -29,7 +29,7 @@ export default function Selection({
 			<Listbox value={selectedPerson} onChange={setSelectedPerson}>
 				<Listbox.Button
 					placeholder={placeholder}
-					className="bg-[#32323280] w-full text-start h-[50px] ring-2 ring-[#514e4e7a] px-3 rounded-lg flex gap-2 justify-between items-center">
+					className="bg-[#32323280] w-full text-start h-[50px] ring-2 ring-[#514e4e8f] px-3 rounded-lg flex gap-2 justify-between items-center">
 					<p className=" whitespace-nowrap overflow-hidden text-ellipsis">
 						{selectedPerson ? (
 							<span>{selectedPerson.label}</span>
