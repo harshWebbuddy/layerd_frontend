@@ -44,12 +44,12 @@ export default function Selection({
 						width={18}
 					/>
 				</Listbox.Button>
-				<Listbox.Options className="absolute bg-[#333] rounded-sm max-h-[300px] overflow-y-auto w-full z-50 p-1">
+				<Listbox.Options className="absolute bg-[#333] max-h-[300px] overflow-y-auto w-full z-50 p-1 rounded-md">
 					{items.map((item) => (
 						<Listbox.Option
 							key={item.label}
 							value={item}
-							className="p-2 hover:bg-[#494949]">
+							className="p-2 hover:bg-[#494949] cursor-pointer rounded-sm">
 							{item.label}
 						</Listbox.Option>
 					))}
