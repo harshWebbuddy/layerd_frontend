@@ -9,8 +9,10 @@ export default function RootLayout({
 	return (
 		<main className="min-h-screen bg-[#212327] ">
 			<div className="flex items-start">
-				<Sidebar />
-				<div className="flex-1 w-full h-screen overflow-y-auto flex flex-col justify-start relative">
+				<div className="overflow-y-auto h-screen z-20">
+					<Sidebar />
+				</div>
+				<div className="flex-1 w-full h-screen max-h-screen overflow-y-auto flex flex-col justify-start relative sm:pl-8">
 					<Navigation />
 					{children}
 				</div>

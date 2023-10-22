@@ -1,14 +1,12 @@
 import Image from "next/image";
 import React from "react";
 import ProfileButton from "./ProfileButton";
-import Menu from "./Menu";
 
 export default function Navigation() {
 	return (
-		<nav className="m-2 sm:m-5 p-1 sm:p-3 z-10">
+		<nav className="m-3 sm:m-5 p-1 sm:p-3 z-10">
 			<div className="flex items-center justify-between">
 				<div>
-					<Menu />
 					<div className="space-y-3 hidden sm:block">
 						<h1 className="text-[23px] font-semibold">Hi, Sheraz Ahmed</h1>
 						<p className="text-sm capitalize">Welcome to world of AI</p>

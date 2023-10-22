@@ -6,7 +6,7 @@ import Card from "./components/Card";
 
 export default function page() {
 	return (
-		<section className="bg-[url('/main/background-image-writing.png')] bg-cover bg-center absolute inset-0 w-full h-full pt-32 px-2 md:px-7 text-sm">
+		<section className="bg-[url('/main/background-image-writing.png')] bg-cover bg-center absolute inset-0 w-full h-full pt-16 sm:pt-32 px-2 md:px-7 text-sm">
 			<h1 className="text-primary-yellow text-3xl font-semibold leading-loose">
 				Templates
 			</h1>

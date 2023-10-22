@@ -37,7 +37,7 @@ export default function Form() {
 				<div className="flex flex-col sm:flex-row gap-3 items-end">
 					<div className="w-full space-y-1.5">
 						<label htmlFor="maxResults" className="flex items-center gap-3">
-							<span>Creativity</span>
+							<span className="whitespace-nowrap">Creativity</span>
 							<Tooltip tooltipContent="Increase or Decrease the creativity level to get various results">
 								<span className="cursor-pointer">
 									<Image
@@ -73,7 +73,7 @@ export default function Form() {
 					</div>
 					<div className="w-full space-y-1.5">
 						<label htmlFor="maxResults" className="flex items-center gap-3">
-							<span>Tone of Voice</span>
+							<span className="whitespace-nowrap">Tone of Voice</span>
 							<Tooltip tooltipContent="Set results tone of the text as needed">
 								<span className="cursor-pointer">
 									<Image
@@ -108,7 +108,7 @@ export default function Form() {
 				<div className="flex  flex-col sm:flex-row gap-3 items-end">
 					<div className="w-full space-y-1.5">
 						<label htmlFor="maxResults" className="flex items-center gap-3">
-							<span>Max Results Length</span>
+							<span className="whitespace-nowrap">Max Results Length</span>
 							<Tooltip tooltipContent="Maximum supporting results is 5">
 								<span className="cursor-pointer">
 									<Image
@@ -144,7 +144,7 @@ export default function Form() {
 					</div>
 					<div className="space-y-1.5 w-full">
 						<label htmlFor="maxResults" className="flex items-center gap-3">
-							<span>Max Results Length</span>
+							<span className="whitespace-nowrap">Max Results Length</span>
 							<Tooltip tooltipContent="Maximum word for each generated text. Maximum allowed length is 1000">
 								<span className="cursor-pointer">
 									<Image

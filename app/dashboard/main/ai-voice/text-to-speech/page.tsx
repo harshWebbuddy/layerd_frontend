@@ -6,7 +6,7 @@ export default function page() {
 	return (
 		<section className="w-full px-5 md:px-10 pb-10">
 			<div className="w-full bg-[url('/main/ai/background-voice-ai-space.png')] bg-cover bg-center rounded-2xl ring-1 ring-slate-700 p-3 md:p-7">
-				<div className="flex items-center justify-between">
+				<div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
 					<div className="flex items-center gap-4">
 						<Image
 							src="/main/ai/speech-to-text.png"

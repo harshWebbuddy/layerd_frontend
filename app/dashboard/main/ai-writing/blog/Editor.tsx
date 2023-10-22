@@ -29,8 +29,8 @@ export default function Editor() {
 		<div className="h-full">
 			<div className="flex flex-col h-full">
 				<form>
-					<div className="flex  flex-col md:flex-row gap-4 md:items-end h-fit">
-						<div className="w-full flex gap-4">
+					<div className="flex flex-col sm:flex-row xl:flex-col 2xl:flex-row gap-4 sm:items-end h-fit">
+						<div className="w-full flex flex-col sm:flex-row xl:flex-col 2xl:flex-row gap-4">
 							<div className="space-y-2 w-full">
 								<label htmlFor="File Title">Document Title</label>
 								<div className=" ring-inset ring-[#514E4E] ring-[2px] rounded-lg">
@@ -120,7 +120,7 @@ export default function Editor() {
 				<div className="w-full ring-1 ring-white/60 min-h-[400px] mt-5 flex-1 h-full rounded-2xl focus-within:ring-white/80">
 					<textarea
 						name=""
-						className="w-full h-full rounded-xl resize-none bg-transparent p-6 outline-none"></textarea>
+						className="w-full h-full rounded-sm sm:rounded-xl resize-none bg-transparent p-3 sm:p-6 outline-none"></textarea>
 				</div>
 			</div>
 		</div>

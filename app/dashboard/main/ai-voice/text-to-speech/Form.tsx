@@ -17,7 +17,7 @@ export default function Form() {
 						placeholder="English (USA)"
 					/>
 				</div>
-				<div className="w-full sm:max-w-[200px]">
+				<div className="w-full">
 					<Selection
 						id="voices"
 						items={languages}
@@ -47,7 +47,7 @@ export default function Form() {
 						/>
 					</div>
 				</div>
-				<div className="w-full sm:max-w-[200px]">
+				<div className="w-fulls">
 					<Selection
 						id="select-workbook"
 						items={[
@@ -237,10 +237,10 @@ export default function Form() {
 					/>
 				</div>
 			</div>
-			<div className="bg-[url('/main/background-speech.png')] bg-center bg-cover bg-no-repeat px-7 pt-6 pb-4 ring-1 ring-slate-700 ring-inset rounded-2xl !mt-10">
-				<h1 className="text-2xl font-semibold">Text To Speech</h1>
+			<div className="bg-[url('/main/background-speech.png')] bg-center bg-cover bg-no-repeat px-4 md:px-7 pt-6 pb-4 ring-1 ring-slate-700 ring-inset rounded-2xl !mt-10">
+				<h1 className="text-xl md:text-2xl font-semibold">Text To Speech</h1>
 				<div className="ring-1 ring-white/30 rounded-2xl mt-4 min-h-[380px] flex flex-col">
-					<div className="flex  flex-col sm:flex-row sm:items-center gap-5 p-7">
+					<div className="flex  flex-col sm:flex-row sm:items-center gap-5 p-3 md:p-7">
 						<div className="flex w-full items-center gap-5">
 							<Image
 								src="/main/ai/speech-to-text.png"
@@ -280,16 +280,16 @@ export default function Form() {
 						/>
 					</div>
 				</div>
-				<div className="flex  flex-col sm:flex-row sm:items-center justify-between mt-3">
+				<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-3">
 					<h1>0 Characters, 2 Lines</h1>
-					<div className="flex gap-3">
-						<button type="button" className="underline leading-[200%]">
+					<div className="flex flex-col sm:flex-row sm:gap-3">
+						<button type="button" className="underline text-start leading-[200%]">
 							Delete All lines
 						</button>
-						<button type="button" className="underline leading-[200%]">
+						<button type="button" className="underline text-start leading-[200%]">
 							Clear Effects
 						</button>
-						<button type="button" className="underline leading-[200%]">
+						<button type="button" className="underline text-start leading-[200%]">
 							Clear Text
 						</button>
 					</div>

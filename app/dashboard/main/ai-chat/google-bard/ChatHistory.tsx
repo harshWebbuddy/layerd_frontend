@@ -4,9 +4,9 @@ import { dummyChatHistory } from "../../components/constants";
 
 export default function ChatHistory() {
 	return (
-		<div className="w-full max-w-[300px] px-2 text-sm space-y-8">
+		<div className="w-full sm:max-w-[300px] px-2 text-sm space-y-8">
 			<div>
-				<button className="bg-gradient-to-br from-primary-red to-primary-yellow h-full w-full rounded-md flex gap-2 py-3 justify-center items-center max-w-[250px]">
+				<button className="bg-gradient-to-br from-primary-red to-primary-yellow h-full w-full rounded-md flex gap-2 py-3 justify-center items-center sm:max-w-[250px]">
 					<Image src="/main/add.svg" alt="add" width={16} height={16} />
 					<span>New chat</span>
 				</button>
