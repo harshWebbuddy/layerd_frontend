@@ -60,7 +60,10 @@ export default function ProfileButton({}: Props) {
 				</div>
 			</div>
 			<div className="relative">
-				{isPopupOpen && <ProfilePopup onClose={() => setIsPopupOpen(false)} />}
+				<ProfilePopup
+					onClose={() => setIsPopupOpen(false)}
+					isOpen={isPopupOpen}
+				/>
 			</div>
 		</div>
 	);

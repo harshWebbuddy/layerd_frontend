@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import React from "react";
 interface Props {
+	isOpen: boolean;
 	onClose: () => void;
 }
-export default function ProfilePopup({ onClose }: Props) {
-	
+export default function ProfilePopup({ isOpen, onClose }: Props) {
 	const linkItems = [
 		{
 			link: "/dashboard/account",
@@ -35,10 +36,35 @@ export default function ProfilePopup({ onClose }: Props) {
 			title: "Affiliate program",
 		},
 	];
+	const subMenuAnimate = {
+		enter: {
+			opacity: 1,
+			translateY : 5,
+			transition: {
+				duration: 0.1,
+			},
+			display: "block",
+		},
+		exit: {
+			opacity: 0,
+			translateY : -5,
+			transition: {
+				duration: 0.1,
+				delay: 0.1,
+			},
+			transitionEnd: {
+				display: "none",
+			},
+		},
+	};
 	return (
-		<div className="absolute right-0 mt-4 z-[9999]">
+		<motion.div
+			initial="exit"
+			animate={isOpen ? "enter" : "exit"}
+			variants={subMenuAnimate}
+			className="absolute right-0 mt-4 z-[9999]">
 			<div className="w-[300px] border-gradient z-[2] bg-[#1616163a] backdrop-blur-3xl rounded-lg">
-				<div className="bg-gradient-to-br from-[#ffffff31] to-[#8f8f8f05] z-10 p-3 pt-6 relative rounded-2xl">
+				<div className="bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f05] z-10 p-3 pt-6 relative rounded-2xl">
 					<div className="text-center">
 						<h1 className="text-xl font-semibold">SHERAZ AHMED</h1>
 						<p className="text-white/80">UX/UI Designer</p>
@@ -75,13 +101,13 @@ export default function ProfilePopup({ onClose }: Props) {
 						</div>
 					</div>
 					<div className="mt-1 w-full">
-						<button className="flex gap-3 items-center p-3 hover:bg-primary-red/10 rounded-lg transition capitalize w-full">
+						<button className="flex gap-3 items-center p-3 hover:bg-primary-red/10 rounded-lg transition capitalize w-full hover:ring-1 hover:ring-primary-red">
 							<Image src="/main/logout.svg" alt="Icon" width={20} height={20} />
 							<p className="capitalize text-[#FF0006] font-semibold">logout</p>
 						</button>
 					</div>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import Dropzone from "../components/DropZone";
+import NavigationButton from "../../components/NavigationButton";
 
 export default function page() {
 	return (
@@ -41,9 +42,9 @@ export default function page() {
 					</button>
 				</div>
 				<div className="flex justify-center">
-					<button className="bg-gradient-to-r from-primary-red to-primary-yellow w-full max-w-[140px] rounded-xl py-3 font-semibold">
+					<NavigationButton link="/dashboard/main/create-your-own/chat" styleClass="bg-gradient-to-r from-primary-red to-primary-yellow w-full max-w-[140px] rounded-xl py-3 font-semibold">
 						Chat
-					</button>
+					</NavigationButton> 
 				</div>
 			</div>
 		</section>

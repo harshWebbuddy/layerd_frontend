@@ -225,6 +225,18 @@ body {
 		)
 		1;
 }
+.border-top-gradient {
+	border-top-width: 3px;
+	border-style: solid;
+	border-image: linear-gradient(
+			to right,
+			rgba(236, 34, 39, 0) 20%,
+			#f99b18 40.62%,
+			#ec2227 60.42%,
+			rgba(249, 155, 24, 0) 80%
+		)
+		1;
+}
 .border-gradient {
 	position: relative;
 }

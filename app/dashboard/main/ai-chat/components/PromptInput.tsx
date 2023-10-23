@@ -7,7 +7,7 @@ interface Props {
 export default function PromptInput({ placeholder, isShadowAbsent }: Props) {
 	return (
 		<div
-			className={`bg-[#323232] ring-2 ring-[#514E4E] flex items-center h-[50px] rounded-lg py-1 pl-3 pr-1 gap-3 my-10 ${
+			className={`bg-[#323232] ring-2 ring-[#514E4E] flex items-center h-[50px] rounded-lg py-1 pl-3 pr-1 gap-3 my-5 ${
 				!isShadowAbsent && "shadow-xl shadow-primary-yellow/20 "
 			}`}>
 			<input
