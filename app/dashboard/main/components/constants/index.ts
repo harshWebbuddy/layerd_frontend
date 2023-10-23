@@ -200,12 +200,12 @@ export const navObjects = [
 			{
 				title: "All Transcripts",
 				link: "/dashboard/documents/transcripts",
-				icon: "/main/voice-docs.png",
+				icon: "/main/images-docs.png",
 			},
 			{
 				title: "Workbooks",
 				link: "/dashboard/documents/work-books",
-				icon: "/main/code-docs.png",
+				icon: "/main/documents-blue.png",
 			},
 			{
 				title: "All Codes",

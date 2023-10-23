@@ -3,7 +3,7 @@ import Dropzone from "../components/DropZone";
 
 export default function page() {
 	return (
-		<section className="w-full">
+		<section className="w-full p-3">
 			<div className="max-w-5xl mx-auto space-y-4">
 				<div className="flex flex-col justify-center items-center gap-3">
 					<h1 className="text-3xl font-bold">
@@ -28,15 +28,15 @@ export default function page() {
 						<span className="bg-[#212327] px-2 text-white text-lg">Or</span>
 					</div>
 				</div>
-				<div className="bg-[url('/background-image-create-your-own.png')] bg-cover bg-no-repeat bg-center rounded-2xl flex gap-5 p-10 ring-1 ring-slate-600/70">
+				<div className="bg-[url('/background-image-create-your-own.png')] bg-cover bg-no-repeat bg-center rounded-2xl flex flex-col sm:flex-row gap-5 p-4 md:p-10 ring-1 ring-slate-600/70">
 					<div className="border-gradient h-14 rounded-2xl flex items-center bg-gradient-to-br from-[#ffffff21] to-[#8f8f8f0f] px-3 flex-1">
 						<input
 							type="text"
 							placeholder="Enter website URL"
-							className="bg-transparent w-full h-full z-10 outline-none "
+							className="bg-transparent w-full h-14 z-[1] outline-none "
 						/>
 					</div>
-					<button className="bg-primary-red w-full max-w-[140px] rounded-xl font-semibold">
+					<button className="bg-primary-red w-full max-w-[140px] h-12 sm:h-auto rounded-xl font-semibold">
 						Crawl
 					</button>
 				</div>

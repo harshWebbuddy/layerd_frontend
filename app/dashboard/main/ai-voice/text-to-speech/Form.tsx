@@ -47,7 +47,7 @@ export default function Form() {
 						/>
 					</div>
 				</div>
-				<div className="w-fulls">
+				<div className="w-full">
 					<Selection
 						id="select-workbook"
 						items={[

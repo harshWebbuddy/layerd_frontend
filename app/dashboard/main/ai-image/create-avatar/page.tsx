@@ -16,7 +16,7 @@ export default function page() {
 			<div className="relative flex flex-col md:flex-row items-center gap-10 md:gap-20 border-[3px] border-primary-yellow border-dashed rounded-2xl bg-[#27272799] px-5 py-10 md:p-20 mt-10 min-h-[600px]">
 				<Dropzone />
 				<div className="w-full md:w-1 h-[2px] md:h-[320px] bg-[#494949]"></div>
-				<div className="relative z-20 space-y-8">
+				<div className="relative z-[1] space-y-8">
 					<p className="leading-[2] capitalize">
 						To get the best results, we suggest uploading 3 full body or entire
 						object photos, 5 medium shots of the chest and up, and 10 close-up

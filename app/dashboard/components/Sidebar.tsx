@@ -45,7 +45,7 @@ export default function Sidebar() {
 			<div className="w-fit min-h-screen top-0">
 				<div
 					className={clsx(
-						"box-border bg-[#1D1D1D] min-h-screen h-full border-right-gradient overscroll-y-auto overflow-y-auto transition-all ease-in-out duration-500 w-[300px] absolute lg:relative z-20",
+						"box-border bg-[#1D1D1D] min-h-screen h-full border-right-gradient overscroll-y-auto overflow-y-auto transition-all ease-in-out duration-500 w-[300px] absolute lg:relative z-[9999999999999999]",
 						!isExpanded && "!w-[0px] !overflow-hidden"
 					)}>
 					<div className="p-4">

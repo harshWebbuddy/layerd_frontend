@@ -6,7 +6,7 @@ import Editor from "./Editor";
 export default function page() {
 	return (
 		<section className="h-full px-5 md:px-10 pb-10 flex-1">
-			<div className="flex  flex-col xl:flex-row gap-6 h-full">
+			<div className="flex  flex-col xl:flex-row gap-6">
 				<div className="w-full bg-[url('/main/ai/background-voice-ai-forms.png')] xl:max-w-[480px] ring-1 ring-slate-600/80 rounded-2xl bg-center bg-cover bg-no-repeat h-full p-4 md:p-7 space-y-4">
 					<div className="flex items-center gap-4">
 						<Image
