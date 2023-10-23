@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { programmingLanguages } from "../../components/constants";
 import Selection from "../../components/Selection";
 import clsx from "clsx";
-import ClipBoard from "@/app/dashboard/affiliates/components/ClipBoard";
 
 export default function page() {
 	const [selection, setSelection] = useState<string | null>(null);

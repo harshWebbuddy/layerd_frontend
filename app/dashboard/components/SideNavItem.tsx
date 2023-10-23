@@ -286,7 +286,7 @@ export default function SideNavItem() {
 																	pathname
 																		.toLowerCase()
 																		.includes(item.link.toLowerCase()) &&
-																	"bg-primary-yellow p-1 rounded-full grid place-content-center"
+																	"bg-primary-yellow p-[1px] rounded-full grid place-content-center"
 																}`}>
 																<Image
 																	src={item.icon}

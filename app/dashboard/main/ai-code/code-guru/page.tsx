@@ -26,7 +26,7 @@ export default function page() {
 									vestibulum hac id viverra sit.
 								</p>
 								<NavigationButton
-									link="#"
+									link="/dashboard/main/ai-code/code-guru/code-explain"
 									styleClass="bg-[#494949] flex justify-between w-full p-3 items-center rounded-md">
 									<span className="font-semibold">View</span>
 									<Image
@@ -54,7 +54,7 @@ export default function page() {
 									vestibulum hac id viverra sit.
 								</p>
 								<NavigationButton
-									link="#"
+									link="/dashboard/main/ai-code/code-guru/code-refactor"
 									styleClass="bg-[#494949] flex justify-between w-full p-3 items-center rounded-md">
 									<span className="font-semibold">View</span>
 									<Image
@@ -82,12 +82,12 @@ export default function page() {
 									vestibulum hac id viverra sit.
 								</p>
 								<NavigationButton
-									link="#"
+									link="/dashboard/main/ai-code/code-guru/code-review"
 									styleClass="bg-[#494949] flex justify-between w-full p-3 items-center rounded-md">
 									<span className="font-semibold">View</span>
 									<Image
 										src="/arrow-right.svg"
-										alt="code-explain"
+										alt="code-review"
 										width={20}
 										height={20}
 										className="rounded-full"
