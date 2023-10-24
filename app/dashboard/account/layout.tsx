@@ -58,7 +58,7 @@ export default function layout({ children }: { children: ReactNode }) {
 						<div className="flex flex-col gap-2 items-center">
 							<div className="bg-[#7367F0] rounded-full overflow-hidden">
 								<Image
-									src="/main/avatar.png"
+									src="/main/Avatar.png"
 									alt="Avatar"
 									width={80}
 									height={80}

@@ -8,8 +8,8 @@ import { labels } from "@/utils/constants/objects";
 
 export default function page() {
 	return (
-		<section className="px-2 sm:px-10 py-5 space-y-5 overflow-x-hidden">
-			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-3 py-7 sm:p-7 space-y-10">
+		<section className="px-2 sm:px-10 py-5 space-y-5">
+			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-3 py-7 sm:p-7 space-y-10 overflow-x-hidden">
 				<div className="flex flex-col xl:flex-row items-start justify-between gap-10 xl:gap-28">
 					<div className="w-full space-y-6 sm:space-y-4">
 						<h1 className="text-2xl font-semibold">Affiliate Program</h1>
