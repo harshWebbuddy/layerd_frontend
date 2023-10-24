@@ -46,7 +46,7 @@ export default function page() {
 		<section className="p-2 sm:p-10 space-y-4 sm:space-y-10">
 			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-4 sm:p-10">
 				<div className="flex flex-col xl:flex-row gap-10 xlitems-center">
-					<div className="w-full max-w-sm rounded-lg p-6 space-y-3 text-center bg-gradient-to-br from-white/10 to-[#8f8f8f10]">
+					<div className="w-full lg:max-w-sm rounded-lg p-6 space-y-3 text-center bg-gradient-to-br from-white/10 to-[#8f8f8f10]">
 						<h1 className="text-white">
 							<span className="text-primary-yellow font-bold text-5xl">0</span>
 							Members

@@ -360,22 +360,25 @@ export default function Home() {
 					<div className="h-[3px] max-w-4xl translate-y-1.5 bg-gradient-to-r from-gray-600 via-gray-800/50 to-transparent flex-1" />
 				</div>
 				<div className="flex flex-col md:flex-row items-center gap-10 mt-12">
-					<p className="w-full text-white/70 text-sm sm:text-base leading-relaxed">
+					<p className="w-full text-white/70 text-sm sm:text-base">
 						<span className="uppercase font-bold text-white">
 							CREATE YOUR OWN GPT
 						</span>{" "}
-						is a powerful feature that enables users to develop their own
-						customized AI models. Leveraging the advanced machine learning
-						capabilities of GPT, users can train their AI on specific data sets,
-						allowing it to generate content or solve problems in specialized
-						domains. This feature fosters creativity, innovation, and precision
-						in AI applications, as users can fine-tune their AI models according
-						to their unique requirements and goals. It's an ideal tool for
-						researchers, developers, and businesses seeking to harness the power
-						of AI in a more personalized and targeted manner.
+						<span className=" leading-relaxed">
+							is a powerful feature that enables users to develop their own
+							customized AI models. Leveraging the advanced machine learning
+							capabilities of GPT, users can train their AI on specific data
+							sets, allowing it to generate content or solve problems in
+							specialized domains. This feature fosters creativity, innovation,
+							and precision in AI applications, as users can fine-tune their AI
+							models according to their unique requirements and goals. It's an
+							ideal tool for researchers, developers, and businesses seeking to
+							harness the power of AI in a more personalized and targeted
+							manner.
+						</span>
 					</p>
 					<div className="bg-gradient-to-tl from-primary-red via-primary-yellow/40 to-transparent p-[1px] w-full rounded-2xl relative">
-						<div className="w-full bg-black rounded-2xl">
+						<div className="w-full bg-black rounded-2xl min-h-[300px]">
 							<Image
 								src="/landing/floating-bot.gif"
 								alt="floating-bot"

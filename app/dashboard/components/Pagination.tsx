@@ -4,7 +4,7 @@ import React from "react";
 export default function Pagination() {
 	const dummyMemberLength = 5;
 	return (
-		<div className="flex flex-wrap gap-3 items-center justify-between text-xs sm:text-sm">
+		<div className="flex flex-wrap gap-3 items-center justify-between text-xs sm:text-sm pt-2">
 			<p>Showing 1 to 5 of 100 entries</p>
 			<div className="space-x-3 flex items-center">
 				<span>Page</span>

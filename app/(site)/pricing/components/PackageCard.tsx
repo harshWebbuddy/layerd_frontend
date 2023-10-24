@@ -35,7 +35,7 @@ const PackageCard: React.FC<Props> = ({
 		<div
 			className={`p-1 bg-gradient-to-b ${gradient} relative rounded-2xl md:max-w-[430px] min-h-[560px] sm:min-h-max`}>
 			{isPremium && (
-				<div className="bg-[url('/rectangle.svg')] h-52 w-28 bg-no-repeat absolute top-1 right-1 rounded-xl">
+				<div className="bg-[url('/Rectangle.svg')] h-52 w-28 bg-no-repeat absolute top-1 right-1 rounded-xl">
 					<p className="transform rotate-[35deg] translate-y-8 translate-x-12">
 						Popular
 					</p>

@@ -5,7 +5,7 @@ import React from "react";
 
 export default function page() {
 	return (
-		<section className="w-4/5 mx-16">
+		<section className="w-fit mx-auto">
 			<h1 className="text-white text-3xl font-semibold">Subscription Plans</h1>
 			<div className="mt-10">
 				<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 xl:gap-10">

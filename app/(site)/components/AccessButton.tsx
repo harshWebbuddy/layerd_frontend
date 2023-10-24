@@ -83,8 +83,8 @@ export default function AccessButton() {
 									<Image
 										src={isSuccess ? "/svgs/check.svg" : "/svgs/Arrow 1.svg"}
 										alt="Send icon"
-										width={30}
-										height={30}
+										width={20}
+										height={20}
 									/>
 								)}
 							</button>
