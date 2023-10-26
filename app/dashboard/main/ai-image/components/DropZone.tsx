@@ -20,7 +20,7 @@ export default function DropZone() {
 		<div>
 			<div
 				{...getRootProps()}
-				className="bg-[url('/main/ai/background-ai-dropzone.png')] bg-no-repeat bg-cover bg-center rounded-3xl ring-[#514E4E] ring-1 w-full flex justify-center items-center cursor-pointer outline-none p-3 min-h-[160px]">
+				className="bg-[url('/main/ai/background-ai-dropzone.png')] bg-no-repeat bg-cover bg-center rounded-3xl ring-[#514E4E] ring-inset ring-1 w-full flex justify-center items-center cursor-pointer outline-none p-3 min-h-[160px]">
 				<input
 					{...getInputProps()}
 					accept="images/*"

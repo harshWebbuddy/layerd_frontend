@@ -14,10 +14,10 @@ export default function page() {
 					draggable={false}
 					className="w-28"
 				/>
-				<h1 className="text-3xl font-semibold mt-10">Welcome to ChatGPT</h1>
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 2xl:gap-16 mt-16">
+				<h1 className="text-3xl font-semibold mt-10 text-center">Welcome to ChatGPT</h1>
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 2xl:gap-16 mt-12">
 					{defaultDisplay.map((item, index) => (
-						<div key={index} className="space-y-6 flex flex-col items-center">
+						<div key={index} className="space-y-3 flex flex-col items-center">
 							<Image
 								src={item.icon}
 								alt="Icon"
@@ -26,7 +26,7 @@ export default function page() {
 								className={`${index !== 2 ? "w-4" : "w-6"}`}
 							/>
 							<h1 className="text-lg font-semibold">{item.title}</h1>
-							<div className="flex flex-col gap-5">
+							<div className="flex flex-col gap-5 !mt-7">
 								{item.lists.map((itemList, index) => (
 									<div
 										key={index}

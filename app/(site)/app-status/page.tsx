@@ -10,7 +10,7 @@ export default function AppStatus() {
 		Website: 100,
 	};
 	return (
-		<div className="mt-28 max-w-[1300px] mx-auto">
+		<div className="pt-32 max-w-[1300px] mx-auto">
 			<section className="p-3 sm:p-4">
 				<div className="flex flex-col md:flex-row justify-between">
 					<h1 className="capitalize text-4xl font-bold">App status</h1>

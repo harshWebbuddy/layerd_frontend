@@ -7,6 +7,7 @@ import { Slider } from "@/components/ui/slider";
 import DropZone from "../components/DropZone";
 import Selection from "../components/Selection";
 import Checkbox from "../../ai-voice/components/Checkbox";
+import Gallery from "./Gallery";
 
 export default function page() {
 	const [selectedAspect, setSelectedAspect] = useState<string>("1:1");
@@ -14,7 +15,7 @@ export default function page() {
 	return (
 		<div className="flex px-3 sm:px-7 gap-6">
 			<section className="w-full">
-				<div className="bg-[url('/main/ai/background-diffusion-ai.png')] bg-center bg-cover p-4 sm:p-7 ring-1 ring-neutral-700 rounded-2xl">
+				<div className="bg-[url('/main/ai/background-diffusion-ai.png')] bg-center bg-cover p-4 sm:p-7 ring-1 ring-neutral-700 ring-inset rounded-2xl">
 					<form className="space-y-6">
 						<div className="flex flex-col xl:flex-row justify-between xl:items-center">
 							<h1 className="capitalize text-primary-yellow text-3xl font-semibold">
@@ -49,10 +50,11 @@ export default function page() {
 					<h1 className="text-2xl font-semibold capitalize">
 						generated images
 					</h1>
+					<Gallery/>
 				</div>
 			</section>
-			<section className="w-full hidden sm:block max-w-[380px] bg-[url('/main/ai/background-diffusion-ai-options.png')] bg-center bg-cover ring-1 ring-neutral-700 rounded-2xl">
-				<div className="p-7">
+			<section className="w-full h-fit hidden sm:block max-w-[324px] bg-[url('/main/ai/background-diffusion-ai-options.png')] bg-center bg-cover ring-1 ring-neutral-700 rounded-2xl">
+				<div className="p-4">
 					<p className="flex items-center gap-4 font-semibold text-lg">
 						<span>Aspect Ratio</span>
 						<span className="cursor-pointer">
