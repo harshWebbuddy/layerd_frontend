@@ -18,15 +18,15 @@ export default function Gallery() {
 	];
 	const columns = 5;
 	return (
-		<div className="flex flex-row gap-2 mt-6">
+		<div className="flex flex-row gap-1.5 mt-6">
 			{Array.from({ length: columns }, (_, columnIndex) => (
-				<div key={columnIndex} className="flex flex-col w-full gap-2">
+				<div key={columnIndex} className="flex flex-col w-full gap-1.5">
 					{images.map(
 						(image, index) =>
 							index % columns === columnIndex && (
 								<div key={index} className="group relative">
-									<img src={image} alt="image" className="w-full rounded-lg" />
-									<div className="opacity-0 absolute inset-0 z-[1] bg-black group-hover:opacity-80 rounded-lg transition duration-200 cursor-pointer"></div>
+									<img src={image} alt="image" className="w-full rounded-xl" />
+									<div className="opacity-0 absolute inset-0 z-[1] bg-black group-hover:opacity-80 rounded-xl transition duration-200 cursor-pointer"></div>
 									<div className="absolute top-0 right-0 flex flex-col gap-3 mx-4 my-3 invisible opacity-0 group-hover:visible group-hover:opacity-100 z-[2]">
 										<Image
 											src="/main/ai/download.svg"

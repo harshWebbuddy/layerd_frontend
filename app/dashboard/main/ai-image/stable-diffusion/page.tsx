@@ -50,7 +50,7 @@ export default function page() {
 					<h1 className="text-2xl font-semibold capitalize">
 						generated images
 					</h1>
-					<Gallery/>
+					<Gallery />
 				</div>
 			</section>
 			<section className="w-full h-fit hidden sm:block max-w-[324px] bg-[url('/main/ai/background-diffusion-ai-options.png')] bg-center bg-cover ring-1 ring-neutral-700 rounded-2xl">
@@ -233,18 +233,20 @@ export default function page() {
 						<h1 className="font-semibold capitalize text-lg">
 							advanced settings
 						</h1>
-						<Selection
-							id="sampler"
-							items={[
-								{
-									value: "Fuler A",
-									label: "Fuler B",
-								},
-							]}
-							placeholder="Select sample"
-							label="Sampler"
-						/>
-						<div className="flex justify-between gap-2">
+						<div className="flex items-center gap-6 w-full">
+							<label htmlFor="sampler">Sampler</label>
+							<Selection
+								id="sampler"
+								items={[
+									{
+										value: "Fuler A",
+										label: "Fuler B",
+									},
+								]}
+								placeholder="Select sample"
+							/>
+						</div>
+						<div className="flex items-center justify-between gap-2">
 							<label className="flex w-full items-center gap-2 max-w-fit">
 								<span>Step</span>
 								<span className="cursor-pointer">
@@ -257,9 +259,11 @@ export default function page() {
 									/>
 								</span>
 							</label>
-							<Slider defaultValue={[33]} max={100} step={1} />
+							<div className="max-w-[150px] w-full">
+								<Slider defaultValue={[33]} max={100} step={1} />
+							</div>
 						</div>
-						<div className="flex justify-between gap-2">
+						<div className="flex items-center justify-between gap-2">
 							<label className="flex w-full items-center gap-2 max-w-fit">
 								<span>CFG ratio</span>
 								<span className="cursor-pointer">
@@ -272,9 +276,11 @@ export default function page() {
 									/>
 								</span>
 							</label>
-							<Slider defaultValue={[33]} max={100} step={1} />
+							<div className="max-w-[150px] w-full">
+								<Slider defaultValue={[33]} max={100} step={1} />
+							</div>
 						</div>
-						<div className="flex justify-between gap-2">
+						<div className="flex items-center justify-between gap-2">
 							<label className="flex w-full items-center gap-2 max-w-fit">
 								<span>clip skip</span>
 								<span className="cursor-pointer">
@@ -287,7 +293,9 @@ export default function page() {
 									/>
 								</span>
 							</label>
-							<Slider defaultValue={[33]} max={100} step={1} />
+							<div className="max-w-[150px] w-full">
+								<Slider defaultValue={[33]} max={100} step={1} />
+							</div>
 						</div>
 						<div className="flex justify-between gap-2">
 							<label className="flex w-full items-center gap-2 max-w-fit">
