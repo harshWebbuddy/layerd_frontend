@@ -26,7 +26,7 @@ export default function page() {
 			<div className="w-[132px] h-[428px] bg-[#FFB076] blur-[150px] absolute top-1/4 left-[-200px] z-[2]" />
 			<div className="flex flex-col gap-2 items-center">
 				<h1 className="text-3xl font-semibold">AI Code Converter</h1>
-				<p>Enter some code and click "Convert"</p>
+				<p className="text-[#ABAEB7]">Enter some code and click "Convert"</p>
 			</div>
 			<div className="flex flex-col sm:flex-row gap-3">
 				<div className="space-y-2 w-full">

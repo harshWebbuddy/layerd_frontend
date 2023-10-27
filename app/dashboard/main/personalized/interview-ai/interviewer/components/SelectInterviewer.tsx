@@ -25,7 +25,7 @@ export default function SelectInterviewer() {
 				<div
 					key={index}
 					onClick={() => setSelectedInterviewer(person.name)}
-					className={`flex justify-between items-center bg-gradient-to-br from-[#ffffff21] to-[#8f8f8f0f] py-5 px-10 rounded-lg cursor-pointer ${
+					className={`flex justify-between items-center bg-gradient-to-br from-[#ffffff21] to-[#8f8f8f0f] py-4 px-8 rounded-lg cursor-pointer ${
 						selectedInterviewer === person.name && "border-gradient"
 					}`}>
 					<div className="space-y-3">

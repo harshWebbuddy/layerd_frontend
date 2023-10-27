@@ -11,7 +11,7 @@ export default function Difficulty() {
 		<div className="space-y-6">
 			<div
 				onClick={() => setSelectedDifficulty("easy")}
-				className={`flex justify-between items-center bg-gradient-to-br from-[#ffffff21] to-[#8f8f8f0f] py-5 px-10 rounded-lg cursor-pointer ${
+				className={`flex justify-between items-center bg-gradient-to-br from-[#ffffff21] to-[#8f8f8f0f] py-4 px-8 rounded-lg cursor-pointer ${
 					selectedDifficulty === "easy" && "border-gradient"
 				}`}>
 				<div className="space-y-3">
@@ -35,7 +35,7 @@ export default function Difficulty() {
 			</div>
 			<div
 				onClick={() => setSelectedDifficulty("medium")}
-				className={`flex justify-between items-center bg-gradient-to-br from-[#ffffff21] to-[#8f8f8f0f] py-5 px-10 rounded-lg cursor-pointer ${
+				className={`flex justify-between items-center bg-gradient-to-br from-[#ffffff21] to-[#8f8f8f0f] py-4 px-8 rounded-lg cursor-pointer ${
 					selectedDifficulty === "medium" && "border-gradient"
 				}`}>
 				<div className="space-y-3">

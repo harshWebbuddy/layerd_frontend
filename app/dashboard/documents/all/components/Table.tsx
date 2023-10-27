@@ -3,10 +3,10 @@ import Image from "next/image";
 import React from "react";
 
 interface Props {
-	columns : string[]
+	columns: string[];
 	data: Array<DocumentData>;
 }
-export default function Table({columns, data }: Props) {
+export default function Table({ columns, data }: Props) {
 	return (
 		<div className="w-full overflow-x-auto">
 			<table className="w-full">
@@ -15,10 +15,27 @@ export default function Table({columns, data }: Props) {
 						{columns.map((column, index) => (
 							<th
 								key={index}
-								className={`text-primary-yellow min-w-[250px] text-left p-6 ${
+								className={`text-primary-yellow min-w-[180px] text-left p-6 ${
 									index === 0 && "pl-8 sm:pl-14"
 								}`}>
-								{column}
+								<div className="flex gap-2 w-full justify-between">
+									{column}
+									<div className="flex flex-col justify-end">
+										<Image
+											src="/main/fi_chevron-up.svg"
+											alt="Search"
+											width={15}
+											height={15}
+										/>
+										<Image
+											src="/main/chevron-down.svg"
+											alt="Search"
+											width={15}
+											height={15}
+											className="-translate-y-2"
+										/>
+									</div>
+								</div>
 							</th>
 						))}
 					</tr>
@@ -29,12 +46,12 @@ export default function Table({columns, data }: Props) {
 							key={index}
 							className={`${
 								index % 2 &&
-								"bg-gradient-to-br from-[#ffffff09] to-[#8f8f8f0c] backdrop-blur-md w-full"
+								"bg-gradient-to-br from-[#35353500] to-[#8f8f8f0c] backdrop-blur-sm w-full"
 							}`}>
 							<td className="p-6 pl-8 sm:pl-14 min-w-[300px]">
 								<div>
 									<div className="flex items-center gap-4">
-										<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-3 max-w-fit">
+										<div className="w-full bg-gradient-to-br from-[#ffffff10] to-[#8f8f8f0c] backdrop-blur-sm rounded-lg p-3 max-w-fit">
 											<Image
 												src="/main/documents-colored.svg"
 												alt="Image"
@@ -51,7 +68,7 @@ export default function Table({columns, data }: Props) {
 							</td>
 							<td className="p-6">{document.workbook}</td>
 							<td className="p-6">
-								<div className="py-2 px-4 bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-full max-w-fit">
+								<div className="py-2 px-6 bg-gradient-to-br from-[#ffffff10] to-[#8f8f8f00] backdrop-blur-md rounded-full max-w-fit">
 									{document.category}
 								</div>
 							</td>
@@ -63,7 +80,7 @@ export default function Table({columns, data }: Props) {
 							</td>
 							<td className="p-6">{document.language}</td>
 							<td className="p-6">{document.wordsUsed}</td>
-							<td className="p-6 pt-10 flex  gap-6">
+							<td className="p-6 pt-10 flex gap-6">
 								<button>
 									<Image
 										src="/main/eye.svg"

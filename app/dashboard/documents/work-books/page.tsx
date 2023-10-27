@@ -24,7 +24,7 @@ export default function page() {
 					All My Workbooks
 				</h1>
 				<div className="bg-gradient-to-r from-transparent via-[#ffffff62] to-transparent h-[3px] w-full my-6" />
-				<div className="flex flex-wrap gap-10 items-end">
+				<div className="flex flex-col md:flex-row gap-10 items-end">
 					<ISelection />
 					<div className="justify-end flex gap-3">
 						<div className="w-full bg-gradient-to-br from-[#ffffff09] to-[#8f8f8f00] backdrop-blur-md rounded-lg p-3 cursor-pointer hover:bg-[#ffffff11] transition duration-300">

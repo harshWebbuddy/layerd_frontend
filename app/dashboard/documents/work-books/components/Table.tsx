@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 interface Props {
 	columns: string[];
@@ -15,7 +16,24 @@ export default function Table({ columns, data }: Props) {
 								className={`text-primary-yellow text-left p-6 min-w-[250px] ${
 									index === 0 && "pl-6 sm:pl-14"
 								}`}>
-								{column}
+								<div className="flex gap-2 w-full justify-between">
+									{column}
+									<div className="flex flex-col justify-end">
+										<Image
+											src="/main/fi_chevron-up.svg"
+											alt="Search"
+											width={15}
+											height={15}
+										/>
+										<Image
+											src="/main/chevron-down.svg"
+											alt="Search"
+											width={15}
+											height={15}
+											className="-translate-y-2"
+										/>
+									</div>
+								</div>{" "}
 							</th>
 						))}
 					</tr>

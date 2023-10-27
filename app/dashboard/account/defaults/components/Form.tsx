@@ -29,14 +29,14 @@ export default function Form() {
 					<Selection
 						id="ai-voice-language"
 						label="Default AI Voiceover Studio Language"
-						placeholder="Select AI voiceover Studio Language"
+						placeholder="English (USA)"
 						required={false}
 						items={languages}
 					/>
 					<Selection
 						id="ai-voice-language"
 						label="Default AI Voiceover Studio Voice"
-						placeholder="Select AI voiceover Studio Voice"
+						placeholder="Set Default Voice"
 						required={false}
 						items={languages}
 					/>
@@ -45,7 +45,7 @@ export default function Form() {
 					<Selection
 						id="ai-voice-language"
 						label="Default Language for Templates"
-						placeholder="Select language for Templates"
+						placeholder="English (USA)"
 						required={false}
 						items={languages}
 					/>

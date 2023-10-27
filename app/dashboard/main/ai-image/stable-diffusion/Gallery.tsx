@@ -15,6 +15,9 @@ export default function Gallery() {
 		"/main/dummy/image10.png",
 		"/main/dummy/image11.png",
 		"/main/dummy/image12.png",
+		"/main/dummy/image13.jpg",
+		"/main/dummy/image15.jpg",
+		"/main/dummy/image14.jpg",
 	];
 	const columns = 5;
 	return (

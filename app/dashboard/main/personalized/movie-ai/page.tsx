@@ -4,10 +4,11 @@ import React from "react";
 
 export default function page() {
 	return (
-		<section className="h-full">
-			<div className="h-full flex  flex-col sm:flex-row justify-center gap-10 items-center max-w-6xl mx-auto">
+		<section className="h-full w-full">
+			<div className="bg-black/90 fixed inset-0" />
+			<div className="h-full w-full flex flex-col sm:flex-row justify-center gap-10 items-center max-w-6xl mx-auto absolute inset-0 py-4 px-3 sm:px-10">
 				<div className="space-y-10">
-					<h1 className="capitalize mt-4 text-3xl md:text-5xl bg-gradient-to-b from-white to-primary-red !leading-[40px] sm:!leading-[65px] font-bold text-transparent bg-clip-text max-w-[600px]">
+					<h1 className="capitalize mt-4 text-4xl md:text-5xl bg-gradient-to-b from-white to-primary-red !leading-[50px] md:!leading-[65px] font-bold text-transparent bg-clip-text max-w-[600px]">
 						Get Curated Show & Movie Recommendations with{" "}
 						<span className="text-primary-yellow">WhopMe</span> AI
 					</h1>

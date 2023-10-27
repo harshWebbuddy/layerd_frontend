@@ -8,17 +8,32 @@ interface Props {
 }
 export default function Table({ columns, data }: Props) {
 	return (
-		<div className="w-full overflow-x-auto">
+		<div className="w-full px-10 mx-auto overflow-x-auto">
 			<table className="w-full">
 				<thead className="border-b-[3px] border-white/10">
 					<tr>
 						{columns.map((column, index) => (
 							<th
 								key={index}
-								className={`text-primary-yellow text-left p-6 min-w-[250px] ${
-									index === 0 && "pl-6 sm:pl-14"
-								}`}>
-								{column}
+								className={`text-primary-yellow text-left py-4 pr-4 min-w-[180px]`}>
+								<div className={`flex gap-2 w-full justify-between ${index !== columns.length -1 && 'pr-10'}`}>
+									{column}
+									<div className="flex flex-col justify-end">
+										<Image
+											src="/main/fi_chevron-up.svg"
+											alt="Search"
+											width={15}
+											height={15}
+										/>
+										<Image
+											src="/main/chevron-down.svg"
+											alt="Search"
+											width={15}
+											height={15}
+											className="-translate-y-2"
+										/>
+									</div>
+								</div>
 							</th>
 						))}
 					</tr>
@@ -31,7 +46,7 @@ export default function Table({ columns, data }: Props) {
 								index % 2 &&
 								"bg-gradient-to-br from-[#ffffff09] to-[#8f8f8f0c] backdrop-blur-md w-full"
 							}`}>
-							<td className="p-6 pl-6 sm:pl-14 min-w-[300px]">
+							<td className="py-4">
 								<div>
 									<div className="flex items-center gap-3">
 										<Image
@@ -48,15 +63,15 @@ export default function Table({ columns, data }: Props) {
 									</div>
 								</div>
 							</td>
-							<td className="p-6">{document.resolution}</td>
-							<td className="p-6">{document.createdFrom}</td>
-							<td className="p-6">
+							<td>{document.resolution}</td>
+							<td>{document.createdFrom}</td>
+							<td>
 								<div className="text-left">
 									<h3 className="font-semibold">{document.createdAt.date}</h3>
 									<h4 className="text-white/50">{document.createdAt.time}</h4>
 								</div>
 							</td>
-							<td className="p-6 pt-10 flex  gap-6">
+							<td className="pt-10 flex justify-end  gap-6">
 								<button>
 									<Image
 										src="/main/download.svg"

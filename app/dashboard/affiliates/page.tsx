@@ -9,7 +9,7 @@ import { labels } from "@/utils/constants/objects";
 export default function page() {
 	return (
 		<section className="px-2 sm:px-10 py-5 space-y-5">
-			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-3 py-7 sm:p-7 space-y-10 overflow-x-hidden">
+			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg p-3 py-7 sm:p-7 space-y-10 overflow-x-hidd text-centeren">
 				<div className="flex flex-col xl:flex-row items-start justify-between gap-10 xl:gap-28">
 					<div className="w-full space-y-6 sm:space-y-4">
 						<h1 className="text-2xl font-semibold">Affiliate Program</h1>
@@ -32,14 +32,15 @@ export default function page() {
 							<Link
 								href={item.link}
 								key={index}
-								className="bg-gradient-to-br from-[#d3d3d309] to-[#8f8f8f00] backdrop-blur-md rounded-lg p-10 space-y-4 flex flex-col items-center w-full h-full">
+								className="bg-gradient-to-br from-[#d3d3d317] to-[#8f8f8f00] backdrop-blur-md rounded-lg p-10 space-y-4 flex flex-col items-center w-full h-full">
 								<Image
 									src={item.image}
 									alt="Referral-image"
-									width={55}
-									height={55}
+									width={70}
+									height={70}
+									draggable={false}
 								/>
-								<p className="font-semibold">{item.title}</p>
+								<p className="font-semibold text-center">{item.title}</p>
 							</Link>
 						))}
 					</div>
@@ -92,6 +93,7 @@ export default function page() {
 							alt="image"
 							width={60}
 							height={60}
+							draggable={false}
 						/>
 						<h1 className="text-2xl font-semibold">Send Invitation</h1>
 						<p className="text-center">
@@ -101,10 +103,11 @@ export default function page() {
 					</div>
 					<div className="bg-gradient-to-br from-[#ffffff10] to-[#8f8f8f02] backdrop-blur-md rounded-lg p-6 space-y-4 flex flex-col items-center w-full">
 						<Image
-							src="/main/send-mail.svg"
+							src="/main/registration.svg"
 							alt="image"
 							width={60}
 							height={60}
+							draggable={false}
 						/>
 						<h1 className="text-2xl font-semibold">Registration</h1>
 						<p className="text-center">
@@ -117,6 +120,7 @@ export default function page() {
 							alt="image"
 							width={60}
 							height={60}
+							draggable={false}
 						/>
 						<h1 className="text-2xl font-semibold">Get Commissions</h1>
 						<p className="text-center">
