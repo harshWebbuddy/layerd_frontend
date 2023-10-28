@@ -40,14 +40,14 @@ export default function SideNavItem() {
 							"flex justify-between gap-3 hover:bg-[#323232b7] hover:ring-2 ring-[#514E4E] rounded-lg cursor-pointer py-2 pl-2 pr-4 items-center transition duration-200 h-[52px]",
 							activeLink == item.title && "bg-[#272727] ring-1"
 						)}>
-						<div className="flex items-center gap-1">
+						<div className="flex items-center gap-2">
 							<div
 								className={`rounded-full p-1 transition duration-500 bg-transparent ${
-									activeLink == item.title && "bg-[#c6c1b521]"
+									activeLink == item.title && "!bg-[#c6c1b521]"
 								}`}>
 								<div
 									className={`rounded-full p-1 transition duration-500 bg-transparent ${
-										activeLink == item.title && "bg-[#c6c1b533]"
+										activeLink == item.title && "!bg-[#c6c1b525]"
 									}`}>
 									<div
 										className={`${
@@ -127,14 +127,14 @@ export default function SideNavItem() {
 								"flex justify-between gap-3 hover:bg-[#323232b7] hover:ring-2 ring-[#514E4E] rounded-lg cursor-pointer py-2.5 pl-2 pr-4 items-center transition duration-200 h-[52px]",
 								activeLink == item.title && "bg-[#272727] ring-1"
 							)}>
-							<div className="flex items-center gap-1">
+							<div className="flex items-center gap-2">
 								<div
 									className={`rounded-full p-1 transition duration-500 bg-transparent ${
-										activeLink == item.title && "bg-[#c6c1b521]"
+										activeLink == item.title && "!bg-[#c6c1b521]"
 									}`}>
 									<div
 										className={`rounded-full p-1 transition duration-500 bg-transparent ${
-											activeLink == item.title && "bg-[#c6c1b533]"
+											activeLink == item.title && "!bg-[#c6c1b525]"
 										}`}>
 										<div
 											className={`${

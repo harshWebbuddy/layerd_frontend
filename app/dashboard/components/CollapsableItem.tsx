@@ -18,7 +18,7 @@ export default function CollapsableItem({ item, index, activeLink }: Props) {
 
 	return (
 		<div className="relative" key={index}>
-			<div className={`flex items-end `}>
+			<div className={`flex items-end z-[1] relative`}>
 				<Image
 					src={`${
 						pathname.includes(item.link)
