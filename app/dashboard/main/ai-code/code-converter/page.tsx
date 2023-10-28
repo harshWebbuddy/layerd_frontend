@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { programmingLanguages } from "../../components/constants";
 import Selection from "../../components/Selection";
 import clsx from "clsx";
+import NavigationButton from "@/app/dashboard/components/NavigationButton";
+import Image from "next/image";
 
 export default function page() {
 	const [selection, setSelection] = useState<string | null>(null);
@@ -22,15 +24,15 @@ export default function page() {
 		setTimeout(() => setCopied(false), 1500);
 	}
 	return (
-		<section className="px-4 md:px-10 space-y-10 relative">
+		<section className="px-4 md:px-10 space-y-6 relative">
 			<div className="w-[132px] h-[428px] bg-[#FFB076] blur-[150px] absolute top-1/4 left-[-200px] z-[2]" />
 			<div className="flex flex-col gap-2 items-center">
-				<h1 className="text-3xl font-semibold">AI Code Converter</h1>
+				<h1 className="text-3xl font-bold">AI Code Converter</h1>
 				<p className="text-[#ABAEB7]">Enter some code and click "Convert"</p>
 			</div>
-			<div className="flex flex-col sm:flex-row gap-3">
+			<div className="flex flex-col sm:flex-row gap-3 !mt-10">
 				<div className="space-y-2 w-full">
-					<label>Input</label>
+					<label className="font-semibold">Input</label>
 					<div
 						onClick={() => setSelection("input")}
 						className={clsx(selection === "input" && "border-gradient")}>
@@ -42,7 +44,7 @@ export default function page() {
 					</div>
 				</div>
 				<div className="space-y-2 w-full">
-					<label>Output</label>
+					<label className="font-semibold">Output</label>
 					<div
 						onClick={() => setSelection("output")}
 						className={clsx(selection === "output" && "border-gradient")}>
@@ -88,6 +90,17 @@ export default function page() {
 					</div>
 				</div>
 			</div>
+			<button
+				className="bg-[#494949] flex justify-between w-full max-w-[270px] p-3 items-center rounded-md">
+				<span className="font-semibold">Convert</span>
+				<Image
+					src="/arrow-right.svg"
+					alt="code-explain"
+					width={20}
+					height={20}
+					className="rounded-full"
+				/>
+			</button>
 		</section>
 	);
 }

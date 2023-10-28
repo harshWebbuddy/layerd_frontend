@@ -89,7 +89,11 @@ export default function SideNavItem() {
 								className="ml-3 flex flex-col"
 								onClick={(e) => e.stopPropagation()}>
 								{item.items?.map((item, index) => (
-									<CollapsableItem index={index} item={item} />
+									<CollapsableItem
+										index={index}
+										item={item}
+										activeLink={activeLink!}
+									/>
 								))}
 							</div>
 						</Collapse>
@@ -173,7 +177,11 @@ export default function SideNavItem() {
 									className="ml-3 flex flex-col"
 									onClick={(e) => e.stopPropagation()}>
 									{item.items?.map((item, index) => (
-										<CollapsableItem index={index} item={item} />
+										<CollapsableItem
+											index={index}
+											item={item}
+											activeLink={activeLink!}
+										/>
 									))}
 								</div>
 							</Collapse>

@@ -139,18 +139,18 @@ export const navObjects = [
 				items: [
 					{
 						title: "Explain Code",
-						link: "/dashboard/main/ai-code/code-writing",
-						icon: "/main/code-writing.png",
+						link: "/dashboard/main/ai-code/code-guru/code-explain",
+						icon: "/main/code-explain.png",
 					},
 					{
 						title: "Code Refactor",
-						link: "/dashboard/main/ai-code/code-converter",
-						icon: "/main/code-converter.png",
+						link: "/dashboard/main/ai-code/code-guru/code-refactor",
+						icon: "/main/code-refactor.png",
 					},
 					{
 						title: "Code Review",
-						link: "/dashboard/main/ai-code/code-guru",
-						icon: "/main/code-guru.png",
+						link: "/dashboard/main/ai-code/code-guru/code-review",
+						icon: "/main/code-review.png",
 					},
 				],
 			},
