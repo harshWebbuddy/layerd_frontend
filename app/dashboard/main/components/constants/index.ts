@@ -33,6 +33,7 @@ export const navObjects = [
 		icon: "/main/search-list.gif",
 		title: "AI Search Engine",
 		link: "/dashboard/main/search-engine",
+		theme : '#4266f5'
 	},
 	{
 		icon: "/main/ai-chat.gif",
@@ -196,7 +197,7 @@ export const navObjects = [
 		title: "AI tools",
 	},
 	{
-		icon: "/main/ai-person.gif",
+		icon: "/main/document.gif",
 		title: "Documents",
 		items: [
 			{

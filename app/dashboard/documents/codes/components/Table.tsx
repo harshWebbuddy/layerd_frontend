@@ -16,7 +16,7 @@ export default function Table({ columns, data }: Props) {
 								className={`text-primary-yellow text-left px-6 pt-4 pb-3 min-w-[200px] ${
 									index === 0 && "pl-8 sm:pl-14"
 								}`}>
-								<div className="flex gap-2 w-full justify-between">
+								<div className="flex gap-4 w-full">
 									{column}
 									<div className="flex flex-col justify-end">
 										<Image

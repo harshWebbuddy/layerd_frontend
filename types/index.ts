@@ -34,3 +34,11 @@ export interface Time {
 	date: string;
 	time: string;
 }
+
+export type LinkItem = {
+  title : string;
+  link : string;
+  icon : string;
+	items ?: LinkItem[];
+	theme ?: string
+}

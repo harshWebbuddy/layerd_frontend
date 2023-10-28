@@ -7,8 +7,8 @@ export default function SearchFilter() {
       <Image
         src="/main/search-white.svg"
         alt="Search"
-        width={25}
-        height={25}
+        width={20}
+        height={20}
       />
 			<input type="text" className="outline-none bg-transparent" />
 		</div>

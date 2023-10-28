@@ -24,7 +24,7 @@ const Input = ({
 }: Props) => {
 	return (
 		<div className="w-full">
-			<label htmlFor={id} className="block leading-6 text-white/80 capitalize">
+			<label htmlFor={id} className="block leading-6 capitalize">
 				{label}
 				{required && <span className="text-primary-red">*</span>}
 				{optional && (

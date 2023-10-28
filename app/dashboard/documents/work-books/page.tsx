@@ -24,48 +24,52 @@ export default function page() {
 					All My Workbooks
 				</h1>
 				<div className="bg-gradient-to-r from-transparent via-[#ffffff62] to-transparent h-[3px] w-full my-6" />
-				<div className="flex flex-col md:flex-row gap-10 items-end">
+				<div className="flex flex-col md:flex-row justify-between gap-10 items-end">
 					<ISelection />
 					<div className="justify-end flex gap-3">
-						<div className="w-full bg-gradient-to-br from-[#ffffff09] to-[#8f8f8f00] backdrop-blur-md rounded-lg p-3 cursor-pointer hover:bg-[#ffffff11] transition duration-300">
+						<div className="w-full bg-gradient-to-br from-[#ffffff09] to-[#8f8f8f00] backdrop-blur-md rounded-lg p-3 cursor-pointer hover:bg-[#ffffff11] transition duration-300  grid place-content-center">
 							<Image
 								src="/main/create-folder.svg"
 								alt="Create Folder"
-								width={40}
-								height={40}
+								width={30}
+								height={30}
+								className="min-w-[30px]"
 							/>
 						</div>
-						<div className="w-full bg-gradient-to-br from-[#ffffff09] to-[#8f8f8f00] backdrop-blur-md rounded-lg p-3 cursor-pointer hover:bg-[#ffffff11] transition duration-300">
+						<div className="w-full bg-gradient-to-br from-[#ffffff09] to-[#8f8f8f00] backdrop-blur-md rounded-lg p-3 cursor-pointer hover:bg-[#ffffff11] transition duration-300 grid place-content-center">
 							<Image
-                src="/main/set-top-stack.svg"
+								src="/main/set-top-stack.svg"
 								alt="Create Folder"
-								width={40}
-								height={40}
-                />
+								width={30}
+								height={30}
+								className="min-w-[30px]"
+							/>
 						</div>
-						<div className="w-full bg-gradient-to-br from-[#ffffff09] to-[#8f8f8f00] backdrop-blur-md rounded-lg p-3 cursor-pointer">
+						<div className="w-full bg-gradient-to-br from-[#ffffff09] to-[#8f8f8f00] backdrop-blur-md rounded-lg p-3 cursor-pointer hover:bg-[#ffffff11]  grid place-content-center">
 							<Image
 								src="/main/delete.svg"
 								alt="Create Folder"
-								width={40}
-								height={40}
+								width={30}
+								height={30}
+								className="min-w-[30px]"
 							/>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div className="w-full bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] backdrop-blur-md rounded-lg relative z-0">
-				<div className="px-4 md:px-10 py-8">
+				<div className="px-4 md:px-10 pt-8">
 					<div className="flex flex-wrap gap-3 justify-between items-center">
 						<h1 className="text-primary-yellow capitalize text-2xl font-bold">
 							All My Workbooks
 						</h1>
 						<SearchFilter />
 					</div>
-					<div className="bg-gradient-to-r from-transparent via-[#ffffff62] to-transparent h-[3px] w-full my-6" />
+					<div className="bg-gradient-to-r from-transparent via-[#ffffff62] to-transparent h-[3px] w-full mt-6" />
 				</div>
 				<Table columns={columns} data={data} />
-				<div className="p-2
+				<div
+					className="p-2
 				 sm:p-10">
 					<Pagination />
 				</div>

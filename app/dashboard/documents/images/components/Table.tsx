@@ -8,15 +8,15 @@ interface Props {
 }
 export default function Table({ columns, data }: Props) {
 	return (
-		<div className="w-full px-10 mx-auto overflow-x-auto">
+		<div className="w-full px-4 md:px-10 mx-auto overflow-x-auto">
 			<table className="w-full">
 				<thead className="border-b-[3px] border-white/10">
 					<tr>
 						{columns.map((column, index) => (
 							<th
 								key={index}
-								className={`text-primary-yellow text-left py-4 pr-4 min-w-[180px]`}>
-								<div className={`flex gap-2 w-full justify-between ${index !== columns.length -1 && 'pr-10'}`}>
+								className={`text-primary-yellow text-left py-4 pr-4 min-w-[180px] whitespace-nowrap`}>
+								<div className={`flex gap-2 w-full justify-between ${index === 0 && 'min-w-[250px] md:min-w-[180px]'} ${index !== columns.length -1 && 'pr-10'}`}>
 									{column}
 									<div className="flex flex-col justify-end">
 										<Image
@@ -46,7 +46,7 @@ export default function Table({ columns, data }: Props) {
 								index % 2 &&
 								"bg-gradient-to-br from-[#ffffff09] to-[#8f8f8f0c] backdrop-blur-md w-full"
 							}`}>
-							<td className="py-4">
+							<td className="py-4 overflow-hidden">
 								<div>
 									<div className="flex items-center gap-3">
 										<Image
@@ -57,21 +57,21 @@ export default function Table({ columns, data }: Props) {
 											className="w-16 h-16 rounded-lg object-cover"
 										/>
 										<div className="">
-											<h1 className="text-lg font-semibold">{document.name}</h1>
+											<h1 className="text-lg font-semibold whitespace-nowrap overflow-hidden text-ellipsis">{document.name}</h1>
 											<p className="text-white/70">{document.subtitle}</p>
 										</div>
 									</div>
 								</div>
 							</td>
-							<td>{document.resolution}</td>
+							<td className="font-semibold">{document.resolution}</td>
 							<td>{document.createdFrom}</td>
 							<td>
-								<div className="text-left">
+								<div className="text-left space-y-1">
 									<h3 className="font-semibold">{document.createdAt.date}</h3>
-									<h4 className="text-white/50">{document.createdAt.time}</h4>
+									<h4 className="text-white/50 text-xs">{document.createdAt.time}</h4>
 								</div>
 							</td>
-							<td className="pt-10 flex justify-end  gap-6">
+							<td className="pt-10 flex justify-end  gap-4">
 								<button>
 									<Image
 										src="/main/download.svg"

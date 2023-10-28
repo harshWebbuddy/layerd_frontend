@@ -31,7 +31,7 @@ export default function ISelection() {
 		},
 	];
 	return (
-		<div className="w-full">
+		<div className="w-full max-w-6xl">
 			<Selection
 				id="workbook-select"
 				items={selectionItems}

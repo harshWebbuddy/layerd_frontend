@@ -25,7 +25,7 @@ export default function Selection({
 
 	return (
 		<div className="w-full space-y-2 relative">
-			{label && <label>{label}</label>}
+			{label && <label className="whitespace-nowrap">{label}</label>}
 			<Listbox value={selectedPerson} onChange={setSelectedPerson}>
 				<Listbox.Button
 					placeholder={placeholder}

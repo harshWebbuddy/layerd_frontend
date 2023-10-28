@@ -6,14 +6,16 @@ interface Props {
 }
 export default function Table({ columns, data }: Props) {
 	return (
-		<div className="w-full overflow-x-auto">
+		<div className="w-full overflow-x-auto 2xl:overflow-clip">
 			<table className="w-full">
 				<thead className="border-b-[3px] border-white/10">
 					<tr>
 						{columns.slice(0, 6).map((column, index) => (
 							<th
 								key={index}
-								className={`text-primary-yellow text-left p-6 min-w-[150px]`}>
+								className={`text-primary-yellow text-left p-4 min-w-[150px]  ${
+									index === 0 && "pl-6 md:pl-10"
+								}`}>
 								<div className="flex gap-2 w-full whitespace-nowrap">
 									{column}
 									<div className="flex flex-col justify-end">
@@ -60,7 +62,7 @@ export default function Table({ columns, data }: Props) {
 						{columns.slice(6).map((column, index) => (
 							<th
 								key={index}
-								className={`text-primary-yellow text-left p-6 min-w-[150px]`}>
+								className={`text-primary-yellow text-left p-4 min-w-[150px]`}>
 								<div className="flex gap-2 w-full">
 									{column}
 									<div className="flex flex-col justify-end">

@@ -10,13 +10,13 @@ export default function Table({ columns, data }: Props) {
 			<table className="w-full">
 				<thead className="border-b-[3px] border-white/10">
 					<tr>
-						{columns.slice(0,3).map((column, index) => (
+						{columns.slice(0, 3).map((column, index) => (
 							<th
 								key={index}
-								className={`text-primary-yellow min-w-[180px] text-left p-6 ${
-									index === 0 && "pl-6 sm:pl-14"
+								className={`text-primary-yellow min-w-[150px] text-left p-4 ${
+									index === 0 && "pl-6 md:pl-14"
 								}`}>
-								<div className="flex gap-2 w-full justify-between">
+								<div className="flex gap-4 w-full whitespace-nowrap">
 									{column}
 									<div className="flex flex-col justify-end">
 										<Image
@@ -24,25 +24,46 @@ export default function Table({ columns, data }: Props) {
 											alt="Search"
 											width={15}
 											height={15}
+											className="min-w-[15px]"
 										/>
 										<Image
 											src="/main/chevron-down.svg"
 											alt="Search"
 											width={15}
 											height={15}
-											className="-translate-y-2"
+											className="-translate-y-2 min-w-[15px]"
 										/>
 									</div>
 								</div>{" "}
 							</th>
 						))}
+						<th className="min-w-[80px]">
+							<div className="flex justify-center">
+								<Image
+									src="/main/music-tune.svg"
+									alt="Search"
+									width={25}
+									height={25}
+									className="min-w-[25px]"
+								/>
+							</div>
+						</th>
+						<th className="min-w-[80px]">
+							<div className="flex justify-center">
+								<Image
+									src="/main/download-colored.svg"
+									alt="Search"
+									width={25}
+									height={25}
+									className="min-w-[25px]"
+								/>
+							</div>
+						</th>
 						{columns.slice(3).map((column, index) => (
 							<th
 								key={index}
-								className={`text-primary-yellow min-w-[180px] text-left p-6 ${
-									index === 0 && "pl-6 sm:pl-14"
-								}`}>
-								<div className="flex gap-2 w-full justify-between">
+								className={`text-primary-yellow min-w-[150px] text-left p-4`}>
+								<div className="flex gap-4 w-full">
 									{column}
 									<div className="flex flex-col justify-end">
 										<Image

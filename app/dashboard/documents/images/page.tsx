@@ -19,10 +19,11 @@ export default function page() {
 				<div className="px-4 sm:px-10 pt-5">
 					<div className="flex flex-wrap gap-4 justify-between items-center">
 						<h1 className="text-primary-yellow capitalize text-2xl font-bold">
-						All My Generated Images						</h1>
+							All My Generated Images
+						</h1>
 						<SearchFilter />
 					</div>
-					<div className="bg-gradient-to-r from-transparent via-[#ffffff62] to-transparent h-[3px] w-full my-6" />
+					<div className="bg-gradient-to-r from-transparent via-[#ffffff62] to-transparent h-[3px] w-full mt-6 mb-3" />
 				</div>
 				<Table columns={columns} data={imageDocuments} />
 				<div className="p-3 sm:p-10">
