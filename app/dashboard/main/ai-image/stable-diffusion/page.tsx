@@ -53,7 +53,7 @@ export default function page() {
 					<Gallery />
 				</div>
 			</section>
-			<section className="w-full h-fit hidden sm:block max-w-[324px] bg-[url('/main/ai/background-diffusion-ai-options.png')] bg-center bg-cover ring-1 ring-neutral-700 rounded-2xl">
+			<section className="w-full h-fit hidden sm:block max-w-[324px] bg-[url('/main/ai/background-diffusion-ai-options.png')] bg-center bg-cover rounded-2xl">
 				<div className="p-4">
 					<p className="flex items-center gap-4 font-semibold text-lg">
 						<span>Aspect Ratio</span>
