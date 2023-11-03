@@ -65,14 +65,6 @@ export default function Gallery() {
     };
   }, []);
 
-
-	useEffect(() => {
-		window.addEventListener("resize", resizeListener);
-		return () => {
-			window.removeEventListener("resize", resizeListener);
-		};
-	}, [window.innerWidth]);
-
 	return (
 		<div className="flex flex-row gap-1.5 mt-6">
 			{Array.from({ length: columns }, (_, columnIndex) => (
