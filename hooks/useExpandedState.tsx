@@ -1,34 +1,43 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const initializeState = () => {
-	if (window.innerWidth && window.innerWidth < 1024) {
-		return false;
-	} else {
-		return true;
-	}
+  if (typeof window !== "undefined" && window.innerWidth < 1024) {
+    return false;
+  } else {
+    return true;
+  }
 };
 
-let initialState = initializeState();
-
 export function useExpandedState() {
-	const [isExpanded, setIsExpanded] = useState(initialState);
+  const [isExpanded, setIsExpanded] = useState(initializeState);
 
-	const expand = () => {
-		setIsExpanded(true);
-	};
+  useEffect(() => {
+    const handleResize = () => {
+      setIsExpanded(window.innerWidth >= 1024);
+    };
 
-	const collapse = () => {
-		setIsExpanded(false);
-	};
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
-	const toggle = () => {
-		setIsExpanded((prev) => !prev);
-	};
+  const expand = () => {
+    setIsExpanded(true);
+  };
 
-	return {
-		isExpanded,
-		expand,
-		collapse,
-		toggle,
-	};
+  const collapse = () => {
+    setIsExpanded(false);
+  };
+
+  const toggle = () => {
+    setIsExpanded((prev) => !prev);
+  };
+
+  return {
+    isExpanded,
+    expand,
+    collapse,
+    toggle,
+  };
 }

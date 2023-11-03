@@ -25,7 +25,7 @@ export default function page() {
 					<h1 className="text-2xl font-semibold text-center">
 						How do you want the code to be explained to you?
 					</h1>
-					<div className="flex gap-4">
+					<div className="flex flex-col md:flex-row gap-4">
 						<div className="w-full h-full justify-between flex flex-col">
 							{explainData.map((item, index) => (
 								<div

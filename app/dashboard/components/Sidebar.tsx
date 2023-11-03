@@ -10,7 +10,7 @@ import { TooltipComponent } from "../main/components/Tooltip";
 export default function Sidebar() {
 	const { isExpanded, expand, collapse, toggle } = useExpandedState();
 	const resizeListener = () => {
-		if (window.innerWidth < 1024) {
+		if (typeof window !== "undefined" && window.innerWidth < 1024) {
 			collapse();
 		}
 	};

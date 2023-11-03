@@ -5,7 +5,7 @@ import React from "react";
 export default function page() {
 	return (
 		<section className="p-3 h-full">
-			<div className="h-full grid place-content-center">
+			<div className="h-full grid place-content-center mt-40 md:mt-0">
 				<div className="flex flex-col justify-center items-center">
 					<div className="max-w-6xl space-y-10 mb-60">
 						<h1 className="text-2xl font-semibold text-center">AI Code Guru</h1>
