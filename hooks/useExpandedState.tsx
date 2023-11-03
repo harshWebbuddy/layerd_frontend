@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const initializeState = () => {
-	if (window.innerWidth < 1024) {
+	if (window.innerWidth && window.innerWidth < 1024) {
 		return false;
 	} else {
 		return true;

@@ -23,38 +23,42 @@ export default function Gallery() {
 	];
 	const [columns, setColumns] = useState(initializeColumns() || 5);
 	function initializeColumns() {
-		if (window.innerWidth > 1568) {
-			return 5;
-		}
-		if (window.innerWidth < 1568 && window.innerWidth > 1268) {
-			return 4;
-		}
-		if (window.innerWidth < 1268 && window.innerWidth > 640) {
-			return 3;
-		}
-		if (window.innerWidth < 640 && window.innerWidth > 368) {
-			return 2;
-		}
-		if (window.innerWidth < 368) {
-			return 1;
+		if (window.innerWidth) {
+			if (window.innerWidth > 1568) {
+				return 5;
+			}
+			if (window.innerWidth < 1568 && window.innerWidth > 1268) {
+				return 4;
+			}
+			if (window.innerWidth < 1268 && window.innerWidth > 640) {
+				return 3;
+			}
+			if (window.innerWidth < 640 && window.innerWidth > 368) {
+				return 2;
+			}
+			if (window.innerWidth < 368) {
+				return 1;
+			}
 		}
 	}
 
 	const resizeListener = () => {
-		if (window.innerWidth > 1280) {
-			return setColumns(5);
-		}
-		if (window.innerWidth < 1280 && window.innerWidth > 1024) {
-			return setColumns(4);
-		}
-		if (window.innerWidth < 1024 && window.innerWidth > 640) {
-			return setColumns(3);
-		}
-		if (window.innerWidth < 640 && window.innerWidth > 368) {
-			return setColumns(2);
-		}
-		if (window.innerWidth < 368) {
-			return setColumns(1);
+		if (window.innerWidth) {
+			if (window.innerWidth > 1280) {
+				return setColumns(5);
+			}
+			if (window.innerWidth < 1280 && window.innerWidth > 1024) {
+				return setColumns(4);
+			}
+			if (window.innerWidth < 1024 && window.innerWidth > 640) {
+				return setColumns(3);
+			}
+			if (window.innerWidth < 640 && window.innerWidth > 368) {
+				return setColumns(2);
+			}
+			if (window.innerWidth < 368) {
+				return setColumns(1);
+			}
 		}
 	};
 
