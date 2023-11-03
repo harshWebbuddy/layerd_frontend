@@ -23,7 +23,7 @@ export default function Gallery() {
 	];
 	const [columns, setColumns] = useState(initializeColumns() || 5);
 	function initializeColumns() {
-		if (window.innerWidth) {
+		if (typeof window !== "undefined") {
 			if (window.innerWidth > 1568) {
 				return 5;
 			}
@@ -43,7 +43,7 @@ export default function Gallery() {
 	}
 
 	const resizeListener = () => {
-		if (window.innerWidth) {
+		if (typeof window !== "undefined") {
 			if (window.innerWidth > 1280) {
 				return setColumns(5);
 			}
