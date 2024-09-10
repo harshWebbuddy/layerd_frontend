@@ -1,3 +1,4 @@
+import BaseProvider from "@/providers/BaseProvider";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="overflow-x-hidden">
       <body className={inter.className}>
-        {children}
-        <Toaster />
+        <BaseProvider>
+          {children}
+          <Toaster />
+        </BaseProvider>
       </body>
     </html>
   );

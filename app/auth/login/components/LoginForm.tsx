@@ -15,6 +15,8 @@ import {
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useSetRecoilState } from "recoil";
+import { emailAtom } from "@/lib/atom";
 
 const loginSchema = z.object({
   email: z.string().email(),
@@ -29,20 +31,27 @@ export default function LoginForm() {
     defaultValues: {
       email: "",
       password: "",
+	  rememberMe: false,
     },
   });
+
+  const setEmail = useSetRecoilState(emailAtom);
 
   const onSubmit = async (values: z.infer<typeof loginSchema>) => {
     toast.promise(axios.post("/auth/login", values), {
       loading: "Signing in",
       error: (error) => {
-        return (
-          error?.response?.data?.stackTrace ?? "Error signing in"
-        );
+        return error?.response?.data?.stackTrace ?? "Error signing in";
       },
-      success: () => {
-        router.push("/dashboard/main");
-        return "Signed in";
+      success: (res) => {
+        if (res.data.success) {
+          router.push("/dashboard/main");
+		  return "Signed in";
+        } else {
+          setEmail(values.email);
+          router.push("/auth/verify/email");
+		  return res.data.message;
+        }
       },
     });
   };

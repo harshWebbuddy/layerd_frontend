@@ -18,6 +18,8 @@ import {
   FormLabel,
 } from "@/components/ui/form";
 import { Checkbox } from "@/components/ui/checkbox";
+import { useSetRecoilState } from "recoil";
+import { emailAtom } from "@/lib/atom";
 
 const registerSchema = z
   .object({
@@ -41,6 +43,7 @@ const registerSchema = z
 
 export default function RegistrationForm() {
   const router = useRouter();
+  const setEmail = useSetRecoilState(emailAtom);
   const form = useForm<z.infer<typeof registerSchema>>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
@@ -59,11 +62,10 @@ export default function RegistrationForm() {
       {
         loading: "Signing up",
         error: (error) => {
-          return (
-            error?.response?.data?.stackTrace ?? "Error signing in"
-          );
+          return error?.response?.data?.stackTrace ?? "Error signing in";
         },
         success: () => {
+          setEmail(values.email);
           router.push("/auth/verify/email");
           return "Signed up";
         },
