@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react";
-import Input from "../../components/Input";
+import FormInput from "../../components/Input";
 import Button from "../../components/Button";
 import { useRouter } from "next/navigation";
 
@@ -18,14 +18,14 @@ export default function AboutForm({}: Props) {
 			className="space-y-10 mt-10 w-full sm:min-w-[400px]"
 			onSubmit={submitHandler}>
 			<div className="space-y-6">
-				<Input
+				<FormInput
 					id="firstName"
 					label="First name"
 					type="email"
 					required={true}
 					placeholder="Last name"
 				/>
-				<Input
+				<FormInput
 					id="password"
 					label="Last name"
 					type="password"

@@ -2,57 +2,164 @@
 
 import React from "react";
 import Button from "../../components/Button";
-import Input from "../../components/Input";
+import FormInput from "../../components/Input";
 import { useRouter } from "next/navigation";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import axios from "@/lib/axios";
+import {
+  Form,
+  FormField,
+  FormControl,
+  FormMessage,
+  FormItem,
+  FormLabel,
+} from "@/components/ui/form";
+import { Checkbox } from "@/components/ui/checkbox";
 
-type Props = {};
+const registerSchema = z
+  .object({
+    email: z.string().email(),
+    password: z
+      .string()
+      .regex(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&_])[A-Za-z\d$@$!%*?&_]{8,}$/,
+        {
+          message: "Enter strong password.",
+        }
+      ),
+    confirmPassword: z.string(),
+    termsAndConditions: z.literal(true),
+  })
+  .required()
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords don't match",
+    path: ["confirmPassword"],
+  });
 
-export default function RegistrationForm({}: Props) {
-	const router = useRouter();
+export default function RegistrationForm() {
+  const router = useRouter();
+  const form = useForm<z.infer<typeof registerSchema>>({
+    resolver: zodResolver(registerSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
+  });
+  const onSubmit = async (values: z.infer<typeof registerSchema>) => {
+    toast.promise(
+      axios.post("/auth/register", {
+        email: values.email,
+        password: values.password,
+        termsAndConditions: values.termsAndConditions,
+      }),
+      {
+        loading: "Signing up",
+        error: (error) => {
+          return (
+            error?.response?.data?.stackTrace ?? "Error signing in"
+          );
+        },
+        success: () => {
+          router.push("/auth/verify/email");
+          return "Signed up";
+        },
+      }
+    );
+  };
 
-	const submitHandler = (e: any) => {
-		e.preventDefault();
-		router.push("/auth/verify/email");
-	};
-
-	return (
-		<form className="space-y-10 mt-7 w-full" onSubmit={submitHandler}>
-			<div className="space-y-6">
-				<Input
-					id="email"
-					label="email"
-					type="email"
-					required={true}
-					placeholder="example@email.com"
-				/>
-				<div className="flex gap-2 sm:gap-4 w-full">
-					<Input
-						id="password"
-						label="password"
-						type="password"
-						required={true}
-						placeholder="Your password"
-					/>
-					<Input
-						id="password-repeat"
-						label="Repeat password"
-						type="password"
-						required={true}
-						placeholder="Repeat"
-					/>
-				</div>
-				<div className="flex items-center gap-2 mt-10">
-					<input
-						type="checkbox"
-						id="checkbox"
-						className="peer cursor-pointer relative h-5 w-5 shrink-0 appearance-none rounded-[4px] bg-[#0F0F0F]  border border-[#2D2D2D] after:absolute after:left-0 after:top-0 after:h-full after:w-full checked:after:bg-[url('data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9JzMwMHB4JyB3aWR0aD0nMzAwcHgnICBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgdmVyc2lvbj0iMS4xIiB4PSIwcHgiIHk9IjBweCI+PHRpdGxlPmljb25fYnlfUG9zaGx5YWtvdjEwPC90aXRsZT48ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz48ZyBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZyBmaWxsPSIjZmZmZmZmIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNi4wMDAwMDAsIDI2LjAwMDAwMCkiPjxwYXRoIGQ9Ik0xNy45OTk5ODc4LDMyLjQgTDEwLjk5OTk4NzgsMjUuNCBDMTAuMjI2Nzg5MSwyNC42MjY4MDE0IDguOTczMTg2NDQsMjQuNjI2ODAxNCA4LjE5OTk4Nzc5LDI1LjQgTDguMTk5OTg3NzksMjUuNCBDNy40MjY3ODkxNCwyNi4xNzMxOTg2IDcuNDI2Nzg5MTQsMjcuNDI2ODAxNCA4LjE5OTk4Nzc5LDI4LjIgTDE2LjU4NTc3NDIsMzYuNTg1Nzg2NCBDMTcuMzY2ODIyOCwzNy4zNjY4MzUgMTguNjMzMTUyOCwzNy4zNjY4MzUgMTkuNDE0MjAxNCwzNi41ODU3ODY0IEw0MC41OTk5ODc4LDE1LjQgQzQxLjM3MzE4NjQsMTQuNjI2ODAxNCA0MS4zNzMxODY0LDEzLjM3MzE5ODYgNDAuNTk5OTg3OCwxMi42IEw0MC41OTk5ODc4LDEyLjYgQzM5LjgyNjc4OTEsMTEuODI2ODAxNCAzOC41NzMxODY0LDExLjgyNjgwMTQgMzcuNzk5OTg3OCwxMi42IEwxNy45OTk5ODc4LDMyLjQgWiI+PC9wYXRoPjwvZz48L2c+PC9nPjwvc3ZnPg==')] after:bg-[length:40px] after:bg-center after:bg-no-repeat after:content-[''] checked:bg-[#1f1f1f] hover:ring-1 hover:ring-[#3a3a3a] transition duration-300 focus:outline-none"
-					/>
-					<label htmlFor="checkbox" className="text-white/50 text-xs sm:text-base">
-						I have read and accept terms & conditions
-					</label>
-				</div>
-			</div>
-			<Button type="submit">Continue</Button>
-		</form>
-	);
+  return (
+    <Form {...form}>
+      <form
+        className="space-y-10 mt-7 w-full"
+        onSubmit={form.handleSubmit(onSubmit)}
+      >
+        <div className="space-y-6">
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <>
+                <FormControl>
+                  <FormInput
+                    id="email"
+                    label="email"
+                    type="email"
+                    placeholder="example@email.com"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </>
+            )}
+          />
+          <div className="flex gap-2 sm:gap-4 w-full">
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <div className="flex flex-col gap-1">
+                  <FormControl>
+                    <FormInput
+                      id="password"
+                      label="password"
+                      type="password"
+                      required={true}
+                      placeholder="Your password"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </div>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="confirmPassword"
+              render={({ field }) => (
+                <div className="flex flex-col gap-1">
+                  <FormControl>
+                    <FormInput
+                      id="password-repeat"
+                      label="Repeat password"
+                      type="password"
+                      required={true}
+                      placeholder="Repeat"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </div>
+              )}
+            />
+          </div>
+          <FormField
+            control={form.control}
+            name="termsAndConditions"
+            render={({ field }) => (
+              <FormItem className="flex items-center gap-2 mt-10">
+                <FormControl>
+                  <Checkbox
+                    className="mt-2"
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                </FormControl>
+                <FormLabel
+                  htmlFor="checkbox"
+                  className="text-white/50 text-xs sm:text-base"
+                >
+                  I have read and accept terms & conditions
+                </FormLabel>
+              </FormItem>
+            )}
+          />
+        </div>
+        <Button type="submit">Continue</Button>
+      </form>
+    </Form>
+  );
 }

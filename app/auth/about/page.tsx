@@ -1,5 +1,5 @@
 import React from "react";
-import Input from "../components/Input";
+import FormInput from "../components/Input";
 import Button from "../components/Button";
 import Logo from "@/components/logo";
 import AboutForm from "./components/AboutForm";
