@@ -17,4 +17,6 @@ export interface IUser {
   imagesPerMonth: number;
   writing: number;
   wordsPerMonth: number;
+  defaultVoiceLanguage: string;
+  defaultTemplateLanguage: string;
 }
