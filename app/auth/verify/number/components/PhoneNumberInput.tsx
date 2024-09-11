@@ -11,14 +11,14 @@ import {
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import React, { useState } from "react";
+import React from "react";
 import Button from "@/app/auth/components/Button";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
-import axios from "axios";
 import { useSelector } from "react-redux";
 import { IUser } from "@/types/IUser";
 import { IReduxValue } from "@/types/redux";
+import axios from "@/lib/axios";
 
 const phoneNumberSchema = z.object({
   phoneNumber: z.string(),
@@ -29,7 +29,7 @@ export default function PhoneNumberInput() {
   const form = useForm<z.infer<typeof phoneNumberSchema>>({
     resolver: zodResolver(phoneNumberSchema),
     defaultValues: {
-      phoneNumber: user.phoneNumber ?? "",
+      phoneNumber: user?.phoneNumber ?? "",
     },
   });
 
@@ -37,14 +37,25 @@ export default function PhoneNumberInput() {
 
   const onSubmit = async (values: z.infer<typeof phoneNumberSchema>) => {
     // router.push("/auth/verify/otp");
-    toast.promise(axios.put("/user", values), {
-      loading: "Updating...",
-      error: "Error updating phone number.",
-      success: () => {
-        router.push("/dashboard/main");
-        return "Phone number updated successfully.";
-      },
-    });
+    toast.promise(
+      axios.put(
+        "/user",
+        { phoneNumber: "+" + values.phoneNumber },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      ),
+      {
+        loading: "Updating...",
+        error: "Error updating phone number.",
+        success: () => {
+          router.push("/dashboard/main");
+          return "Phone number updated successfully.";
+        },
+      }
+    );
   };
   return (
     <Form {...form}>

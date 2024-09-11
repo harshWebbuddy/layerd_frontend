@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { IReduxValue } from "@/types/redux";
 
 export default function VerifyEmail() {
-  const email = useSelector<IReduxValue, string>(state => state.email.data);
+  const email = useSelector<IReduxValue, string>((state) => state.email.data);
   const router = useRouter();
   useEffect(() => {
     if (!email) {

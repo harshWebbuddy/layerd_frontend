@@ -13,4 +13,8 @@ export interface IUser {
   referralId?: string;
   verified: boolean;
   password?: string;
+  queries: number;
+  imagesPerMonth: number;
+  writing: number;
+  wordsPerMonth: number;
 }

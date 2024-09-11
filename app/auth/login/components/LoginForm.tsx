@@ -45,6 +45,7 @@ export default function LoginForm() {
       },
       success: (res) => {
         if (res.data.success) {
+          localStorage.setItem("token", res.data.token);
           router.push("/dashboard/main");
           return "Signed in";
         } else {

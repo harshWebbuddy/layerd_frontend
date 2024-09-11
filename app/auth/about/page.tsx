@@ -20,14 +20,14 @@ export default function About() {
   const [loading, setLoading] = useState(true);
   const user = useSelector<IReduxValue, IUser>((state) => state.user.data);
   const dispatch = useDispatch();
-  const token = searchParams.get("token");
+  const searchToken = searchParams.get("token");
 
   useOnMountUnsafe(() => {
-    const sendRequest = () => {
+    const sendRequest = (token: string) => {
       toast.promise(
         axios.get("/auth/verify", {
           headers: {
-            Authorization: `Bearer ${token || localStorage.getItem("token")}`,
+            Authorization: `Bearer ${token}`,
           },
         }),
         {
@@ -46,8 +46,9 @@ export default function About() {
         }
       );
     };
-    if ((token || localStorage.getItem("token")) && !user) {
-      sendRequest();
+    const token = searchToken || localStorage.getItem("token");
+    if (token && !user) {
+      sendRequest(token);
     } else router.push("/auth/register");
   });
   return (

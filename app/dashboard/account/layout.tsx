@@ -8,25 +8,26 @@ import { useSelector } from "react-redux";
 import { IReduxValue } from "@/types/redux";
 import { IUser } from "@/types/IUser";
 import { FaUserAlt } from "react-icons/fa";
+import displayNumber from "@/utils/displayNumber";
 
 export default function layout({ children }: { children: ReactNode }) {
   const user = useSelector<IReduxValue, IUser>((state) => state.user.data);
   const plans = [
     {
       title: "Search Engine",
-      plans: "25 queries",
+      plans: displayNumber(user.queries) + " queries",
     },
     {
       title: "Words Per Month",
-      plans: "10,000",
+      plans: displayNumber(user.wordsPerMonth),
     },
     {
       title: "Images Per Month",
-      plans: "25",
+      plans: displayNumber(user.imagesPerMonth),
     },
     {
       title: "10 Writing",
-      plans: "10",
+      plans: displayNumber(user.writing),
     },
   ];
   const options = [
