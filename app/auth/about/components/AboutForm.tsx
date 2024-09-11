@@ -37,14 +37,21 @@ export default function AboutForm({ user }: { user?: IUser }) {
   });
 
   const onSubmit = async (values: z.infer<typeof aboutSchema>) => {
-    toast.promise(axios.put("/user", values), {
-      loading: "Updating...",
-      error: "Error updating your account data",
-      success: () => {
-        router.push("/auth/verify/number");
-        return "Updated Account data successfully";
-      },
-    });
+    toast.promise(
+      axios.put("/user", values, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }),
+      {
+        loading: "Updating...",
+        error: "Error updating your account data",
+        success: () => {
+          router.push("/auth/verify/number");
+          return "Updated Account data successfully";
+        },
+      }
+    );
   };
   return (
     <Form {...form}>

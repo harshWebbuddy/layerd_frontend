@@ -19,10 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="overflow-x-hidden">
       <body className={inter.className}>
-        <BaseProvider>
-          {children}
-          <Toaster />
-        </BaseProvider>
+        <BaseProvider>{children}</BaseProvider>
+        <Toaster />
       </body>
     </html>
   );

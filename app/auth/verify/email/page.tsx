@@ -1,14 +1,13 @@
 "use client";
 
 import Logo from "@/components/logo";
-import { emailAtom } from "@/lib/atom";
-import Link from "next/link";
 import { useEffect } from "react";
-import { useRecoilValue } from "recoil";
 import { useRouter } from "next/navigation";
+import { useSelector } from "react-redux";
+import { IReduxValue } from "@/types/redux";
 
 export default function VerifyEmail() {
-  const email = useRecoilValue(emailAtom);
+  const email = useSelector<IReduxValue, string>(state => state.email.data);
   const router = useRouter();
   useEffect(() => {
     if (!email) {

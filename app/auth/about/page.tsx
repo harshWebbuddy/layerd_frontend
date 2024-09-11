@@ -8,14 +8,18 @@ import { useSearchParams, useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import axios from "@/lib/axios";
 import { ClipLoader } from "react-spinners";
-import { IUser } from "@/types/IUser";
 import { useOnMountUnsafe } from "@/hooks/useOnMountUnsafe";
+import { IReduxValue } from "@/types/redux";
+import { IUser } from "@/types/IUser";
+import { useDispatch, useSelector } from "react-redux";
+import { setUser } from "@/features/userSlice";
 
 export default function About() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState<IUser>();
+  const user = useSelector<IReduxValue, IUser>((state) => state.user.data);
+  const dispatch = useDispatch();
   const token = searchParams.get("token");
 
   useOnMountUnsafe(() => {
@@ -35,7 +39,7 @@ export default function About() {
           },
           success: (res) => {
             setLoading(false);
-            setUser(res.data.user);
+            dispatch(setUser(res.data.user));
             localStorage.setItem("token", res.data.token);
             return res.data.message;
           },
