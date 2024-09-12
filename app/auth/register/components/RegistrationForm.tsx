@@ -87,7 +87,6 @@ export default function RegistrationForm() {
               <>
                 <FormControl>
                   <FormInput
-                    id="email"
                     label="email"
                     type="email"
                     placeholder="example@email.com"
