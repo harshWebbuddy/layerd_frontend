@@ -27,6 +27,8 @@ export default function ProfileDetail() {
             "wordsPerMonth",
             "imagesPerMonth",
             "queries",
+            "defaultVoiceLanguage",
+            "defaultTemplateLanguage",
           ].includes(key) && (
             <div
               key={key}

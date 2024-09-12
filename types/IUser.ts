@@ -9,6 +9,8 @@ export interface IUser {
   role: string;
   city: string;
   country: string;
+  postalCode: number;
+  addressLine: string;
   phoneNumber: string;
   referralId?: string;
   verified: boolean;

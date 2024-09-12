@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Input from "../../me/components/Input";
 import Image from "next/image";
 import Selection from "../../me/components/Selection";
 import { languages } from ".";
@@ -10,8 +9,6 @@ import {
   FormField,
   FormControl,
   FormMessage,
-  FormItem,
-  FormLabel,
 } from "@/components/ui/form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -21,7 +18,6 @@ import { IUser } from "@/types/IUser";
 import { IReduxValue } from "@/types/redux";
 import toast from "react-hot-toast";
 import axios from "@/lib/axios";
-import { useRouter } from "next/navigation";
 
 const defaultsSchema = z
   .object({
@@ -39,7 +35,6 @@ export default function DefaultsForm() {
       defaultTemplateLanguage: user.defaultTemplateLanguage ?? "English(USA)",
     },
   });
-  const router = useRouter();
   const onSubmit = (values: z.infer<typeof defaultsSchema>) => {
     toast.promise(
       axios.put("/user", values, {
@@ -51,7 +46,6 @@ export default function DefaultsForm() {
         loading: "Updating...",
         error: "Error updating your account data",
         success: () => {
-          router.push("/auth/verify/number");
           return "Updated Account data successfully";
         },
       }
