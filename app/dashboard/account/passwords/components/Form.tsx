@@ -15,6 +15,8 @@ import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import axios from "@/lib/axios";
 import FormInput from "@/app/auth/components/Input";
+import { useDispatch } from "react-redux";
+import { setUser } from "@/features/userSlice";
 
 const passwordSchema = z
   .object({
@@ -37,6 +39,7 @@ const passwordSchema = z
 
 export default function PasswordForm() {
   const router = useRouter();
+  const dispatch = useDispatch();
   const form = useForm<z.infer<typeof passwordSchema>>({
     resolver: zodResolver(passwordSchema),
     defaultValues: {
@@ -47,16 +50,31 @@ export default function PasswordForm() {
   });
   const onSubmit = (values: z.infer<typeof passwordSchema>) => {
     toast.promise(
-      axios.put("/user", values, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+      axios.put(
+        "/user/update-password",
+        {
+          currentPassword: values.currentPassword,
+          newPassword: values.newPassword,
         },
-      }),
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      ),
       {
         loading: "Updating...",
-        error: "Error updating your account data",
+        error: (error) => {
+          if (error?.response?.status === 401) {
+            localStorage.clear();
+            dispatch(setUser(null));
+            router.push("/auth/login");
+          }
+
+          return "Error updating your account password";
+        },
         success: () => {
-          return "Updated Account data successfully";
+          return "Updated Account password successfully";
         },
       }
     );
@@ -96,7 +114,7 @@ export default function PasswordForm() {
           />
           <FormField
             control={form.control}
-            name="currentPassword"
+            name="newPassword"
             render={({ field }) => (
               <>
                 <FormControl>
@@ -113,7 +131,7 @@ export default function PasswordForm() {
           />
           <FormField
             control={form.control}
-            name="currentPassword"
+            name="confirmNewPassword"
             render={({ field }) => (
               <>
                 <FormControl>
