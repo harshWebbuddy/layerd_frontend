@@ -7,7 +7,8 @@ import axios from "@/lib/axios";
 import { IChat } from "@/types/IChat";
 import { cn } from "@/lib/utils";
 import toast from "react-hot-toast";
-import Markdown from 'react-markdown'
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export default function ChatPage() {
   const [inputMessage, setInputMessage] = useState("");
@@ -75,8 +76,9 @@ export default function ChatPage() {
             >
               <Markdown
                 className={cn("bg-[gray] rounded-xl py-1 px-2", {
-                  "bg-black": message.role === "system",
+                  "bg-[#0a0925]": message.role === "system",
                 })}
+                remarkPlugins={[remarkGfm]}
               >
                 {message.content}
               </Markdown>
