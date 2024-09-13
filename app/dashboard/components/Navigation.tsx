@@ -41,7 +41,7 @@ export default function Navigation() {
               draggable={false}
             />
             <div className="absolute -top-2 -right-2 bg-[#EA5455] w-5 h-5 rounded-full grid place-content-center text-xs">
-              4
+              0
             </div>
           </div>
           <ProfileButton />

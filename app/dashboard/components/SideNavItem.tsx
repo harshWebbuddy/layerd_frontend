@@ -97,7 +97,7 @@ export default function SideNavItem() {
                 {item.items?.map((item, index) => (
                   <CollapsableItem
                     index={index}
-					key={index}
+                    key={index}
                     item={item}
                     activeLink={activeLink!}
                   />
@@ -193,6 +193,7 @@ export default function SideNavItem() {
                     <CollapsableItem
                       index={index}
                       item={item}
+                      key={index}
                       activeLink={activeLink!}
                     />
                   ))}
