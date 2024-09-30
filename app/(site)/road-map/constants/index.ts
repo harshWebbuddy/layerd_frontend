@@ -14,7 +14,7 @@ export const mileStones = [
 	{
 		title: "AI Images",
 		description:
-			"With tools like Dalle-2, Stable Diffusion, and Midjourney, we've made image creation and editing a breeze. Generate, edit, and enhance images like never before.",
+			"With tools like Dalle-3, Stable Diffusion, and Midjourney, we've made image creation and editing a breeze. Generate, edit, and enhance images like never before.",
 		date: "jul 2023",
 	},
 	{

@@ -169,7 +169,7 @@ export const packageData = [
 			},
 			{
 				title: "Ai Images (25 Images Per Month)",
-				peer: ["Dalle-2 ", "Stable Diffusion (Advanced)", "MidJourney"],
+				peer: ["Dalle-3 ", "Stable Diffusion (Advanced)", "MidJourney"],
 			},
 		],
 		gradient: "from-[#4B4B4B] to-[black]",
@@ -197,7 +197,7 @@ export const packageData = [
 			},
 			{
 				title: "Ai Images (150 Images Per Month)",
-				peer: ["Dalle-2 ", "Stable Diffusion (Advanced)", "MidJourney"],
+				peer: ["Dalle-3 ", "Stable Diffusion (Advanced)", "MidJourney"],
 			},
 		],
 		gradient: "from-[#4B4B4B] to-[black]",
@@ -225,7 +225,7 @@ export const packageData = [
 			},
 			{
 				title: "Ai Images (Unlimited Images Per Month)",
-				peer: ["Dalle-2 ", "Stable Diffusion (Advanced)", "MidJourney"],
+				peer: ["Dalle-3 ", "Stable Diffusion (Advanced)", "MidJourney"],
 			},
 		],
 		gradient: "from-primary-red to-primary-yellow",

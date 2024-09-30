@@ -151,7 +151,7 @@ export const botOptions = [
 export const ImageAiOptions = [
 	{
 		image: "/landing/dalle.png",
-		title: "Dalle - 2 ",
+		title: "Dalle - 3 ",
 		description:
 			"An advanced AI technology that generates detailed images from text descriptions. It's a powerful tool for artists and content creators, allowing them to bring their imagination to life.",
 	},

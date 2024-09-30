@@ -76,8 +76,8 @@ export const navObjects = [
 		title: "AI Image",
 		items: [
 			{
-				title: "Dalle - 2 ",
-				link: "/dashboard/main/ai-image/dalle-2",
+				title: "Dalle - 3 ",
+				link: "/dashboard/main/ai-image/dalle-3",
 				icon: "/main/dalle-2.png",
 			},
 			{
@@ -353,5 +353,4 @@ export const programmingLanguages = [
 	{ label: "TSX", value: "tsx" },
 	{ label: "TypeScript", value: "typescript" },
 	{ label: "Visual Basic .NET", value: "vbnet" },
-	{ label: "Vue", value: "vue" },
 ];

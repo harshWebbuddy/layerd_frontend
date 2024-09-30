@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 
 import Image from "next/image";
 import React, { useState, useCallback, useEffect } from "react";
@@ -75,8 +75,8 @@ export default function ChatPage() {
               })}
             >
               <Markdown
-                className={cn("bg-[gray] rounded-xl py-1 px-2", {
-                  "bg-[#0a0925]": message.role === "system",
+                className={cn("bg-[#2f2f2f] rounded-xl py-1 px-2", {
+                  "bg-[#212121]": message.role === "system",
                 })}
                 remarkPlugins={[remarkGfm]}
               >
