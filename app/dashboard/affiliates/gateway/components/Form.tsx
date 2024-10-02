@@ -1,6 +1,6 @@
 import React from "react";
 import CheckBox from "./CheckBox";
-import Input from "@/app/dashboard/account/me/components/Input";
+import Input from "@/app/dashboard/components/Input";
 
 export default function Form() {
 	return (

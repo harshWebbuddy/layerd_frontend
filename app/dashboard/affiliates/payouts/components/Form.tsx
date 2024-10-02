@@ -1,4 +1,4 @@
-import Input from "@/app/dashboard/account/me/components/Input";
+import Input from "@/app/dashboard/components/Input";
 import React from "react";
 
 export default function Form() {

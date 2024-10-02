@@ -1,5 +1,5 @@
 import React from "react";
-import Input from "../../account/me/components/Input";
+import Input from "../../components/Input";
 
 export default function Mail() {
 	return (
