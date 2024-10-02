@@ -33,11 +33,9 @@ export default function ISelection() {
 	return (
 		<div className="w-full max-w-6xl">
 			<Selection
-				id="workbook-select"
 				items={selectionItems}
 				label="Select Workbook Name"
 				placeholder="Select"
-				required={false}
 			/>
 		</div>
 	);
