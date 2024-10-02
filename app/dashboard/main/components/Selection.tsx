@@ -24,7 +24,7 @@ export default function Selection({
   items: ItemType[];
   placeholder: string;
   isActive?: boolean;
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
 }) {
   const [selectedPerson, setSelectedPerson] = useState(items[0]);
 
