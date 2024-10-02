@@ -14,13 +14,13 @@ export default function AiImagesPage() {
 				<div className="space-y-1">
 					<h1 className="font-bold text-xl">Step 2:</h1>
 					<p className="text-white/70 text-sm leading-relaxed">
-						Choose between Dalle-2, Midjourney, or Stable Diffusion.
+						Choose between Dalle-3, Midjourney, or Stable Diffusion.
 					</p>
 				</div>
 				<div className="space-y-1">
 					<h1 className="font-bold text-xl">Step 3:</h1>
 					<p className="text-white/70 text-sm leading-relaxed">
-						For Dalle-2, input the text description of the image you want to
+						For Dalle-3, input the text description of the image you want to
 						generate and click on 'Generate'. You will see the generated image.
 					</p>
 				</div>
