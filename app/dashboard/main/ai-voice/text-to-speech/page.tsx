@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Form from "./Form";
 
-export default function page() {
+export default function TextToSpeechPage() {
   return (
     <section className="w-full px-5 md:px-10 pb-10">
       <div className="w-full bg-[url('/main/ai/background-voice-ai-space.png')] bg-cover bg-center rounded-2xl ring-1 ring-slate-700 p-3 md:p-7">
