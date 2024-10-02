@@ -54,7 +54,6 @@ export default function Selection({
 				}`}>
 				<Listbox value={selectedPerson} onChange={setSelectedPerson}>
 					<Listbox.Button
-						placeholder={placeholder}
 						className="bg-[#212327] ring-1 ring-white w-full text-start h-[40px] px-3 rounded-lg flex justify-between items-center">
 						{selectedPerson ? (
 							<span>{selectedPerson.label}</span>
