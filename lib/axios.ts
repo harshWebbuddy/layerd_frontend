@@ -1,7 +1,7 @@
 import a from "axios";
 
 const axios = a.create({
-  baseURL: process.env.BACKEND_URL,
+  baseURL: "https://api.layerd.ai/api/v1/",
 });
 
 export default axios;
