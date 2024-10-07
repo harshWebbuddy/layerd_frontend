@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import Selection from "../components/Selection";
 import Checkbox from "../components/Checkbox";
@@ -6,11 +7,31 @@ import Image from "next/image";
 import { languages } from "@/app/dashboard/account/defaults/components";
 import axios from "@/lib/axios";
 import toast from "react-hot-toast";
+import { useQuery } from "react-query";
 
 export default function Form() {
   const [text, setText] = useState("");
   const [title, setTitle] = useState("");
-  const [sound, setSound] = useState<string>();
+  const [receivedResponse, setReceivedResponse] = useState(false);
+
+  const { data: audios, isLoading } = useQuery(
+    ["text-speeches", receivedResponse],
+    async () => {
+      const res = await axios.get("/ai/voice/text-to-speeches", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      return res.data.files;
+    },
+    {
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+    }
+  );
+
+  console.log(audios);
+
   return (
     <form className="space-y-5 mt-6">
       <div className="flex flex-col xl:flex-row gap-3 w-full">
@@ -298,7 +319,10 @@ export default function Form() {
                           loading: "Converting to speech",
                           error: (error) =>
                             error?.response?.data?.stackTrace ?? "Error",
-                          success: "Converted to speech",
+                          success: () => {
+                            setReceivedResponse(!receivedResponse);
+                            return "Converted to speech";
+                          },
                         }
                       );
                     }
@@ -310,16 +334,29 @@ export default function Form() {
               ))}
             </div>
           </div>
-
-          <div className="h-full flex-1 grid place-content-center mb-20">
-            <Image
-              src="/main/ai/stack-cards.png"
-              alt="image"
-              height={40}
-              width={40}
-              draggable={false}
-            />
-          </div>
+          {audios && audios.length > 0 ? (
+            <div className="flex-1 flex-col h-full mb-20">
+          {audios.map((audio) => (
+            <div key={audio.path}>
+              <audio src={audio.path }/>
+            </div>
+          ))}
+            </div>
+          ) : (
+            <div className="h-full flex-1 grid place-content-center mb-20">
+              {isLoading ? (
+                <div>Loading...</div>
+              ) : (
+                <Image
+                  src="/main/ai/stack-cards.png"
+                  alt="image"
+                  height={40}
+                  width={40}
+                  draggable={false}
+                />
+              )}
+            </div>
+          )}
         </div>
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-3">
           <h1> {text.length} Characters</h1>
