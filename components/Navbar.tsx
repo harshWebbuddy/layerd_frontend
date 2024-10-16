@@ -17,13 +17,13 @@ export default function Navbar() {
           <div className="flex gap-4">
             <Link
               href="/auth/login"
-              className="hidden sm:block bg-transparent ring-1 ring-inset ring-gray-300 max-h-12 py-2 w-28 rounded-xl hover:bg-neutral-700/30 transition capitalize"
+              className="hidden sm:flex items-center justify-center bg-transparent ring-1 ring-inset ring-gray-300 max-h-12 py-2 w-28 rounded-xl hover:bg-neutral-700/30 transition capitalize"
             >
               Sign in
             </Link>
             <Link
               href="/auth/register"
-              className="hidden sm:block bg-gradient-to-r from-primary-red max-h-12 to-primary-yellow py-2 w-28 rounded-xl capitalize"
+              className="hidden sm:flex items-center justify-center bg-gradient-to-r from-primary-red max-h-12 to-primary-yellow py-2 w-28 rounded-xl capitalize"
             >
               Sign up
             </Link>

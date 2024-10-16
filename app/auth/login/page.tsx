@@ -25,9 +25,9 @@ export default function page() {
             <div className="flex gap-2 sm:gap-4 mt-1">
               <SocialAuthButton
                 image={googleIcon}
-                title="Sign up with google"
+                title="Sign in with google"
               />
-              <SocialAuthButton image={appleIcon} title="Sign up with apple" />
+              <SocialAuthButton image={appleIcon} title="Sign in with apple" />
             </div>
           </div>
           <LoginForm />
