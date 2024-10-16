@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import SocialAuthButton from "../components/SocialAuthButton";
 import LoginForm from "./components/LoginForm";
 import Link from "next/link";
 import ImageFlipper from "../components/ImageFlipper";
-import PageLayout from "../components/PageLayout";
+import { useGoogleLogin } from "@react-oauth/google";
+
 export default function page() {
   const googleIcon = "/logos/icons8-google.svg";
   const appleIcon = "/logos/icons8-apple.svg";
@@ -13,6 +16,11 @@ export default function page() {
     "/authFlow/8c0c47c855f3eb77c5186a37dad4da6e.jpeg",
     "/authFlow/740510e3c70cd26d29353d1fde9d5008.png",
   ];
+
+  const login = useGoogleLogin({
+    onSuccess: (tokenResponse) => console.log(tokenResponse),
+  });
+
   return (
     <main className="bg-black/90 backdrop-blur-2xl w-full min-w-screen h-full min-h-screen flex justify-center items-center">
       <div className="flex items-center gap-20 xl:gap-32 p-3 sm:p-4 w-full sm:w-auto justify-center">
@@ -25,6 +33,7 @@ export default function page() {
             <div className="flex gap-2 sm:gap-4 mt-1">
               <SocialAuthButton
                 image={googleIcon}
+                onClick={login}
                 title="Sign in with google"
               />
               <SocialAuthButton image={appleIcon} title="Sign in with apple" />
