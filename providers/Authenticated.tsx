@@ -15,7 +15,6 @@ const Authenticated = ({ children }: { children: React.ReactNode }) => {
   const user = useSelector<IReduxValue, IUser>((state) => state.user.data);
   const dispatch = useDispatch()
   useOnMountUnsafe(() => {
-    console.log(process.env)
     axios
       .get("/user/me", {
         headers: {
