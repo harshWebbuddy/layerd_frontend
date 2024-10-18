@@ -13,8 +13,9 @@ import { IReduxValue } from "@/types/redux";
 const Authenticated = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
   const user = useSelector<IReduxValue, IUser>((state) => state.user.data);
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   useOnMountUnsafe(() => {
+    console.log(process.env)
     axios
       .get("/user/me", {
         headers: {

@@ -1,7 +1,10 @@
+"use client";
 import a from "axios";
 
+const BASE_URL = process.env.BACKEND_URL;
+
 const axios = a.create({
-  baseURL: process.env.BACKEND_URL + "/api/v1/",
+  baseURL: BASE_URL + "/api/v1/",
 });
 
 export default axios;
