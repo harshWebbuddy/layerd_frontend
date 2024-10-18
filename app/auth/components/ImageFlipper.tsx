@@ -14,41 +14,46 @@ import { EffectCards, Autoplay } from "swiper/modules";
 import Logo from "@/components/logo";
 
 const ImageFlipper = ({ images }: { images: string[] }) => {
-	return (
-		<div className="w-full">
-			<div className="flex items-center justify-center">
-				<div className="relative">
-					<Swiper
-						effect={"cards"}
-						grabCursor={true}
-						autoplay={{
-							delay: 2500,
-							disableOnInteraction: false,
-						}}
-						modules={[EffectCards, Autoplay]}
-						className="mySwiper">
-						{images.map((image, index) => (
-							<SwiperSlide>
-								<div className="relative w-[500px] h-[650px] bg-[#0F0F0F] rounded-2xl overflow-hidden" key={index}>
-									<span className="absolute z-50 top-3 left-3">
-										<Logo />
-									</span>
-									<Image
-										src={image}
-										alt={`Image ${index + 1}`}
-										objectFit="cover"
-										fill
-										className="w-full h-full object-cover"
-									/>
-									<span className="text-xs font-semibold absolute bottom-3 left-3 text-[#AFAFAF]">Art Created by Midjourney</span>
-								</div>
-							</SwiperSlide>
-						))}
-					</Swiper>
-				</div>
-			</div>
-		</div>
-	);
+  return (
+    <div className="w-full">
+      <div className="flex items-center justify-center">
+        <div className="relative">
+          <Swiper
+            effect={"cards"}
+            grabCursor={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            modules={[EffectCards, Autoplay]}
+            className="mySwiper"
+          >
+            {images.map((image, index) => (
+              <SwiperSlide>
+                <div
+                  className="relative w-[500px] h-[650px] bg-[#0F0F0F] rounded-2xl overflow-hidden"
+                  key={index}
+                >
+                  <span className="absolute z-50 top-3 left-3">
+                    <Logo />
+                  </span>
+                  <Image
+                    src={image}
+                    alt={`Image ${index + 1}`}
+                    fill
+                    className="w-full h-full object-cover"
+                  />
+                  <span className="text-xs font-semibold absolute bottom-3 left-3 text-[#AFAFAF]">
+                    Art Created by Midjourney
+                  </span>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ImageFlipper;

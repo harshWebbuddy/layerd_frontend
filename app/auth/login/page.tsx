@@ -6,6 +6,9 @@ import LoginForm from "./components/LoginForm";
 import Link from "next/link";
 import ImageFlipper from "../components/ImageFlipper";
 import { useGoogleLogin } from "@react-oauth/google";
+import axios from "@/lib/axios";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function page() {
   const googleIcon = "/logos/icons8-google.svg";
@@ -16,9 +19,32 @@ export default function page() {
     "/authFlow/8c0c47c855f3eb77c5186a37dad4da6e.jpeg",
     "/authFlow/740510e3c70cd26d29353d1fde9d5008.png",
   ];
+  const router = useRouter();
 
-  const login = useGoogleLogin({
-    onSuccess: (tokenResponse) => console.log(tokenResponse),
+  const googleLogin = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      toast.promise(
+        axios.get("/auth/google-login", {
+          headers: {
+            Authorization: `Bearer ${tokenResponse.access_token}`,
+          },
+        }),
+        {
+          loading: "Retrieving Account...",
+          error: (error) =>
+            error?.response?.data?.message ?? "Error Retrieving Account...",
+          success: (response) => {
+            localStorage.setItem("token", response.data.token);
+            router.push(
+              response.data.registered
+                ? "/auth/verify/number"
+                : "/dashboard/main"
+            );
+            return "Account Retrieved successfully.";
+          },
+        }
+      );
+    },
   });
 
   return (
@@ -33,7 +59,7 @@ export default function page() {
             <div className="flex gap-2 sm:gap-4 mt-1">
               <SocialAuthButton
                 image={googleIcon}
-                onClick={login}
+                onClick={googleLogin}
                 title="Sign in with google"
               />
               <SocialAuthButton image={appleIcon} title="Sign in with apple" />

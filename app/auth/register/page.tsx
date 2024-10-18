@@ -1,19 +1,47 @@
 import React from "react";
 import SocialAuthButton from "../components/SocialAuthButton";
-
 import RegistrationForm from "./components/RegistrationForm";
 import Link from "next/link";
 import ImageFlipper from "../components/ImageFlipper";
-import PageLayout from "../components/PageLayout";
+import { useGoogleLogin } from "@react-oauth/google";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+import axios from "axios";
 export default function page() {
   const googleIcon = "/logos/icons8-google.svg";
   const appleIcon = "/logos/icons8-apple.svg";
-
+  const router = useRouter();
   const images = [
     "/authFlow/6c2e17dbefdb7be276e7096bbbba2d8d.jpeg",
     "/authFlow/625f5e2001e55afa0ff8f4d675aa9eba.jpeg",
     "/authFlow/c68d5ef96ff41fc45baa1d965600c0a2.jpeg",
   ];
+
+  const googleLogin = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      toast.promise(
+        axios.get("/auth/google-login", {
+          headers: {
+            Authorization: `Bearer ${tokenResponse.access_token}`,
+          },
+        }),
+        {
+          loading: "Retrieving Account...",
+          error: (error) =>
+            error?.response?.data?.message ?? "Error Retrieving Account...",
+          success: (response) => {
+            localStorage.setItem("token", response.data.token);
+            router.push(
+              response.data.registered
+                ? "/auth/verify/number"
+                : "/dashboard/main"
+            );
+            return "Account Retrieved successfully.";
+          },
+        }
+      );
+    },
+  });
 
   return (
     <main className="bg-black/90 backdrop-blur-2xl w-full min-w-screen h-full min-h-screen flex justify-center items-center">
@@ -27,6 +55,7 @@ export default function page() {
             <div className="flex gap-2 sm:gap-4 mt-1">
               <SocialAuthButton
                 image={googleIcon}
+                onClick={googleLogin}
                 title="Sign up with google"
               />
               <SocialAuthButton image={appleIcon} title="Sign up with apple" />

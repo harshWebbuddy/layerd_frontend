@@ -1,13 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
 import Logo from "./logo";
 import Popup from "@/app/(site)/components/Popup";
 import Link from "next/link";
 
 export default function Navbar() {
-  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="w-full absolute top-0 bg-transparent">

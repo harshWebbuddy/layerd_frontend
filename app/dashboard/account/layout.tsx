@@ -66,7 +66,7 @@ export default function layout({ children }: { children: ReactNode }) {
             <div className="flex flex-col gap-2 items-center">
               {user.profile ? (
                 <div className="bg-[#7367F0] rounded-full overflow-hidden">
-                  <Image
+                  <img
                     src={user.profile}
                     alt="Moon starts"
                     height={32}

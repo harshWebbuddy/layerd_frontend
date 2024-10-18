@@ -21,7 +21,7 @@ export default function StoreProvider({
   return (
     <Provider store={storeRef.current}>
       <QueryClientProvider client={queryClient}>
-        <GoogleOAuthProvider clientId="523931782901-qgieo4thrpvmncjetc7qc7ssnfob9pgi.apps.googleusercontent.com">
+        <GoogleOAuthProvider clientId="1008505461325-32m7akgav88lr60g27u9idcj99saj22k.apps.googleusercontent.com">
           {children}
         </GoogleOAuthProvider>
       </QueryClientProvider>

@@ -1,7 +1,7 @@
 import a from "axios";
 
 const axios = a.create({
-  baseURL: "https://layered-backend.onrender.com/api/v1/",
+  baseURL: "http://localhost:5000/api/v1/",
 });
 
 export default axios;

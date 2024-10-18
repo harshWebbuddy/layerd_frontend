@@ -36,7 +36,7 @@ export default function ProfileButton() {
         <div className="relative">
           {user.profile ? (
             <div className="bg-[#7367F0] rounded-full overflow-hidden">
-              <Image
+              <img
                 src={user.profile}
                 alt="Moon starts"
                 height={32}
