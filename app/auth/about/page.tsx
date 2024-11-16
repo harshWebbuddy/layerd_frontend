@@ -1,24 +1,20 @@
 "use client";
 
-import React, { Suspense } from "react";
+import React, { useState, Suspense } from "react";
 import Logo from "@/components/logo";
 import AboutForm from "./components/AboutForm";
 import Link from "next/link";
+import { useSearchParams, useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+import axios from "@/lib/axios";
 import { ClipLoader } from "react-spinners";
+import { useOnMountUnsafe } from "@/hooks/useOnMountUnsafe";
 import { IReduxValue } from "@/types/redux";
 import { IUser } from "@/types/IUser";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setUser } from "@/features/userSlice";
 
-// Separate component for content that uses searchParams
 function AboutContent() {
-  const { useSearchParams, useRouter } = require("next/navigation");
-  const { useState } = require("react");
-  const { useDispatch } = require("react-redux");
-  const { setUser } = require("@/features/userSlice");
-  const { useOnMountUnsafe } = require("@/hooks/useOnMountUnsafe");
-  const axios = require("@/lib/axios");
-  const toast = require("react-hot-toast");
-
   const searchParams = useSearchParams();
   const router = useRouter();
   const [loading, setLoading] = useState(true);
@@ -53,23 +49,11 @@ function AboutContent() {
     const token = searchToken || localStorage.getItem("token");
     if (token && !user) {
       sendRequest(token);
-    } else router.push("/auth/register");
+    } else {
+      router.push("/auth/register");
+    }
   });
 
-  return (
-    <>
-      {loading ? (
-        <div className="my-4">
-          <ClipLoader color="#EC2227" />
-        </div>
-      ) : (
-        <AboutForm user={user} />
-      )}
-    </>
-  );
-}
-
-export default function About() {
   return (
     <main className="bg-black/90 backdrop-blur-2xl w-full min-w-screen h-full min-h-screen flex justify-center items-center">
       <div className="flex flex-col items-center p-3 sm:p-4 w-full max-w-[450px]">
@@ -79,18 +63,20 @@ export default function About() {
             Tell Us About You
           </h1>
         </div>
-
-        <Suspense fallback={<ClipLoader color="#EC2227" />}>
-          <AboutContent />
-        </Suspense>
-
+        {loading ? (
+          <div className="my-4">
+            <ClipLoader color="#EC2227" />
+          </div>
+        ) : (
+          <AboutForm user={user} />
+        )}
         <div className="mt-6">
           <p className="max-w-sm text-center text-sm text-white/50">
-            By Clicking "
+            By Clicking “
             <Link href="#" className="text-primary-red hover:underline">
               Continue
             </Link>
-            ", You Agree to Our Terms and Acknowledge Our{" "}
+            ”, You Agree to Our Terms and Acknowledge Our{" "}
             <Link
               href="/user-agreements/privacy-policy"
               className="text-primary-red cursor-pointer hover:underline"
@@ -101,5 +87,13 @@ export default function About() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function About() {
+  return (
+    <Suspense fallback={<div className="loading-screen">Loading...</div>}>
+      <AboutContent />
+    </Suspense>
   );
 }

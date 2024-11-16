@@ -4009,6 +4009,7 @@ vfile@^6.0.0:
     lucide-react "^0.288.0"
     next latest
     react latest
+    react-apple-signin-auth "^1.1.0"
     react-chartjs-2 "^5.2.0"
     react-collapse "^5.1.1"
     react-credit-card-input "^1.1.5"
