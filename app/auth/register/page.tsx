@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import SocialAuthButton from "../components/SocialAuthButton";
 import RegistrationForm from "./components/RegistrationForm";
