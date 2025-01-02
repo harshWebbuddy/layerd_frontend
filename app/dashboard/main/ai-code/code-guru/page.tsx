@@ -66,34 +66,7 @@ export default function page() {
 									/>
 								</NavigationButton>
 							</div>
-							<div className="bg-[url('/main/background-code.png')] bg-cover bg-center p-7 rounded-2xl ring-1 ring-neutral-700 ring-inset space-y-3">
-								<div className="bg-[url('/main/code/background-code-rectangle.png')] bg-cover bg-center p-4 w-fit">
-									<Image
-										src="/main/code/code-review.jpg"
-										alt="code-explain"
-										width={100}
-										height={100}
-										className="w-[50px] h-[50px] rounded-full"
-									/>
-								</div>
-								<h1 className="text-xl font-semibold">Code Review</h1>
-								<p className="text-[#ABAEB7]">
-									Lorem ipsum dolor sit amet consectetur. Semper faucibus
-									vestibulum hac id viverra sit.
-								</p>
-								<NavigationButton
-									link="/dashboard/main/ai-code/code-guru/code-review"
-									styleClass="bg-[#494949] flex justify-between w-full p-3 items-center rounded-md">
-									<span className="font-semibold">View</span>
-									<Image
-										src="/arrow-right.svg"
-										alt="code-review"
-										width={20}
-										height={20}
-										className="rounded-full"
-									/>
-								</NavigationButton>
-							</div>
+					 
 						</div>
 					</div>
 				</div>

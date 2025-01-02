@@ -1,12 +1,21 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Editor from "@monaco-editor/react";
 import toast from "react-hot-toast";
 import axios from "@/lib/axios";
+import EventSource from "eventsource";
+import { FaCode, FaCopy, FaRocket } from "react-icons/fa";
 
-export default function page() {
+export default function Page() {
   const [copied, setCopied] = useState(false);
+  const [codes, setCodes] = useState<string>("");
+  const [refactoredCodes, setRefactoredCodes] = useState<string>("");
+  const [detectedLanguage, setDetectedLanguage] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [explanations, setExplanations] = useState<string>("");
+  const eventSourceRef = useRef<EventSource | null>(null);
+
   const handleCopyClick = () => {
     navigator.clipboard
       .writeText("Code-converter")
@@ -17,126 +26,231 @@ export default function page() {
         console.error("Copy failed: ", error);
       });
   };
-  if (copied) {
-    setTimeout(() => setCopied(false), 1500);
-  }
 
-  const [codes, setCodes] = useState<string>("");
-  const [refactoredCodes, setRefactoredCodes] = useState<string>("");
-  const [detectedLanguage, setDetectedLanguage] = useState<string>("");
+  useEffect(() => {
+    if (copied) {
+      const timer = setTimeout(() => setCopied(false), 1500);
+      return () => clearTimeout(timer);
+    }
+  }, [copied]);
 
-  const refactorCodes = () => {
+  const refactorCodes = async () => {
     if (codes.length === 0) {
       return toast.error("Please provide codes to refactor");
     }
-
-    toast.promise(
-      axios.post(
-        "/ai/code/guru/refactor",
-        {
-          codes,
-        },
+    try {
+      const { data } = await axios.post(
+        "/ai/code/refactor",
+        { code: codes },
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         }
-      ),
-      {
-        loading: "Refactoring...",
-        error: "Error Refactoring codes",
-        success: (response) => {
-          const { language, codes } = response.data;
-          setRefactoredCodes(codes);
-          setDetectedLanguage(language);
-          return "Refactored codes";
-        },
-      }
-    );
+      );
+      console.log("data", data.data.streamId);
+      await streamResponse(data.data.streamId);
+    } catch (error) {
+      console.error("Error sending message:", error);
+    }
+  };
+
+  const streamResponse = async (streamId: string) => {
+    setIsLoading(true);
+    cleanupEventSource();
+
+    try {
+      const eventSource = new EventSource(
+        `https://api.layerd.ai/api/v1/ai/code/stream/${streamId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+
+      eventSourceRef.current = eventSource;
+      let accumulatedResponse = "";
+
+      eventSource.onmessage = (event: MessageEvent) => {
+        const chunk = event.data;
+        console.log("chunk", chunk);
+        try {
+          const parsedChunk = JSON.parse(chunk);
+          if (parsedChunk && parsedChunk.message) {
+            const msg = parsedChunk.message;
+            accumulatedResponse += msg;
+            console.log("acc", accumulatedResponse);
+            setExplanations(accumulatedResponse);
+            console.log("Acc", accumulatedResponse);
+            setIsLoading(false);
+          }
+        } catch (error) {
+          console.error("Error parsing explanation chunk:", error);
+        }
+      };
+
+      eventSource.addEventListener("end", () => {
+        cleanupEventSource();
+        toast.success("Explanation completed!");
+      });
+
+      eventSource.onerror = (error) => {
+        console.error("EventSource error:", error);
+        cleanupEventSource();
+      };
+    } catch (error) {
+      console.error("Error setting up EventSource:", error);
+      cleanupEventSource();
+    }
+  };
+
+  const cleanupEventSource = () => {
+    if (eventSourceRef.current) {
+      eventSourceRef.current.close();
+      eventSourceRef.current = null;
+    }
   };
 
   return (
-    <section className="space-y-6 px-4 md:px-10">
-      <div className="bg-[url('/main/code/background-code-title.png')] bg-no-repeat bg-cover bg-center p-4 md:p-10 ring-1 ring-neutral-700 ring-inset rounded-2xl">
-        <h1 className="text-3xl text-primary-yellow font-semibold">
-          Code Refactor
-        </h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur. Fringilla viverra arcu
-          vestibulum id odio velit nibh dictum enim. Tempor massa nullam mauris
-          interdum volutpat ornare egestas. Ac nulla bibendum tempus at cursus
-          odio et dolor. Dolor eget facilisis ac a venenatis. Pellentesque
-          accumsan ante sit aliquet.
-        </p>
-      </div>
-      <div className="flex flex-col md:flex-row gap-4">
-        <div className="w-full space-y-3">
-          <h1 className="font-semibold">Input Your Code</h1>
-          <div className="bg-[url('/main/background-code.png')] bg-cover bg-center bg-no-repeat min-h-[500px] w-full rounded-xl ring-b-[3px] ring-neutral-700 ring-inset flex flex-col">
-            <div className="bg-[#393A3D] flex justify-between px-3 py-1.5 rounded-t-xl">
-              <h1>1</h1>
-              <div className="group relative">
-                <button onClick={handleCopyClick}>Copy</button>
-                <div
-                  className={`absolute -top-10 ${
-                    copied ? "-right-1" : "-right-0 sm:-right-10"
-                  } `}
-                >
-                  <div className="bg-[#585858]/90 backdrop-blur-md p-2 rounded-md text-[13px] whitespace-nowrap z-50 invisible scale-75 transition-all duration-300 group-hover:visible group-hover:scale-100 opacity-0 group-hover:opacity-100">
-                    {copied ? "Copied!" : "Copy to Clipboard"}
-                  </div>
+    <section className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 px-4 py-8">
+      {/* Background Effects */}
+      <div className="fixed inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/30 rounded-full blur-[120px] -z-10" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[120px] -z-10" />
+
+      <div className="max-w-7xl mx-auto space-y-8 relative z-10">
+        {/* Header Section */}
+        <div className="text-center space-y-4">
+          <div className="inline-block animate-bounce-slow">
+            <div className="flex items-center justify-center w-16 h-16 mx-auto bg-emerald-500/10 rounded-2xl backdrop-blur-sm border border-emerald-500/20">
+              <FaCode className="w-8 h-8 text-emerald-400" />
+            </div>
+          </div>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
+            AI Code Refactor
+          </h1>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Transform your code into a cleaner, more efficient version with
+            AI-powered refactoring
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+          {/* Input Editor */}
+          <div className="bg-gray-800/50 rounded-xl backdrop-blur-sm border border-gray-700/50 overflow-hidden">
+            <div className="bg-gray-900/50 p-4 flex items-center justify-between border-b border-gray-700/50">
+              <div className="flex items-center gap-3">
+                <div className="flex space-x-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
                 </div>
+                <h2 className="text-sm font-medium text-gray-400 ml-2">
+                  Input Code
+                </h2>
               </div>
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(codes);
+                  toast.success("Code copied!");
+                }}
+                className="p-1.5 text-gray-400 hover:text-emerald-400 rounded-lg hover:bg-gray-700/50 transition-colors"
+              >
+                <FaCopy className="w-4 h-4" />
+              </button>
             </div>
             <Editor
-              height={500}
-              width={"100%"}
-              onChange={(value) => {
-                setCodes(value);
+              height="500px"
+              language={detectedLanguage || "javascript"}
+              onChange={(value) => setCodes(value || "")}
+              theme="vs-dark"
+              options={{
+                minimap: { enabled: false },
+                fontSize: 14,
+                padding: { top: 16 },
+                fontFamily: "JetBrains Mono, monospace",
               }}
             />
           </div>
-        </div>
-        <div className="w-full space-y-3">
-          <h1 className="font-semibold">Code OutPut Results </h1>
-          <div className="bg-[url('/main/background-code.png')] bg-cover bg-center bg-no-repeat min-h-[500px] w-full rounded-xl ring-b-[3px] ring-neutral-700 ring-inset flex flex-col">
-            <div className="bg-[#393A3D] flex justify-between px-3 py-1.5  rounded-t-xl">
-              <h1>1</h1>
-              <div className="group relative">
-                <button onClick={handleCopyClick}>Copy</button>
-                <div
-                  className={`absolute -top-10 ${
-                    copied ? "-right-1" : "-right-0 sm:-right-10"
-                  } `}
-                >
-                  <div className="bg-[#585858]/90 backdrop-blur-md p-2 rounded-md text-[13px] whitespace-nowrap z-50 invisible scale-75 transition-all duration-300 group-hover:visible group-hover:scale-100 opacity-0 group-hover:opacity-100">
-                    {copied ? "Copied!" : "Copy to Clipboard"}
-                  </div>
+
+          {/* Output Editor */}
+          <div className="bg-gray-800/50 rounded-xl backdrop-blur-sm border border-gray-700/50 overflow-hidden">
+            <div className="bg-gray-900/50 p-4 flex items-center justify-between border-b border-gray-700/50">
+              <div className="flex items-center gap-3">
+                <div className="flex space-x-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
                 </div>
+                <h2 className="text-sm font-medium text-gray-400 ml-2">
+                  Refactored Code
+                </h2>
               </div>
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(explanations);
+                  toast.success("Refactored code copied!");
+                }}
+                className="p-1.5 text-gray-400 hover:text-emerald-400 rounded-lg hover:bg-gray-700/50 transition-colors"
+              >
+                <FaCopy className="w-4 h-4" />
+              </button>
             </div>
             <Editor
-              height={500}
-              width={"100%"}
-              value={refactoredCodes}
-              language={detectedLanguage}
+              height="500px"
+              language={detectedLanguage || "javascript"}
+              value={explanations}
+              theme="vs-dark"
+              options={{
+                readOnly: true,
+                minimap: { enabled: false },
+                fontSize: 14,
+                padding: { top: 16 },
+                fontFamily: "JetBrains Mono, monospace",
+              }}
             />
+            {isLoading && (
+              <div className="absolute inset-0 bg-gray-900/50 backdrop-blur-sm flex flex-col items-center justify-center">
+                <div className="flex items-center gap-2 text-emerald-400">
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full animate-bounce" />
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full animate-bounce [animation-delay:-.3s]" />
+                  <div className="w-2 h-2 bg-emerald-400 rounded-full animate-bounce [animation-delay:-.5s]" />
+                </div>
+                <p className="text-gray-400 mt-4">Refactoring your code...</p>
+              </div>
+            )}
           </div>
         </div>
+
+        <div className="flex justify-center">
+          <button
+            onClick={refactorCodes}
+            disabled={isLoading || !codes}
+            className="group relative px-6 py-3 rounded-xl font-medium text-white transition-all duration-200
+                      bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 
+                      hover:shadow-lg hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed
+                      disabled:hover:translate-y-0"
+          >
+            <span className="flex items-center gap-2">
+              {isLoading ? (
+                <div className="flex items-center gap-2">
+                  <span>Refactoring</span>
+                  <div className="w-2 h-2 bg-white rounded-full animate-bounce" />
+                  <div className="w-2 h-2 bg-white rounded-full animate-bounce [animation-delay:-.3s]" />
+                  <div className="w-2 h-2 bg-white rounded-full animate-bounce [animation-delay:-.5s]" />
+                </div>
+              ) : (
+                <>
+                  <FaCode className="w-5 h-5" />
+                  <span>Refactor Code</span>
+                  <FaRocket className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </>
+              )}
+            </span>
+          </button>
+        </div>
       </div>
-      <button
-        onClick={refactorCodes}
-        className="bg-[#494949] flex justify-between w-full max-w-[200px] p-3 items-center rounded-md"
-      >
-        <span className="font-semibold">Refactor</span>
-        <Image
-          src="/arrow-right.svg"
-          alt="code-explain"
-          width={20}
-          height={20}
-          className="rounded-full"
-        />
-      </button>
     </section>
   );
 }
