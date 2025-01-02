@@ -2,12 +2,12 @@
 
 import React, { useState, useCallback, useEffect, useMemo } from "react";
 import { IChat } from "@/types/IChat";
-import { Assistant, Chat, Conversation } from "@/types/aiassistant";
 
 import Sidebar from "./components/Sidebar";
 import ChatHistory from "./components/ChatHistory";
 import Topbar from "./components/Topbar";
 import ChatSection from "./components/ChatSection";
+import { Assistant, Chat, Conversation } from "@/types/aiassistant";
 
 interface PageProps {
   params: {
@@ -71,7 +71,7 @@ const ChatPage: React.FC<PageProps> = ({ params: { chatid } }: PageProps) => {
     (Conversationid: string | null) => {
       setConversationId(Conversationid);
       setValue(Conversationid);
-
+      
       if (Conversationid === null) {
         setMessages([]);
         setNewChat(true);
@@ -108,7 +108,8 @@ const ChatPage: React.FC<PageProps> = ({ params: { chatid } }: PageProps) => {
         conversationid={conversationId}
         setConversationId={setConversationId}
         onSelectConversation={handleSelectConversation}
-        onNewChat={handleNewChat}
+                onNewChat={handleNewChat}
+
       />
       <div className="flex-1 flex flex-col">
         <Topbar

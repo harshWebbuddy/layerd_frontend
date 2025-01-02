@@ -28,7 +28,7 @@ export default function UploadPicture({
 
   const validateFile = (file: File): boolean => {
     // Check file type
-    const validTypes = ['image/jpeg', 'image/png', 'image/jpg'];
+    const validTypes = ["image/jpeg", "image/png", "image/jpg"];
     if (!validTypes.includes(file.type)) {
       toast({
         description: "Please upload only JPG, JPEG or PNG images. ⚠️",
@@ -37,7 +37,6 @@ export default function UploadPicture({
       return false;
     }
 
-    // Check file size (5MB = 5 * 1024 * 1024 bytes)
     const maxSize = 5 * 1024 * 1024;
     if (file.size > maxSize) {
       toast({
@@ -52,7 +51,6 @@ export default function UploadPicture({
 
   const generateInteriorDesign = async (file: File): Promise<void> => {
     try {
-      // Validate file before proceeding
       if (!file || !(file instanceof File)) {
         throw new Error("No valid file provided");
       }
@@ -62,10 +60,17 @@ export default function UploadPicture({
       }
 
       const formData = new FormData();
-      formData.append("file", file);
+      formData.append("image", file);
       formData.append("theme", theme);
       formData.append("room", room);
       formData.append("image_resolution", imageResolution);
+
+      console.log("FormData contents:", {
+        file: file,
+        theme: theme,
+        room: room,
+        imageResolution: imageResolution,
+      });
 
       const response = await fetch(
         "https://api.layerd.ai/api/v1/ai/personalized/interiorai",
@@ -73,18 +78,21 @@ export default function UploadPicture({
           method: "POST",
           body: formData,
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTdlYjgxNzYyNTUwNzc1NDJkMDQ3NCIsImVtYWlsIjoic3dhcG5pbEB3ZWJidWRkeS5hZ2VuY3kiLCJpYXQiOjE3MzQ3NTQ1NzYsImV4cCI6MTczNTM1OTM3Nn0.BXNftj02F-k7HTpWS7pEUct1XHVkABa7EH6sTLoRKUg",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         }
       );
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+        console.error("API Error Response:", errorData);
+        throw new Error(
+          errorData.message || `HTTP error! status: ${response.status}`
+        );
       }
 
       const data = await response.json();
+      console.log("API Success Response:", data);
 
       if (data.data?.url) {
         onUploadSuccess?.(data.data.url);
@@ -114,7 +122,7 @@ export default function UploadPicture({
     if (rejectedFiles.length > 0) {
       const rejection = rejectedFiles[0];
       const error = rejection.errors[0];
-      
+
       toast({
         description: error.message || "Please upload a valid image file. ⚠️",
         variant: "destructive",
@@ -131,16 +139,14 @@ export default function UploadPicture({
     }
 
     const droppedFile = acceptedFiles[0];
+    console.log("Dropped file:", droppedFile);
 
-    // Validate the file
     if (!validateFile(droppedFile)) {
       return;
     }
 
-    // Store the file
     setFile(droppedFile);
 
-    // Create base64 for preview
     try {
       const reader = new FileReader();
       reader.onload = (event) => {
@@ -156,9 +162,9 @@ export default function UploadPicture({
       };
       reader.readAsDataURL(droppedFile);
 
-      // Generate interior design
       await generateInteriorDesign(droppedFile);
     } catch (error) {
+      console.error("Error processing image:", error);
       toast({
         description: "Failed to process the image. Please try again. ⚠️",
         variant: "destructive",
