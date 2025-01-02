@@ -12,5 +12,5 @@ export const dummyEditorData = [
   "/main/editor/text-arrow.png",
   "/main/editor/text-height.png",
   "/main/editor/background-fill.png",
-  "/main/editor/style-link.png",
+  // "/main/editor/style-link.png",
 ]

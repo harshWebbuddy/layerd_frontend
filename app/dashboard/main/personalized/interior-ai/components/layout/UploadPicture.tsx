@@ -4,6 +4,7 @@ import Motion from "@/components/ui/Motion";
 import { ViewUploadedImage } from "../ViewUploadedImage";
 import { useToast } from "@/components/ui/use-toast";
 import { Dropzone } from "../Dropzone";
+import axios from "@/lib/axios";
 
 interface UploadPictureProps {
   file: File | null;
@@ -27,7 +28,6 @@ export default function UploadPicture({
   const { toast } = useToast();
 
   const validateFile = (file: File): boolean => {
-    // Check file type
     const validTypes = ["image/jpeg", "image/png", "image/jpg"];
     if (!validTypes.includes(file.type)) {
       toast({
@@ -60,7 +60,7 @@ export default function UploadPicture({
       }
 
       const formData = new FormData();
-      formData.append("image", file);
+      formData.append("file", file);
       formData.append("theme", theme);
       formData.append("room", room);
       formData.append("image_resolution", imageResolution);
@@ -72,26 +72,26 @@ export default function UploadPicture({
         imageResolution: imageResolution,
       });
 
-      const response = await fetch(
-        "https://api.layerd.ai/api/v1/ai/personalized/interiorai",
+      const response = await axios.post(
+        "/ai/personalized/interiorai",
+        formData,
         {
-          method: "POST",
-          body: formData,
           headers: {
+            "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         }
       );
-
-      if (!response.ok) {
-        const errorData = await response.json();
+      console.log("response", response.data.data.response);
+      if (!response.data.success) {
+        const errorData = response.data;
         console.error("API Error Response:", errorData);
         throw new Error(
           errorData.message || `HTTP error! status: ${response.status}`
         );
       }
 
-      const data = await response.json();
+      const data = response.data;
       console.log("API Success Response:", data);
 
       if (data.data?.url) {
@@ -119,6 +119,8 @@ export default function UploadPicture({
     acceptedFiles: File[],
     rejectedFiles: FileRejection[]
   ): Promise<void> => {
+    console.log("acceptedFiles", acceptedFiles);
+    console.log("rejectedFiles", rejectedFiles);
     if (rejectedFiles.length > 0) {
       const rejection = rejectedFiles[0];
       const error = rejection.errors[0];

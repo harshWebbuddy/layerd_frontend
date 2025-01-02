@@ -1,68 +1,44 @@
-"use client";
+ 
+import React from "react";
 
-import React, { useEffect, useState } from "react";
-import { Listbox } from "@headlessui/react";
-import Image from "next/image";
-
-type ItemType = {
-  value: string;
-  label: string;
-};
-export default function Selection({
-  id,
-  label,
-  items,
-  placeholder,
-  onChange,
-}: {
+interface SelectionProps {
   id: string;
   label?: string;
   required?: boolean;
-  items: ItemType[];
+  items: { value: string; label: string }[];
   placeholder?: string;
+  value?: string;
   onChange?: (value: string) => void;
-}) {
-  const [selectedPerson, setSelectedPerson] = useState<ItemType | null>(null);
+}
 
-  useEffect(() => {
-    if (onChange && selectedPerson) {
-      onChange(selectedPerson.value);
-    }
-  }, [selectedPerson]);
-
+export default function Selection({
+  id,
+  label,
+  required = false,
+  items,
+  placeholder,
+  value,
+  onChange,
+}: SelectionProps) {
   return (
-    <div id={id} className="w-full space-y-2 relative">
-      {label && <label>{label}</label>}
-      <Listbox value={selectedPerson} onChange={setSelectedPerson}>
-        <Listbox.Button
-          className="bg-[#32323280] w-full text-start h-[50px] ring-2 ring-[#514e4e8f] px-3 rounded-lg flex gap-2 justify-between items-center"
-        >
-          <p className=" whitespace-nowrap overflow-hidden text-ellipsis">
-            {selectedPerson ? (
-              <span>{selectedPerson.label}</span>
-            ) : (
-              <span className="text-white/50">{placeholder}</span>
-            )}
-          </p>
-          <Image
-            src="/chevron-down.svg"
-            alt="chevron-down"
-            height={18}
-            width={18}
-          />
-        </Listbox.Button>
-        <Listbox.Options className="absolute bg-[#333] rounded-xl max-h-[300px] overflow-y-auto w-full z-50 p-1 ring-1 ring-white/10">
-          {items.map((item) => (
-            <Listbox.Option
-              key={item.label}
-              value={item}
-              className="p-3 hover:bg-[#494949] rounded-md cursor-pointer"
-            >
-              {item.label}
-            </Listbox.Option>
-          ))}
-        </Listbox.Options>
-      </Listbox>
+    <div className="space-y-2">
+      {label && <label htmlFor={id}>{label}</label>}
+      <select
+        id={id}
+        required={required}
+        value={value}
+        onChange={(e) => onChange?.(e.target.value)}
+        className="w-full bg-[#32323280] rounded-lg ring-[#514E4E] ring-1 focus:ring-white/50 transition duration-200 h-[50px] px-3 outline-none"
+      >
+        <option value="" disabled>
+          {placeholder}
+        </option>
+        {items.map((item) => (
+          <option key={item.value} value={item.value}>
+            {item.label}
+          </option>
+        ))}
+      </select>
     </div>
   );
 }

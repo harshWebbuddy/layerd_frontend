@@ -1,398 +1,304 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Selection from "../components/Selection";
-import Checkbox from "../components/Checkbox";
-import Image from "next/image";
-import { languages } from "@/app/dashboard/account/defaults/components";
+import Motion from "@/components/ui/Motion";
+import { useVoiceConfig } from "./hooks/useVoiceConfig";
+import {
+  LANGUAGE_OPTIONS,
+  SPEAKING_STYLES,
+  AUDIO_FORMATS,
+} from "./config/voices";
+import {
+  Edit3,
+  Globe,
+  Mic,
+  Type,
+  Music,
+  Volume2,
+  Download,
+  Trash2,
+  Clock,
+  Settings,
+  PlayCircle,
+  PauseCircle,
+  Share2,
+} from "lucide-react";
 import axios from "@/lib/axios";
 import toast from "react-hot-toast";
-import { useQuery } from "react-query";
+
+interface AudioResponse {
+  url: string;
+  title: string;
+  createdAt: string;
+}
+
+type AudioFormat = (typeof AUDIO_FORMATS)[number]["value"];
 
 export default function Form() {
   const [text, setText] = useState("");
+  const { languageCode, setLanguageCode, availableVoices } = useVoiceConfig();
+  const [voiceId, setVoiceId] = useState("Aditi");
+  const [style, setStyle] = useState(SPEAKING_STYLES[0].value);
+  const [format, setFormat] = useState<AudioFormat>("mp3");
   const [title, setTitle] = useState("");
-  const [receivedResponse, setReceivedResponse] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [generatedAudios, setGeneratedAudios] = useState<AudioResponse[]>([]);
 
-  const { data: audios, isLoading } = useQuery(
-    ["text-speeches", receivedResponse],
-    async () => {
-      const res = await axios.get("/ai/voice/text-to-speeches", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
-      return res.data.files;
-    },
-    {
-      refetchOnMount: false,
-      refetchOnWindowFocus: false,
+  useEffect(() => {
+    const savedAudios = localStorage.getItem("generatedAudios");
+    if (savedAudios) {
+      setGeneratedAudios(JSON.parse(savedAudios));
     }
-  );
+  }, []);
+  const handleFormatChange = (selectedFormat: AudioFormat) => {
+    setFormat(selectedFormat);
+  };
 
-  console.log(audios);
+  const handleConvertToSpeech = async () => {
+    if (!text.trim()) {
+      toast.error("Please enter some text to convert");
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const response = await axios.post(
+        "/ai/voice/text-to-speech",
+        {
+          text: text.trim(),
+          voiceId,
+          languageCode,
+          outputFormat: format,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+
+      if (response.data.success) {
+        const newAudio = {
+          url: response.data.data.url,
+          title: title || `${voiceId} - ${new Date().toLocaleTimeString()}`,
+          createdAt: new Date().toISOString(),
+        };
+
+        const updatedAudios = [newAudio, ...generatedAudios];
+        setGeneratedAudios(updatedAudios);
+        localStorage.setItem("generatedAudios", JSON.stringify(updatedAudios));
+        toast.success("Audio generated successfully! 🎉");
+      }
+    } catch (error: any) {
+      console.error("Error:", error);
+      toast.error(
+        error.response?.data?.message ||
+          error.message ||
+          "Failed to generate audio"
+      );
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+ 
+ 
 
   return (
-    <form className="space-y-5 mt-6">
-      <div className="flex flex-col xl:flex-row gap-3 w-full">
-        <div className="border-bottom-gradient w-full">
-          <Selection
-            id="auto-detect"
-            items={languages}
-            label="Language"
-            placeholder="English (USA)"
-          />
-        </div>
-        <div className="w-full">
-          <Selection
-            id="voices"
-            items={languages}
-            label="Voices"
-            placeholder="Choose Your Voice"
-          />
-        </div>
-        <div className="flex items-end">
-          <button
-            type="button"
-            className="bg-gradient-to-br from-primary-red to-primary-yellow p-2 w-[50px] h-[50px] rounded-lg grid place-content-center"
-          >
-            <Image
-              src="/main/ai/volume.svg"
-              alt="speech to text"
-              width={25}
-              height={25}
+    <Motion
+      transition={{ duration: 0.5 }}
+      variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+    >
+      <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+        {/* Top Controls */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="space-y-2">
+            <label className="text-sm font-medium flex items-center gap-2">
+              <Edit3 className="w-4 h-4 text-primary-orange" />
+              Title
+            </label>
+            <div className="bg-[#32323280] rounded-xl ring-1 ring-white/10 focus-within:ring-primary-orange/50 transition-all duration-300 hover:bg-[#32323299]">
+              <input
+                type="text"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                placeholder="Enter audio title"
+                className="w-full h-[50px] bg-transparent px-4 outline-none"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-medium flex items-center gap-2">
+              <Globe className="w-4 h-4 text-primary-orange" />
+              Language
+            </label>
+            <Selection
+              id="language"
+              items={LANGUAGE_OPTIONS}
+              value={languageCode}
+              onChange={setLanguageCode}
             />
-          </button>
-        </div>
-        <div className="w-full space-y-2">
-          <label>Audio Title</label>
-          <div className="bg-[#32323280] rounded-lg ring-[#514E4E] ring-1 focus-within:ring-white/50 transition duration-200 w-full flex justify-center items-center h-[50px] cursor-pointer outline-none px-3">
-            <input
-              type="text"
-              className="w-full h-full  rounded-lg bg-transparent outline-none"
-              placeholder="New Audio"
-              onChange={(e) => {
-                setTitle(e.target.value);
-              }}
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-medium flex items-center gap-2">
+              <Mic className="w-4 h-4 text-primary-orange" />
+              Voice
+            </label>
+            <Selection
+              id="voice"
+              items={availableVoices}
+              value={voiceId}
+              onChange={setVoiceId}
             />
           </div>
         </div>
-        <div className="w-full">
-          <Selection
-            id="select-workbook"
-            items={[
-              {
-                value: "Workbook 1",
-                label: "Workbook 1",
-              },
-              {
-                value: "Workbook 2",
-                label: "Workbook 2",
-              },
-              {
-                value: "Workbook 3",
-                label: "Workbook 3",
-              },
-              {
-                value: "Workbook 4",
-                label: "Workbook 4",
-              },
-            ]}
-            label="Select"
-            placeholder="Workbook Name"
+
+        <div className="bg-gradient-to-br from-[#2a2a2a] to-[#1f1f1f] rounded-xl p-6 space-y-4 ring-1 ring-white/10">
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-semibold flex items-center gap-2">
+              <Type className="w-5 h-5 text-primary-orange" />
+              Text to Speech
+            </h2>
+            <div className="flex items-center gap-2 text-sm">
+              <span
+                className={
+                  text.length >= 900 ? "text-primary-red" : "text-gray-400"
+                }
+              >
+                {text.length}
+              </span>
+              <span className="text-gray-400">/</span>
+              <span className="text-gray-400">1000</span>
+            </div>
+          </div>
+
+          <textarea
+            value={text}
+            onChange={(e) => setText(e.target.value.slice(0, 1000))}
+            placeholder="Enter your text here to synthesize..."
+            className="w-full h-40 bg-black/20 rounded-xl p-4 outline-none resize-none focus:ring-1 focus:ring-primary-orange/50 transition-all duration-300"
           />
-        </div>
-      </div>
-      <div className="flex gap-4">
-        <Checkbox label="MP3" id="mp3" />
-        <Checkbox label="WAV" id="WAV" />
-        <Checkbox label="OGG" id="OGG" />
-        <Checkbox label="WEBM" id="WEBM" />
-      </div>
-      <div className="flex flex-col sm:flex-row flex-wrap xl:flex-nowrap gap-4 xl:gap-3">
-        <div className="w-full sm:max-w-[200px]">
-          <Selection
-            id="speaking-style"
-            items={[
-              {
-                value: "Fast",
-                label: "Fast",
-              },
-              {
-                value: "Medium",
-                label: "Medium",
-              },
-              {
-                value: "Slow",
-                label: "Slow",
-              },
-            ]}
-            placeholder="Speaking Style"
-          />
-        </div>
-        <div className="w-full sm:max-w-[200px]">
-          <Selection
-            id="voice-effects"
-            items={[
-              {
-                value: "Reverb",
-                label: "Reverb",
-              },
-              {
-                value: "Echo",
-                label: "Echo",
-              },
-              {
-                value: "High Pitch",
-                label: "High Pitch",
-              },
-              {
-                value: "Auto Tune",
-                label: "Auto Tune",
-              },
-            ]}
-            placeholder="Voice Effects"
-          />
-        </div>
-        <div className="w-full sm:max-w-[200px]">
-          <Selection
-            id="say-as"
-            items={[
-              {
-                value: "Auto Detect",
-                label: "Auto Detect",
-              },
-              {
-                value: "Manual Detection",
-                label: "Manual Detection",
-              },
-            ]}
-            placeholder="Say as"
-          />
-        </div>
-        <div className="w-full sm:max-w-[200px]">
-          <Selection
-            id="Emphasis"
-            items={[
-              {
-                value: "Auto Detect",
-                label: "Auto Detect",
-              },
-              {
-                value: "Manual Detection",
-                label: "Manual Detection",
-              },
-            ]}
-            placeholder="Emphasis"
-          />
-        </div>
-        <div className="w-full sm:max-w-[200px]">
-          <Selection
-            id="Volume"
-            items={[
-              {
-                value: "High",
-                label: "High",
-              },
-              {
-                value: "Medium",
-                label: "Medium",
-              },
-              {
-                value: "Low",
-                label: "Low",
-              },
-            ]}
-            placeholder="Volume"
-          />
-        </div>
-        <div className="w-full sm:max-w-[200px]">
-          <Selection
-            id="speed"
-            items={[
-              {
-                value: "Fast",
-                label: "Fast",
-              },
-              {
-                value: "Medium",
-                label: "Medium",
-              },
-              {
-                value: "Slow",
-                label: "Slow",
-              },
-            ]}
-            placeholder="Speed"
-          />
-        </div>
-        <div className="w-full sm:max-w-[200px]">
-          <Selection
-            id="pitch"
-            items={[
-              {
-                value: "High",
-                label: "High",
-              },
-              {
-                value: "Medium",
-                label: "Medium",
-              },
-              {
-                value: "Low",
-                label: "Low",
-              },
-            ]}
-            placeholder="Pitch"
-          />
-        </div>
-        <div className="w-full sm:max-w-[200px]">
-          <Selection
-            id="pauses"
-            items={[
-              {
-                value: "Fast",
-                label: "Fast",
-              },
-              {
-                value: "Medium",
-                label: "Medium",
-              },
-              {
-                value: "Slow",
-                label: "Slow",
-              },
-            ]}
-            placeholder="Pauses"
-          />
-        </div>
-      </div>
-      <div className="bg-[url('/main/background-speech.png')] bg-center bg-cover bg-no-repeat px-4 md:px-7 pt-6 pb-4 ring-1 ring-slate-700 ring-inset rounded-2xl !mt-10">
-        <h1 className="text-xl md:text-2xl font-semibold">Text To Speech</h1>
-        <div className="ring-1 ring-white/30 rounded-2xl mt-4 min-h-[380px] flex flex-col">
-          <div className="flex  flex-col sm:flex-row sm:items-center gap-5 p-3 md:p-7">
-            <div className="flex w-full items-center gap-5">
-              <Image
-                src="/main/ai/speech-to-text.png"
-                alt="speech to text"
-                width={50}
-                height={50}
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-white/10">
+            <div className="space-y-2">
+              <label className="text-sm font-medium flex items-center gap-2">
+                <Settings className="w-4 h-4 text-primary-orange" />
+                Speaking Style
+              </label>
+              <Selection
+                id="style"
+                items={SPEAKING_STYLES}
+                value={style}
+                onChange={setStyle}
               />
-              <div className="bg-[#32323280] rounded-lg ring-[#514E4E] ring-2 w-full flex justify-center items-center h-[50px] cursor-pointer outline-none px-3">
-                <input
-                  type="text"
-                  max={1000}
-                  className="w-full h-full  rounded-lg bg-transparent outline-none"
-                  placeholder="Enter your text here to synthesize..."
-                  onChange={(e) => {
-                    setText(e.target.value);
-                  }}
-                />
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-sm font-medium flex items-center gap-2">
+                <Music className="w-4 h-4 text-primary-orange" />
+                Audio Format
+              </label>
+              <div className="flex flex-wrap gap-3">
+                {AUDIO_FORMATS?.map((audioFormat) => (
+                  <div
+                    key={audioFormat.value}
+                    className="flex items-center space-x-2"
+                  >
+                    <input
+                      type="radio"
+                      id={audioFormat.value}
+                      name="audioFormat"
+                      value={audioFormat.value}
+                      checked={format === audioFormat.value}
+                      onChange={() => handleFormatChange(audioFormat.value)}
+                      className="accent-primary-orange"
+                    />
+                    <label htmlFor={audioFormat.value} className="text-sm">
+                      {audioFormat.label}
+                      <span className="text-xs text-gray-400 ml-1">
+                        ({audioFormat.quality})
+                      </span>
+                    </label>
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="flex h-[50px] gap-2">
-              {[
-                "/main/ai/music-note.svg",
-                "/main/ai/time.svg",
-                "/main/ai/trash.svg",
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  onClick={async () => {
-                    if (index === 0) {
-                      toast.promise(
-                        axios.post(
-                          "/ai/voice/text-to-speech",
-                          {
-                            text,
-                            title,
-                          },
-                          {
-                            headers: {
-                              Authorization: `Bearer ${localStorage.getItem(
-                                "token"
-                              )}`,
-                            },
-                          }
-                        ),
-                        {
-                          loading: "Converting to speech",
-                          error: (error) =>
-                            error?.response?.data?.stackTrace ?? "Error",
-                          success: () => {
-                            setReceivedResponse(!receivedResponse);
-                            return "Converted to speech";
-                          },
-                        }
-                      );
-                    }
-                  }}
-                  className={`bg-[#fdbb142b] h-full w-[50px] px-2 grid place-content-center rounded-lg hover:bg-[#fdbb1446] transition cursor-pointer`}
-                >
-                  <Image src={item} alt="image" height={25} width={25} />
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold flex items-center gap-2">
+            <Volume2 className="w-5 h-5 text-primary-orange" />
+            Generated Audios
+          </h3>
+          <div className="space-y-3 max-h-[300px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
+            {generatedAudios?.map((audio, index) => (
+              <div
+                key={index}
+                className="bg-gradient-to-r from-[#2a2a2a] to-[#1f1f1f] rounded-xl p-4 flex flex-col sm:flex-row sm:items-center gap-4 hover:bg-[#32323299] transition-all duration-300 ring-1 ring-white/10"
+              >
+                <div className="flex-1">
+                  <h4 className="font-medium text-primary-orange flex items-center gap-2">
+                    <PlayCircle className="w-4 h-4" />
+                    {audio.title}
+                  </h4>
+                  <p className="text-sm text-gray-400 flex items-center gap-2">
+                    <Clock className="w-3 h-3" />
+                    {new Date(audio.createdAt).toLocaleString()}
+                  </p>
                 </div>
-              ))}
-            </div>
-          </div>
-          {audios && audios.length > 0 ? (
-            <div className="flex-1 flex-col h-full mb-20">
-          {audios.map((audio) => (
-            <div key={audio.path}>
-              <audio src={audio.path }/>
-            </div>
-          ))}
-            </div>
-          ) : (
-            <div className="h-full flex-1 grid place-content-center mb-20">
-              {isLoading ? (
-                <div>Loading...</div>
-              ) : (
-                <Image
-                  src="/main/ai/stack-cards.png"
-                  alt="image"
-                  height={40}
-                  width={40}
-                  draggable={false}
-                />
-              )}
-            </div>
-          )}
-        </div>
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-3">
-          <h1> {text.length} Characters</h1>
-          <div className="flex flex-col sm:flex-row sm:gap-3">
-            <button
-              type="button"
-              className="underline text-start leading-[200%]"
-            >
-              Delete All lines
-            </button>
-            <button
-              type="button"
-              className="underline text-start leading-[200%]"
-            >
-              Clear Effects
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setText("");
-              }}
-              className="underline text-start leading-[200%]"
-            >
-              Clear Text
-            </button>
+                <div className="flex items-center gap-4">
+                  <audio
+                    controls
+                    src={audio.url}
+                    className="max-w-[300px] audio-player"
+                    controlsList="nodownload"
+                  />
+                  <div className="flex gap-2">
+                   
+                    
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-      <div className="flex justify-center gap-3">
-        <button className="bg-transparent ring-1 ring-white ring-inset rounded-lg py-3 w-[200px] hover:bg-[#47444446] transition duration-300">
-          Listen
-        </button>
-        <button className="bg-gradient-to-br from-primary-red to-primary-yellow rounded-lg py-3 w-[200px]">
-          Listen
-        </button>
-      </div>
-    </form>
+
+        <div className="flex justify-center gap-4">
+          <button
+            type="button"
+            onClick={() => setText("")}
+            className="px-8 py-3 rounded-xl border border-white/10 hover:bg-white/5 transition-all duration-300 flex items-center gap-2"
+          >
+            <Trash2 className="w-4 h-4" />
+            Clear Text
+          </button>
+          <button
+            type="button"
+            onClick={handleConvertToSpeech}
+            disabled={isLoading || !text.trim()}
+            className="px-8 py-3 rounded-xl bg-gradient-to-r from-primary-red to-primary-yellow 
+              disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90 transition-all duration-300
+              flex items-center gap-2"
+          >
+            {isLoading ? (
+              <>
+                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                Generating...
+              </>
+            ) : (
+              <>
+                <Volume2 className="w-5 h-5" />
+                Generate Audio
+              </>
+            )}
+          </button>
+        </div>
+      </form>
+    </Motion>
   );
 }

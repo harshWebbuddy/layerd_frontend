@@ -1,0 +1,68 @@
+export const THEMES = {
+  default: {
+    colors: {
+      primary: "from-primary-red to-primary-yellow",
+      secondary: "#32323280",
+      accent: "#514E4E",
+      text: "white",
+      border: "white/30",
+    },
+    components: {
+      input: "bg-[#32323280] rounded-lg ring-[#514E4E]",
+      button: "bg-gradient-to-br from-primary-red to-primary-yellow",
+      card: "bg-[#32323280] rounded-lg p-4",
+    },
+  },
+  modern: {
+    colors: {
+      primary: "from-blue-500 to-purple-600",
+      secondary: "#1a1a2e80",
+      accent: "#2a2a3a",
+      text: "white",
+      border: "white/20",
+    },
+    components: {
+      input: "bg-[#1a1a2e80] rounded-xl ring-[#2a2a3a]",
+      button: "bg-gradient-to-r from-blue-500 to-purple-600",
+      card: "bg-[#1a1a2e80] rounded-xl p-5",
+    },
+  },
+  // Add more themes as needed
+};
+export const LANGUAGE_OPTIONS        = [
+    { value: "English(USA)", label: "English(USA)" },
+    { value: "English(UK)", label: "English(UK)" },
+    { value: "Mandarin Chinese", label: "Mandarin Chinese" },
+    { value: "Hindi", label: "Hindi" },
+    { value: "Spanish", label: "Spanish" },
+    { value: "French", label: "French" },
+    { value: "Modern Standard Arabic", label: "Modern Standard Arabic" },
+    { value: "Bengali", label: "Bengali" },
+    { value: "Russian", label: "Russian" },
+    { value: "Portuguese", label: "Portuguese" },
+    { value: "Urdu", label: "Urdu" },
+    { value: "Indonesian", label: "Indonesian" },
+    { value: "German", label: "German" },
+    { value: "Japanese", label: "Japanese" },
+    { value: "Nigerian Pidgin", label: "Nigerian Pidgin" },
+    { value: "Marathi", label: "Marathi" },
+    { value: "Telugu", label: "Telugu" },
+    { value: "Turkish", label: "Turkish" },
+    { value: "Tamil", label: "Tamil" },
+    { value: "Yue Chinese", label: "Yue Chinese" },
+    { value: "Vietnamese", label: "Vietnamese" },
+    { value: "Tagalog", label: "Tagalog" },
+    { value: "Wu Chinese", label: "Wu Chinese" },
+    { value: "Korean", label: "Korean" },
+    { value: "Iranian Persian (Farsi)", label: "Iranian Persian (Farsi)" },
+    { value: "Hausa", label: "Hausa" },
+    { value: "Egyptian Spoken Arabic", label: "Egyptian Spoken Arabic" },
+    { value: "Swahili", label: "Swahili" },
+    { value: "Javanese", label: "Javanese" },
+    { value: "Italian", label: "Italian" },
+    { value: "Western Punjabi", label: "Western Punjabi" },
+    { value: "Kannada", label: "Kannada" },
+    { value: "Gujarati", label: "Gujarati" },
+    { value: "Thai", label: "Thai" },
+  ];
+  

@@ -1,6 +1,6 @@
 "use client";
 
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { saveAs } from "file-saver";
 import { toast } from "react-hot-toast";
@@ -32,10 +32,20 @@ export default function Home() {
   const [render, setRender] = useState<string>(numberOfRenders[0].value);
   const [loading, setLoading] = useState<boolean>(false);
   const [outputImage, setOutputImage] = useState<string>("");
-  const router = useRouter();
   const [mode, setMode] = useState<string>(modes[0].value);
   const [privacyValue, setPrivacyValue] = useState<string>(privacy[0].value);
   const tabs = ["Upload Your picture", "Room Type / Mode", "Style and Others"];
+  const [generatedImages, setGeneratedImages] = useState<
+    Array<{
+      id: string;
+      imageUrl: string;
+      roomStyle: string;
+      roomType: string;
+      createdAt: Date;
+      privacyValue: string;
+    }>
+  >([]);
+
   function downloadOutputImage(): void {
     if (outputImage) {
       saveAs(outputImage, "output.png");
@@ -52,36 +62,10 @@ export default function Home() {
 
     try {
       const formData = new FormData();
-
-      formData.append(
-        "file",
-        JSON.stringify({
-          headers: { "Content-Type": "text/plain" },
-          content: base64Image,
-        })
-      );
-      formData.append(
-        "theme",
-        JSON.stringify({
-          headers: { "Content-Type": "text/plain" },
-          content: mode,
-        })
-      );
-      formData.append(
-        "room",
-        JSON.stringify({
-          headers: { "Content-Type": "text/plain" },
-          content: room,
-        })
-      );
-      formData.append(
-        "image_resolution",
-        JSON.stringify({
-          headers: { "Content-Type": "text/plain" },
-          content: resolution,
-        })
-      );
-      console.log("files", file);
+      formData.append("file", file);
+      formData.append("theme", mode);
+      formData.append("room", room);
+      formData.append("image_resolution", resolution);
 
       const response = await axios.post(
         "/ai/personalized/interiorai",
@@ -94,20 +78,52 @@ export default function Home() {
           timeout: 300000,
         }
       );
+      console.log("image", response.data.data.response.input.image);
 
       const result = response.data;
 
       if (result) {
-        toast.success(result?.message?.description || "Room design generated!");
-      }
+        const generatedImageUrl = result.data.response.input.image;
+        console.log("image", generatedImageUrl);
+        setOutputImage(generatedImageUrl);
 
-      setOutputImage(result.output[1]); // Update state with the generated image
-    } catch (error) {
-      toast.error("Failed to generate room design");
+        const newImage = {
+          id: Date.now().toString(),
+          imageUrl: generatedImageUrl,
+          roomStyle: roomStyle,
+          roomType: room,
+          createdAt: new Date(),
+          privacyValue: privacyValue,
+        };
+
+        setGeneratedImages((prev) => [newImage, ...prev]);
+
+        const storedImages = JSON.parse(
+          localStorage.getItem("galleryImages") || "[]"
+        );
+        localStorage.setItem(
+          "galleryImages",
+          JSON.stringify([newImage, ...storedImages])
+        );
+
+        toast.success("Room design generated successfully! 🎉");
+      } else {
+        throw new Error(result.message || "Failed to generate room design");
+      }
+    } catch (error: any) {
+      console.error("Error:", error);
+      toast.error(error.message || "Failed to generate room design");
     } finally {
       setLoading(false);
     }
   }
+
+  useEffect(() => {
+    const storedImages = JSON.parse(
+      localStorage.getItem("galleryImages") || "[]"
+    );
+    setGeneratedImages(storedImages);
+  }, []);
 
   const renderComponent = (activeTab: string) => {
     switch (activeTab) {
@@ -117,6 +133,9 @@ export default function Home() {
             file={file}
             setFile={setFile}
             setBase64Image={setBase64Image}
+            theme={mode}
+            room={room}
+            imageResolution={resolution}
           />
         );
       case "Room Type / Mode":
@@ -166,11 +185,9 @@ export default function Home() {
           loading={loading}
         />
         <Gallery
-          outputImage={outputImage}
-          roomStyle={roomStyle}
-          roomType={room}
-          clerkUserId={"user"}
-          privacyValue={privacyValue}
+          images={generatedImages}
+          selectedFilter={roomStyle}
+          onFilterChange={setRoomStyle}
         />
       </main>
     </Fragment>

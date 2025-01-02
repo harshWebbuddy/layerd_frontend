@@ -151,26 +151,26 @@ export const navObjects = [
         link: "/dashboard/main/personalized/interior-ai",
         icon: "/main/interior-ai.png",
       },
-      {
-        title: "Movie AI",
-        link: "/dashboard/main/personalized/movie-ai",
-        icon: "/main/movie-ai.png",
-      },
+    //   {
+    //     title: "Movie AI",
+    //     link: "/dashboard/main/personalized/movie-ai",
+    //     icon: "/main/movie-ai.png",
+    //   },
       {
         title: "Age AI",
         link: "/dashboard/main/personalized/age-ai",
         icon: "/main/age-ai.png",
       },
-      {
-        title: "Weather GPT",
-        link: "/dashboard/main/personalized/weather-gpt",
-        icon: "/main/weather-gpt.png",
-      },
-      {
-        title: "Interview AI",
-        link: "/dashboard/main/personalized/interview-ai",
-        icon: "/main/interview-ai.png",
-      },
+    //   {
+    //     title: "Weather GPT",
+    //     link: "/dashboard/main/personalized/weather-gpt",
+    //     icon: "/main/weather-gpt.png",
+    //   },
+    //   {
+    //     title: "Interview AI",
+    //     link: "/dashboard/main/personalized/interview-ai",
+    //     icon: "/main/interview-ai.png",
+    //   },
     ],
   },
   {

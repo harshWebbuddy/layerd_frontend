@@ -104,13 +104,13 @@ function NavigationButtons({
       <div className="flex justify-center mt-12 gap-6">
         <button
           onClick={() => setActiveTab(tabs[0])}
-          className="outline-none py-3 px-10 rounded-lg font-semibold uppercase text-xl border border-white text-white"
+          className="outline-none border py-3 px-10 rounded-lg font-semibold uppercase text-xl border border-white text-white"
         >
           Back
         </button>
         <button
           onClick={() => setActiveTab(tabs[2])}
-          className="bg-primary-orange py-3 px-10 rounded-lg text-primary-black font-semibold uppercase text-xl"
+          className="bg-primary-orange border  py-3 px-10 rounded-lg text-primary-black font-semibold uppercase text-xl"
         >
           Next
         </button>
@@ -122,7 +122,7 @@ function NavigationButtons({
     <div className="flex justify-center mt-12 gap-6">
       <button
         onClick={() => setActiveTab(tabs[1])}
-        className="outline-none py-3 px-10 rounded-lg font-semibold uppercase text-xl border border-white text-white"
+        className="outline-none py-3 px-10 rounded-lg border  font-semibold uppercase text-xl border border-white text-white"
       >
         Back
       </button>
@@ -130,7 +130,7 @@ function NavigationButtons({
         disabled={loading}
         onClick={submitImage}
         className={clsx(
-          "bg-primary-orange py-3 px-10 rounded-lg text-primary-black font-semibold uppercase text-xl min-w-[150px] flex justify-center",
+          "bg-primary-orange py-3 px-10 rounded-lg  border text-primary-black font-semibold uppercase text-xl min-w-[150px] flex justify-center",
           loading && "opacity-80 cursor-not-allowed"
         )}
       >
