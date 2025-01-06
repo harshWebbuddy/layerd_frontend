@@ -9,7 +9,7 @@ import React from "react";
 import Image from "next/image";
 import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
-import { planIdsMap, PlanName } from "@/lib/utils";
+import { planIdsMap, PlanName } from "@/lib/utils2";
 import { Assistant, Conversation } from "@/types/aiassistant";
 import { aiModelOptions, languageOptions } from "./option";
 import {
@@ -21,7 +21,6 @@ import {
   SelectValue,
 } from "./select";
 import { RootState } from "@/lib/store2";
-
 interface IProps {
   assistant: Assistant;
   isSidebarOpen: boolean;

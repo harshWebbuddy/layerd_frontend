@@ -1,5 +1,5 @@
-import { isEmptyObject, UserPlan } from "@/lib/utils";
- import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+  import { isEmptyObject, UserPlan } from "@/lib/utils2";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface AuthState {
   isAuthenticated: boolean;
