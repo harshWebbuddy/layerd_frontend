@@ -37,7 +37,12 @@ export default function page() {
         "/ai/image/stablediffusion",
         {
           user_prompt: prompt,
-          size: "1024x1024",
+          // size: "1024x1024",
+          samples: 1,
+          noise_level: 0.1,
+          width: "512",
+          height:"512",
+          enhance_prompt: prompt
         },
         {
           headers: {
