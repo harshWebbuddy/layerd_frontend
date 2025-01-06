@@ -34,7 +34,7 @@ export default function page() {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        "/ai/image/stablDiffusion",
+        "/ai/image/stablediffusion",
         {
           user_prompt: prompt,
           size: "1024x1024",
