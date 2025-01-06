@@ -11,6 +11,7 @@ interface UploadResponse {
   message: string;
   data: {
     response: {
+      docId: string;
       id: string;
       model: string;
       version: string;
@@ -29,7 +30,11 @@ interface UploadResponse {
   };
 }
 
-export default function Upload() {
+interface UploadProps {
+  onUploadComplete: (docId: string) => void;
+}
+
+export default function Upload({ onUploadComplete }: UploadProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
 
@@ -65,18 +70,8 @@ export default function Upload() {
         }
       );
 
-      const resultData = {
-        resultUrl: response.data.data.response.input.image,
-        originalUrl: previewUrl,
-        timestamp: new Date().toISOString(),
-        predictionId: response.data.data.response.id,
-        isProcessing: false,
-      };
-
-      localStorage.setItem("ageAiResult", JSON.stringify(resultData));
-      toast.success("Image uploaded successfully!");
+      onUploadComplete(response.data.data.response?.docId);
       setIsModalOpen(false);
-      window.dispatchEvent(new Event("ageAiComplete"));
     } catch (error: any) {
       console.error("Upload error:", error);
       toast.error(
