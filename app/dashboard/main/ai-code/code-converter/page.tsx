@@ -146,9 +146,9 @@ export default function CodeConverterPage() {
   const [codes, setCodes] = useState<string>();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 px-4 py-8">
-      <div className="fixed inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[120px] -z-10" />
+  <div className="px-4 md:px-10 space-y-6 relative">
+    <div className="w-[132px] h-[428px] bg-[#FFB076] blur-[150px] absolute top-1/4 left-[-200px] z-[2]" />
+    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[120px] -z-10" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px] -z-10" />
 
       <div className="max-w-7xl mx-auto space-y-8 relative z-10">
@@ -167,7 +167,7 @@ export default function CodeConverterPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1  z-10 relative sm:grid-cols-2 gap-6 p-4 bg-gray-800/50 rounded-xl backdrop-blur-sm border border-gray-700/50">
+        <div className="grid grid-cols-1  z-10 relative sm:grid-cols-2 gap-6 p-4  rounded-xl backdrop-blur-sm  ">
           <div className="space-y-2 relative z-10">
             <label className="text-sm font-medium text-gray-300">
               From Language
@@ -281,7 +281,7 @@ export default function CodeConverterPage() {
               "group relative px-8 py-4 rounded-xl font-medium text-white transition-all duration-200",
               loading
                 ? "bg-gray-700 cursor-not-allowed"
-                : "bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 hover:shadow-lg hover:-translate-y-0.5"
+                : "bg-[#FFB076]   hover:from-blue-600 hover:to-purple-600 hover:shadow-lg hover:-translate-y-0.5"
             )}
           >
             <span className="flex items-center gap-3">

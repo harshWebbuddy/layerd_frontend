@@ -32,13 +32,17 @@ export default function Page() {
     { language: "mysql", image: "/main/code/mysql.png" },
   ];
 
-  const [selectedLanguage, setSelectedLanguage] = useState<
-    string | undefined
-  >();
+  const [selectedLanguage, setSelectedLanguage] = useState<string | undefined>(
+    undefined
+  );
   const [inputMessage, setInputMessage] = useState("");
   const [responseMessage, setResponseMessage] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const eventSourceRef = useRef<EventSource | null>(null);
+
+  useEffect(() => {
+    setSelectedLanguage(undefined);
+  }, []);
 
   const cleanupEventSource = () => {
     if (eventSourceRef.current) {
@@ -51,12 +55,6 @@ export default function Page() {
     return () => {
       cleanupEventSource();
     };
-  }, []);
-
-  useEffect(() => {
-    if (languageArray.length > 0 && !selectedLanguage) {
-      setSelectedLanguage(languageArray[0].language);
-    }
   }, []);
 
   const streamResponse = async (chatId: string) => {
@@ -149,40 +147,22 @@ export default function Page() {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 px-4 py-8">
-      <div className="fixed inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[120px] -z-10" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px] -z-10" />
-
-      <div className="max-w-7xl mx-auto space-y-8 relative z-10">
-        <div className="text-center space-y-4">
-          <div className="inline-block animate-bounce-slow">
-            <div className="flex items-center justify-center w-16 h-16 mx-auto bg-blue-500/10 rounded-2xl backdrop-blur-sm border border-blue-500/20">
-              <FaCode className="w-8 h-8 text-blue-400" />
-            </div>
-          </div>
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            AI Code Generation
+    <section className="relative p-3">
+      <div className="max-w-7xl mx-auto space-y-10">
+        <div className="flex justify-center">
+          <h1 className="text-3xl font-bold text-center max-w-sm">
+            Supports Major Programming Languages
           </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Transform your ideas into code with AI-powered precision. Select a
-            language and describe what you want to create.
-          </p>
         </div>
 
         {selectedLanguage ? (
-          <div className="bg-gray-800/50 rounded-xl backdrop-blur-sm border border-gray-700/50 p-6">
+          <div>
             <div
               onClick={() => setSelectedLanguage(undefined)}
-              className="flex mb-6 cursor-pointer items-center gap-3 text-lg group"
+              className="flex mb-4 cursor-pointer items-center gap-2"
             >
-              <IoMdArrowBack className="text-blue-400 group-hover:translate-x-[-4px] transition-transform" />
-              <span className="font-medium text-gray-300">
-                Selected:{" "}
-                <span className="font-bold text-blue-400">
-                  {selectedLanguage}
-                </span>
-              </span>
+              <IoMdArrowBack />
+              <div>Language: {selectedLanguage}</div>
             </div>
 
             <form
@@ -192,32 +172,30 @@ export default function Page() {
                 handleSendMessage();
               }}
             >
-              <div className="flex bg-gray-900/50 border border-gray-700/50 rounded-lg p-4 items-center gap-4 focus-within:border-blue-500 transition-all duration-300">
-                <FaCode className="text-blue-400" />
+              <div className="bg-[url('/main/background-image-form.png')] bg-cover bg-no-repeat h-14 rounded-xl flex pl-4 border-bottom-gradient">
                 <input
                   type="text"
-                  className="flex-1 bg-transparent outline-none text-sm placeholder-gray-400"
-                  placeholder="Describe what you want to create..."
+                  className="flex-1 bg-transparent outline-none placeholder:capitalize text-sm"
+                  placeholder="Ask to code anything"
                   onChange={(e) => setInputMessage(e.target.value)}
                   value={inputMessage}
                 />
                 <button
                   type="submit"
                   disabled={loading}
-                  className="group relative px-4 py-2 rounded-lg font-medium text-white transition-all duration-200
-                           bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 
-                           hover:shadow-lg hover:-translate-y-0.5"
+                  className="bg-gradient-to-br from-primary-red to-primary-yellow cursor-pointer grid place-content-center m-1.5 p-3 rounded-lg transition duration-300"
                 >
-                  <span className="flex items-center gap-2">
-                    {loading ? (
-                      <DotsLoader />
-                    ) : (
-                      <>
-                        Generate
-                        <FaRocket className="group-hover:translate-x-1 transition-transform" />
-                      </>
-                    )}
-                  </span>
+                  {loading ? (
+                    <DotsLoader />
+                  ) : (
+                    <Image
+                      src="/main/send-outlined.svg"
+                      alt="Send"
+                      width={28}
+                      height={28}
+                      draggable={false}
+                    />
+                  )}
                 </button>
               </div>
             </form>
@@ -262,35 +240,28 @@ export default function Page() {
             )}
           </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 3xl:grid-cols-6 gap-4">
             {languageArray.map((item, index) => (
               <div
+                className="grid place-content-center bg-gradient-to-br from-[#ffffff13] to-[#8f8f8f0c] p-12 rounded-xl cursor-pointer"
                 key={index}
                 onClick={() => handleLanguageSelect(item.language)}
-                className="group relative bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 p-6 rounded-xl 
-                          hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/20 cursor-pointer
-                          transition-all duration-300 transform hover:-translate-y-1"
               >
-                <div
-                  className="bg-gray-900/80 w-[90px] h-[90px] rounded-full flex items-center justify-center mx-auto
-                              group-hover:bg-blue-500/20 transition-all duration-500 mb-4"
-                >
+                <div className="bg-gradient-to-br from-[#ffffff1f] to-[#8f8f8f0c] w-[90px] h-[90px] p-4 rounded-full grid place-content-center">
                   <Image
                     src={item.image}
                     alt={item.language}
                     width={40}
                     height={40}
-                    className="transform group-hover:scale-110 transition-transform duration-300"
+                    className="object-cover"
                   />
                 </div>
-                <p className="text-center text-sm font-medium capitalize text-gray-400 group-hover:text-blue-400">
-                  {item.language}
-                </p>
               </div>
             ))}
           </div>
         )}
       </div>
+      <div className="w-[664px] h-[138px] bg-[#FFB076] blur-[250px] absolute top-1/3 left-[-550px]" />
     </section>
   );
 }
