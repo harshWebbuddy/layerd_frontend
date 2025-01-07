@@ -113,19 +113,19 @@ const ChatPage: React.FC<PageProps> = ({ params: { chatid } }: PageProps) => {
 
       />
       <div className="flex-1 flex flex-col">
-        <Topbar
-          conversation={assistantConversation}
-          assistant={assistantData!}
-          isSidebarOpen={isSidebarOpen}
-          setIsSidebarOpen={setIsSidebarOpen}
-          isHistoryOpen={isHistoryOpen}
-          setHistoryOpen={setHistoryOpen}
-          selectedLanguage={selectedLanguage}
-          switchLanguage={switchLanguage}
-          setSelectedAiModel={setSelectedAiModel}
-          selectedAiModel={selectedAiModel}
-          messagesData={messagesData}
-        />
+          {/* <Topbar
+            conversation={assistantConversation}
+            assistant={assistantData!}
+            isSidebarOpen={isSidebarOpen}
+            setIsSidebarOpen={setIsSidebarOpen}
+            isHistoryOpen={isHistoryOpen}
+            setHistoryOpen={setHistoryOpen}
+            selectedLanguage={selectedLanguage}
+            switchLanguage={switchLanguage}
+            setSelectedAiModel={setSelectedAiModel}
+            selectedAiModel={selectedAiModel}
+            messagesData={messagesData}
+          /> */}
         <ChatSection
           setMessages={setMessages}
           messages={messages}

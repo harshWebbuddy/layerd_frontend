@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import Form from "./Form";
-
+ 
 export default function TextToSpeechPage() {
   return (
     <section className="w-full px-5 md:px-10 pb-10">
-      <div className="w-full bg-gradient-to-br from-[#1a1a1a] to-[#2d2d2d] rounded-2xl ring-1 ring-white/10 shadow-2xl backdrop-blur-xl">
+      <div className="w-full bg-[url('/main/ai/background-voice-ai-space.png')] bg-cover bg-center rounded-2xl ring-1 ring-slate-700 p-3 md:p-7   ring-white/10 shadow-2xl backdrop-blur-xl">
         {/* Header Section */}
         <div className="bg-[url('/main/ai/background-voice-ai-space.png')] bg-cover bg-center rounded-t-2xl p-6 md:p-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -48,7 +48,7 @@ export default function TextToSpeechPage() {
         </div>
 
          <div className="p-6 md:p-8">
-          <Form />
+          <Form/>
         </div>
       </div>
     </section>

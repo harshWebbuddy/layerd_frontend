@@ -112,7 +112,7 @@ const ChatPage: React.FC<PageProps> = ({ params: { chatid } }: PageProps) => {
 
       />
       <div className="flex-1 flex flex-col">
-        <Topbar
+        {/* <Topbar
           conversation={assistantConversation}
           assistant={assistantData!}
           isSidebarOpen={isSidebarOpen}
@@ -124,7 +124,7 @@ const ChatPage: React.FC<PageProps> = ({ params: { chatid } }: PageProps) => {
           setSelectedAiModel={setSelectedAiModel}
           selectedAiModel={selectedAiModel}
           messagesData={messagesData}
-        />
+        /> */}
         <ChatSection
           setMessages={setMessages}
           messages={messages}

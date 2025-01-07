@@ -84,29 +84,31 @@ const ChatSection: React.FC<ChatSectionProps> = ({
 
   // console.log("message", messages);
   return (
-    <div className="flex-1 h-full border border-[#514E4E] rounded-2xl flex flex-col mt-4 px-8 pb-8">
-      <div className="flex-1 flex flex-col h-full max-h-[68vh] overflow-y-auto">
+    <div className="flex-1 h-full border bg-[url('/main/background-image-chat-bard.png')] bg-cover bg-center bg-no-repeat border-[#514E4E] rounded-2xl flex flex-col mt-4 relative">
+    <div className="flex-1 overflow-hidden px-8">
+      <div className="h-full max-h-[calc(100vh-280px)] overflow-y-auto">
         <ChatMessages
           conversation={{ ...conversation, chats: messages }}
           assistant={assistant}
         />
       </div>
-      <div className="space-y-4">
-        <ChatInput
-          conversationid={conversationid}
-          selectedModel={selectedAiModel}
-          chatid={assistant?.id}
-          addMessage={addMessage}
-          updateMessage={updateMessage}
-          selectedLanguage={selectedLanguage}
-          newChat={newChat}
-          setNewChat={setNewChat}
-          onSelectConversation={onSelectConversation}
-          
-           convId={convId}
-        />
-      </div>
     </div>
+
+    <div className="sticky bottom-0 left-0 right-0 px-8 pb-8 bg-gradient-to-t from-black/20 to-transparent pt-4">
+      <ChatInput
+        conversationid={conversationid}
+        selectedModel={selectedAiModel}
+        chatid={assistant?.id}
+        addMessage={addMessage}
+        updateMessage={updateMessage}
+        selectedLanguage={selectedLanguage}
+        newChat={newChat}
+        setNewChat={setNewChat}
+        onSelectConversation={onSelectConversation}
+        convId={convId}
+      />
+    </div>
+  </div>
   );
 };
 

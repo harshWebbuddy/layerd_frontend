@@ -92,18 +92,25 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({
 
   return (
     <>
-      <div className="mt-4 flex justify-start items-start gap-4">
-        
-      </div>
+      <div className="mt-4 flex justify-start items-start gap-4"></div>
       {conversation.chats.length > 0 &&
         conversation.chats.map((chat: Chat) => {
           return (
             <div key={chat._id} className="p-4">
               <div className="mt-4 flex flex-row-reverse justify-start items-start gap-4">
-                <Avatar className="w-11 h-11 rounded-xl">
-                  <AvatarImage src={currentUser?.profile_img} />
-                  <AvatarFallback>
-                    {currentUser?.email?.slice(0, 1)}
+                <Avatar className="w-11 h-11 rounded-xl ring-2 ring-primary-yellow/20 ring-offset-2 ring-offset-[#1A1A1A] shadow-lg shadow-black/10">
+                  <AvatarImage
+                    src={currentUser?.profile_img || "/main/user-default.png"}
+                    className="object-cover"
+                  />
+                  <AvatarFallback className="bg-gradient-to-br from-primary-red/10 to-primary-yellow/10 text-gray-300">
+                    <Image
+                      src="/main/user-default.svg"
+                      alt="Default user"
+                      width={24}
+                      height={24}
+                      className="text-gray-400"
+                    />
                   </AvatarFallback>
                 </Avatar>
                 <div className="max-w-5xl bg-[url('/navbar.svg')] bg-center bg-cover bg-no-repeat text-white py-3 px-5 rounded-xl text-[14.5px] leading-relaxed">
@@ -111,13 +118,15 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({
                 </div>
               </div>
               <div className="mt-4 flex justify-start items-start gap-4">
-                <Image
-                  src={assistant?.avatar || "/landing/Chatgpt4.png"}
-                  alt="Assistant"
-                  width={100}
-                  height={100}
-                  className="w-[45px] h-[45px] object-cover rounded-xl"
-                />
+                <Avatar className="w-11 h-11 rounded-xl ring-2 ring-primary-red/20 ring-offset-2 ring-offset-[#1A1A1A] shadow-lg shadow-black/10">
+                  <AvatarImage
+                    src={assistant?.avatar || "/landing/Chatgpt4.png"}
+                    className="object-cover"
+                  />
+                  <AvatarFallback className="bg-gradient-to-br from-primary-red/10 to-primary-yellow/10">
+                    AI
+                  </AvatarFallback>
+                </Avatar>
                 <div className="max-w-5xl min-h-11 bg-gradient-to-b from-[#EC2227]/50 to-[#FDBB14]/50 text-primary-black py-4 px-5 rounded-xl text-[15px] leading-[1.8] flex flex-col items-center justify-center text-justify">
                   {chat.response ? (
                     <ReactMarkdown
@@ -129,7 +138,7 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({
                       {chat.response}
                     </ReactMarkdown>
                   ) : (
-                    <DotsLoader />  
+                    <DotsLoader />
                   )}
                 </div>
               </div>
