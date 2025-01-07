@@ -299,7 +299,7 @@ export const programmingLanguages = [
   { label: "JavaScript", value: "javascript" },
   { label: "Java", value: "java" },
   { label: "C", value: "c" },
-  { label: "C++", value: "cpp" },
+  { label: "C++", value: "c++" },
   { label: "C#", value: "csharp" },
   { label: "Ruby", value: "ruby" },
   { label: "PHP", value: "php" },
