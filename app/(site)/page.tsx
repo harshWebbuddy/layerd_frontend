@@ -2,10 +2,10 @@
 import Image from "next/image";
 import Contact from "./components/Contact";
 import Hero from "./components/Hero";
- import {
+import {
   AiPersonaObject,
   botOptions,
-   voiceOptions,
+  voiceOptions,
   writingOptions,
 } from "@/utils/constants/objects";
 import BoxComponent from "./components/BoxComponent";
@@ -14,21 +14,26 @@ import SixCardTab from "./cardstab/page";
 import SwiperComponent from "./components/Swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-// import Motion from "@/components/Motion";
-// import { ArrowWaveIcon, FocusIllustration, TrustPilotStarIcon } from "@/components/svgs";
-// import { QuotesIcon } from "@/components/svgs/svgs";
+
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { A11y, Navigation,   Scrollbar } from "swiper/modules";
+import { A11y, Navigation, Scrollbar } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 import Motion from "./components/Motion";
 import SixCardTabTwo from "./cardstab copy/page";
 import Education from "./components/Education";
+import SixCardTabThree from "./cardtab2/page";
+import { useState } from "react";
+ import AIWritingContent from "../dashboard/main/ai-writing/page";
+import Modal from "@/components/Modal";
+import AiModal from "../components/Modal";
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <div className="w-full bg-[url('/background-image-earth-landing.png')] bg-cover bg-center bg-no-repeat relative overflow-hidden">
@@ -69,14 +74,8 @@ export default function Home() {
               revolutionizing the way you browse.
             </p>
           </div>
-          <div className="w-full mt-5 sm:mt-10" data-aos="zoom-in-up">
-            <Image
-              src="/landing/ai-search.gif"
-              alt="Search Ai"
-              width={1000}
-              height={600}
-              className="rounded-lg sm:rounded-3xl mx-auto shadow-2xl shadow-[#313030]"
-            />
+          <div className="w-full mt-5 sm:mt-10">
+            <SixCardTabThree />
           </div>
         </div>
         <div id="ai-chat" className="mt-28" data-aos="fade-up">
@@ -162,12 +161,12 @@ export default function Home() {
               elementum. Donec arcu ac nulla elementum nunc rhoncus orci.
             </p>
           </div>{" "}
-          <div
-            className="w-full flex justify-between items-center  max-w-[500px] right-[200px] absolute  gap-x-60 mt-10"
-            data-aos="zoom-in"
-          >
-            <button className="text-sm font-semibold ring-1 ring-gray-200 hover:ring-transparent transition duration-300 hover:bg-primary-red px-6 py-3.5 rounded-lg hover:scale-105">
-              Explore
+          <div className="w-full flex justify-between items-center  max-w-[500px] right-[200px] absolute  gap-x-60 mt-10">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="text-sm font-semibold w-full ring-1 ring-gray-200 hover:ring-transparent transition duration-300 hover:bg-primary-red px-6 py-3.5 rounded-lg hover:scale-105"
+            >
+              Explore all templates
             </button>
             <div className="flex flex-row gap-x-10 justify-between ">
               {" "}
@@ -571,6 +570,10 @@ export default function Home() {
       <div className="w-full max-w-[1400px] mx-auto p-2.5 sm:p-4">
         <Contact message="Get a front-row seat to innovation. Subscribe to our newsletter today" />
       </div>
+
+      <AiModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} children={""}  />
+      
+      
     </main>
   );
 }
