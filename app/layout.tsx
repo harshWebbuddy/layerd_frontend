@@ -9,6 +9,23 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Layerd",
   description: "Layerd • AI",
+  icons: {
+    icon: [
+      {
+        url: "/logo.svg",
+        sizes: "any",
+      },
+      {
+        url: "/logo.svg",
+        type: "image/png",
+        sizes: "32x32",
+      },
+    ],
+    apple: {
+      url: "/apple-touch-icon.png",
+      sizes: "180x180",
+    },
+  },
 };
 
 export default function RootLayout({

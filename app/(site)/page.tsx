@@ -27,8 +27,6 @@ import SixCardTabTwo from "./cardstab copy/page";
 import Education from "./components/Education";
 import SixCardTabThree from "./cardtab2/page";
 import { useState } from "react";
- import AIWritingContent from "../dashboard/main/ai-writing/page";
-import Modal from "@/components/Modal";
 import AiModal from "../components/Modal";
 
 export default function Home() {
@@ -224,59 +222,7 @@ export default function Home() {
             </Motion>
           </div>
         </div>
-        {/* <div className="mt-20 px-6   py-20">
-          <div className="max-w-[1420px] mx-auto flex flex-col xl:flex-row gap-y-10 gap-x-5 xl:items-center">
-            <Motion
-              transition={{ duration: 0.6, delay: 0.4 }}
-              variants={{
-                hidden: { opacity: 0, y: 50 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              classNames="w-full"
-            >
-              <div className="w-full flex items-center px-8">
-                <button className="button-prev-slide absolute -left-10 h-20 w-20 rounded-full flex justify-center items-center border border-dashed border-gray-400 hover:bg-primary-red hover:text-white hover:border-primary-red transition-all duration-300">
-                  <ArrowLeft size={30} />
-                </button>
-                <Swiper
-                  modules={[Navigation, Scrollbar, A11y]}
-                  spaceBetween={25}
-                  loop={true}
-                  navigation={{
-                    nextEl: ".button-next-slide",
-                    prevEl: ".button-prev-slide",
-                  }}
-                  className="!w-full"
-                  slidesPerView={5}
-                  breakpoints={{
-                    0: {
-                      slidesPerView: 1,
-                    },
-                    640: {
-                      slidesPerView: 3,
-                    },
-                    1024: {
-                      slidesPerView: 5,
-                    },
-                  }}
-                >
-                  {writingOptions.map((option, index) => (
-                    <SwiperSlide key={index}>
-                      <BoxComponent
-                        option={option}
-                        index={index}
-                        isFullWidth={true}
-                      />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-                <button className="button-next-slide absolute -right-10 h-20 w-20 rounded-full flex justify-center items-center border border-dashed border-gray-400 hover:bg-primary-red hover:text-white hover:border-primary-red transition-all duration-300">
-                  <ArrowRight size={30} />
-                </button>
-              </div>
-            </Motion>
-          </div>
-        </div> */}
+
         <div id="ai-voice" className="mt-28" data-aos="fade-up">
           <div className="absolute h-[900px] sm:w-[150px] bg-orange-700 left-[-250px] blur-[250px] rounded" />
           <div>
@@ -356,74 +302,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* <div id="ai-codes" className="mt-14 sm:mt-28" data-aos="fade-up">
-          <div
-            className="absolute h-[900px] w-[150px] bg-[#726761] right-[-250px] blur-[250px] rounded"
-            data-aos="zoom-in"
-            data-aos-duration="1500"
-          />
-          <div className="w-full flex items-center flex-col">
-            <div className="w-full flex items-center gap-3">
-              <Image
-                src="/slash.png"
-                alt="Slashes"
-                height={300}
-                width={600}
-                draggable={false}
-                className="w-[300px] object-cover h-[70px] absolute left-0 translate-y-2"
-                data-aos="fade-right"
-                data-aos-duration="1000"
-              />
-              <h1
-                className="relative z-10 uppercase mt-4 text-2xl md:text-3xl bg-gradient-to-b from-white to-gray-600 font-bold text-transparent bg-clip-text"
-                data-aos="zoom-in"
-                data-aos-duration="800"
-              >
-                AI Codes
-              </h1>
-              <div
-                className="h-[3px] max-w-4xl translate-y-1.5 bg-gradient-to-r from-gray-600 via-gray-800/50 to-transparent flex-1"
-                data-aos="fade-left"
-                data-aos-duration="1000"
-              />
-            </div>
-            <div
-              className="flex flex-col xl:flex-row gap-10 mt-20 relative"
-              data-aos="fade-up"
-              data-aos-duration="1200"
-            >
-              <StickyComponent data-aos="slide-right" />
-              <div className="w-full">
-                <div
-                  className="grid grid-cols-1 sm:grid-cols-2 gap-6"
-                  data-aos="zoom-in-right"
-                >
-                  {codeOptions.slice(0, 4).map((option, index) => (
-                    <BoxComponent
-                      option={option}
-                      index={index}
-                      isFullWidth={true}
-                    />
-                  ))}
-                </div>
-                <div className="mt-6" data-aos="zoom-in-left">
-                  {codeOptions.slice(4).map((option, index) => (
-                    <BoxComponent
-                      option={option}
-                      index={index}
-                      isFullWidth={true}
-                    />
-                  ))}
-                </div>
-                <div className="w-full mt-10" data-aos="fade-up">
-                  <button className="text-sm font-semibold  ring-1 ring-gray-200 hover:ring-transparent transition duration-300 hover:bg-primary-red px-6 py-3.5 rounded-lg">
-                    Explore AI Codes
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
         <div id="ai-codes" className="mt-12 sm:mt-20" data-aos="fade-up">
           <div className="absolute h-[900px] sm:w-[150px] bg-orange-700 left-[-250px] blur-[250px] rounded" />
           <div>
@@ -571,9 +449,11 @@ export default function Home() {
         <Contact message="Get a front-row seat to innovation. Subscribe to our newsletter today" />
       </div>
 
-      <AiModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} children={""}  />
-      
-      
+      <AiModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        children={""}
+      />
     </main>
   );
 }
