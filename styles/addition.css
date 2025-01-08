@@ -1,0 +1,219 @@
+/* Variables */
+:root {
+  --breakpoint_mobile_landscape: 767px;
+  --breakpoint_mobile_portrait: 600px;
+  --breakpoint_small_portrait: 380px;
+  --breakpoint_tablet: 1000px;
+  --breakpoint_mini_laptop: 1200px;
+  --breakpoint_mini_laptop2: 1300px;
+
+  --breakpoint_laptop: 1600px;
+}
+
+.craftBrand {
+  padding: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 480px) {
+  .craftBrand {
+    padding: 40px 0;
+  }
+}
+
+.craftBrand .title {
+  margin-bottom: 90px;
+}
+
+@media screen and (max-width: 768px) {
+  .craftBrand .title {
+    margin-bottom: 40px;
+  }
+}
+
+.craftBrand .title h3 {
+  line-height: 55px;
+}
+
+@media screen and (max-width: 768px) {
+  .craftBrand .title h3 {
+    line-height: 40px;
+  }
+}
+
+.craftBrand .appraoch_support_content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .craftBrand .appraoch_support_content ul {
+    justify-content: flex-start;
+  }
+}
+
+.craftBrand .appraoch_support_content ul li {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  position: relative;
+  padding-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+  .craftBrand .appraoch_support_content ul li {
+    padding-bottom: 10px;
+    gap: 15px;
+    width: 100%;
+  }
+}
+
+.craftBrand .appraoch_support_content ul li:last-child {
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.craftBrand .appraoch_support_content ul li:last-child:after {
+  display: none;
+}
+
+.craftBrand .appraoch_support_content ul li:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  width: 2px;
+  border-left: 2px dashed #D73B6B;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .craftBrand .appraoch_support_content ul li:after {
+    display: none;
+  }
+}
+
+.craftBrand .appraoch_support_content ul li:hover:before {
+  background: black;
+  border-color: #D73B6B;
+}
+
+.craftBrand .appraoch_support_content ul li:nth-child(1):before {
+  content: "1";
+}
+
+.craftBrand .appraoch_support_content ul li:nth-child(2):before {
+  content: "2";
+}
+
+.craftBrand .appraoch_support_content ul li:nth-child(3):before {
+  content: "3";
+}
+
+.craftBrand .appraoch_support_content ul li:before {
+  content: "";
+  z-index: 1;
+  transition: all 0.4s ease-in-out;
+  position: absolute;
+  left: 50%;
+  width: 86px;
+  height: 86px;
+  top: 20px;
+  background: black;
+  border: 8px solid #D73B6B66;
+  border-radius: 100%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+@media (max-width: 768px) {
+  .craftBrand .appraoch_support_content ul li:before {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .craftBrand .appraoch_support_content ul li {
+    padding-left: 0;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+}
+
+.craftBrand .appraoch_support_content ul li:nth-child(even) {
+  padding-left: 0;
+  padding-right: 0;
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+  .craftBrand .appraoch_support_content ul li:nth-child(even) {
+    padding-right: 0;
+    flex-direction: row;
+  }
+}
+
+.craftBrand .appraoch_support_content ul li:nth-child(even) section {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .craftBrand .appraoch_support_content ul li:nth-child(even) section {
+    text-align: left;
+  }
+}
+
+.craftBrand .appraoch_support_content ul li:nth-child(even) .imgBlock {
+  text-align: start;
+}
+
+.craftBrand .appraoch_support_content ul li section {
+  width: 40%;
+}
+
+@media (max-width: 768px) {
+  .craftBrand .appraoch_support_content ul li section {
+    width: 100%;
+  }
+}
+
+.craftBrand .appraoch_support_content ul li section h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.craftBrand .appraoch_support_content ul li section h5 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.craftBrand .appraoch_support_content ul li section p {
+  font-size: 14px;
+  line-height: 28px;
+  margin: 0;
+}
+
+.craftBrand .appraoch_support_content ul li .imgBlock {
+  width: 40%;
+  text-align: end;
+}
+
+.craftBrand .appraoch_support_content ul li .imgBlock img {
+  width: 300px;
+}
+
+@media (max-width: 768px) {
+  .craftBrand .appraoch_support_content ul li .imgBlock {
+    display: none;
+  }
+}

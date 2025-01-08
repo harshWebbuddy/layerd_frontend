@@ -169,13 +169,13 @@ export default function ChatHistory({
     <div
     className={clsx(
       isOpen ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full",
-      "transition-all duration-300 h-[calc(100vh-100px)] z-50  border-r border-[#2A2A2A]",
+      "transition-all duration-300 h-[calc(100vh-100px)] z-50    ",
       "fixed top-[80px] left-0 w-full sm:w-[100px] md:w-[420px] lg:relative lg:top-0"
     )}
   >
     <div className="flex flex-col h-full">
       {/* Search and New Chat Section */}
-      <div className="px-4 py-4 border-b border-[#2A2A2A] backdrop-blur-xl  sticky top-0 z-30">
+      <div className="px-4 py-4 backdrop-blur-xl  sticky top-0 z-30">
         <div className="flex gap-3 mb-4">
           <div className="relative flex-1">
             <input

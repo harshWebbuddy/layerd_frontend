@@ -7,8 +7,25 @@ import { Toaster } from "react-hot-toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "WhopMe",
-  description: "WhopMe • AI",
+  title: "Layerd",
+  description: "Layerd • AI",
+  icons: {
+    icon: [
+      {
+        url: "/logo2.png",
+        sizes: "any",
+      },
+      {
+        url: "/logo2.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+    ],
+    apple: {
+      url: "/apple-touch-icon.png",
+      sizes: "180x180",
+    },
+  },
 };
 
 export default function RootLayout({

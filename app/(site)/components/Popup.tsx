@@ -1,22 +1,39 @@
+"use client";
 import Modal from "@/components/Modal/PopupModal";
 import { menuSections } from "@/utils/constants/objects";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface IProps {
   onClose: () => void;
   isOpen: boolean;
 }
+
 export default function Popup({ onClose, isOpen }: IProps) {
   const router = useRouter();
+
+   useEffect(() => {
+    AOS.init({
+      duration: 500,  
+      easing: "ease-out",  
+    
+    });
+  }, []);
+
   return (
     <Modal onClose={onClose} isOpen={isOpen}>
       <div className="min-h-screen w-full">
         <div className="relative m-5 md:m-14">
-          <div className="flex justify-between w-full">
+          <div
+            className="flex justify-between w-full"
+            data-aos="fade-down"  
+            data-aos-delay="200"
+          >
             <div className="flex gap-5 font-bold">
-              <p className="text-primary-yellow uppercase ">Menu</p>
+              <p className="text-primary-yellow uppercase">Menu</p>
               <div className="flex gap-3 text-primary-yellow">
                 <p>: :</p>
                 <p>: :</p>
@@ -45,22 +62,30 @@ export default function Popup({ onClose, isOpen }: IProps) {
               </button>
             </div>
           </div>
-          <div className="mt-10 flex w-full flex-wrap gap-y-14 gap-x-4 justify-between">
+          <div
+            className="mt-10 flex w-full flex-wrap gap-y-14 gap-x-4 justify-between"
+            data-aos="fade-up"  
+            data-aos-delay="400"
+          >
             {menuSections.map((section, index) => (
               <div key={index} className="w-full min-w-[200px] max-w-fit">
-                <div className="gap-2 flex items-center">
-                  <h3 className="text-xl font-bold uppercase">
-                    {section.title}
-                  </h3>
+                <div className="gap-2 flex items-center" data-aos="zoom-in">
+                  <h3 className="text-xl font-bold uppercase">{section.title}</h3>
                   <div className="ring-1 ring-white w-7 h-7 grid place-content-center  rounded-full">
                     {section.items.length}
                   </div>
                 </div>
-                <ul className="list-none mt-6 flex flex-col gap-4  border-l border-dashed border-white h-fit px-10">
+                <ul
+                  className="list-none mt-6 flex flex-col gap-4 border-l border-dashed border-white h-fit px-10"
+                  data-aos="fade-in"  
+                  data-aos-delay="600"
+                >
                   {section.items.map((item, itemIndex) => (
                     <li
                       key={itemIndex}
                       className="mt-1 flex items-center gap-2"
+                      data-aos="slide-right" 
+                      data-aos-delay="800"
                     >
                       <a href={item.link} className="hover:underline">
                         <span dangerouslySetInnerHTML={{ __html: item.text }} />
@@ -85,7 +110,11 @@ export default function Popup({ onClose, isOpen }: IProps) {
               </div>
             ))}
           </div>
-          <div className="flex gap-4 mt-10">
+          <div
+            className="flex gap-4 mt-10"
+            data-aos="fade-up"
+            data-aos-delay="1000"
+          >
             <Link
               href="/auth/login"
               className="mb-20 bg-transparent ring-1 ring-inset ring-gray-300 max-h-12 py-2 w-28 rounded-xl hover:bg-neutral-700/30 transition"

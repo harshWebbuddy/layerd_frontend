@@ -20,7 +20,7 @@ export default function Card({ template }: Props) {
 		if(template.isPremium){
 			return alert("Sorry! You need to be premium to use this feature!")
 		}
-		return router.push("/dashboard/main/ai-writing/blog")
+		return router.push("/")
 	}
 	return (
 		<div
