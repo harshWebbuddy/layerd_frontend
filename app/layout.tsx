@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/logo.svg",
+        url: "/logo2.png",
         sizes: "any",
       },
       {
-        url: "/logo.svg",
+        url: "/logo2.png",
         type: "image/png",
         sizes: "32x32",
       },
