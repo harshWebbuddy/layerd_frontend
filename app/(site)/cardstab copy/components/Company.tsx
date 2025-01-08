@@ -16,8 +16,8 @@ const Company = () => {
             className="w-full relative z-0"
           >
             <Image
-              className="xl:w-[500px] w-full 2xl:w-[500px] h-full"
-              src="/svgs/mysvg3.svg"
+              className="xl:w-[500px] w-full 2xl:w-[800px] h-full"
+              src="/cards/card4.svg"
               alt="Center Image"
               width={512}
               height={512}
@@ -38,22 +38,22 @@ const Company = () => {
                 width={80}
                 height={80}
               />
-              <span className="font-semibold">Code Writing</span>{" "}
+              <span className="font-semibold">Explain Code</span>{" "}
             </h1>
             <p
               data-aos="fade-right"
               data-aos-duration="1500"
               className="text-[12px] 2xl:text-[16px] text-left text-white mt-2 w-full max-w-[600px] leading-normal font-light"
             >
-              Lorem ipsum dolor sit amet consectetur. Diam eu nulla consectetur
-              elit sed in at vitae. Luctus orci vel lectus rhoncus nulla ac nec
-              elementum. Donec arcu ac nulla elementum nunc rhoncus orci.
-              Consectetur leo sit nulla nec ligula. Mattis mauris enim elit quam
-              pharetra. Convallis sollicitudin malesuada molestie ullamcorper.
-              Sem bibendum sodales tincidunt lacus elit varius. Purus a vitae
-              posuere varius pharetra ut. Elit lorem pellentesque lobortis
-              euismod magnis dignissim suspendisse adipiscing. Et tempus magnis
-              posuere bibendum consectetur ultrices.
+              <li>
+                Understand complex code snippets with clear explanations. Our AI
+                can break down complex code into simpler terms, making it easier
+                to learn, debug, and maintain. Whether you're trying to
+                understand legacy code or a new programming language.
+              </li>
+              <li>
+                Our Explain Code feature can help you grasp the concepts quickly
+              </li>{" "}
             </p>
 
             <div className="flex flex-col gap-20 mt-6">
@@ -64,7 +64,7 @@ const Company = () => {
               >
                 <Link href="/auth/register" className="no-underline">
                   <button className="border-white border font-medium flex items-center gap-2 text-white 2xl:py-3.5 2xl:px-6 rounded-xl py-2 px-2 group-hover:font-bold shadow-md hover:shadow-">
-                    Explore Code Writing
+                    Explore Explain Code
                   </button>
                 </Link>
               </div>

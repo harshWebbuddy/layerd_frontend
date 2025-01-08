@@ -7,12 +7,17 @@ import clsx from "clsx";
 import Company from "./components/Company";
 import Industry from "./components/Industry";
 import Team from "./components/Team";
+import First from "./components/First";
+import Second from "./components/Second";
+import Third from "./components/Third";
 
 // Memoize components for better performance
 const MemoizedCompany = memo(Company);
 const MemoizedTeam = memo(Team);
 const MemoizedIndustry = memo(Industry);
-
+const MemoizedFirst = memo(First);
+const MemoizedSecond = memo(Second);
+const MemoizedThird = memo(Third);
 const tabs = [
   "Code Writing",
   "Code Converter",
@@ -39,16 +44,19 @@ const Layout2 = () => {
   const renderContent = () => {
     switch (activeTab) {
       case "Code Writing":
+        return <MemoizedFirst />;
       case "Code Converter":
+        return <MemoizedSecond />;
       case "Code Guru":
+        return <MemoizedThird />;
       case "Explain Code":
-        return <MemoizedCompany />;
+        return  <MemoizedCompany />;
       case "Code Refactor":
-        return <MemoizedTeam />;
+        return  <MemoizedIndustry />;
       case "Code Review":
-        return <MemoizedIndustry />;
+        return<MemoizedTeam />;
       default:
-        return <MemoizedCompany />;
+        return<MemoizedCompany />;
     }
   };
 

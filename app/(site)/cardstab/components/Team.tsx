@@ -15,9 +15,11 @@ const Company = () => {
               data-aos-duration="1500"
               className="text-[16px] xl:text-[24px] 2xl:text-[28px] text-left w-full leading-normal text-white"
             >
-              <h2 className="text-[#C92544] sm:text-[16px] "> Dalle-2</h2>
+              <h2 className="text-[#C92544] sm:text-[16px] ">
+                Stable Diffusion
+              </h2>
               <span className="font-semibold">
-                Lorem ipsum dolor sit amet consectetur.
+                Artistic Creations, Reimagined
               </span>{" "}
             </h1>
             <p
@@ -25,15 +27,14 @@ const Company = () => {
               data-aos-duration="1500"
               className="text-[12px] 2xl:text-[16px] text-left text-white mt-4 w-full max-w-[600px] leading-normal font-light"
             >
-              Lorem ipsum dolor sit amet consectetur. Diam eu nulla consectetur
-              elit sed in at vitae. Luctus orci vel lectus rhoncus nulla ac nec
-              elementum. Donec arcu ac nulla elementum nunc rhoncus orci.
-              Consectetur leo sit nulla nec ligula. Mattis mauris enim elit quam
-              pharetra. Convallis sollicitudin malesuada molestie ullamcorper.
-              Sem bibendum sodales tincidunt lacus elit varius. Purus a vitae
-              posuere varius pharetra ut. Elit lorem pellentesque lobortis
-              euismod magnis dignissim suspendisse adipiscing. Et tempus magnis
-              posuere bibendum consectetur ultrices.
+              Midjourney is a powerful AI tool that transforms text prompts into
+              stunning, artistic images. Whether you're seeking inspiration,
+              creating concept art, or simply exploring the boundaries of
+              digital art, Midjourney offers a unique and creative experience.
+              <br /><br/>
+              With its ability to generate a wide range of styles, from
+              photorealistic to abstract, Midjourney empowers you to bring your
+              imagination to life.
             </p>
 
             <div className="flex flex-col gap-20 mt-10">
@@ -44,7 +45,7 @@ const Company = () => {
               >
                 <Link href="/auth/register" className="no-underline">
                   <button className="border-white border font-medium flex items-center gap-2 text-white 2xl:py-3.5 2xl:px-6 rounded-xl py-2 px-2 group-hover:font-bold shadow-md hover:shadow-">
-                    Explore Dalle - 2
+                  Explore Stable Diffusion
                   </button>
                 </Link>
               </div>
@@ -60,7 +61,7 @@ const Company = () => {
           >
             <Image
               className="xl:w-[1500px] w-full 2xl:w-[2200px] h-full"
-              src="/1.svg"
+              src="/cards/card8.svg"
               alt="Center Image"
               width={1012}
               height={812}

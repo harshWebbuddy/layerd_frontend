@@ -16,8 +16,8 @@ const Company = () => {
             className="w-full relative z-0"
           >
             <Image
-              className="xl:w-[500px] w-full 2xl:w-[500px] h-full"
-              src="/svgs/mysvg3.svg"
+              className="xl:w-[500px] w-full 2xl:w-[800px] h-full"
+              src="/cards/card6.svg"
               alt="Center Image"
               width={512}
               height={512}
@@ -38,22 +38,36 @@ const Company = () => {
                 width={80}
                 height={80}
               />
-              <span className="font-semibold">Code Writing</span>{" "}
+              <span className="font-semibold">Code Review</span>{" "}
             </h1>
             <p
               data-aos="fade-right"
               data-aos-duration="1500"
               className="text-[12px] 2xl:text-[16px] text-left text-white mt-2 w-full max-w-[600px] leading-normal font-light"
             >
-              Lorem ipsum dolor sit amet consectetur. Diam eu nulla consectetur
-              elit sed in at vitae. Luctus orci vel lectus rhoncus nulla ac nec
-              elementum. Donec arcu ac nulla elementum nunc rhoncus orci.
-              Consectetur leo sit nulla nec ligula. Mattis mauris enim elit quam
-              pharetra. Convallis sollicitudin malesuada molestie ullamcorper.
-              Sem bibendum sodales tincidunt lacus elit varius. Purus a vitae
-              posuere varius pharetra ut. Elit lorem pellentesque lobortis
-              euismod magnis dignissim suspendisse adipiscing. Et tempus magnis
-              posuere bibendum consectetur ultrices.
+              <li>
+                {" "}
+                Improve code readability and maintainability with our AI-powered
+                refactoring tool. Our AI can automatically identify areas for
+                improvement, such as redundant code, inconsistent formatting,
+                and poor naming conventions.
+              </li>
+              <li>
+                By applying automated refactoring techniques, you can
+                significantly enhance the quality and maintainability of your
+                code.
+              </li>
+              <li>
+                Code Review: Identify potential issues and suggest improvements
+                in your code. Our AI can perform automated code reviews,
+                flagging potential bugs, security vulnerabilities, and style
+                violations.
+              </li>
+              <li>
+                By catching errors early in the development process, you can
+                save time and effort and improve the overall quality of your
+                code.
+              </li>
             </p>
 
             <div className="flex flex-col gap-20 mt-6">
@@ -64,7 +78,7 @@ const Company = () => {
               >
                 <Link href="/auth/register" className="no-underline">
                   <button className="border-white border font-medium flex items-center gap-2 text-white 2xl:py-3.5 2xl:px-6 rounded-xl py-2 px-2 group-hover:font-bold shadow-md hover:shadow-">
-                    Explore Code Writing
+                    Explore Code Review
                   </button>
                 </Link>
               </div>
