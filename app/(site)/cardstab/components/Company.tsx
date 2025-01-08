@@ -18,7 +18,7 @@ const Company = () => {
             >
               <h2 className="text-[#C92544] sm:text-[16px] "> Dalle-2</h2>
               <span className="font-semibold">
-                Lorem ipsum dolor sit amet consectetur.
+                Transform Text into Stunning Visuals
               </span>{" "}
             </h1>
             <p
@@ -26,15 +26,17 @@ const Company = () => {
               data-aos-duration="1500"
               className="text-[12px] 2xl:text-[16px] text-left text-white mt-4 w-full max-w-[600px] leading-normal font-light"
             >
-              Lorem ipsum dolor sit amet consectetur. Diam eu nulla consectetur
-              elit sed in at vitae. Luctus orci vel lectus rhoncus nulla ac nec
-              elementum. Donec arcu ac nulla elementum nunc rhoncus orci.
-              Consectetur leo sit nulla nec ligula. Mattis mauris enim elit quam
-              pharetra. Convallis sollicitudin malesuada molestie ullamcorper.
-              Sem bibendum sodales tincidunt lacus elit varius. Purus a vitae
-              posuere varius pharetra ut. Elit lorem pellentesque lobortis
-              euismod magnis dignissim suspendisse adipiscing. Et tempus magnis
-              posuere bibendum consectetur ultrices.
+              DALL-E 2 is a state-of-the-art AI model capable of generating
+              photo-realistic and artistic images from text descriptions. It
+              uses a sophisticated neural network to understand and interpret
+              prompts, producing stunning visuals that align with your creative
+              vision.
+              <br />
+              <br/>
+          
+              Whether you need to create unique marketing materials, design
+              characters for a video game, or simply explore new artistic
+              frontiers, DALL-E 2 is the tool for you.
             </p>
 
             <div className="flex flex-col gap-20 mt-10">
@@ -61,7 +63,7 @@ const Company = () => {
           >
             <Image
               className="xl:w-[1500px] w-full 2xl:w-[2200px] h-full"
-              src="/1.svg"
+              src="/cards/card7.svg"
               alt="Center Image"
               width={1012}
               height={812}

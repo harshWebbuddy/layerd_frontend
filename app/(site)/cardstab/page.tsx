@@ -7,6 +7,7 @@ import React, { useState, useEffect, memo } from "react";
 import Company from "./components/Company";
 import Industry from "./components/Industry";
 import Team from "./components/Team";
+import ImageAI from "./components/Image";
  
 
 const tabs = [
@@ -31,10 +32,10 @@ const Layout2 = ({ children }: { children: React.ReactNode }) => {
         return <Company />;
       case "Stable Diffusion":
         return <Team />;
-      case " Mid Journey":
+      case "Mid Journey":
         return <Industry />;
-      case " Create Avatar":
-        return <Industry />;
+      case "Create Avatar":
+        return <ImageAI />;
       default:
         return <Company />;
     }
