@@ -159,7 +159,7 @@ export default function Home() {
               elementum. Donec arcu ac nulla elementum nunc rhoncus orci.
             </p>
           </div>{" "}
-          <div className="w-full flex justify-between items-center  max-w-[500px] right-[200px] absolute  gap-x-60 mt-10">
+          <div className="w-full flex justify-between items-center  max-w-[500px] right-[200px] absolute  gap-x-40 mt-10">
             <button
               onClick={() => setIsModalOpen(true)}
               className="text-sm font-semibold w-full ring-1 ring-gray-200 hover:ring-transparent transition duration-300 hover:bg-primary-red px-6 py-3.5 rounded-lg hover:scale-105"
@@ -329,7 +329,7 @@ export default function Home() {
         </div>
         <div
           id="ai-personalized"
-          className="sm:mt-14 pt-14 pb-14 relative w-full"
+          className="sm:mt-14 pt-14 pb-14 rounded-3xl relative w-full"
           data-aos="fade-up"
         >
           <div
@@ -337,11 +337,11 @@ export default function Home() {
             data-aos="fade-right"
           />
           <div
-            className="bg-gradient-to-r w-full from-[#000] via-[#000]/80 to-[#000] absolute inset-0 z-[-1]"
+            className="bg-gradient-to-r rounded-3xl w-full from-[#000] via-[#000]/80 to-[#000] absolute inset-0 z-[-1]"
             data-aos="fade-in"
           />
           <video
-            className="w-full h-full absolute inset-0 object-cover z-[-2] hidden md:block"
+            className="w-full h-full  rounded-3xl absolute inset-0 object-cover z-[-2] hidden md:block"
             loop={true}
             autoPlay={true}
             data-aos="zoom-in"
@@ -352,7 +352,7 @@ export default function Home() {
             />
           </video>
           <div id="create-your" className="mt-12 sm:mt-20" data-aos="fade-up">
-            <div className="absolute h-[900px] sm:w-[150px] bg-orange-700 left-[-250px] blur-[250px] rounded" />
+            <div className="absolute h-[900px] sm:w-[150px] bg-orange-700 left-[-250px] blur-[250px] rounded-3xl" />
             <div>
               <Image
                 src="/slash.png"
